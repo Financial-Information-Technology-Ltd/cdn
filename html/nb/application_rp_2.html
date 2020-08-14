@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Step 1}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+<style type="text/css">
+thead {
+	border-bottom: 3px white solid;
+}
+
+thead th {
+	padding: 3px;
+	padding-left: 7px;
+	text-align: left;
+}
+
+thead th a {
+	margin-top: -2px;
+	margin-left: -18px;
+	position: absolute;
+}
+
+#RefreshImage {
+	margin: 0px;
+	width: 0px;
+	height: 0px;
+}
+
+#SecondLifeToggle {
+	margin: 2px 0 0 0;
+}
+
+tbody {
+	border-top: 3px white solid;
+	border-bottom: 3px white solid;
+}
+
+tbody td {
+	padding: 2px;
+	padding-left: 7px;
+}
+
+tfoot {
+	background-color: white;
+	margin-top: 100px;
+}
+</style>
+</head>
+<body>
+  <form method="post" action="%SERVLET_PATH%">
+    {ERRORS}
+    <table>
+      <thead>
+        <tr>
+          <td class="title">{%(2)First Life Assured (if different from First Applicant)}</td>
+          <th style="text-align: right">{HELP_LINK}</th>
+        </tr>
+      </thead>
+      <tbody id="FirstLife_Details">
+        <tr>
+          <td style="width: 25%">{%(10)Client Number (if already exists)}</td>
+          <td>
+            <input type="text" name="FirstLifeKey" onchange="document.forms[0].submit()">
+            <input type="BUTTON" class="button" value="{%(104)Search Client}"
+              ONCLICK="search_client('FirstLifeKey',true)">
+          </td>
+        </tr>
+        <tr>
+          <td>{%(11)Title}</td>
+          <td>
+            <select name="FirstLife_Title">
+              <option value="">&nbsp;</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>{%(12)Surname}</td>
+          <td>
+            <input name="FirstLife_LastName" size="30">
+          </td>
+        </tr>
+        <tr>
+          <td>{%(13)Previous Name}</td>
+          <td>
+            <input name="FirstLife_MaidenName" size="30">
+          </td>
+        </tr>
+        <tr>
+          <td>{%(14)First Name (s)}</td>
+          <td>
+            <input name="FirstLife_FirstName" size="30">
+          </td>
+        </tr>
+        <tr>
+          <td>{%(15)Sex}</td>
+          <td>
+            <select name="FirstLife_Sex">
+              <option value="">&nbsp;</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>{%(16)DOB}</td>
+          <td>
+            <input name="FirstLife_BirthDate" size="10">
+            {DATE_FORMAT}
+          </td>
+        </tr>
+        <tr>
+          <td>{%(17)Country of Residence}</td>
+          <td>
+            <select name="FirstLife_TaxCountry">
+              <option value="">&nbsp;</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>{%(18)Nationality}</td>
+          <td>
+            <select name="FirstLife_Nationality"></select>
+          </td>
+        </tr>
+        <tr>
+          <td>{%(29)US Tax Payor Status}</td>
+          <td>
+            <select name="FirstLife_USTaxPayorStatus">
+              <option value="">&nbsp;</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>{%(19)Passport/Identity Card No}</td>
+          <td>
+            <input name="FirstLife_IDNo" size="20">
+          </td>
+        </tr>
+        <tr>
+          <td>{%(32)Passport/Identity Card Expiry Date}</td>
+          <td>
+            <input name="FirstLife_IDExpiryDate" size="20">
+          </td>
+        </tr>
+        <tr>
+          <td>{%(20)Address}</td>
+          <td>
+            <input name="FirstLife_Address" size="50">
+          </td>
+        </tr>
+        <tr>
+          <td>{%(21)Postcode}</td>
+          <td>
+            <input name="FirstLife_PostCode" size="20">
+          </td>
+        </tr>
+        <tr>
+          <td>{%(22)City}</td>
+          <td>
+            <input name="FirstLife_City" size="20">
+          </td>
+        </tr>
+        <tr>
+          <td>{%(23)Country}</td>
+          <td>
+            <input name="FirstLife_Country" size="20">
+          </td>
+        </tr>
+        <tr>
+          <td>{%(24)Home Tel No}</td>
+          <td>
+            <input name="FirstLife_PhoneNo" size="20">
+          </td>
+        </tr>
+        <tr>
+          <td>{%(25)Work Tel No}</td>
+          <td>
+            <input name="FirstLife_WorkPhoneNo" size="20">
+          </td>
+        </tr>
+        <tr>
+          <td>{%(26)Mobile}</td>
+          <td>
+            <input name="FirstLife_MobileNo" size="20">
+          </td>
+        </tr>
+        <tr>
+          <td>{%(27)Email}</td>
+          <td>
+            <input name="FirstLife_EMail" size="20">
+          </td>
+        </tr>
+        <tr>
+          <td>{%(28)Relationship To Applicant}</td>
+          <td>
+            <select name="FirstLife_RelationToOwner">
+              <option value="">&nbsp;</option>
+            </select>
+          </td>
+        </tr>
+      </tbody>
+      <!--%(JointLifeToggleFrag)-->
+      <thead>
+        <tr>
+          <td class="title">{%(72)Second Life Assured (if different from Second Applicant)}</td>
+          <th>
+            <input type="checkbox" id="JointLifeToggle" name="JointLifeToggle">
+          </th>
+        </tr>
+      </thead>
+      <!--%(JointLifeToggleFrag_END)-->
+      <!--%(JointLifeFrag)-->
+      <tbody id="SecondLife_Details">
+        <tr>
+          <td style="width: 25%">{%(40)Client Number (if already exists)}</td>
+          <td>
+            <input type="text" name="SecondLifeKey" onchange="document.forms[0].submit()">
+            <input type="BUTTON" class="button" value="{%(104)Search Client}"
+              ONCLICK="search_client('SecondLifeKey',true)">
+          </td>
+        </tr>
+        <tr>
+          <td>{%(41)Title}</td>
+          <td>
+            <select name="SecondLife_Title">
+              <option value="">&nbsp;</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>{%(42)Surname}</td>
+          <td>
+            <input name="SecondLife_LastName" size="30">
+          </td>
+        </tr>
+        <tr>
+          <td>{%(43)Previous Name}</td>
+          <td>
+            <input name="SecondLife_MaidenName" size="30">
+          </td>
+        </tr>
+        <tr>
+          <td>{%(44)First Name (s)}</td>
+          <td>
+            <input name="SecondLife_FirstName" size="30">
+          </td>
+        </tr>
+        <tr>
+          <td>{%(45)Sex}</td>
+          <td>
+            <select name="SecondLife_Sex">
+              <option value="">&nbsp;</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>{%(46)DOB}</td>
+          <td>
+            <input name="SecondLife_BirthDate" size="10">
+            {DATE_FORMAT}
+          </td>
+        </tr>
+        <tr>
+          <td>{%(47)Country of Residence}</td>
+          <td>
+            <select name="SecondLife_TaxCountry">
+              <option value="">&nbsp;</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>{%(48)Nationality}</td>
+          <td>
+            <select name="SecondLife_Nationality"></select>
+          </td>
+        </tr>
+        <tr>
+          <td>{%(59)US Tax Payor Status}</td>
+          <td>
+            <select name="SecondLife_USTaxPayorStatus">
+              <option value="">&nbsp;</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>{%(49)Passport/Identity Card No}</td>
+          <td>
+            <input name="SecondLife_IDNo" size="20">
+          </td>
+        </tr>
+        <tr>
+          <td>{%(33)Passport/Identity Card Expiry Date}</td>
+          <td>
+            <input name="SecondLife_IDExpiryDate" size="20">
+          </td>
+        </tr>
+        <tr>
+          <td>{%(50)Address}</td>
+          <td>
+            <input name="SecondLife_Address" size="50">
+          </td>
+        </tr>
+        <tr>
+          <td>{%(51)Postcode}</td>
+          <td>
+            <input name="SecondLife_PostCode" size="20">
+          </td>
+        </tr>
+        <tr>
+          <td>{%(52)City}</td>
+          <td>
+            <input name="SecondLife_City" size="20">
+          </td>
+        </tr>
+        <tr>
+          <td>{%(53)Country}</td>
+          <td>
+            <input name="SecondLife_Country" size="20">
+          </td>
+        </tr>
+        <tr>
+          <td>{%(54)Home Tel No}</td>
+          <td>
+            <input name="SecondLife_PhoneNo" size="20">
+          </td>
+        </tr>
+        <tr>
+          <td>{%(55)Work Tel No}</td>
+          <td>
+            <input name="SecondLife_WorkPhoneNo" size="20">
+          </td>
+        </tr>
+        <tr>
+          <td>{%(56)Mobile}</td>
+          <td>
+            <input name="SecondLife_MobileNo" size="20">
+          </td>
+        </tr>
+        <tr>
+          <td>{%(57)Email}</td>
+          <td>
+            <input name="SecondLife_EMail" size="20">
+          </td>
+        </tr>
+        <tr>
+          <td>{%(58)Relationship To Applicant}</td>
+          <td>
+            <select name="SecondLife_RelationToOwner">
+              <option value="">&nbsp;</option>
+            </select>
+          </td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>{%(3)Joint Life Option}</td>
+          <td>
+            <input type="text" name="NO_OF_LIVES">
+          </td>
+        </tr>
+      </tbody>
+      <!--%(JointLifeFrag_END)-->
+      <tfoot>
+        <tr>
+          <td align="left">
+            <input class="button" name="PrevButton" type="submit" value="&lt; {%(100)Previous}">
+          </td>
+          <td align="right">
+            <input name="NextButton" class="button" type="submit" value="{%(101)Next} &gt;">
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  </form>
+</body>
+</html>

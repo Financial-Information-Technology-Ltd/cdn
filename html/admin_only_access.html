@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Security Message}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}" />
+</head>
+<body>
+  <form method="post" action="%SERVLET_PATH%">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(1)Security Message}</td>
+      </tr>
+      <tr>
+        <th>{%(2)Only administrator has the right to access this function}</th>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(100)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

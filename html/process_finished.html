@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Process Status}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body onload="scrollTo(0,1000000);">
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(2)Processing finished}</td>
+      </tr>
+    </table>
+    <PRE class="default">{BATCH_MESSAGES}</PRE>
+    <table class="navigation">
+      <tr>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(200)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

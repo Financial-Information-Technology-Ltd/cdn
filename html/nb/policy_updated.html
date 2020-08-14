@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+<title>{%(1)Policy submitted}</title>
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    <table>
+      <tr>
+        <td class="title">{HELP_LINK}{%(2)Policy submitted}</td>
+      </tr>
+      <tr>
+        <th>{%(3)Policy Number} {POLICY_KEY_URL}</th>
+      </tr>
+      <tr>
+        <td>{ERRORS}</td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SubmitButton" value="{%(100)Continue}">
+        </td>
+      </tr>
+    </table>
+    <!--%(SEGMENT_LIST_FRAGMENT)-->
+    <table>
+      <tr>
+        <td class="title" colspan=3>{%(11)List of segments}</td>
+      </tr>
+      <tr>
+        <th>{%(12)Number}</th>
+        <th>{%(13)Status}</th>
+        <th>{%(14)Premium}</th>
+      </tr>
+      <!--{SEGMENT_LIST}-->
+    </table>
+    <!--%-->
+  </form>
+</body>
+</html>

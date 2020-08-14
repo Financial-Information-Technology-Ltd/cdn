@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Policy Underwriting}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(1)Policy Underwriting}</td>
+      </tr>
+      <tr>
+        <th>{%(3)Agent}</th>
+        <td>{AGENT_NO} - {AGENT_NAME}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Policy}</th>
+        <td>{PolicyKey}</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th width=10%>{%(6)Date Requested}</th>
+        <th width=40%>{%(7)Description}</th>
+        <th width=10%>{%(8)Status}</th>
+      </tr>
+      <!--{PolicyUnderwriting}-->
+    </table>
+    <p align="right">
+      <b>
+        <a href="%BACK_LINK%">
+          {%(101)Return}
+          <img src="/lf/images/back.gif">
+        </a>
+      </b>
+    </p>
+  </form>
+</body>
+</html>

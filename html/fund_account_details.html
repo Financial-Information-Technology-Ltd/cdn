@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Unit Linked Fund Accounts}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(1)Unit Linked Fund Accounts}</td>
+      </tr>
+      <tr>
+        <th width=30%>{%(2)Fund Code}</th>
+        <td>{FUND_CODE}</td>
+      </tr>
+      <tr>
+        <th>{%(3)Fund Name}</th>
+        <td>{FUND_NAME}</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th colspan=4>{%(4)Account Mapping}</th>
+      </tr>
+      <tr>
+        <th style="width: 1%">{%(5)Pseudo}</th>
+        <th style="width: 1%">&nbsp;</th>
+        <th style="width: 1%">{%(6)Account}</th>
+        <th>{%(7)Description}</th>
+      </tr>
+      <!--{PSEUDO_ACCOUNT_TABLE}-->
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input name="SaveFundAccount" type="submit" value="{%(99)Save}">
+        </td>
+        <td class="return">
+          <a href="%SERVLET_PATH%?screen_name=FUND_ACC_CHOOSE">
+            {%(100)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

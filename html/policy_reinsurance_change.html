@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Facultative Reinsurance}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form method="post" action="%SERVLET_PATH%">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(2)Change Facultative Reinsurance}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Policy No}</th>
+        <td>{PolicyNo}</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th>{%(11)Cov.No}</th>
+        <th>{%(12)Plan}</th>
+        <th>{%(13)Status}</th>
+        <th>{%(14)Allowed}</th>
+        <th>{%(15)Treaty}</th>
+      </tr>
+      <!--{COVERAGE_LIST}-->
+    </table>
+    <table>
+      <!--%(ALL_COVERAGES)-->
+      <tr>
+        <th>{%(4)Change reinsurance on all allowed coverages}</th>
+        <td>
+          <input type="checkbox" name="AllCoverages">
+        </td>
+      </tr>
+      <!--%-->
+      <!--%(COVERAGE_NO)-->
+      <tr>
+        <th>{%(5)Coverage No}</th>
+        <td>
+          <select name="CovNo" ONCHANGE="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <!--%-->
+      <tr>
+        <th>{%(6)New Reinsurance Treaties}</th>
+        <td>
+          <table>
+            <!--{TREATY_LIST}-->
+            <tr>
+              <td>
+                <input type="submit" name="TreatyCode_BUTTON" value="{%(102)Add}" />
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SaveButton" value="{%(100)Submit}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

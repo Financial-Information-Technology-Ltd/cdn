@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Dictionary Search}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(2)Dictionary Search - }{DictName}</td>
+      </tr>
+      <tr>
+        <th>{%(3)Dictionary Item}</th>
+        <th>{%(4)Column Heading}</th>
+      </tr>
+      <!--{DICTIONARY_LIST}-->
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>&nbsp;</td>
+        <td class="return">
+          <a href="javascript:window.close()">
+            {%(100)Close}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+<script type="text/javascript">
+function return_data(value,do_submit)
+{
+  name_element = document.forms[0].elements["ReturnField"];
+  data_name = name_element.value;
+  element = window.opener.document.forms[0].elements[data_name];
+  element.value = value;
+  window.close();
+}
+</script>
+</html>

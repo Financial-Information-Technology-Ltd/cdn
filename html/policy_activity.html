@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Policy Activity}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}
+          {%(1)Policy Activity}
+          <a href="%BACK_LINK%">
+            <span class="return_link">{%(101)Return}</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <th colspan="2">
+          {%(3)Activity for} {PolicyKey}
+        </th>
+      </tr>
+    </table>
+    <table class="zebra">
+      <tr>
+        <th style="width: 12%">
+          <a href="?screen_name=show_policy_activity&PolicyKey={PolicyKey}&SortField=effdate">{%(4)Eff Date}</a>
+        </th>
+        <th style="width: 8%">
+          <a href="?screen_name=show_policy_activity&PolicyKey={PolicyKey}&SortField=trans_no">{%(5)Trans.No}</a>
+        </th>
+        <th style="width: 8%">
+          <a href="?screen_name=show_policy_activity&PolicyKey={PolicyKey}&SortField=currency">{%(6)Ccy}</a>
+        </th>
+        <th style="width: 12%">
+          <a href="?screen_name=show_policy_activity&PolicyKey={PolicyKey}&SortField=trans_code">{%(7)Transaction}</a>
+        </th>
+        <th style="width: 13%">
+          <a href="?screen_name=show_policy_activity&PolicyKey={PolicyKey}&SortField=cash">{%(8)Cash}</a>
+        </th>
+        <th style="width: 13%">
+          <a href="?screen_name=show_policy_activity&PolicyKey={PolicyKey}&SortField=premium">{%(9)Premium}</a>
+        </th>
+        <!--%(LOAN_FRAGMENT)-->
+        <th style="width: 13%">
+          <a href="?screen_name=show_policy_activity&PolicyKey={PolicyKey}&SortField=premium">{%(13)Loan}</a>
+        </th>
+        <!--%-->
+        <th style="width: 13%">
+          <a href="?screen_name=show_policy_activity&PolicyKey={PolicyKey}&SortField=suspense">{%(10)Suspense}</a>
+        </th>
+        <th style="width: 8%">
+          <a href="?screen_name=show_policy_activity&PolicyKey={PolicyKey}&SortField=user">{%(11)User}</a>
+        </th>
+        <th>
+          <a href="?screen_name=show_policy_activity&PolicyKey={PolicyKey}&SortField=paid_to_dt">{%(12)Paid to Date}</a>
+        </th>
+        <th>{%(14)Rv}</th>
+      </tr>
+      <!--{POLICY_ACTIVITY}-->
+    </table>
+    <table class="navigation">
+      <tr>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

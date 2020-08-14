@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Commissions}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(1)Commissions}
+          <a href="%SERVLET_PATH%?screen_name=%BACK_LINK%">
+            <span class="return_link">{%(200)Return}</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Agent No}</th>
+        <td>{AgentKey}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Agent Name}</th>
+        <td>{AgentName}</td>
+      </tr>
+      <tr>
+        <th>{%(20)Reason}</th>
+        <td>
+          <select name="Reason">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(21)Policy}</th>
+        <td>
+          <input type="text" name="PolicyKey">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(22)Start Date}</th>
+        <td>
+          <input type="text" name="StartDate">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(23)Show commissions due only}</th>
+        <td>
+          <input type="checkbox" name="CommDueOnly">
+        </td>
+      </tr>
+      <tr>
+        <th>&nbsp;</th>
+        <td>
+          <input type="submit" name="ShowValues" value="{%(24)Submit}">
+        </td>
+      </tr>
+    </table>
+    <!--%(COMMISSION_TABLE_FRAGMENT)-->
+    <table>
+      <tr>
+        <Th>{%(13)Effective Date}</th>
+        <Th>{%(5)Coverage}</th>
+        <Th>{%(6)Policy No}</th>
+        <Th>{%(7)Currency}</th>
+        <Th>{%(8)Earned Comm}</th>
+        <Th>{%(9)Amount Paid}</th>
+        <Th>{%(10)Ind}</th>
+        <Th>{%(11)Statement Printed}</th>
+        <Th>{%(12)Statement No}</th>
+      </tr>
+      <!--{COMMISSION_LIST}-->
+    </table>
+    <!--%-->
+    <table>
+      <tr class="navigation">
+        <td class="return">
+          <a href="%SERVLET_PATH%?screen_name=%BACK_LINK%">
+            {%(200)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+    <input type="hidden" name="TooLong"
+      value="{%(25)Error. Looks like the agent has too many entries and selection took too long}">
+  </form>
+</body>
+</html>

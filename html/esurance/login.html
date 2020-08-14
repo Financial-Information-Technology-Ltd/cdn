@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{%(1)LIFEfit - Login}</title>
+  <link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+  <link rel="stylesheet" type="text/css" href="{JQUERY_UI_CSS_PATH}">
+  <script type="text/javascript" src="{JQUERY_PATH}"></script>
+  <script type="text/javascript" src="{JQUERY_UI_PATH}"></script>
+<style type="text/css">
+table.c2 {
+	width: 100%;
+	height: 100%
+}
+
+table.c1 {
+	width: 0px
+}
+.h1_es {
+  background-image: linear-gradient(var(--darker1), var(--darker),var(--darker2));
+}
+.ui-widget-header,.ui-state-default, ui-button {
+  background:var(--lighter);
+  border: 1px solid #b9cd6d;
+  color: #000000;
+  font-weight: bold;
+}
+</style>
+</head>
+<body onload="on_load()">
+<!--%(Disclaimer)-->
+<div id="dialog" title="{LOGIN_DISCLAIMER_DIALOG_TITLE}">
+  {LOGIN_DISCLAIMER}
+</div>
+<!--%-->
+  <div id="errors">{ERRORS}</div>
+  <div id="main" class="roundedtopleft">
+    <div class="rounded">
+      <h1 class="h1_es">{%(2)eSurance Login}</h1>
+    </div>
+    <form action="" method="post" id="loginForm">
+      <ul id="fields">
+        <li class="field">
+          <label for="UserName">User Name</label>
+          <input type="text" id="UserName" name="UserName" autocomplete="off" />
+        </li>
+        <!--%(NON_PREVENT_KEYLOGGING)-->
+        <li class="field">
+          <label for="Password">Password</label>
+          <input type="password" id="Password" name="Password" autocomplete="off" />
+        </li>
+        <!--%-->
+        <!--%(PREVENT_KEYLOGGING)-->
+        <li class="field" id="pwcharsli">
+          <label for="pwchars">{%(6)Enter the following characters from your password}</label>
+          <ul id="pwchars">
+            <li>
+              <input type="password" id="Password1" name="Password1" autocomplete="one-time-code" size="1" maxlength="1"
+                onkeyup="moveFocus(event,'Password2')" />
+              <label for="Password1">{Position1}</label>
+            </li>
+            <li>
+              <input type="password" id="Password2" name="Password2" autocomplete="one-time-code" size="1" maxlength="1"
+                onkeyup="moveFocus(event,'Password3')" />
+              <label for="Password2">{Position2}</label>
+            </li>
+            <li>
+              <input type="password" id="Password3" name="Password3" autocomplete="one-time-code" size="1" maxlength="1"
+                onkeyup="moveFocus(event,'SubmitButton')" />
+              <label for="Password3">{Position3}</label>
+            </li>
+          </ul>
+        </li>
+        <!--%-->
+        <li class="field">
+          <label for="SubmitButton"></label>
+          <input type="submit" value="Login" name="SubmitButton" id="SubmitButton" />
+        </li>
+        <li class="field">
+          <label for="ForgotPasswordLink"></label>
+          <a href="?screen_name=reset_password" id="ForgotPasswordLink">{%(7)Forgot Password?}</a>
+        </li>
+      </ul>
+      <input type="hidden" name="SCREEN_NAME" value="LOGIN">
+    </form>
+    <div id="pblogo">
+      <img src="%PB_IMAGE_NAME%">
+    </div>
+  </div>
+  <script type="text/javascript">
+    $( function() {
+      $( "#dialog" ).dialog({height: 300,width:550,modal:true});
+    } );
+			function on_load() {
+				set_focus();
+				if (window.requestIdleCallback)
+				    requestIdleCallback(addFingerprint);
+				else
+				    setTimeout(addFingerprint, 500);
+			}
+			function addFingerprint() {
+				if (typeof Fingerprint2 == 'undefined')
+					return;
+		        Fingerprint2.get(function (components) {
+		        	const values = components.map(component => component.value);
+		        	var fingerprint = String(Fingerprint2.x64hash128(values.join(''), 31));
+		        	var input = document.createElement("input");
+		        	input.setAttribute("type", "hidden");
+		        	input.setAttribute("name", "fingerprint");
+		        	input.setAttribute("value", fingerprint);
+		        	document.getElementById("loginForm").appendChild(input);
+		        })
+			}
+			function set_focus() {
+				{FRAMES_NOT_ALLOWED}
+				element = document.forms[0].elements["FOCUSED_FIELD"];
+				if (element != null) {
+					field_name = element.value;
+					element = document.forms[0].elements[field_name];
+					if (element != null) {
+						element_type = "" + element.type;
+						if (element_type != "undefined")
+							element.focus();
+						else {
+							if (!isNaN(element.length)) {
+								button_checked = -1;
+								for (var i = 0; i < element.length; i++) {
+									if (element[i].checked)
+										button_checked = i;
+								}
+								if (button_checked >= 0)
+									element[button_checked].focus();
+								else {
+									element[0].focus();
+									element[0].checked = false;
+								}
+							}
+						}
+					}
+				}
+			}
+			function moveFocus(e, name) {
+				var e = window.event || e;
+				var pressedKey = e.which || e.keyCode;
+				if (pressedKey<48||pressedKey>122)
+					return;
+				if (pressedKey > 57 && pressedKey < 65)
+					return;
+				if (pressedKey > 90 && pressedKey < 97)
+					return;
+				var element = document.forms[0].elements[name];
+				element.focus();
+			}
+		</script>
+</body>
+</html>

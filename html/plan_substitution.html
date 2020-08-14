@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Plan Substitution}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="3">{HELP_LINK}{%(2)Plan Substitution}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(11)Policy No}</th>
+        <td colspan="2">{PolicyKey}</td>
+      </tr>
+      <tr>
+        <th>{%(12)Company}</th>
+        <td style="width: 35%">{Company}</td>
+        <td>
+          <select name="CompanyNo" ONCHANGE="document.forms[0].submit()"></select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(13)Branch}</th>
+        <td>{Branch}</td>
+        <td>
+          <select name="BranchNo" ONCHANGE="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th colspan=2>{%(14)Plans}</th>
+      </tr>
+      <!--{PLAN_LIST}-->
+      <!--%(POLICY_FEE_STRUCTURE)-->
+      <tr>
+        <th>{%(16)Policy Fee Structure - Currently set to: }{EXISTING_POLICY_FEE_STRUCTURE}</th>
+        <td>
+          <select name="POLICY_FEE_STRUCTURE">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <!--%-->
+      <!--%(AGENT_SA_FREQUENCY)-->
+      <tr>
+        <th>{%(26)Agent Service agreement frequency}</th>
+        <td>
+          <select name="AGENT_SA_FREQUENCY">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(27)Do not collect Agent Service Agreement Fee}</th>
+        <td>
+          <input type="checkbox" name="ASA_ZERO">
+        </td>
+      </tr>
+      <!--%-->
+      <tr>
+        <th>{%(17)List Type:}</th>
+        <td>
+          <select name="PLAN_SUBSTITUTION_LISTTYPE">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th colspan=4>{%(20)Funds}</th>
+      </tr>
+      <tr>
+        <th>{%(21)Old Fund}</th>
+        <th>{%(22)No Of Units}</th>
+        <th>{%(23)New Fund}</th>
+        <th>{%(24)Share}</th>
+      </tr>
+      <!--{FUND_LIST}-->
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SaveButton" value="{%(100)Process}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

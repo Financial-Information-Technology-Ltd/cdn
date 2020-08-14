@@ -1,0 +1,198 @@
+<?xml version="1.0"?>
+<!DOCTYPE UserSecurity SYSTEM "menu.dtd">
+<UserSecurity>
+	<FitMenu>
+		<Description>PLL Operations Menu</Description>
+		<Submenu id="SUB_INDIVIDUAL">
+			<Prompt>Individual</Prompt>
+			<Item>
+				<Prompt>New Business</Prompt>
+				<Command>DO_NEW_BUSINESS</Command>
+			</Item>
+			<Item>
+				<Prompt>Policy Workbench</Prompt>
+				<Command>DO_POLICY_ENQUIRY</Command>
+			</Item>
+			<Item>
+				<Prompt>Client Workbench</Prompt>
+				<Command>DO_CLIENT_MAIN</Command>
+			</Item>
+			<Submenu id="SUB_AGENT">
+				<Prompt>Agent SubMenu</Prompt>
+				<Item>
+					<Prompt>Agent Workbench</Prompt>
+					<Command>DO_AGENT_MAIN</Command>
+				</Item>
+				<Item>
+					<Prompt>Servicing Agents</Prompt>
+					<Command>CHOOSE_SERV_AGENT_MAINTENANCE</Command>
+				</Item>
+				<Item>
+					<Prompt>Statements</Prompt>
+					<Command>DO_STATEMENTS</Command>
+				</Item>
+			</Submenu>
+			<Item>
+				<Prompt>Policy Diary Entry</Prompt>
+				<Command>DO_SHOW_POLICY_DIARY_ENTRY</Command>
+			</Item>
+		</Submenu>
+		<Submenu id="SUB_PAYMENT">
+			<Prompt>Premium/Payment</Prompt>
+			<Item>
+				<Prompt>Policy Accounting</Prompt>
+				<Command>MAKE_POLICY_ACCOUNTING</Command>
+			</Item>
+			<Item>
+				<Prompt>Unreconciled transactions</Prompt>
+				<Command>DO_UNRECONCILED_BANK_TRANS</Command>
+			</Item>
+		</Submenu>
+		<Submenu id="SUB_WORKFLOW">
+			<Prompt>Workflow</Prompt>
+			<Item>
+				<Prompt>New Task</Prompt>
+				<Command>NEW_WORKFLOW_TASK</Command>
+			</Item>
+			<Item>
+				<Prompt>List Tasks</Prompt>
+				<Command>LIST_WORKFLOW_TASKS</Command>
+			</Item>
+			<Item>
+				<Prompt>Schedule</Prompt>
+				<Command>SHOW_WORKFLOW_SCHEDULE</Command>
+			</Item>
+		</Submenu>
+		<Submenu id="SUB_SUPPORT_FILE">
+			<Prompt>Support Files</Prompt>
+			<Item>
+				<Prompt>Custodian</Prompt>
+				<Command>DO_CUSTODIAN_MAIN</Command>
+			</Item>
+			<Submenu id="SUB_SUPPORT_ORGANISATION">
+				<Prompt>Organisation</Prompt>
+				<Item>
+					<Prompt>Company Documentation</Prompt>
+					<Command>COMPANY_DOCUMENTATION_START</Command>
+				</Item>
+			</Submenu>
+			<Item>
+				<Prompt>Product Workbench</Prompt>
+				<Command>CHOOSE_PLAN</Command>
+			</Item>
+			<Submenu id="SUB_REPORTS">
+				<Prompt>Reports</Prompt>
+				<Item>
+					<Prompt>Create Reports</Prompt>
+					<Command>EDIT_REPORT_WRITER</Command>
+				</Item>
+				<Item>
+					<Prompt>Run Reports</Prompt>
+					<Command>RUN_REPORTS</Command>
+				</Item>
+			</Submenu>
+		</Submenu>
+		<Submenu id="SUB_ADMINISTRATION">
+			<Prompt>Administration</Prompt>
+			<Item>
+				<Prompt>Who is Logged On?</Prompt>
+				<Command>LIST_SESSIONS</Command>
+			</Item>
+			<Item>
+				<Prompt>Change Password</Prompt>
+				<Command>DO_PASSWORD_CHANGE</Command>
+			</Item>
+			<Item>
+				<Prompt>Out Of Office</Prompt>
+				<Command>OUT_OF_OFFICE</Command>
+			</Item>
+		</Submenu>
+		<Item>
+			<Prompt>Logout</Prompt>
+			<Command>DO_LOGIN</Command>
+		</Item>
+	</FitMenu>
+	<AllowedCommands>
+		<Command id="DO_MAINTAIN_POLICY">Maintain Policy</Command>
+		<Command id="DO_MAINTAIN_CLIENT">Maintain Client</Command>
+	</AllowedCommands>
+	<PolicyMaintenanceButtons>
+		<ButtonName>StatusChangeButton</ButtonName>
+		<ButtonName>CoverageStatusChangeButton</ButtonName>
+		<ButtonName>RiderClaimButton</ButtonName>
+		<ButtonName>SwitchUnitsButton</ButtonName>
+		<ButtonName>UwrreqButton</ButtonName>
+		<ButtonName>RegularIncomeButton</ButtonName>
+		<ButtonName>MortalityLoadingButton</ButtonName>
+		<ButtonName>ChangeTrailerCommission</ButtonName>
+		<ButtonName>UnitWithdrawalButton</ButtonName>
+		<ButtonName>UnitReversalButton</ButtonName>
+		<ButtonName>UnitWithdrawalTerminationButton</ButtonName>
+		<ButtonName>SurrenderQuoteButton</ButtonName>
+		<ButtonName>FundSplitButton</ButtonName>
+		<ButtonName>UnitAdjustmentButton</ButtonName>
+		<ButtonName>ReinsuranceButton</ButtonName>
+		<ButtonName>PremiumEndorsementButton</ButtonName>
+		<ButtonName>BeneficiariesButton</ButtonName>
+		<ButtonName>AddSegmentButton</ButtonName>
+		<ButtonName>AddRiderButton</ButtonName>
+		<ButtonName>SegmentSurrenderButton</ButtonName>
+		<ButtonName>ViewSegmentSurrenderButton</ButtonName>
+		<ButtonName>ModemethodButton</ButtonName>
+		<ButtonName>DistributionFunds</ButtonName>
+		<ButtonName>CreatePaymentOutButton</ButtonName>
+		<ButtonName>DoPolicyPaymentButton</ButtonName>
+		<ButtonName>DoPolicyAccountingButton</ButtonName>
+		<ButtonName>AnnuityButton</ButtonName>
+		<ButtonName>PlanSubstitutionButton</ButtonName>
+		<ButtonName>AdhocPolicyCharges</ButtonName>
+		<ButtonName>PendingEndorsementsButton</ButtonName>
+		<ButtonName>CancelPendingEndorsementButton</ButtonName>
+		<ButtonName>CancelPendingStatusChangeButton</ButtonName>
+		<ButtonName>CancelSwitchRequestButton</ButtonName>
+		<ButtonName>ReversePremiumButton</ButtonName>
+		<ButtonName>RepaySuspenseButton</ButtonName>
+		<ButtonName>PayPremiumFromSuspenseButton</ButtonName>
+		<ButtonName>ChangeCommRateButton</ButtonName>
+	</PolicyMaintenanceButtons>
+	<GroupSchemeMaintenanceButtons>
+		<ButtonName>AllowMemberStrategyButton</ButtonName>
+		<ButtonName>CalculateBillButton</ButtonName>
+		<ButtonName>CalculateJoinersBillButton</ButtonName>
+		<ButtonName>CancelBillButton</ButtonName>
+		<ButtonName>ChangeCommRateButton</ButtonName>
+		<ButtonName>ChangeInvestmentButton</ButtonName>
+		<ButtonName>CreatePaymentOutButton</ButtonName>
+		<ButtonName>CSVBillButton</ButtonName>
+		<ButtonName>DoPolicyAccountingButton</ButtonName>
+		<ButtonName>DoPolicyPaymentButton</ButtonName>
+		<ButtonName>GroupSurrenderButton</ButtonName>
+		<ButtonName>ImportMembersButton</ButtonName>
+		<ButtonName>MedicalProviderButton</ButtonName>
+		<ButtonName>MembershipButton</ButtonName>
+		<ButtonName>PayJoinersPremiumButton</ButtonName>
+		<ButtonName>PayPartialPremiumButton</ButtonName>
+		<ButtonName>PayPremiumButton</ButtonName>
+		<ButtonName>PrintJoinersBillButton</ButtonName>
+		<ButtonName>RenewalDataButton</ButtonName>
+		<ButtonName>ReversePremiumButton</ButtonName>
+		<ButtonName>SignOffButton</ButtonName>
+		<ButtonName>SignOffUndoButton</ButtonName>
+		<ButtonName>StatementButton</ButtonName>
+		<ButtonName>StatusChangeButton</ButtonName>
+		<ButtonName>UwrreqButton</ButtonName>
+		<ButtonName>WorkflowButton</ButtonName>
+		<ButtonName>LossRatioButton</ButtonName>
+	</GroupSchemeMaintenanceButtons>
+    <ClientButtons/>
+	<AllowedCommandsOther>
+		<Command id="TEST_GENACCTRN"></Command>
+		<Command id="DO_PRINT_LETTER"></Command>
+		<Command id="CLEAR_SPOOL"></Command>
+		<Command id="RUNNING_PROCESS"></Command>
+		<Command id="DOWNLOAD_SPOOL"></Command>
+		<Command id="SHOW_POLICY_IMAGES"></Command>
+		<Command id="DO_PRINT_DOCUMENT"></Command>
+		<Command id="PRINT_CONTRACT_NOTE"></Command>
+	</AllowedCommandsOther>
+</UserSecurity>

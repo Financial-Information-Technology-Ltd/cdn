@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Scheme Setup}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(1)Scheme Setup}</td>
+      </tr>
+      <tr>
+        <th width=30%>{%(2)Scheme number}</th>
+        <td>{SCHEME_CODE}</td>
+      </tr>
+      <tr>
+        <th>{%(3)Group Owner}</th>
+        <td>
+          <input type="text" name="ClientKey" ONCHANGE="force_submit();">
+          <input type="Button" name="SearchClientButton" value="{%(98)Search Client}"
+            ONCLICK="search_client('ClientKey',true)">
+          {OWNER_NAME}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(5)Address}</th>
+        <td>{OWNER_ADDRESS}</td>
+      </tr>
+      <tr>
+        <th>{%(6)City}</th>
+        <td>{OWNER_CITY}</td>
+      </tr>
+      <tr>
+        <th>{%(7)County}</th>
+        <td>{OWNER_COUNTY}</td>
+      </tr>
+      <tr>
+        <th>{%(8)Post Code}</th>
+        <td>{OWNER_POSTCODE}</td>
+      </tr>
+      <tr>
+        <th>{%(9)Phone No}</th>
+        <td>{OWNER_PHONE}</td>
+      </tr>
+      <tr>
+        <th>{%(10)Fax No}</th>
+        <td>{OWNER_FAX}</td>
+      </tr>
+      <tr>
+        <th>{%(11)Registration Date}</th>
+        <td>{OWNER_REGISTRATION_DATE}</td>
+      </tr>
+      <tr>
+        <th>{%(22)Scheme status}</th>
+        <td>{STATUS}</td>
+      </tr>
+      <tr>
+        <th>{%(23)Application Received Date}</th>
+        <td>
+          <input type="text" name="APP_RECD_DATE" size=10>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(24)Scheme RCD}</th>
+        <td>
+          <input type="text" name="SCHEME_RCD" size=10>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(25)Signed off}</th>
+        <td>{SIGN_OFF_DATE}</td>
+      </tr>
+      <tr>
+        <th>{%(26)Policy Number}</th>
+        <td>{MASTER_POLICY_NUMBER}</td>
+      </tr>
+      <tr>
+        <th>{%(27)Currency}</th>
+        <td>
+          <select name="CURRENCY">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(28)Mode method}</th>
+        <td>
+          <select name="MODE_METHOD">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(53)Documentation Language}</th>
+        <td>
+          <select name="SCHEME_LANGUAGE">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(54)Members are allowed to change investment strategy}</th>
+        <td>
+          <input type="checkbox" name="CHANGE_STRATEGY_ON_ESURANCE">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(92)Agent No}</th>
+        <td>
+          <input type="text" name="AGENT_CODE" ONCHANGE="document.forms[0].submit()">
+          <input type="BUTTON" name="AGENT_BUTTON" value="&hellip;" class="ellipsis" ONCLICK="search_agent('AGENT_CODE',true)">
+          {AGENT_NAME}
+        </td>
+      </tr>
+    </table>
+    <!--%(PRODUCT_SETUP)-->
+    <table>
+      <tr>
+        <td class="title" colspan="2">{%(65)Product set-up}</td>
+      </tr>
+      <tr>
+        <th width=30%>{%(29)Investment premium (percentage of salary)}</th>
+        <td>
+          <input type="text" name="PREMIUM_VALUE" size=8>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(31)Level of cover for Health}</th>
+        <td>
+          <select name="RISK_CLASS">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+    <!--%-->
+    <table>
+      <tr>
+        <td class="title" colspan="{PLAN_CHOICE_COLS}">{%(66)Product configuration}</td>
+      </tr>
+      <tr>
+        <th colspan="{PLAN_CHOICE_PLAN_COLS}">{%(67)Product}</th>
+        <!--%(PLAN_CHOICE_SA_BASIS)-->
+        <th>{%(73)SA Basis}</th>
+        <!--%-->
+        <!--%(PLAN_CHOICE_SA_AMOUNT)-->
+        <th align='RIGHT'>{%(68)SA Amount}</th>
+        <!--%-->
+        <!--%(PLAN_CHOICE_SA_MULTIPLY)-->
+        <th align='RIGHT'>{%(69)SA as multiply of salary}</th>
+        <!--%-->
+        <!--%(PLAN_CHOICE_PREMIUM_AMOUNT)-->
+        <th align='RIGHT'>{%(70)Premium amount}</th>
+        <!--%-->
+        <!--%(PLAN_CHOICE_PREMIUM_PERCENT)-->
+        <th align='RIGHT'>{%(71)Premium as percent of salary}</th>
+        <!--%-->
+        <!--%(PLAN_CHOICE_UNIT_RATE)-->
+        <th align='RIGHT'>{%(72)Premium rate}</th>
+        <!--%-->
+      </tr>
+      <!--{PLAN_CHOICE_FRAGMENT}-->
+    </table>
+    <table>
+      <tr>
+        <td class="title" colspan="2">{%(61)Fund Split}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(62)Funds}</th>
+        <th>{%(63)Split}</th>
+      </tr>
+      <!--{EMPLOYER_FUND_LIST}-->
+      <tr>
+        <td colspan="2">
+          <input type="submit" name="AddEmployerFundButton" value="{%(64)Add}">
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <td class="title" colspan="3">{%(111)Subgroup Details}</td>
+      </tr>
+      <!--{SUBGROUP_LIST}-->
+      <tr>
+        <td colspan="3">
+          <input type="submit" name="AddSubgroupButton" value="{%(112)Add}">
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SaveButton" value="{%(100)Save}">
+          <input type="submit" name="ModifyButton" value="{%(102)Modify}">
+          <input type="submit" name="SignOffButton" value="{%(103)Sign Off}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="/lf/images/back.gif">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

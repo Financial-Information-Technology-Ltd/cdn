@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Surrenders}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}" />
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(1)Surrenders}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Policy No}</th>
+        <td>{PolicyKey}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Status}</th>
+        <td>{Status}</td>
+      </tr>
+      <tr>
+        <th>{%(5)Owner}</th>
+        <td>{Owner}</td>
+      </tr>
+      <tr>
+        <th>{%(6)Commence Date}</th>
+        <td>{IssueDate}</td>
+      </tr>
+      <tr>
+        <th>{%(7)Product}</th>
+        <td>{Plan}</td>
+      </tr>
+      <tr>
+        <th>{%(8)Transaction Date}</th>
+        <td>
+          <input type="text" name="TransDate" size="10">
+        </td>
+      </tr>
+    </table>
+    <!--%(MAIN_BODY)-->
+    <table>
+      <tr>
+        <th style="width: 30%">{%(10)Minimum Surrender Amount}</th>
+        <td>{MinSurrenderAmount}</td>
+      </tr>
+      <tr>
+        <th>{%(11)Minimum Policy Value}</th>
+        <td>{MinPolicyValue}</td>
+      </tr>
+      <tr>
+        <th>{%(12)Total Segments}</th>
+        <td>{TotalSegments}</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th colspan="4">{%(13)Value of Funds}</th>
+      </tr>
+      <tr>
+        <th>{%(14)Fund}</th>
+        <th>{%(15)Init Units}</th>
+        <th>{%(16)Accum Units}</th>
+        <th>{%(17)Policy Value}</th>
+      </tr>
+      <!--{FUND_LIST}-->
+      <tr>
+        <th colspan="3">{%(18)Net Value}</th>
+        <td align="right">
+          <b>{NetValue}</b>
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th style="width: 30%">{%(19)Segments to Surrender}</th>
+        <td>
+          <input type="text" name="Segments">
+        </td>
+      </tr>
+    </table>
+    <!--%(QUOTE_BODY)-->
+    <table>
+      <tr>
+        <th colspan="3">{%(20)Units to Surrender}</th>
+      </tr>
+      <tr>
+        <th>{%(21)Fund}</th>
+        <th>{%(22)No Units}</th>
+        <th>{%(23)Value}</th>
+      </tr>
+      <!--{SURRENDER_LIST}-->
+      <tr>
+        <th colspan="2">{%(24)Surrender Value}</th>
+        <td align="right">
+          <b>{SurrenderValue}</b>
+        </td>
+      </tr>
+      <tr>
+        <th colspan="2">{%(25)Outstanding Est Chg}</th>
+        <td align="right">{OutstandingEstChg}</td>
+      </tr>
+      <tr>
+        <th colspan="2">{%(26)Net Surrender Value}</th>
+        <td align="right">{NetSurrenderValue}</td>
+      </tr>
+    </table>
+    <!--%(QUOTE_BODY_END)-->
+    {PAYMENTS_OUT}
+    <!--%(MAIN_BODY_END)-->
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="PrevButton" value="{%(101)Previous}">
+        </td>
+        <td align="right">
+          <input type="submit" name="NextButton" value="{%(102)Next}">
+          <input type="submit" name="SubmitButton" value="{%(100)Submit}">
+        </td>
+      </tr>
+      <!--%(RETURN_FRAGMENT)-->
+      <tr>
+        <td></td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(200)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+      <!--%(RETURN_FRAGMENT_END)-->
+    </table>
+  </form>
+</body>
+</html>

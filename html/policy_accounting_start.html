@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Policy / Name check}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form method="post" action="%SERVLET_PATH%">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(1)Policy / Name check}</td>
+      </tr>
+      <tr>
+        <th>{%(2)Policy No}</th>
+        <td>
+          <input name="PolicyKey" type="text">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(3)Name}</th>
+        <td>
+          <input name="Name" type="text">
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input name="OKButton" type="submit" value="{%(5)Continue}">
+        </td>
+        <td class="return">
+          <a href="?screen_name=do_main_page">
+            {%(6)Return}
+            <img alt="back" src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

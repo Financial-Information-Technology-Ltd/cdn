@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Policy Regular Income}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr class="zebra">
+        <th colspan="99" class="title">{HELP_LINK}{%(1)Policy Regular Income}</th>
+      </tr>
+      <tr>
+        <th>{%(3)Regular Income for} {PolicyKey}</th>
+      </tr>
+      <tr>
+        <th>{%(11)Coverage}</th>
+        <th>{%(12)No}</th>
+        <th>{%(13)From}</th>
+        <th>{%(14)To}</th>
+        <th>{%(15)Frequency}</th>
+        <th>{%(16)Type}</th>
+        <th>{%(17)Percent}</th>
+        <th>{%(18)Amount}</th>
+        <th>{%(19)Currency}</th>
+      </tr>
+      <!--{PolicyIPaymentTable}-->
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="NewEntryButton" value="{%(101)Add New}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(102)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<!DOCTYPE SkinDescription SYSTEM "menu.dtd">
+<Skin>
+  <Description>FIT Triadic</Description>
+  <ImageName>$PATH/fit.png</ImageName>
+  <StylesheetPath>$PATH/triadic.css</StylesheetPath>
+  <StylesheetPathRtl>$PATH/train_stylesheet.css</StylesheetPathRtl>
+  <MenuStyle>$PATH/menu_var_triadic.js</MenuStyle>
+</Skin>

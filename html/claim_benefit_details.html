@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Benefits}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(1)Benefits}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(2)Benefit code}</th>
+        <td>
+          <input type="text" name="BENEFIT_CODE" size=6>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(3)Benefit year}</th>
+        <td>
+          <input type="text" name="BENEFIT_YEAR" size=4>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(4)Benefit type}</th>
+        <td>
+          <select name="BENEFIT_TYPE" ONCHANGE="force_submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(5)Description}</th>
+        <td>
+          <input type="text" name="DESCRIPTION" size=27>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(6)Currency}</th>
+        <td>
+          <select name="CURRENCY">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(7)Calender Year Limit}</th>
+        <td>
+          <input type="checkbox" name="CALENDER_YEAR_LIMIT">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(8)Total cap amount}</th>
+        <td>
+          <input type="text" name="TOTAL_CAP_AMOUNT" size=17>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(9)Total cap basis}</th>
+        <td>
+          <select name="TOTAL_CAP_BASIS">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(10)Minimum Amount}</th>
+        <td>
+          <input type="text" name="MINIMUM_CLAIM_VALUE" size=17>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(11)Minimum basis}</th>
+        <td>
+          <select name="MIMIMUM_APPLY_TYPE">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(12)Annual Cap Amount}</th>
+        <td>
+          <input type="text" name="ANNUAL_TOTAL_CAP" size=17>
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th colspan="2" align="LEFT">{%(13)Premium Calculation:}</th>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(14)Flat premium amount}</th>
+        <td>
+          <input type="text" name="FLAT_PREMIUM_AMT" size=16>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(15)Plan code}</th>
+        <td>
+          <select name="PLAN_CODE">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <td colspan="2">
+          <table>
+            <tr>
+              <td>{%(16)}</td>
+              <td>{%(17)Benefit}</td>
+              <td>{%(18)Opt}</td>
+              <td>{%(19)Sex qual.}</td>
+              <td>{%(20)Calc Basis}</td>
+              <td>{%(21)Annual Maximum}</td>
+            </tr>
+            <!--{BENEFIT_1_TABLE}-->
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <table>
+            <tr>
+              <td>{%(16)}</td>
+              <td>{%(22)Max factor}</td>
+              <td>{%(23)Annual factor}</td>
+              <td>{%(24)Cap basis}</td>
+              <td>{%(25)Cap amount}</td>
+              <td>{%(26)Cap Apply}</td>
+            </tr>
+            <!--{BENEFIT_2_TABLE}-->
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <table>
+            <tr>
+              <td>{%(16)}</td>
+              <td>{%(27)Min pcnt}</td>
+              <td>{%(28)Max pcnt}</td>
+              <td>{%(29)Non PPO basis}</td>
+              <td>{%(30)Non PPO Value}</td>
+              <td>{%(31)Non PPO pcge}</td>
+            </tr>
+            <!--{BENEFIT_3_TABLE}-->
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <table>
+            <tr>
+              <td>{%(16)}</td>
+              <td>{%(32)Deductible basis}</td>
+              <td>{%(33)Deductible value}</td>
+              <td>{%(34)Deductible pcge}</td>
+            </tr>
+            <!--{BENEFIT_4_TABLE}-->
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <table>
+            <tr>
+              <td>{%(16)}</td>
+              <td>{%(35)Reimbursement basis}</td>
+              <td>{%(36)Reimbursement pcge}</td>
+            </tr>
+            <!--{BENEFIT_5_TABLE}-->
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <table>
+            <tr>
+              <td>{%(16)}</td>
+              <td>{%(37)O/S Claims}</td>
+              <td>{%(38)Payments}</td>
+            </tr>
+            <!--{BENEFIT_6_TABLE}-->
+            <tr>
+              <td>{%(16)}</td>
+              <td>
+                <input type="submit" name="AddValueButton" value="{%(39)Add}">
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SaveClaimBenefit" value="{%(40)Save}">
+        </td>
+        <td class="return">
+          <a href="%SERVLET_PATH%?screen_name=CLAIM_BENEFIT_CHOOSE">
+            {%(41)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

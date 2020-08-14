@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)New Topup}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan=2>{HELP_LINK}{%(2)New topup}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Policy No}</th>
+        <td>{PolicyKey}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Plan}</th>
+        <td>{Plan}</td>
+      </tr>
+      <tr>
+        <th>{%(5)Application Date}</th>
+        <td>
+          <input type="text" name="ApplicationDate" size=10>
+          {DATE_FORMAT}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(6)Issue Date}</th>
+        <td>
+          <input type="text" name="IssueDate" size=10>
+          {DATE_FORMAT}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(7)Premium}</th>
+        <td>
+          <input type="text" name="Premium" size=12>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(8)Same agent as on main plan}</th>
+        <td>
+          <input type="checkbox" name="SameAgentAsBase">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(9)Rider Commission}</th>
+        <td>
+          <select name="RiderCommissionFlag">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(10)End Date}</th>
+        <td>
+          <input type="text" name="EndDate" size=10>
+          {DATE_FORMAT}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(11)Payment Frequency}</th>
+        <td>
+          <select name="Frequency">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(12)Payment Method}</th>
+        <td>
+          <select name="PaymentCode" onchange="force_submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+    <!--%(BANK_DETAILS_DD_FRAGMENT)-->
+    <table>
+      <tr>
+        <th colspan="2">{%(50)Bank Details}</th>
+      </tr>
+      <!--%(EXISTING_ACCOUNT)-->
+      <tr>
+        <th style="width: 30%">{%(51)Existing account}</th>
+        <td>
+          <select name="ExistingBankAccount" ONCHANGE="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <!--%-->
+      <tr>
+        <td style="width: 30%">{%(17)Sort Code}</td>
+        <td>
+          <select name="SortCode" onchange="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>{%(14)Bank Name}</td>
+        <td>
+          <input name="BankName" size="30">
+        </td>
+      </tr>
+      <tr>
+        <td>{%(66)Account Number}</td>
+        <td>
+          <input name="BankAccount" size="20">
+        </td>
+      </tr>
+      <!--%(BANK_ACCT_TYPE_FRAGMENT)-->
+      <tr>
+        <td>{%(69)Account Type}</td>
+        <td>
+          <select name="BankAccountType">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <!--%(BANK_ACCT_TYPE_FRAGMENT_END)-->
+      <tr>
+        <td>{%(15)Account Holder Last Name}</td>
+        <td>
+          <input name="AccountHolderLastName" size="55">
+        </td>
+      </tr>
+      <tr>
+        <td>{%(67)Account Holder First Name}</td>
+        <td>
+          <input name="AccountHolderFirstName" size="55">
+        </td>
+      </tr>
+    </table>
+    <!--%(BANK_DETAILS_DD_FRAGMENT_END)-->
+    <!--%(BANK_DETAILS_CC_FRAGMENT)-->
+    <table>
+      <tr>
+        <th colspan="2">{%(60)Credit Card Details}</th>
+      </tr>
+      <!--%(EXISTING_ACCOUNT)-->
+      <tr>
+        <th style="width: 30%">{%(52)Existing card}</th>
+        <td>
+          <select name="ExistingBankAccount" ONCHANGE="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <!--%-->
+      <tr>
+        <td style="width: 30%">{%(62)Credit Card Number}</td>
+        <td>
+          <input name="CreditCardNumber" size="20" maxlength="16">
+        </td>
+      </tr>
+      <tr>
+        <td>{%(63)Expiry Date}</td>
+        <td>
+          {%(64)Month}
+          <input name="CreditCardExpiryMonth" size="2">
+          {%(65)Year}
+          <input name="CreditCardExpiryYear" size="2" maxlength="2">
+        </td>
+      </tr>
+    </table>
+    <!--%(BANK_DETAILS_CC_FRAGMENT_END)-->
+    <!--%(FUND_FRAGMENT)-->
+    <table>
+      <tr>
+        <th colspan=2>{%(20)Funds}</th>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(21)Fund Code}</th>
+        <th>{%(22)Fund Percentage(%)}</th>
+      </tr>
+      <!--{INVESTMENT_PERCENTAGE_TABLE}-->
+    </table>
+    <!--%(FUND_FRAGMENT_END)-->
+    <!--%(AGENT_FRAGMENT)-->
+    <table>
+      <tr>
+        <th>{%(31)Agent No}</th>
+        <td>
+          <input type="text" name="AgentNo" ONCHANGE="document.forms[0].submit()">
+          <input type="BUTTON" value="{%(105)Search Agent}" ONCLICK="search_agent('AgentNo',true)">
+          {AGENT_NAME}
+        </td>
+      </tr>
+    </table>
+    <!--%(AGENT_FRAGMENT_END)-->
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="ProcessButton" value="{%(100)Process}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

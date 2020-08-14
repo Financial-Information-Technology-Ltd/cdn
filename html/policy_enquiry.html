@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(18)Agent Enquiry}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td colspan="2">
+          <b>{%(18)Agent Enquiry}</b>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <b>{%(1)Agent} {AGENT_NO} {%(2)has} {POLICY_COUNT} {%(3)policies}</b>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top" style="width: 50%">
+          <BR>
+          <b>{%(7)Policy}:</b>
+          <select name="PolicyKey">
+            <option value="*">{%(15)All Policies}</option>
+            <!--{POLICY_OPTIONS}-->
+          </select>
+          <input class="flat" type="submit" name="SubmitPolicy" value="{%(8)Go!}">
+          <BR>
+          <BR>
+          <b>{%(10)Client}:</b>
+          <select name="ClientKey">
+            <option value="*">{%(16)All Clients}</option>
+            <!--{CLIENT_OPTIONS}-->
+          </select>
+          <input class="flat" type="submit" name="SubmitClient" value="{%(8)Go!}">
+          <BR>
+        </td>
+        <td valign="top">
+          <BR>
+          <b>{%(9)Plan}:</b>
+          <BR>
+          {PLAN_LIST}
+          <BR>
+          <BR>
+          <b>{%(12)Status}:</b>
+          <BR>
+          {STATUS_LIST}
+          <BR>
+          <BR>
+          <input class="flat" type="submit" name="SubmitFilter" value="{%(8)Go!}">
+          <BR>
+        </td>
+      </tr>
+    </table>
+    <P>
+    <table>
+      <tr>
+        <td colspan="2">
+          <b>Summary</b>
+        </td>
+      </tr>
+      <tr>
+        <td style="width: 25%">
+          <a href="{ALL_COMM_LINK}">{%(4)Total commissions}</a>
+        </td>
+        <td>{TOTAL_AMOUNT}</td>
+      </tr>
+      <tr>
+        <td>
+          <a href="{DUE_COMM_LINK}">{%(5)Commission due}</a>
+        </td>
+        <td>{PENDING_AMOUNT}</td>
+      </tr>
+      <tr>
+        <td>{%(6)Current balance}</td>
+        <td>{CURRENT_BALANCE}</td>
+      </tr>
+    </table>
+    <P align="right">
+      <b>
+        <a href="%BACK_LINK%">
+          {%(17)Return}
+          <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+        </a>
+      </b>
+    </P>
+  </form>
+</body>
+</html>

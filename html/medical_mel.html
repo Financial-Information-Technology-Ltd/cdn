@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Funf}</title>
+<link rel="stylesheet" type="text/css" href="/lf/MEL_Stylesheet.css">
+</head>
+<body>
+  {ERRORS}
+  <div align="left">
+    <table style="width: 750">
+      <tr>
+        <td>
+          <h1>&nbsp;Fragen an die zu versichernde Person</h1>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div align="left">
+    <table style="width: 750">
+      <tr>
+        <td style="width: 22" align="left" valign="top">
+          <b>1.&nbsp;</b>
+        </td>
+        <td colspan="2" style="width: 708">Sind auf Ihr Leben beantragte Versicherungen (einschlie�lich
+          Berufs-/Erwerbsunf�higkeitsversicherungen abgelehnt, zur�ckgestellt, oder zu erschwerten Bedingungen
+          angenommen worden?</td>
+      </tr>
+      <tr>
+        <td style="width: 22" align="left" valign="top"></td>
+        <td style="width: 265">
+          <input type="radio" name="OtherApplications" value="0">
+          Nein
+        </td>
+        <td style="width: 462"></td>
+      </tr>
+      <tr>
+        <td style="width: 22" align="left" valign="top"></td>
+        <td style="width: 265">
+          <input type="radio" name="OtherApplications" value="1">
+          Ja (wann und bei welchem Unternehmen):
+        </td>
+        <td style="width: 462">
+          <input name="OtherApplications_rem" size="56">
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div>
+    <table style="width: 750">
+      <tr>
+        <td style="width: 22" align="left" valign="top">
+          <b>2.</b>
+        </td>
+        <td colspan="2" style="width: 717">Sind Sie beruflich oder privat besonderen Gefahren ausgesetzt (Tauchen,
+          Fallschirmspringen, Wettfahrten, T�tigkeiten au�erhalb Europas&hellip;)</td>
+      </tr>
+      <tr>
+        <td style="width: 22" align="left" valign="top"></td>
+        <td style="width: 130">
+          <input type="radio" name="Hazards" value="0">
+          Nein
+        </td>
+        <td style="width: 588"></td>
+      </tr>
+      <tr>
+        <td style="width: 22" align="left" valign="top"></td>
+        <td style="width: 130">
+          <input type="radio" name="Hazards" value="1">
+          Ja welche:
+        </td>
+        <td style="width: 588">
+          <input name="Hazards_rem" size="70">
+        </td>
+      </tr>
+    </table>
+    <table style="width: 750">
+      <tr>
+        <td style="width: 23" valign="top">
+          <b>3.</b>
+        </td>
+        <td colspan="2" style="width: 722">K�rpergr��e und Gewicht</td>
+      </tr>
+      <tr>
+        <td style="width: 23" valign="top"></td>
+        <td style="width: 326">
+          Gewicht (kg)
+          <input name="Weight" size="10">
+        </td>
+        <td style="width: 394">
+          K�rpergr��e (cm)
+          <input name="Height" size="10">
+        </td>
+      </tr>
+    </table>
+    <table style="width: 750">
+      <tr>
+        <td style="width: 23" valign="top">
+          <b>4.</b>
+        </td>
+        <td style="width: 720" colspan="2">Sind Sie in den letzten 5 Jahren �rztlich untersucht, beraten oder
+          behandelt worden?</td>
+      </tr>
+      <tr>
+        <td style="width: 23" valign="top"></td>
+        <td style="width: 215">
+          <input type="radio" name="Treatment" value="0">
+          Nein
+        </td>
+        <td style="width: 512"></td>
+      </tr>
+      <tr>
+        <td style="width: 23" valign="top"></td>
+        <td style="width: 215">
+          <input type="radio" name="Treatment" value="1">
+          Ja (Wann und weshalb)
+        </td>
+        <td style="width: 512">
+          <input name="Treatment_rem" size="60">
+        </td>
+      </tr>
+      <tr>
+        <td style="width: 23" valign="top"></td>
+        <td style="width: 208">Befund&nbsp;</td>
+        <td style="width: 512">
+          <input name="Treatment_Findings" size="60">
+        </td>
+      </tr>
+      <tr>
+        <td style="width: 23" valign="top"></td>
+        <td style="width: 208">Name und Anschrift des Arztes</td>
+        <td style="width: 512">
+          <p align="left">
+            <input name="Treatment_Doctor" size="60">
+        </td>
+      </tr>
+    </table>
+    <table style="width: 750">
+      <tr>
+        <td style="width: 23" valign="top">
+          <b>5.</b>
+        </td>
+        <td style="width: 725">Bestehen oder bestanden in den letzten 5 Jahren Beschwerden oder Krankheiten (z.B.
+          des Herzens oder des Kreislaufsystems; der Atmungs-, Verdauungs-, Harn-, Geschlechts-, oder Sinnesorgane; der
+          Nerven, Milz, Dr�sen, Haut, Knochen, Gelenke, Wirbels�ule; des R�ckenmarks, des Gehirns, Gem�ts, Blutes,
+          Fettstoffwechsels; wie Geschw�lste, Gicht, Rheumatismus, Infektionen, Allergien, Bluthochdruck, Diabetes
+          mellitus, Alkohol- oder Drogenkonsum)?</td>
+      </tr>
+      <tr>
+        <td style="width: 23" valign="top"></td>
+        <td style="width: 729">
+          <input type="radio" name="OtherIllnesses" value="0">
+          Nein
+          <input type="radio" name="OtherIllnesses" value="1">
+          Ja, bitte detaillierte Beantwortung unter Punkt 9
+        </td>
+      </tr>
+    </table>
+    <table style="width: 750">
+      <tr>
+        <td style="width: 23" valign="top">
+          <b>6.</b>
+        </td>
+        <td style="width: 725">Bestehen oder bestanden in den letzten 10 Jahren Krebs- oder andere b�sartige
+          Geschwulstkrankheiten?</td>
+      </tr>
+      <tr>
+        <td style="width: 23" valign="top"></td>
+        <td style="width: 730">
+          <input type="radio" name="Cancer" value="0">
+          Nein
+          <input type="radio" name="Cancer" value="1">
+          Ja, bitte detaillierte Beantwortung unter Punkt 9
+        </td>
+      </tr>
+    </table>
+    <table style="width: 750">
+      <tr>
+        <td style="width: 22" valign="top">
+          <b>7.</b>
+        </td>
+        <td style="width: 726">Wurde bei Ihnen eine HIV-lnfektion festgestellt?</td>
+      </tr>
+      <tr>
+        <td style="width: 23" valign="top"></td>
+        <td style="width: 730">
+          <input type="radio" name="hiv" value="0">
+          Nein
+          <input type="radio" name="hiv" value="1">
+          Ja, bitte detaillierte Beantwortung unter Punkt 9
+        </td>
+      </tr>
+    </table>
+    <table style="width: 750">
+      <tr>
+        <td style="width: 22" valign="top">
+          <b>8.</b>
+        </td>
+        <td style="width: 726">Sind Sie in den letzten 10 Jahren operiert worden oder haben Sie einen Unfall,
+          Verletzungen oder Vergiftungen erlitten?</td>
+      </tr>
+      <tr>
+        <td style="width: 22" valign="top"></td>
+        <td style="width: 732">
+          <input type="radio" name="Operation" value="0">
+          Nein
+          <input type="radio" name="Operation" value="1">
+          Ja, bitte detaillierte Beantwortung unter Punkt 9
+        </td>
+      </tr>
+    </table>
+    <div align="left">
+      <table style="width: 750">
+        <tr>
+          <td style="width: 22" valign="top">
+            <b>9.</b>
+          </td>
+          <td style="width: 61">Frage Nr.</td>
+          <td style="width: 154">Art der Erkrankung</td>
+          <td style="width: 156">wann und wie lange</td>
+          <td style="width: 350">Name und Anschrift des Arztes/Krankehauses</td>
+        </tr>
+      </table>
+      <table style="width: 750" id="QuestionTable">
+        <tr>
+          <td style="width: 22" valign="top"></td>
+          <td style="width: 61">
+            <input name="QuestionNo" size="4">
+          </td>
+          <td style="width: 154">
+            <input name="IllnessType" size="17">
+          </td>
+          <td style="width: 156">
+            <input name="WhenAndHowLong" size="17">
+          </td>
+          <td style="width: 350">
+            <input name="QuestionDoctor" size="36">
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div align="left">
+      <table class="navigation" style="width: 750">
+        <tr>
+          <td align="left">
+            <input class="button" name="PrevButton" type="submit" value="&lt; {%(19)Previous}">
+          </td>
+          <td align="right">
+            <input class="button" name="NextButton" type="submit" value="{%(20)Next} &gt;">
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

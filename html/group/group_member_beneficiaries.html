@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)CHANGE OF BENEFICIARIES}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body ONLOAD="initialise()">
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan=2>{HELP_LINK}{%(1)CHANGE OF BENEFICIARIES}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(2)Scheme Owner}</th>
+        <td>{SchemeOwner}</td>
+      </tr>
+      <tr>
+        <th>{%(3)Membership Number}</th>
+        <td>{PolicyKey}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Member Name}</th>
+        <td>{PolicyOwner}</td>
+      </tr>
+      <tr>
+        <th>{%(5)Currency}</th>
+        <td>{Currency}</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th colspan="5">{%(6)Primary Beneficiaries}</th>
+      </tr>
+      <tr>
+        <th>{%(15)Client No}</th>
+        <th>{%(7)First Name}</th>
+        <th>{%(8)Last Name}</th>
+        <th>{%(9)Date of Birth}</th>
+        <th>{%(10)Share}</th>
+      </tr>
+      <!--{BeneficiaryTable_0}-->
+      <tr>
+        <td colspan="4" style="text-align: right">Total</td>
+        <td>
+          <span id="SplitTotal_0"></span>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="5">{%(11)Clause Text (use instead of OR in addition to named beneficiaries)}</td>
+      </tr>
+      <tr>
+        <td colspan="5">
+          <input name="BeneficiaryClauseText_0" size=60 style="width: 100%" ONCHANGE="document.forms[0].submit()">
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th colspan="5">{%(12)Secondary Beneficiaries}</th>
+      </tr>
+      <tr>
+        <th>{%(15)Client No}</th>
+        <th>{%(7)First Name}</th>
+        <th>{%(8)Last Name}</th>
+        <th>{%(9)Date of Birth}</th>
+        <th>{%(10)Share}</th>
+      </tr>
+      <!--{BeneficiaryTable_1}-->
+      <tr>
+        <td colspan="4" style="text-align: right">Total</td>
+        <td>
+          <span id="SplitTotal_1"></span>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="5">{%(11)Clause Text (use instead of OR in addition to named beneficiaries)}</td>
+      </tr>
+      <tr>
+        <td colspan="5">
+          <input name="BeneficiaryClauseText_1" size=60 style="width: 100%" ONCHANGE="document.forms[0].submit()">
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th colspan="5">{%(13)Tertiary Beneficiaries}</th>
+      </tr>
+      <tr>
+        <th>{%(15)Client No}</th>
+        <th>{%(7)First Name}</th>
+        <th>{%(8)Last Name}</th>
+        <th>{%(9)Date of Birth}</th>
+        <th>{%(10)Share}</th>
+      </tr>
+      <!--{BeneficiaryTable_2}-->
+      <tr>
+        <td colspan="4" style="text-align: right">Total</td>
+        <td>
+          <span id="SplitTotal_2"></span>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="5">{%(11)Clause Text (use instead of OR in addition to named beneficiaries)}</td>
+      </tr>
+      <tr>
+        <td colspan="5">
+          <input name="BeneficiaryClauseText_2" size=60 style="width: 100%" ONCHANGE="document.forms[0].submit()">
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th colspan="5">{%(14)Quaternary Beneficiaries}</th>
+      </tr>
+      <tr>
+        <th>{%(15)Client No}</th>
+        <th>{%(7)First Name}</th>
+        <th>{%(8)Last Name}</th>
+        <th>{%(9)Date of Birth}</th>
+        <th>{%(10)Share}</th>
+      </tr>
+      <!--{BeneficiaryTable_3}-->
+      <tr>
+        <td colspan="4" style="text-align: right">Total</td>
+        <td>
+          <span id="SplitTotal_3"></span>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="5">{%(11)Clause Text (use instead of OR in addition to named beneficiaries)}</td>
+      </tr>
+      <tr>
+        <td colspan="5">
+          <input name="BeneficiaryClauseText_3" size=60 style="width: 100%" ONCHANGE="document.forms[0].submit()">
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SubmitButton" value="{%(100)Submit}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+<script type="text/javascript">
+function initialise()
+{
+	var i = 0;
+	while ((document.getElementById('SplitTotal_'+i)))
+	{
+		updateSplitTotal(i);
+		i++;
+	}
+	set_focus();
+}
+function updateSplitTotal(i)
+{
+	var j = 0;
+	var total_share = 0;
+	while ((document.forms[0].elements["BENE_SPLIT_"+i+"_"+j]))
+	{
+		float_changed("BENE_SPLIT_"+i+"_"+j,3);
+    if (parse_float(document.forms[0].elements["BENE_SPLIT_"+i+"_"+j].value)!="")
+    	total_share += parse_float(document.forms[0].elements["BENE_SPLIT_"+i+"_"+j].value);
+		j++;
+	}
+	document.getElementById('SplitTotal_'+i).innerHTML = format_float(total_share,3);
+	return total_share; 
+}
+</script>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Match Members}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(1)Match Members}
+          <a href="%BACK_LINK%">
+            <span class="return_link">{%(101)Return}</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <th width=30%>{%(3)Scheme number}</th>
+        <td>{SCHEME_CODE}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Scheme Owner}</th>
+        <td>{GROUP_OWNER}</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th>{%(11)No}</th>
+        <th>{%(12)Name}</th>
+        <th>{%(13)Subgroup}</th>
+        <th>{%(14)Birth Date}</th>
+        <th align="right">{%(15)Current Salary }</th>
+        <th>{%(16)Certificate}</th>
+        <th>{%(17)Date Left Group}</th>
+        <th width=1px>&nbsp;</th>
+      </tr>
+      <!--{MEMBER_MATCH_LIST}-->
+    </table>
+    <input type="hidden" name="MatchButtonText" value="{%(19)Search Imported Members}">
+    <input type="hidden" name="ProcessButtonText" value="{%(100)Process}">
+    <input type="hidden" name="ConfirmProcess" value="">
+    <table class="navigation">
+      <tr>
+        <td>{ProcessButton}</td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="/lf/images/back.gif">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+  <script>
+function confirm_process()
+{
+  answer = confirm("{%(200)Warning - underwriting for remaining unmatched members will be lost! Are you sure?}");
+  if (answer)
+  {
+    scr_element = document.forms[0].elements["ConfirmProcess"];
+    if (scr_element!=null)
+      scr_element.value = true;
+    document.forms[0].submit();
+    return true;
+  }
+}
+</script>
+</body>
+</html>

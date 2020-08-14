@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Batch Status}</title>
+<!-- Please leave this line as is. Do not change-->
+<meta http-equiv="R1efresh" content="{REFRESH_INTERVAL}">
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body ONLOAD="scrollTo(0,1000000);">
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(2)Batch status}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Processing}</th>
+        <td>{BATCH_KEY} {BATCH_NAME}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Status}</th>
+        <td>{BATCH_STATUS}</td>
+      </tr>
+      <tr>
+        <th>{%(5)PID}</th>
+        <td>{PID}</td>
+      </tr>
+      <tr>
+        <th>{%(6)Spool ID}</th>
+        <td>{SpoolID}</td>
+      </tr>
+      <tr>
+        <th>{%(7)Refresh Interval (sec.)}</th>
+        <td>{REFRESH_INTERVAL}</td>
+      </tr>
+    </table>
+    <table class="terminal">
+      <tr>
+        <td>{BATCH_MESSAGES}</td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="RefreshButton" value="{%(100)Refresh}">
+        </td>
+        <td class="return">
+          <a href="?screen_name={RETURNTO}">
+            {%(200)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+  <!--%(AUTOREFRESH)-->
+  <script>
+  setTimeout('document.forms[0].submit()',{REFRESH_INTERVAL}*1000);
+</script>
+  <!--%-->
+</body>
+</html>

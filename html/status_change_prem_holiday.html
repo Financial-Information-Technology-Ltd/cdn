@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Status Change - Premium Holiday}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan=2>{HELP_LINK}{%(1)Status Change - Premium Holiday}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Policy number}</th>
+        <td>{PolicyNo}</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th>{%(4)Coverage}</th>
+        <th>{%(5)Plan}</th>
+        <th>{%(6)Total Prem}</th>
+        <th>{%(7)Basis}</th>
+        <th>{%(8)Start}</th>
+        <th>{%(9)Fee Calc}</th>
+        <th>{%(10)Percentage}</th>
+        <th>{%(11)Hol Premium}</th>
+        <th>{%(12)Months}</th>
+        <th>{%(13)End}</th>
+      </tr>
+      <!--{PremHolidayTable}-->
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="ProcessPremHoliday" value="{%(100)Submit Status Change}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+<script type="text/javascript">
+function month_change(element_name)
+{
+  element = document.forms[0].elements[element_name];
+  if (element==null)
+    return true;
+  new_value = element.value;
+  old_element = document.forms[0].elements[element_name+"_old"];
+  if (old_element==null)
+    return true;
+  old_value = old_element.value;
+  if (new_value==old_value)
+    return true;
+  else  
+    document.forms[0].submit();
+}
+</script>
+</html>

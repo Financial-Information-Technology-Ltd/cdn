@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Step 2}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form method="post" action="%SERVLET_PATH%">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(2)Policy Details}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Application Date}</th>
+        <td>
+          <input name="ApplicationDate" size="10">
+          {DATE_FORMAT}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(5)Start Date}</th>
+        <td>
+          <input name="StartDate" size="10">
+          {DATE_FORMAT}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(18)Policy Term in month}</th>
+        <td>
+          <input name="PolicyTermMonths" size="8">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(20)Payment Term in month}</th>
+        <td>
+          <input name="PaymentTermMonths" size="8">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(8)Mode/Method}</th>
+        <td>
+          <select name="ModeMethod">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(15)Sum Assured calculation}</th>
+        <td>
+          <select name="LifeCover" ONCHANGE="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(12)Face Amount}</th>
+        <td>
+          <input name="FaceAmount" size="10">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(16)Percent}</th>
+        <td>
+          <input name="FaceAmountPercent" size=6>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(17)Reduction amount}</th>
+        <td>
+          <input name="LifeCoverAmount" size=8>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(19)In the army}</th>
+        <td>
+          <input type="checkbox" name="NonMedicalRequired">
+        </td>
+      </tr>
+    </table>
+    <!--%(ADDITIONAL_RIDERS)-->
+    <table>
+      <tr>
+        <th colspan="3">{%(41)Additional Riders}</th>
+      </tr>
+      <tr>
+        <th style="width: 40">&nbsp;</th>
+        <th>{%(42)}Plan</th>
+        <th>{%(43)}Face Amount</th>
+      </tr>
+      <!--{RIDER_LIST}-->
+    </table>
+    <!--%-->
+    <table class="navigation">
+      <tr>
+        <td align="left">
+          <input class="button" name="PrevButton" type="submit" value="&lt; {%(101)Previous}">
+        </td>
+        <td align="right">
+          <input class="button" name="NextButton" type="submit" value="{%(102)Next} &gt;">
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

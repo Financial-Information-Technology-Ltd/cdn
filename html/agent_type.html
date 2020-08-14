@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Agent Types}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form method="post" action="%SERVLET_PATH%">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(2)Agent Types}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Agent Type}</th>
+        <td>
+          <input type="text" name="AgentTypeKey" size="15">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(4)Description}</th>
+        <td>
+          <input type="text" name="Description" size="60">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(6)Hold commissions for new policies}</th>
+        <td>
+          <select name="HoldNewCommissions">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(7)Agent Region/Area Codes}</th>
+        <td>
+          <select name="AgentRegion">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(8)Consultant Agent Type}</th>
+        <td>
+          <select name="ConsultantAgenttype">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(9)Salary Level}</th>
+        <td>
+          <input type="text" name="SalaryLevel">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(10)Max Salary Allowance}</th>
+        <td>
+          <input type="text" name="MaxAllowance">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(12)Lower Threshold Expected Monthly Case Count}</th>
+        <td>
+          <input type="text" name="MinCaseCount">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(13)Upper Limit Expected Monthly Case Count}</th>
+        <td>
+          <input type="text" name="MaxCaseCount">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(14)Lower Threshold Expected No Of Active Agents}</th>
+        <td>
+          <input type="text" name="MinNoOfAgents">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(15)Upper Limit Expected No Of Active Agents}</th>
+        <td>
+          <input type="text" name="MaxNoOfAgents">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(16)Lower Threshold Budgeted Monthly Production}</th>
+        <td>
+          <input type="text" name="MinProduction">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(17)Upper Limit Budgeted Monthly Production}</th>
+        <td>
+          <input type="text" name="MaxProduction">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(11)Prefix }</th>
+        <td>
+          <input type="text" name="Prefix">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(21)Restrict Bonus Premiums}</th>
+        <td>
+          <input type="checkbox" name="RESTRICT_BONUS_PREMIUM">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(20)Fund Codes}</th>
+        <td>
+          <table>
+            <tr>
+              <td>{%(24)Fund}</td>
+              <td>{%(29)Setup Fee %}</td>
+              <td>{%(30)Commission %}</td>
+            </tr>
+            <!--{FUND_LIST_TABLE}-->
+            <tr>
+              <td colspan=2>
+                <input type="submit" name="AddFundButton" value="{%(5)Add}">
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SaveButton" value="{%(100)Save}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(200)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

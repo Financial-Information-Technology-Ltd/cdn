@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Company Unit Movements}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    <b>{ERRORS}</b>
+    <P>
+    <table>
+      <tr>
+        <td colspan="7">
+          <b>{%(2)Company Unit Movements for} {PolicyKey}</b>
+        </td>
+        <td align="right">
+          <b>
+            <a href="%BACK_LINK%">
+              {%(12)Return}
+              <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+            </a>
+          </b>
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th ROWSPAN="2">{%(3)Eff Date}</th>
+        <th ROWSPAN="2">{%(4)Reason}</th>
+        <th ROWSPAN="2">{%(5)Cov No}</th>
+        <th ROWSPAN="2">{%(6)Unit Price Date}</th>
+        <th ROWSPAN="2">{%(7)Fund}</th>
+        <!--%(COY_INITIAL_UNITS)-->
+        <th colspan="2">{%(81)Company Initial Units}</th>
+        <!--%-->
+        <th colspan="2">{%(82)Company Accumulation Units}</th>
+        <th ROWSPAN="2">{%(10)Trans.No}</th>
+        <th ROWSPAN="2">{%(11)Rv.No}</th>
+      </tr>
+      <tr>
+        <!--%(COY_INITIAL_UNITS)-->
+        <th>{%(8)Moved}</th>
+        <th>{%(9)Unit Price}</th>
+        <!--%-->
+        <th>{%(8)Moved}</th>
+        <th>{%(9)Unit Price}</th>
+      </tr>
+      <!--{CompanyUnitMovements}-->
+    </table>
+    <P align="right">
+      <b>
+        <a href="%BACK_LINK%">
+          {%(12)Return}
+          <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+        </a>
+      </b>
+    </P>
+  </form>
+</body>
+</html>

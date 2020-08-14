@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Client Entry}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form method="post" action="%SERVLET_PATH%">
+    {ERRORS}
+    <!--%(DUPLICATE_CLIENTS)-->
+    <table>
+      <!--{DUPLICATE_CLIENT_LIST}-->
+      <tr>
+        <td colspan="4">
+          <input name="SaveButtonForce" type="submit" value="{%(104)Save Anyway}">
+        </td>
+      </tr>
+    </table>
+    <!--%-->
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(2)Client processing - Corporate}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Client No}</th>
+        <td>{ClientKey}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Status Code}</th>
+        <td>
+          <select name="Status" ONCHANGE="return onStatusChange();">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(11)Client Category}</th>
+        <td>
+          <select name="ClientCategory">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(9)Name}</th>
+        <td>
+          <input name="Name" size="60">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(10)Alpha}</th>
+        <td>{Alpha}</td>
+      </tr>
+      <!--{SPECIAL_CLIENT_FIELDS}-->
+      <tr>
+        <th>{%(102)VIP}</th>
+        <td>
+          <input name="VIP" type="checkbox">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(103)Consolidate Payout}</th>
+        <td>
+          <input name="ConsolidatePayout" type="checkbox">
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <table>
+            <tr>
+              <th style="width: 30%">{%(12)Address}</th>
+              <td>
+                <TEXTAREA name="Address" cols="80" rows="3"></TEXTAREA>
+              </td>
+            </tr>
+            <tr>
+              <th>{%(13)City}</th>
+              <td>
+                <input name="City" size="20">
+              </td>
+            </tr>
+            <tr>
+              <th>{%(56)County}</th>
+              <td>
+                <input name="County" size="20">
+              </td>
+            </tr>
+            <tr>
+              <th>{%(14)Postcode}</th>
+              <td>
+                <input name="PostCode" size="20">
+                {ADDRESS_LOOKUP_FRAGNEMT_Address}
+              </td>
+            </tr>
+            <tr>
+              <th>{%(15)Country}</th>
+              <td>
+                <select name="Country">
+                  <option value="">&nbsp;</option>
+                </select>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <table>
+            <tr>
+              <th style="width: 30%">{%(71)Mail address is different from home address}</th>
+              <td>
+                <input type="checkbox" name="MailAddrDiff">
+              </td>
+            </tr>
+            <!--%(MailAddressFrag)-->
+            <tr>
+              <th style="width: 30%">{%(50)Mail Address}</th>
+              <td>
+                <TEXTAREA name="MailAddress" cols="80" rows="3"></TEXTAREA>
+              </td>
+            </tr>
+            <tr>
+              <th>{%(13)City}</th>
+              <td>
+                <input name="MailCity" size="20">
+              </td>
+            </tr>
+            <tr>
+              <th>{%(56)County}</th>
+              <td>
+                <input name="MailCounty" size="20">
+              </td>
+            </tr>
+            <tr>
+              <th>{%(14)Postcode}</th>
+              <td>
+                <input name="MailPostCode" size="20">
+                {ADDRESS_LOOKUP_FRAGNEMT_MailAddress}
+              </td>
+            </tr>
+            <tr>
+              <th>{%(15)Country}</th>
+              <td>
+                <select name="MailCountry">
+                  <option value="">&nbsp;</option>
+                </select>
+              </td>
+            </tr>
+            <!--%(MailAddressFrag_END)-->
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(16)Country of Tax Liability}</th>
+        <td>
+          <select name="TaxCountry">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(35)Tax Number}</th>
+        <td>
+          <input name="TaxNumber" size="20">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(136)Second Country of Tax Liability}</th>
+        <td>
+          <select name="TaxResidentCountry2">
+            <option></option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(137)Second Country Tax Number}</th>
+        <td>
+          <input name="TaxNumberCountry2" size="20">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(19)Web Approval}</th>
+        <td>
+          <input name="WebApproval" type="checkbox">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(21)Telephone No.}</th>
+        <td>
+          <input name="PhoneNo" size="20">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(22)Mobile Phone No.}</th>
+        <td>
+          <input name="MobileNo" size="20">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(23)Fax No}</th>
+        <td>
+          <input name="FaxNo" size="20">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(24)EMail address}</th>
+        <td>
+          <input name="EMail" size="30">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(25)Documentation Language}</th>
+        <td>
+          <select name="DocumentLanguage">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(26)Annual Income}</th>
+        <td>
+          <input name="Income" size="20">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(27)Currency}</th>
+        <td>
+          <select name="Currency">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(29)Registered No.}</th>
+        <td>
+          <input name="RegistrationNo" size="20">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(30)Registration Date}</th>
+        <td>
+          <input name="OwnerRegistrationDate" size="12">
+          {DATE_FORMAT}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(5)External Reference}</th>
+        <td>
+          <input name="ExternalRef" size="20">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(31)Company Contact}</th>
+        <td>
+          <input name="CompanyContact" size="50">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(32)Comments}</th>
+        <td>
+          <textarea name="Comments" cols="80" rows="3"></textarea>
+        </td>
+      </tr>
+      <!--%(AEI_FRAGMENT)-->
+      <tr>
+        <th>{%(74)FATCA Account Type}</th>
+        <td>
+          <select name="FATCA_ACCOUNT_TYPE">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(73)CRS Account Type}</th>
+        <td>
+          <select name="CRS_ACCOUNT_TYPE">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <!--%(AEI_FRAGMENT_END)-->
+    </table>
+    <table>
+      <tr>
+        <th colspan="3">{%(51)Related To}</th>
+      </tr>
+      <tr>
+        <th style="width: 1%">{%(52)Relation Type}</th>
+        <th style="width: 1%">{%(53)Related Client No}</th>
+        <th>{%(54)Related Date}</th>
+      </tr>
+      <!--{RELATION_LIST}-->
+      <tr>
+        <td colspan="3">
+          <input name="AddRelationButton" type="submit" value="{%(55)Add}">
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input name="SaveButton" type="submit" value="{%(100)Save}" ONCLICK="return onSaveButton();">
+        </td>
+        <td class="return">
+          <a href="?screen_name=%BACK_LINK%">
+            {%(101)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+    <input name="AddressLookupButtonLabel" type="hidden" value="{%(150)Address Lookup}">
+    <input name="OrigStatus" type="hidden" value="">
+  </form>
+  <script type="text/javascript">
+			function onSaveButton() {
+				element = document.forms[0].elements["OrigStatus"];
+				if (element.value != "")
+					return onStatusChange();
+				else
+					return true;
+			}
+			function onStatusChange() {
+				element1 = document.forms[0].elements["Status"];
+				if (element1.value != "A") {
+					element2 = document.forms[0].elements["ExternalRef"];
+					if (element2.value != "") {
+						element3 = document.forms[0].elements["OrigStatus"];
+						if (element3.value == "")
+							element3.value = element1.value;
+						alert("{%(151)Check InvestPro Valuation Mailing Address}");
+						return false;
+					}
+					return true;
+				} else
+					return true;
+			}
+		</script>
+</body>
+</html>

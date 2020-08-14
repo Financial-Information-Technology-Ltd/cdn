@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Edit Branch}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="3">{HELP_LINK}{%(1)Edit Branch}</td>
+      </tr>
+      <tr>
+        <th>{%(2)Please choose the branch to edit:}</th>
+        <td>
+          <select name="Branch_Code">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+        <td>
+          <input type="submit" name="SubmitBranchCode" value="Continue">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(3)Or type the branch key:}</th>
+        <td>
+          <input type="text" name="New_Branch_Code">
+        </td>
+        <td>
+          <input type="submit" name="CreateNewBranchCode" value="Continue">
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td class="return">
+          <b>
+            <a href="?screen_name=do_main_page">
+              {%(101)Return}
+              <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+            </a>
+          </b>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Policy Endorsement}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(1)Policy Endorsement}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(2)Policy No}</th>
+        <td>{PolicyKey}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Policy Owner}</th>
+        <td>{PolicyOwnerName}</td>
+      </tr>
+      <tr>
+        <th>{%(5)Joint Owner}</th>
+        <td>{JointOwnerName}</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th colspan="{COV_TABLE_COLUMN_NO}">{%(11)Coverages}</th>
+      </tr>
+      <tr>
+        <th>{%(12)Coverage}</th>
+        <th>{%(13)Lives}</th>
+        <th>{%(14)First Life}</th>
+        <th>{%(15)Second Life}</th>
+        <th>{%(16)Life Cover Option}</th>
+        <th>{%(17)Life Cover Percentage}</th>
+        <th>{%(18)Face Amount}</th>
+        <!--%(PREMIUM_COLUMN)-->
+        <th>{%(19)Premium}</th>
+        <!--%-->
+      </tr>
+      <!--{COVERAGE_TABLE}-->
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SubmitButton" value="{%(100)Submit}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+    <input type="hidden" name="FeesAgreement_HIDDEN">
+  </form>
+</body>
+</html>

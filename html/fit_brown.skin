@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<!DOCTYPE SkinDescription SYSTEM "menu.dtd">
+<Skin>
+  <Description>FIT Brown</Description>
+  <ImageName>$PATH/lifefit.png</ImageName>
+  <StylesheetPath>$PATH/brown_stylesheet.css</StylesheetPath>
+  <StylesheetPathRtl>$PATH/brown_stylesheet.css</StylesheetPathRtl>
+  <MenuStyle>$PATH/brown_menu_var.js</MenuStyle>
+</Skin>

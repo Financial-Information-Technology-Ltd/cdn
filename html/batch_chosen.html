@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Batch control}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(2)Batch Control}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Batch}</th>
+        <td>{BATCH_CODE}</td>
+      </tr>
+    </table>
+    <table class="zebra">
+      <tr>
+        <th>&nbsp;</th>
+        <th>{%(6)Selected}</th>
+        <th>{%(5)Process Name}</th>
+        <th>{%(7)Parameter}</th>
+      </tr>
+      <!--{PROC_TABLE}-->
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="RunButton" value="{%(100)Run Batch}">
+        </td>
+        <td class="return">
+          <a href="{RETURN_TO}">
+            {%(200)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Step 3}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body onload="form_load()">
+  <form method="post" action="%SERVLET_PATH%">
+    {ERRORS}
+    <div align="left">
+      <table style="width: 750">
+        <tr>
+          <td colspan="2">
+            <h2>{%(2)Policy Details}</h2>
+          </td>
+        </tr>
+        <tr>
+          <td style="width: 260">{%(4)Start Date}</td>
+          <td style="width: 490">
+            <input name="StartDate" size="16">
+            {DATE_FORMAT}
+          </td>
+        </tr>
+        <tr>
+          <td>{%(5)Payment Term}</td>
+          <td>
+            <input name="PaymentTerm" onchange="total_premium()" size="10">
+            {%(15)(min. 10 years)}
+          </td>
+        </tr>
+        <tr>
+          <td>{%(6)Premium Amount}</td>
+          <td>
+            <input name="PremiumAmount" onchange="total_premium()" size="20">
+            ({%(3)min.} {MINIMUM_PREMIUM_MONTH} Euro)
+          </td>
+        </tr>
+        <tr>
+          <td>{%(7)Mode/Method}</td>
+          <td>
+            <select name="ModeMethod" onchange="total_premium()">
+              <option value="">&nbsp;</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td style="width: 265">{%(8)Total Premium}</td>
+          <td style="width: 456">
+            <input name="TotalPremium" tabindex="-1" disabled onkeypress="return false" size="20">
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div align="left">
+      <table style="width: 750">
+        <tr>
+          <td colspan="2">
+            <h2>{%(10)Risk Cover}</h2>
+          </td>
+        </tr>
+        <tr>
+          <td>{%(11)If no level of cover is selected, death cover is set at 101% of policy value}</td>
+        </tr>
+        <tr>
+          <td>
+            <input type="checkbox" value="ON" name="LifeCover_200" onclick="life_cover_200()">
+            {%(12)60% of the total premium}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="checkbox" value="ON" name="LifeCover_300" onclick="life_cover_300()">
+            {%(13)100% of the total premium}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="checkbox" value="ON" name="DynamicOptionBox" onclick="dynamic_option()">
+            {%(14)I do not want to use the dynamic option for annual increase in premiums}
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div align="left">
+      <table class="navigation" style="width: 750">
+        <tr>
+          <td align="left">
+            <input class="button" name="PrevButton" type="submit" value="&lt; {%(19)Previous}">
+          </td>
+          <td align="right">
+            <input class="button" name="NextButton" type="submit" value="{%(20)Next} &gt;">
+          </td>
+        </tr>
+      </table>
+    </div>
+    <input type="hidden" name="LifeCover" value="4">
+    <input type="hidden" name="FaceAmountPercent" value="101">
+    <input type="hidden" name="DynamicOption" value="0">
+    <input type="hidden" name="MaturityType" value="W">
+  </form>
+  <script type="text/javascript">
+function total_premium()
+{
+  p_element = document.forms[0].elements["PremiumAmount"];
+  if (typeof(p_element)=="undefined")
+    return;
+  m_element = document.forms[0].elements["ModeMethod"];
+  if (typeof(m_element)=="undefined")
+    return;
+  t_element = document.forms[0].elements["PaymentTerm"];
+  if (typeof(t_element)=="undefined")
+    return;
+  v_element = document.forms[0].elements["ModeMethodMult"];
+  if (typeof(v_element)=="undefined")
+    return;
+  r_element = document.forms[0].elements["TotalPremium"];
+  if (typeof(r_element)=="undefined")
+    return;
+  premium = parse_float(p_element.value);
+  if (isNaN(premium))
+    return;
+  s = format_float(premium,2);
+  if (s!=p_element.value)
+    p_element.value = s;
+  term = parseInt(t_element.value);
+  if (isNaN(term))
+    return;
+  pos = m_element.selectedIndex;
+  if (pos==0)
+    return;
+  mult = 0;
+  cnt = 0;
+  s = "";
+  value = v_element.value;
+  for (i=0; i<=value.length; i++)
+  {
+    if (i==value.length)
+    {
+      if (cnt==pos)
+        mult = parseInt(s);
+      break;
+    }
+    if (value.charAt(i)==';')
+    {
+      if (cnt==pos)
+      {
+        mult = parseInt(s);
+        break;
+      }
+      cnt++;
+      s = "";
+    }
+    else
+     s += value.charAt(i);
+  }
+  if (isNaN(mult))
+  {
+    r_element.value = "";
+    return;
+  }
+  if (mult==0)
+  {
+    r_element.value = "";
+    return;
+  }
+  v = Math.round(premium*mult*term);
+  if (v<100)
+  {
+    r_element.value = "";
+    return;
+  }
+  r_element.value = format_float(v,2);
+}
+function life_cover_200()
+{
+  element = document.forms[0].elements["LifeCover"];
+  if (typeof(element)=="undefined")
+    return;
+  element_pcge = document.forms[0].elements["FaceAmountPercent"];
+  element_200 = document.forms[0].elements["LifeCover_200"];
+  if (typeof(element_200)=="undefined")
+    return;
+  element_300 = document.forms[0].elements["LifeCover_300"];
+  if (typeof(element_300)=="undefined")
+    return;
+  if (element_200.checked)
+  {
+    element.value = "1";
+    element_pcge.value = "60";
+    element_300.checked = false;
+  }
+  else
+  {
+    element.value = "4";
+    element_pcge.value = "101";
+  }  
+}
+function life_cover_300()
+{
+  element = document.forms[0].elements["LifeCover"];
+  if (typeof(element)=="undefined")
+    return;
+  element_pcge = document.forms[0].elements["FaceAmountPercent"];
+  element_200 = document.forms[0].elements["LifeCover_200"];
+  if (typeof(element_200)=="undefined")
+    return;
+  element_300 = document.forms[0].elements["LifeCover_300"];
+  if (typeof(element_300)=="undefined")
+    return;
+  if (element_300.checked)
+  {
+    element_200.checked = false;
+    element.value = "1";
+    element_pcge.value = "100";
+  }
+  else
+  {
+    element.value = "4";
+    element_pcge.value = "101";
+  }  
+}
+function form_load()
+{
+  element = document.forms[0].elements["MaturityType"];
+  if (typeof(element)=="undefined")
+    return;
+  element.value = "W";		
+  element = document.forms[0].elements["LifeCover"];
+  if (typeof(element)=="undefined")
+    return;
+  element_pcge = document.forms[0].elements["FaceAmountPercent"];
+  element_200 = document.forms[0].elements["LifeCover_200"];
+  if (typeof(element_200)=="undefined")
+    return;
+  element_300 = document.forms[0].elements["LifeCover_300"];
+  if (typeof(element_300)=="undefined")
+    return;
+  if (element.value=="1" && element_pcge.value=="60.00")
+    element_200.checked = true;
+  if (element.value=="1" && element_pcge.value=="100.00")
+    element_300.checked = true;
+  element = document.forms[0].elements["DynamicOption"];
+  if (typeof(element)=="undefined")
+    return;
+  element1 = document.forms[0].elements["DynamicOptionBox"];
+  if (typeof(element1)=="undefined")
+    return;
+  if (element.value=="1")
+    element1.checked = false;
+   else
+    element1.checked = true;
+}
+function dynamic_option()
+{
+  element = document.forms[0].elements["DynamicOption"];
+  if (typeof(element)=="undefined")
+    return;
+  element1 = document.forms[0].elements["DynamicOptionBox"];
+  if (typeof(element1)=="undefined")
+    return;
+  if (element1.checked)
+    element.value = "0";
+   else
+    element.value = "1";
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Policy Segments}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan=2>{HELP_LINK}{%(2)Policy Segments}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(10)Policy}</th>
+        <td>{PolicyKey}</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th>{%(21)Segment No}</th>
+        <th>{%(22)Status}</th>
+        <th>{%(23)Premium}</th>
+        <th>{%(24)Policy Unit Value}</th>
+        <th>{%(25)Company Unit Value}</th>
+      </tr>
+      <!--{SEGMENT_LIST_TABLE}-->
+      <tr>
+        <td colspan="2">
+          <b>{%(26)Total}</b>
+        </td>
+        <td align="right">
+          <b>{TotalPremium}</b>
+        </td>
+        <td align="right">
+          <b>{TotalPolValue}</b>
+        </td>
+        <td align="right">
+          <b>{TotalCompValue}</b>
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

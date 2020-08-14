@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Plan Mortality Configuration}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan=2>{HELP_LINK}{%(1)Plan Mortality Configuration}</td>
+      </tr>
+      <tr>
+        <th width=30%>{%(2)Plan Code}</th>
+        <td>{PlanCode}</td>
+      </tr>
+      <tr>
+        <th>{%(3)Plan Name}</th>
+        <td>{PlanName}</td>
+      </tr>
+      <tr>
+        <th>{%(6)Debt Fund}</th>
+        <td>
+          <select name="DEBT_FUND">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(7)Allow Precede Alloc}</th>
+        <td>
+          <input type="checkbox" name="ALLOW_PRECEDE_ALLOC">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(20)Deduct UMD on Premium Payment}</th>
+        <td>
+          <input type="checkbox" name="DEDUCT_UMD_ON_PREMIUM_PAYMENT">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(9)Mortality Freq}</th>
+        <td>
+          <select name="MORT_FREQ">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(10)Incidence}</th>
+        <td>
+          <select name="MORTALITY_INCIDENCE">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(11)Effect On Company Units}</th>
+        <td>
+          <select name="MORT_ON_COY_UNITS">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(19)How to pay for charge}</th>
+        <td>
+          <select name="MORT_CHARGE_PAYMENT_METHOD">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SaveButton" value="{%(100)Save}">
+        </td>
+        <td class="return">
+          <b>
+            <a href="%BACK_LINK%">
+              {%(101)Return}
+              <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+            </a>
+          </b>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

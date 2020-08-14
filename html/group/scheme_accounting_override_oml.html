@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Scheme Accounting Override}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2" align="left">{HELP_LINK}{%(1)Scheme Accounting Override}</td>
+      </tr>
+      <tr>
+        <th width=20%>{%(2)Scheme number}</th>
+        <td width=80%>{SCHEME_CODE}</td>
+      </tr>
+      <tr>
+        <th width=20%>{%(3)Scheme Owner}</th>
+        <td width=80%>{GROUP_OWNER}</td>
+      </tr>
+      <tr>
+        <th width=20%>{%(4)Scheme Commencement Date}</th>
+        <td width=80%>{START_COVER_DATE}</td>
+      </tr>
+    </table>
+    <!--%(DEPOSIT_FRAGMENT)-->
+    <table>
+      <tr>
+        <td class="title" colspan="3">{%(20) Deposit/Renewal}</td>
+      </tr>
+      <tr>
+        <th width=20%>{%(21)Mode method}</th>
+        <td width=20%>
+          <select id="DEPOSIT_MODE_METHOD" name="DEPOSIT_MODE_METHOD"></select>
+        </td>
+      </tr>
+      <tr>
+        <th width=20%>{%(22)Posting Date}</th>
+        <td width=20%>
+          <input type="text" name="DEPOSIT_POSTING_DATE" size=12>
+        </td>
+        <td width=60%></td>
+      </tr>
+      <tr>
+        <th width=20%></th>
+        <th width=20%>{%(23)Premium}</th>
+        <th width=60%>{%(24)Reinsurance Premium}</th>
+      </tr>
+      <tr>
+        <th width=20%>{PLAN_1}</th>
+        <td width=20%>
+          <input type="text" name="DEPOSIT_PREMIUM_1" size=14>
+        </td>
+        <td width=60%>
+          <input type="text" name="DEPOSIT_REINS_PREMIUM_1" size=14>
+        </td>
+      </tr>
+      <!--%(DEPOSIT_PLAN_2_FRAGMENT)-->
+      <tr>
+        <th width=20%>{PLAN_2}</th>
+        <td width=20%>
+          <input type="text" name="DEPOSIT_PREMIUM_2" size=14>
+        </td>
+        <td width=60%>
+          <input type="text" name="DEPOSIT_REINS_PREMIUM_2" size=14>
+        </td>
+      </tr>
+      <!--%-->
+    </table>
+    <!--%-->
+    <!--%(INITIAL_FRAGMENT)-->
+    <table>
+      <tr>
+        <td class="title" colspan="3">{%(30) Initial}</td>
+      </tr>
+      <tr>
+        <th width=20%>{%(31)Mode method}</th>
+        <td width=20%>{INITIAL_MODE_METHOD}</td>
+      </tr>
+      <tr>
+        <th width=20%>{%(32)Posting Date}</th>
+        <td width=20%>
+          <input type="text" name="INITIAL_POSTING_DATE" size=12>
+        </td>
+        <td width=60%></td>
+      </tr>
+      <tr>
+        <th width=20%></th>
+        <th width=20%>{%(33)Premium}</th>
+        <th width=60%>{%(34)Reinsurance Premium}</th>
+      </tr>
+      <tr>
+        <th width=20%>{PLAN_1}</th>
+        <td width=20%>
+          <input type="text" name="INITIAL_PREMIUM_1" size=14>
+        </td>
+        <td width=60%>
+          <input type="text" name="INITIAL_REINS_PREMIUM_1" size=14>
+        </td>
+      </tr>
+      <!--%(INITIAL_PLAN_2_FRAGMENT)-->
+      <tr>
+        <th width=20%>{PLAN_2}</th>
+        <td width=20%>
+          <input type="text" name="INITIAL_PREMIUM_2" size=14>
+        </td>
+        <td width=60%>
+          <input type="text" name="INITIAL_REINS_PREMIUM_2" size=14>
+        </td>
+      </tr>
+      <!--%-->
+    </table>
+    <!--%-->
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="ProcessButton" value="{%(102)Process}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="/lf/images/back.gif">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

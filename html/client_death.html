@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Client Death}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form method="post" action="%SERVLET_PATH%">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(2)Client processing - Death}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Client No}</th>
+        <td>{ClientKey}</td>
+      </tr>
+      <tr>
+        <th>{%(7)First Name}</th>
+        <td>{FirstName}</td>
+      </tr>
+      <tr>
+        <th>{%(8)Other Name}</th>
+        <td>{OtherName}</td>
+      </tr>
+      <tr>
+        <th>{%(9)Surname}</th>
+        <td>{LastName}</td>
+      </tr>
+      <tr>
+        <th>{%(34)Birth Date}</th>
+        <td>{BirthDate}&nbsp;&nbsp; {DATE_FORMAT}</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th style="width: 30%">{%(4)Status Code}</th>
+        <td>
+          <select name="Status">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(41)Date death notified}</th>
+        <td>
+          <input name="DeathDateNotified" size="10">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(42)Date of Death}</th>
+        <td>
+          <input name="DeathDate" size="10">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(43)Death certificate}</th>
+        <td>
+          <input name="DeathCertificate" type="checkbox">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(44)Cause of Death}</th>
+        <td>
+          <select name="DeathCause">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input name="SubmitButton" type="submit" value="{%(100)Submit}">
+        </td>
+        <td class="return">
+          <a href="?screen_name=%BACK_LINK%">
+            {%(200)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

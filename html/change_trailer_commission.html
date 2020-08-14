@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Change Trailer Commission}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(1)Change Trailer Commission}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Policy}</th>
+        <td>{POLICY_NO}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Coverage No}</th>
+        <td>
+          <select name="CoverageNo" onchange="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th>{%(11)Agent}</th>
+        <th>{%(12)Agent Share}</th>
+      </tr>
+      <!--{AGENT_LIST}-->
+      <tr>
+        <td colspan=8>
+          <input type="submit" name="AddEntryButton" value="{%(32)Add}">
+        </td>
+      </tr>
+    </table>
+    <!--%(TRAILER_COMM_RATE)-->
+    <table>
+      <tr>
+        <th style="width: 30%">{%(21)Trailer Commission Rate}</th>
+        <td>
+          <input type="text" name="TrailerCommRate">
+        </td>
+      </tr>
+    </table>
+    <!--%-->
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SaveButton" value="{%(100)Save}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

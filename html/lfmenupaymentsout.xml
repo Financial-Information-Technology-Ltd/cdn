@@ -1,0 +1,809 @@
+<?xml version="1.0"?>
+<!DOCTYPE UserSecurity SYSTEM "menu.dtd">
+<UserSecurity>
+  <FitMenu>
+    <Description>Lifefit Menu Options</Description>
+    <Submenu id="SUB_INDIVIDUAL">
+      <Prompt>Individual</Prompt>
+      <Item>
+        <Prompt>New Business</Prompt>
+        <Command>DO_NEW_BUSINESS</Command>
+      </Item>
+      <Item>
+        <Prompt>Policy Workbench</Prompt>
+        <Command>DO_POLICY_ENQUIRY</Command>
+      </Item>
+      <Item>
+        <Prompt>Client Workbench</Prompt>
+        <Command>DO_CLIENT_MAIN</Command>
+      </Item>
+      <Submenu id="SUB_AGENT">
+        <Prompt>Agent SubMenu</Prompt>
+        <Item>
+          <Prompt>Agent Workbench</Prompt>
+          <Command>DO_AGENT_MAIN</Command>
+        </Item>
+        <Item>
+          <Prompt>Servicing Agents</Prompt>
+          <Command>CHOOSE_SERV_AGENT_MAINTENANCE</Command>
+        </Item>
+        <Item>
+          <Prompt>Writing Agents</Prompt>
+          <Command>CHOOSE_WRITING_AGENT_MAINTENANCE</Command>
+        </Item>
+        <Item>
+          <Prompt>Statements</Prompt>
+          <Command>DO_STATEMENTS</Command>
+        </Item>
+      </Submenu>
+      <Item>
+        <Prompt>Policy Diary Entries</Prompt>
+        <Command>DO_SHOW_POLICY_DIARY_ENTRY</Command>
+      </Item>
+    </Submenu>
+    <Submenu id="SUB_GROUP">
+      <Prompt>Group</Prompt>
+      <Item>
+        <Prompt>Group Workbench</Prompt>
+        <Command>DO_GROUP_MAIN</Command>
+      </Item>
+    </Submenu>
+    <Submenu id="SUB_PAYMENT">
+      <Prompt>Premium/Payment</Prompt>
+      <Item>
+        <Prompt>Policy Accounting</Prompt>
+        <Command>MAKE_POLICY_ACCOUNTING</Command>
+      </Item>
+      <Submenu id="BANK_STATEMENTS">
+        <Prompt>Adjustments</Prompt>
+        <Item>
+          <Prompt>Import statement</Prompt>
+          <Command>DO_IMPORT_BANK_TRANS</Command>
+        </Item>
+        <Item>
+          <Prompt>Validate statement</Prompt>
+          <Command>DO_IMPORT_BANK_TRANS</Command>
+        </Item>
+      </Submenu>
+      <Item>
+        <Prompt>Online Prem Collection</Prompt>
+        <Command>MAKE_ONLINE_RECEIPTING_START</Command>
+      </Item>
+      <Item>
+        <Prompt>Switch Policy Suspense</Prompt>
+        <Command>SUSPENSE_SWITCH</Command>
+      </Item>
+      <Submenu id="SUB_DD">
+        <Prompt>Direct Debits</Prompt>
+        <Item>
+          <Prompt>Manual DD Entry</Prompt>
+          <Command>MAKE_DD_ENTRY</Command>
+        </Item>
+        <Item>
+          <Prompt>DD Reversals</Prompt>
+          <Command>MAKE_DD_REVERSALS</Command>
+        </Item>
+      </Submenu>
+      <Submenu id="ADJUSTMENTS">
+        <Prompt>Adjustments</Prompt>
+        <Item>
+          <Prompt>General Accounting Journals</Prompt>
+          <Command>MAKE_GEN_ACC_JRNLS</Command>
+        </Item>
+        <Item>
+          <Prompt>Non-LIFEfit accounting</Prompt>
+          <Command>SHOW_GENERAL_ACCOUNTING</Command>
+        </Item>
+        <Item>
+          <Prompt>Agent balance transfer</Prompt>
+          <Command>MOVE_AGENT_BALANCE</Command>
+        </Item>
+        <Item>
+          <Prompt>Commission Journals</Prompt>
+          <Command>MAKE_COMM_ACC_JRNLS</Command>
+        </Item>
+        <Item>
+          <Prompt>Reverse Payment by Receipt No</Prompt>
+          <Command>REVERSE_PAY_BY_RECEIPT</Command>
+        </Item>
+      </Submenu>
+      <Item>
+        <Prompt>Unreconciled transactions</Prompt>
+        <Command>DO_UNRECONCILED_BANK_TRANS</Command>
+      </Item>
+      <Submenu id="PAYMENTSOUT">
+        <Prompt>Payments Out</Prompt>
+        <Item>
+          <Prompt>Payments Out Authorisation</Prompt>
+          <Command>SHOW_PAYMENTS_OUT_LIST</Command>
+        </Item>
+      </Submenu>
+      <Submenu id="COUPONS">
+        <Prompt>Coupons</Prompt>
+        <Item>
+          <Prompt>Create Coupon</Prompt>
+          <Command>CREATE_COUPON</Command>
+        </Item>
+        <Item>
+          <Prompt>Authorise Coupon</Prompt>
+          <Command>AUTHORISE_COUPON</Command>
+        </Item>
+      </Submenu>
+    </Submenu>
+    <Submenu id="SUB_WORKFLOW">
+      <Prompt>Workflow</Prompt>
+      <Item>
+        <Prompt>New Task</Prompt>
+        <Command>NEW_WORKFLOW_TASK</Command>
+      </Item>
+      <Item>
+        <Prompt>List Tasks</Prompt>
+        <Command>LIST_WORKFLOW_TASKS</Command>
+      </Item>
+      <Item>
+        <Prompt>Schedule</Prompt>
+        <Command>SHOW_WORKFLOW_SCHEDULE</Command>
+      </Item>
+    </Submenu>
+    <Submenu id="SUB_SUPPORT_FILE">
+      <Prompt>Support Files</Prompt>
+      <Submenu id="SUB_SUPPORT_AGENT">
+        <Prompt>Commission Setup</Prompt>
+        <Item>
+          <Prompt>Agent Types</Prompt>
+          <Command>CHOOSE_AGENT_TYPE</Command>
+        </Item>
+        <Item>
+          <Prompt>Commission Schedules</Prompt>
+          <Command>CHOOSE_AGENT_COMM_SCHEDULE</Command>
+        </Item>
+        <Item>
+          <Prompt>Commission Rates</Prompt>
+          <Command>CHOOSE_AGENT_COMM_RATES</Command>
+        </Item>
+        <Item>
+          <Prompt>Commission Types</Prompt>
+          <Command>CHOOSE_AGENT_COMM_TYPE</Command>
+        </Item>
+        <Item>
+          <Prompt>Agent Hierarchy</Prompt>
+          <Command>DO_AGENT_HIERARCHY</Command>
+        </Item>
+      </Submenu>
+      <Item>
+        <Prompt>Custodian</Prompt>
+        <Command>DO_CUSTODIAN_MAIN</Command>
+      </Item>
+      <Submenu id="SUB_SUPPORT_ORGANISATION">
+        <Prompt>Organisation</Prompt>
+        <Item>
+          <Prompt>Branch</Prompt>
+          <Command>EDIT_BRANCH</Command>
+        </Item>
+        <Item>
+          <Prompt>Company</Prompt>
+          <Command>EDIT_COMPANY</Command>
+        </Item>
+        <Item>
+          <Prompt>Company Documentation</Prompt>
+          <Command>COMPANY_DOCUMENTATION_START</Command>
+        </Item>
+        <Item>
+          <Prompt>Co-Insurance Company</Prompt>
+          <Command>EDIT_COINS_COMPANY</Command>
+        </Item>
+        <Item>
+          <Prompt>Trust</Prompt>
+          <Command>EDIT_TRUST</Command>
+        </Item>
+      </Submenu>
+      <Submenu id="SUB_SUPPORT_COUNTRY">
+        <Prompt>Country</Prompt>
+        <Item>
+          <Prompt>Country</Prompt>
+          <Command>EDIT_COUNTRY</Command>
+        </Item>
+        <Item>
+          <Prompt>Country Tax</Prompt>
+          <Command>CHOOSE_COUNTRY_TAX</Command>
+        </Item>
+      </Submenu>
+      <Submenu id="SUB_SUPPORT_CURRENCY">
+        <Prompt>Currency</Prompt>
+        <Item>
+          <Prompt>Currency Codes</Prompt>
+          <Command>EDIT_CURRENCY</Command>
+        </Item>
+        <Item>
+          <Prompt>Currency Rates</Prompt>
+          <Command>DO_CURRENCY_RATES</Command>
+        </Item>
+      </Submenu>
+      <Submenu id="SUB_SUPPORT_RATES">
+        <Prompt>Rates</Prompt>
+        <Item>
+          <Prompt>Rate Structure</Prompt>
+          <Command>CHOOSE_RATE_STRUCTURE</Command>
+        </Item>
+        <Item>
+          <Prompt>Rate Entry</Prompt>
+          <Command>DO_EDIT_RATES</Command>
+        </Item>
+        <Item>
+          <Prompt>Tax Rates</Prompt>
+          <Command>EDIT_TAX_RATES</Command>
+        </Item>
+        <Item>
+          <Prompt>Bonus Rates</Prompt>
+          <Command>EDIT_BONUS_RATES</Command>
+        </Item>
+        <Item>
+          <Prompt>Interest Rates</Prompt>
+          <Command>CHOOSE_INTEREST_RATES</Command>
+        </Item>
+      </Submenu>
+      <Submenu id="SUB_SUPPORT_CODES">
+        <Prompt>Codes</Prompt>
+        <Item>
+          <Prompt>Codes Records</Prompt>
+          <Command>DO_CHOOSE_CODE</Command>
+        </Item>
+        <Item>
+          <Prompt>Fund Codes</Prompt>
+          <Command>EDIT_FUND</Command>
+        </Item>
+        <Item>
+          <Prompt>Fund Portfolios</Prompt>
+          <Command>FUND_PORTFOLIO</Command>
+        </Item>
+        <Item>
+          <Prompt>Status Codes</Prompt>
+          <Command>EDIT_STATUS_CODES</Command>
+        </Item>
+        <Item>
+          <Prompt>Mode/Methods</Prompt>
+          <Command>EDIT_MODEMETHOD</Command>
+        </Item>
+        <Item>
+          <Prompt>Sort Codes</Prompt>
+          <Command>EDIT_SORTCODE</Command>
+        </Item>
+        <Item>
+          <Prompt>Workflow Task Codes</Prompt>
+          <Command>EDIT_WORKFLOW_TASK_CODES</Command>
+        </Item>
+        <Item>
+          <Prompt>Bill Types</Prompt>
+          <Command>DO_BILL_TYPE</Command>
+        </Item>
+        <Item>
+          <Prompt>Agent Regions and Areas</Prompt>
+          <Command>EDIT_AGENT_REGION</Command>
+        </Item>
+        <Item>
+          <Prompt>Cash Payment Types</Prompt>
+          <Command>DO_PAYMENT_IN_TYPE</Command>
+        </Item>
+        <Item>
+          <Prompt>Automatic Payment Methods</Prompt>
+          <Command>DO_DD_PAYMENT_METHOD</Command>
+        </Item>
+        <Item>
+          <Prompt>Agent Loan Types</Prompt>
+          <Command>EDIT_AGENT_LOAN_TYPES</Command>
+        </Item>
+        <Item>
+          <Prompt>Cities</Prompt>
+          <Command>SHOW_CITY_CHOOSE</Command>
+        </Item>
+        <Item>
+          <Prompt>Policy Fee Structure</Prompt>
+          <Command>DO_POLICY_FEE_STRUCTURE_MAIN</Command>
+        </Item>
+      </Submenu>
+      <Submenu id="SUB_SUPPORT_UNDERWRITING">
+        <Prompt>Underwriting</Prompt>
+        <Item>
+          <Prompt>Requirements</Prompt>
+          <Command>EDIT_OSCODE</Command>
+        </Item>
+        <Item>
+          <Prompt>Table</Prompt>
+          <Command>DO_UNDERWRITING_TABLE</Command>
+        </Item>
+        <Item>
+          <Prompt>Questions</Prompt>
+          <Command>SET_QUESTIONS</Command>
+        </Item>
+        <Item>
+          <Prompt>Requirement Statuses</Prompt>
+          <Command>DO_UWRREQ_STATUS</Command>
+        </Item>
+      </Submenu>
+      <Submenu id="SUB_SUPPORT_DATA">
+        <Prompt>Data</Prompt>
+        <Item>
+          <Prompt>Unit Prices</Prompt>
+          <Command>CHOOSE_UNIT_PRICES</Command>
+        </Item>
+        <Item>
+          <Prompt>Unit Price Graphs</Prompt>
+          <Command>DO_SHOW_UNIT_GRAPHS</Command>
+        </Item>
+        <Item>
+          <Prompt>Investment Limits</Prompt>
+          <Command>DO_INVESTMENT_LIMITS</Command>
+        </Item>
+        <Item>
+          <Prompt>Holiday Table</Prompt>
+          <Command>EDIT_HOLIDAY</Command>
+        </Item>
+        <Item>
+          <Prompt>Standard Letters</Prompt>
+          <Command>DO_CHOOSE_MERGE</Command>
+        </Item>
+      </Submenu>
+      <Item>
+        <Prompt>Plans</Prompt>
+        <Command>CHOOSE_PLAN</Command>
+      </Item>
+      <Submenu id="SUB_SUPPORT_REINSURANCE">
+        <Prompt>Reinsurance</Prompt>
+        <Item>
+          <Prompt>Reinsurance Company</Prompt>
+          <Command>EDIT_REINS_COMPANY</Command>
+        </Item>
+        <Item>
+          <Prompt>Reinsurance Treaty</Prompt>
+          <Command>REINSURANCE_TREATY</Command>
+        </Item>
+      </Submenu>
+      <Submenu id="SUB_SUPPORT_ACCOUNTING">
+        <Prompt>Accounting</Prompt>
+        <Item>
+          <Prompt>General Ledger</Prompt>
+          <Command>DO_GENERAL_LEDGER</Command>
+        </Item>
+        <Item>
+          <Prompt>Accounting Specifications</Prompt>
+          <Command>ACCT_SPEC</Command>
+        </Item>
+        <Item>
+          <Prompt>Pseudo Codes</Prompt>
+          <Command>EDIT_PSEUDO</Command>
+        </Item>
+        <Item>
+          <Prompt>Pseudo Mapping</Prompt>
+          <Command>DO_PSEUDO_MAPPING</Command>
+        </Item>
+        <Item>
+          <Prompt>Fund Accounts</Prompt>
+          <Command>EDIT_FUND_ACC</Command>
+        </Item>
+        <Item>
+          <Prompt>Payment Out Cash Pseudo Codes</Prompt>
+          <Command>EDIT_PAYMENT_OUT_CASH</Command>
+        </Item>
+        <Item>
+          <Prompt>Import Accouting Setup</Prompt>
+          <Command>IMPORT_ACCOUNTING_SETUP</Command>
+        </Item>
+        <Item>
+          <Prompt>Export Accouting Setup</Prompt>
+          <Command>EXPORT_ACCOUNTING_SETUP</Command>
+        </Item>
+      </Submenu>
+      <Submenu id="SUB_SUPPORT_WEB">
+        <Prompt>Web</Prompt>
+        <Item>
+          <Prompt>Web Security</Prompt>
+          <Command>EDIT_WEB_SECURITY</Command>
+        </Item>
+        <Item>
+          <Prompt>Web Security Groups</Prompt>
+          <Command>DO_WEB_SECURITY_GROUP</Command>
+        </Item>
+        <Item>
+          <Prompt>Website</Prompt>
+          <Command>EDIT_WEBSITE</Command>
+        </Item>
+      </Submenu>
+      <Submenu id="SUB_REPORTS">
+        <Prompt>Reports</Prompt>
+        <Item>
+          <Prompt>Create Reports</Prompt>
+          <Command>EDIT_REPORT_WRITER</Command>
+        </Item>
+        <Item>
+          <Prompt>Run Reports</Prompt>
+          <Command>RUN_REPORTS</Command>
+        </Item>
+      </Submenu>
+      <Item>
+        <Prompt>Mail Shot</Prompt>
+        <Command>DO_MAIL_SHOT</Command>
+      </Item>
+      <Item>
+        <Prompt>Compliance</Prompt>
+        <Command>COMPLIANCE</Command>
+      </Item>
+    </Submenu>
+    <Submenu id="SUB_ADMINISTRATION">
+      <Prompt>Administration</Prompt>
+      <Item>
+        <Prompt>System Dates</Prompt>
+        <Command>SYSTEM_DATES</Command>
+      </Item>
+      <Item>
+        <Prompt>Direct Debit Dates</Prompt>
+        <Command>DD_DATES</Command>
+      </Item>
+      <Item>
+        <Prompt>Run Batch</Prompt>
+        <Command>CHOOSE_BATCH</Command>
+      </Item>
+      <Item>
+        <Prompt>Run Batch Suite</Prompt>
+        <Command>RUN_BATCH_SUITE</Command>
+      </Item>
+      <Item>
+        <Prompt>Spool Files</Prompt>
+        <Command>CHOOSE_SPOOL</Command>
+      </Item>
+      <Item>
+        <Prompt>Fund Distribution</Prompt>
+        <Command>DO_FUND_DISTRIBUTION</Command>
+      </Item>
+      <Item>
+        <Prompt>Recalculate Interest</Prompt>
+        <Command>DO_RECALC_INTEREST</Command>
+      </Item>
+      <Item>
+        <Prompt>Who is Logged On?</Prompt>
+        <Command>LIST_SESSIONS</Command>
+      </Item>
+      <Item>
+        <Prompt>Audit Logs</Prompt>
+        <Command>SHOW_AUDIT_LOGS_PAGE</Command>
+      </Item>
+      <Item>
+        <Prompt>Import Data</Prompt>
+        <Command>DO_IMPORT_DATA</Command>
+      </Item>
+      <Submenu id="">
+        <Prompt>Bank Statements</Prompt>
+        <Item>
+          <Prompt>Import Bank Statements</Prompt>
+          <Command>SHOW_IMPORT_BANK_STATEMENT</Command>
+        </Item>
+        <Item>
+          <Prompt>Validate Bank Statements</Prompt>
+          <Command>DO_VALIDATE_BANK_STATEMENT</Command>
+        </Item>
+      </Submenu>
+      <Item>
+        <Prompt>Translations</Prompt>
+        <Command>DO_TRANSLATION</Command>
+      </Item>
+      <Item>
+        <Prompt>Change Password</Prompt>
+        <Command>DO_PASSWORD_CHANGE</Command>
+      </Item>
+      <Submenu id="SUB_CONFIGURATION">
+        <Prompt>Configuration</Prompt>
+        <Item>
+          <Prompt>System</Prompt>
+          <Command>SYSTEM</Command>
+        </Item>
+        <Item>
+          <Prompt>System Date Limits/General</Prompt>
+          <Command>SYSTEM_GENERAL</Command>
+        </Item>
+        <Item>
+          <Prompt>System Flags</Prompt>
+          <Command>SYSTEM_FLAGS</Command>
+        </Item>
+        <Item>
+          <Prompt>Statuses</Prompt>
+          <Command>LFCONFIG_STATUS</Command>
+        </Item>
+        <Item>
+          <Prompt>Documentation</Prompt>
+          <Command>DOCUMENTATION</Command>
+        </Item>
+        <Item>
+          <Prompt>Application</Prompt>
+          <Command>APPLICATION</Command>
+        </Item>
+        <Item>
+          <Prompt>Data Logging</Prompt>
+          <Command>LOGGING_CONFIG</Command>
+        </Item>
+        <Item>
+          <Prompt>Site Parameters</Prompt>
+          <Command>EDIT_SITE_PARAMS</Command>
+        </Item>
+        <Item>
+          <Prompt>System Nos</Prompt>
+          <Command>SYSTEM_NUMBER</Command>
+        </Item>
+        <Item>
+          <Prompt>File Location</Prompt>
+          <Command>FILE_LOCATION</Command>
+        </Item>
+        <Item>
+          <Prompt>Data Dictionary</Prompt>
+          <Command>DATA_DOCS</Command>
+        </Item>
+        <Item>
+          <Prompt>SMS Interface</Prompt>
+          <Command>SMS_INTERFACE</Command>
+        </Item>
+        <Item>
+          <Prompt>Email Settings</Prompt>
+          <Command>CONFIG_EMAIL_SETTINGS</Command>
+        </Item>
+      </Submenu>
+      <Submenu id="SUB_NL_INTERFACE">
+        <Prompt>NL Interface</Prompt>
+        <Item>
+          <Prompt>NL Parameters</Prompt>
+          <Command>NL_PARAMETERS</Command>
+        </Item>
+        <Item>
+          <Prompt>NL Account Input</Prompt>
+          <Command>NL_ACCOUNT_INPUT</Command>
+        </Item>
+        <Item>
+          <Prompt>Missing Accounts</Prompt>
+          <Command>RUN_LFBNONL</Command>
+        </Item>
+      </Submenu>
+      <Submenu id="SUB_USER_ADJUSTMENTS">
+        <Prompt>User Adjustments</Prompt>
+        <Item>
+          <Prompt>Status Change Reversal</Prompt>
+          <Command>STATUS_CHANGE_REVERSAL_START</Command>
+        </Item>
+        <Item>
+          <Prompt>Adhoc Unit Adjustments</Prompt>
+          <Command>UNIT_ADJUSTMENT_START</Command>
+        </Item>
+        <Item>
+          <Prompt>Unit Reversal (Latest Transaction)</Prompt>
+          <Command>UNIT_REVERSAL_START</Command>
+        </Item>
+        <Item>
+          <Prompt>Move Docstore Item</Prompt>
+          <Command>SHOW_MOVE_DOC_IMAGE</Command>
+        </Item>
+      </Submenu>
+      <Submenu id="SUB_DOWNLOAD">
+        <Prompt>Download</Prompt>
+        <Item>
+          <Prompt>Accounting Transactions</Prompt>
+          <Command>DOWNLOAD_ACCOUNTING</Command>
+        </Item>
+        <Item>
+          <Prompt>Unit Triangulation</Prompt>
+          <Command>DOWNLOAD_UNIT_TRIANGULATION</Command>
+        </Item>
+        <Item>
+          <Prompt>Outstanding Premiums</Prompt>
+          <Command>DOWNLOAD_OUTSTANDING_PREMIUMS</Command>
+        </Item>
+        <Item>
+          <Prompt>Reinsurance Download</Prompt>
+          <Command>DOWNLOAD_REINSURANCE</Command>
+        </Item>
+        <Item>
+          <Prompt>Outstanding Premiums By Date</Prompt>
+          <Command>DOWNLOAD_OUTSTANDING_PREMIUMS_BY_DATE</Command>
+        </Item>
+        <Item>
+          <Prompt>Future Audit</Prompt>
+          <Command>DOWNLOAD_FUTURE_AUDIT</Command>
+        </Item>
+        <Item>
+          <Prompt>Closed Policies Report</Prompt>
+          <Command>DOWNLOAD_CLOSED_POLICIES</Command>
+        </Item>
+        <Item>
+          <Prompt>Paying In Slip</Prompt>
+          <Command>DOWNLOAD_PAYING_IN_SLIP</Command>
+        </Item>
+        <Item>
+          <Prompt>School Fees Report</Prompt>
+          <Command>DOWNLOAD_SFB</Command>
+        </Item>
+        <Item>
+          <Prompt>Acct Map Export</Prompt>
+          <Command>DOWNLOAD_ACCTMAP</Command>
+        </Item>
+        <Item>
+          <Prompt>Monthly Fund Reinsurance Extract</Prompt>
+          <Command>DOWNLOAD_FUND_REINS</Command>
+        </Item>
+        <Item>
+          <Prompt>Extract AXA Unit Movements</Prompt>
+          <Command>DOWNLOAD_AXA_UNITMOVES</Command>
+        </Item>
+        <Item>
+          <Prompt>Policy Valuation By Effective Date</Prompt>
+          <Command>DOWNLOAD_POLICY_VALUATION_BY_DATE</Command>
+        </Item>
+        <Item>
+          <Prompt>Structured Note Holdings Report</Prompt>
+          <Command>DOWNLOAD_STRUCTURED_NOTE_HOLDINGS</Command>
+        </Item>
+        <Item>
+          <Prompt>Download Policy</Prompt>
+          <Command>DOWNLOAD_POLICY</Command>
+        </Item>
+        <Item>
+          <Prompt>Download Fund House Holdings</Prompt>
+          <Command>DOWNLOAD_FUNDHOUSE_HOLDINGS</Command>
+        </Item>
+      </Submenu>
+      <Submenu id="SUB_SECURITY">
+        <Prompt>Security/Processes</Prompt>
+        <Item>
+          <Prompt>User IDs</Prompt>
+          <Command>SECURITY</Command>
+        </Item>
+        <Item>
+          <Prompt>User Group</Prompt>
+          <Command>SECURITY_GROUP</Command>
+        </Item>
+        <Item>
+          <Prompt>Batch Setup</Prompt>
+          <Command>EDIT_BATCHPROCESSING</Command>
+        </Item>
+        <Item>
+          <Prompt>Menu Details</Prompt>
+          <Command>EDIT_MENU</Command>
+        </Item>
+        <Item>
+          <Prompt>Pending DocServer Files</Prompt>
+          <Command>SHOW_DOC_SERVER_LIST</Command>
+        </Item>
+      </Submenu>
+    </Submenu>
+    <Item>
+      <Prompt>Logout</Prompt>
+      <Command>DO_LOGIN</Command>
+    </Item>
+  </FitMenu>
+  <AllowedCommands>
+    <Command id="DO_MAINTAIN_POLICY">Maintain Policy</Command>
+    <Command id="DO_MAINTAIN_CLIENT">Maintain Client</Command>
+    <Command id="PROCESS_AGENT_MAINTENANCE">Maintain Agent</Command>
+    <Command id="CREATE_NEW_AGENT">Create New Agent</Command>
+    <Command id="PROCESS_AGENT_PAYMENT">Process Agent payment</Command>
+    <Command id="PAYMENT_FROM_AGENT">Payment from Agent</Command>
+    <Command id="CREATE_NEW_AGENT_LOAN">Create New Agent Loan</Command>
+    <Command id="CHANGE_AGENT_ACCOUNT">Change Agent payment information</Command>
+    <Command id="BULK_UNIT_SWITCH">Bulk Unit Switch</Command>
+    <Command id="FUND_PROCESS_DIVIDEND">Fund Process Dividend</Command>
+    <Command id="FUND_PROCESS_MATURITY">Fund Process Maturity</Command>
+    <Command id="FUND_LIMIT_HISTORY">Fund Limit History</Command>
+    <Command id="FUND_MODIFY">Fund Modify</Command>
+    <Command id="TRUST_MODIFY">Trust Modify</Command>
+    <Command id="TRUST_VALUATION">Trust Valuation</Command>
+    <Command id="TRUST_DOCTSTORE_DOWNLOAD">Trust Docstore Download</Command>
+    <Command id="AGENT_VALUATION">Agent Valuation</Command>
+    <Command id="AGENT_DOCSTORE_DOWNLOAD">Agent Docstore Download</Command>
+  </AllowedCommands>
+  <PolicyMaintenanceButtons>
+    <ButtonName>StatusChangeButton</ButtonName>
+    <ButtonName>CoverageStatusChangeButton</ButtonName>
+    <ButtonName>RiderClaimButton</ButtonName>
+    <ButtonName>SwitchUnitsButton</ButtonName>
+    <ButtonName>UwrreqButton</ButtonName>
+    <ButtonName>RegularIncomeButton</ButtonName>
+    <ButtonName>MortalityLoadingButton</ButtonName>
+    <ButtonName>ChangeTrailerCommission</ButtonName>
+    <ButtonName>UnitWithdrawalButton</ButtonName>
+    <ButtonName>UnitReversalButton</ButtonName>
+    <ButtonName>UnitWithdrawalTerminationButton</ButtonName>
+    <ButtonName>GroupSurrenderButton</ButtonName>
+    <ButtonName>SurrenderQuoteButton</ButtonName>
+    <ButtonName>FundSplitButton</ButtonName>
+    <ButtonName>UnitAdjustmentButton</ButtonName>
+    <ButtonName>ReinsuranceButton</ButtonName>
+    <ButtonName>PremiumEndorsementButton</ButtonName>
+    <ButtonName>BeneficiariesButton</ButtonName>
+    <ButtonName>AddSegmentButton</ButtonName>
+    <ButtonName>AddRiderButton</ButtonName>
+    <ButtonName>SegmentSurrenderButton</ButtonName>
+    <ButtonName>ViewSegmentSurrenderButton</ButtonName>
+    <ButtonName>ModemethodButton</ButtonName>
+    <ButtonName>DistributionFunds</ButtonName>
+    <ButtonName>CreatePaymentOutButton</ButtonName>
+    <ButtonName>DoPolicyPaymentButton</ButtonName>
+    <ButtonName>DoPolicyAccountingButton</ButtonName>
+    <ButtonName>AnnuityButton</ButtonName>
+    <ButtonName>PlanSubstitutionButton</ButtonName>
+    <ButtonName>AdhocPolicyCharges</ButtonName>
+    <ButtonName>JoinGroupButton</ButtonName>
+    <ButtonName>LeaveGroupButton</ButtonName>
+    <ButtonName>PendingEndorsementsButton</ButtonName>
+    <ButtonName>DdStatusButton</ButtonName>
+    <ButtonName>CancelPendingEndorsementButton</ButtonName>
+    <ButtonName>CancelPendingStatusChangeButton</ButtonName>
+    <ButtonName>CancelSwitchRequestButton</ButtonName>
+    <ButtonName>LapseDateButton</ButtonName>
+    <ButtonName>ReversePremiumButton</ButtonName>
+    <ButtonName>PolicyLoansButton</ButtonName>
+    <ButtonName>RepaySuspenseButton</ButtonName>
+    <ButtonName>PolicyReplacementButton</ButtonName>
+    <ButtonName>PayPremiumFromSuspenseButton</ButtonName>
+    <ButtonName>ChangeCommRateButton</ButtonName>
+    <ButtonName>ChangeRenewalRateButton</ButtonName>
+    <ButtonName>ChangeInvestmentAdvisorRateButton</ButtonName>
+  </PolicyMaintenanceButtons>
+  <GroupSchemeMaintenanceButtons>
+    <ButtonName>AccountStatementButton</ButtonName>
+    <ButtonName>AgentCommissionButton</ButtonName>
+    <ButtonName>AllowMemberStrategyButton</ButtonName>
+    <ButtonName>CalculateBillButton</ButtonName>
+    <ButtonName>CalculateJoinersBillButton</ButtonName>
+    <ButtonName>CalculateYearEndAdjustment</ButtonName>
+    <ButtonName>CancelBillButton</ButtonName>
+    <ButtonName>CancelMemberChangesButton</ButtonName>
+    <ButtonName>CancelYearEndAdjustment</ButtonName>
+    <ButtonName>ChangeCommRateButton</ButtonName>
+    <ButtonName>ChangeInvestmentButton</ButtonName>
+    <ButtonName>CreatePaymentOutButton</ButtonName>
+    <ButtonName>CSVBillButton</ButtonName>
+    <ButtonName>DoPolicyAccountingButton</ButtonName>
+    <ButtonName>DoPolicyPaymentButton</ButtonName>
+    <ButtonName>GroupNotesButton</ButtonName>
+    <ButtonName>GroupSurrenderButton</ButtonName>
+    <ButtonName>ImportMembersButton</ButtonName>
+    <ButtonName>LossRatioButton</ButtonName>
+    <ButtonName>MatchMemberButton</ButtonName>
+    <ButtonName>MedicalProviderButton</ButtonName>
+    <ButtonName>MembershipButton</ButtonName>
+    <ButtonName>MembershipTotalsButton</ButtonName>
+    <ButtonName>ModeMethodButton</ButtonName>
+    <ButtonName>ModifyBankAccountButton</ButtonName>
+    <ButtonName>ModifySchemeButton</ButtonName>
+    <ButtonName>PayJoinersPremiumButton</ButtonName>
+    <ButtonName>PayPartialPremiumButton</ButtonName>
+    <ButtonName>PayPremiumButton</ButtonName>
+    <ButtonName>PrintJoinersBillButton</ButtonName>
+    <ButtonName>RefundPremiumButton</ButtonName>
+    <ButtonName>RenewalDataButton</ButtonName>
+    <ButtonName>ReversePaymentButton</ButtonName>
+    <ButtonName>ReversePremiumButton</ButtonName>
+    <ButtonName>SchemeAccountingButton</ButtonName>
+    <ButtonName>SchemeAccountingOverrideButton</ButtonName>
+    <ButtonName>SettleSchemeButton</ButtonName>
+    <ButtonName>ShowGroupImagesButton</ButtonName>
+    <ButtonName>SignOffButton</ButtonName>
+    <ButtonName>SignOffUndoButton</ButtonName>
+    <ButtonName>StatementButton</ButtonName>
+    <ButtonName>StatusChangeButton</ButtonName>
+    <ButtonName>StatusChangeReversalButton</ButtonName>
+    <ButtonName>UwrreqButton</ButtonName>
+    <ButtonName>UndoActivationButton</ButtonName>
+    <ButtonName>WorkflowButton</ButtonName>
+  </GroupSchemeMaintenanceButtons>
+  <ClientButtons>
+    <ButtonName>SendHomeSmsButton</ButtonName>
+    <ButtonName>SendMobileSmsButton</ButtonName>
+    <ButtonName>SendEmailButton</ButtonName>
+  </ClientButtons>
+  <AllowedCommandsOther>
+    <Command id="TEST_GENACCTRN"></Command>
+    <Command id="DO_PRINT_LETTER"></Command>
+    <Command id="CLEAR_SPOOL"></Command>
+    <Command id="RUNNING_PROCESS"></Command>
+    <Command id="DOWNLOAD_SPOOL"></Command>
+    <Command id="SHOW_POLICY_IMAGES"></Command>
+    <Command id="DO_PRINT_DOCUMENT"></Command>
+    <Command id="PRINT_CONTRACT_NOTE"></Command>
+    <Command id="PROCESS_GROUP_AGENT_COMM"></Command>
+  </AllowedCommandsOther>
+</UserSecurity>

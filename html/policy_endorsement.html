@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Policy Endorsement}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(1)Policy Endorsement}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(2)Policy No}</th>
+        <td>{PolicyKey}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Policy Owner}</th>
+        <td>
+          <input type="text" name="PolicyOwner" size="10" onchange="document.forms[0].submit()">
+          <input type="BUTTON" value="&hellip;" class="ellipsis" name="PolicyOwnerButton" ONCLICK="search_client('PolicyOwner',true)">
+          {PolicyOwnerName}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(5)Joint Owner}</th>
+        <td>
+          <input type="text" name="PolicyJointOwner" size="10" onchange="document.forms[0].submit()">
+          <input type="BUTTON" value="&hellip;" class="ellipsis" name="PolicyJointOwnerButton" ONCLICK="search_client('PolicyJointOwner',true)">
+          {JointOwnerName}
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th colspan="7">{%(31)Life Assured}</th>
+      </tr>
+      <tr>
+        <th>{%(32)Coverage}</th>
+        <th>{%(33)Lives}</th>
+        <th>{%(34)First Life}</th>
+        <th>{%(35)Second Life}</th>
+        <th>{%(36)Face Amount}</th>
+        <th>{%(76)Life Cover Option}</th>
+        <th>{%(7)Life Cover Percentage}</th>
+      </tr>
+      <!--{COVERAGE_TABLE}-->
+    </table>
+    <table>
+      <tr>
+        <td style="width: 50%" VALIGN="TOP">
+          <table>
+            <tr>
+              <th style="width: 30%">{%(41)Premium Indexation}</th>
+              <td>
+                <input type="checkbox" name="DynamicOption">
+                <input type="text" name="PremEscalationRate">
+              </td>
+            </tr>
+            <tr>
+              <th>{%(49)Sum Assured Indexation}</th>
+              <td>
+                <input type="checkbox" name="SaEscalation">
+                <input type="text" name="SaEscalationRate">
+              </td>
+            </tr>
+            <tr>
+              <th>{%(42)Underwritten}</th>
+              <td>
+                <input type="checkbox" name="Underwritten">
+              </td>
+            </tr>
+            <tr>
+              <th>{%(43)Hold Mail}</th>
+              <td>
+                <select name="HoldMail">
+                  <option value="">&nbsp;</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th>{%(44)Payer No}</th>
+              <td>
+                <input type="text" name="PayerNo" size=10 ONCHANGE="document.forms[0].submit()">
+                <input type="BUTTON" value="&hellip;" class="ellipsis" name="PayerNoButton" ONCLICK="search_client('PayerNo',true)">
+                {PayerName}
+              </td>
+            </tr>
+            <!--%(ACCOUNT_DETAILS)-->
+            <tr>
+              <th>{%(45)Bank Account No}</th>
+              <td>
+                <select name="AccountNo">
+                  <option value="">&nbsp;</option>
+                </select>
+              </td>
+            </tr>
+            <!--%-->
+            <tr>
+              <th>{%(47)Language}</th>
+              <td>
+                <select name="Language">
+                  <option value="">&nbsp;</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th>{%(81)Latest Allocation Rate}</th>
+              <td>
+                <input type="text" name="LatestAllocationRate">
+              </td>
+            </tr>
+            <tr>
+              <th>{%(83)Voucher Type}</th>
+              <td>
+                <select name="BILL_TYPE">
+                  <option value="">&nbsp;</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th>{%(84)Investment Limits}</th>
+              <td>
+                <select name="INVESTMENT_LIMITS">
+                  <option value="">&nbsp;</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th>{%(87)Market Value Adjustment Percent}</th>
+              <td>
+                <input type="text" name="MVA_PERCENT" size=10>
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td style="width: 50%" VALIGN="TOP">
+          <table>
+            <tr>
+              <th>{%(48)Risk Profile}</th>
+              <td>
+                <select name="RiskProfile">
+                  <option value="">&nbsp;</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th>{%(75)Fees agreement}</th>
+              <td>
+                <input type="checkbox" name="FeesAgreement">
+              </td>
+            </tr>
+            <tr>
+              <th>{%(78)Distribution Option}</th>
+              <td>
+                <!--{FundDistributionOption}-->
+              </td>
+            </tr>
+            <tr>
+              <th>{%(71)Policy Term}</th>
+              <td>
+                <input type="text" name="PolicyTerm">
+              </td>
+            </tr>
+            <tr>
+              <th>{%(72)Maturity Date}</th>
+              <td>
+                <input type="text" name="MaturityDate">
+              </td>
+            </tr>
+            <tr>
+              <th>{%(82)Expiry Date}</th>
+              <td>
+                <input type="text" name="EtiExpiryDate">
+              </td>
+            </tr>
+            <tr>
+              <th>{%(80)Premium Term}</th>
+              <td>
+                <input type="text" name="PremiumTerm">
+              </td>
+            </tr>
+            <tr>
+              <th>{%(79)Endorsement Number}</th>
+              <td>
+                <input type="text" name="EndorsementNo" size=10>
+              </td>
+            </tr>
+            <tr>
+              <th>{%(85)Unit Statement}</th>
+              <td>
+                <select name="UnitStatementProcess">
+                  <option value="">&nbsp;</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th>{%(86)Hold Commissions}</th>
+              <td>
+                <select name="HoldCommissions">
+                  <option value="">&nbsp;</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th>{%(88)Gross Yield}</th>
+              <td>
+                <input type="text" name="GrossYield" size=10>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <!--%(OVERRIDE_FEES_TABLE)-->
+    <table>
+      <tr>
+        <th colspan="3">{%(90)Override Fee Table}</th>
+      </tr>
+      <tr>
+        <th>{%(91)Band (policy value)}</th>
+        <th>{%(92)Policy Admin Fee}</th>
+        <th>{%(93)Intermediary trail fee}</th>
+      </tr>
+      <!--{FEES_TABLE}-->
+      <tr>
+        <td colspan=3>
+          <input type="submit" name="AddFeeButton" value="{%(94)Add}" />
+        </td>
+      </tr>
+    </table>
+    <!--%-->
+    <!--%(OTHER_RELATIONS_TABLE)-->
+    <table>
+      <tr>
+        <th colspan="3">{%(95)Policy Relationships}</th>
+      </tr>
+      <tr>
+        <th style="width: 1%">{%(96)Type}</th>
+        <th>{%(97)Client}</th>
+        <th>{%(99)Note}</th>
+      </tr>
+      <!--{OTHER_RELATIONS_TABLE}-->
+      <tr>
+        <td colspan=2>
+          <input type="submit" name="AddRelationship" value="{%(98)Add}" />
+        </td>
+      </tr>
+    </table>
+    <!--%-->
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SubmitButton" value="{%(100)Submit}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+    <input type="hidden" name="FeesAgreement_HIDDEN">
+  </form>
+</body>
+</html>

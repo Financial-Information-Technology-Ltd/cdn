@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Step 3}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form method="post" action="%SERVLET_PATH%">
+    {ERRORS}
+    <table>
+      <thead>
+        <tr>
+          <td class="title">{%(2)Policy Details}</td>
+          <th colspan='5' style="text-align: right">{HELP_LINK}</th>
+        </tr>
+      </thead>
+      <tr>
+        <td style="width: 30%">{%(14)Application Received Date}</td>
+        <td>
+          <input name="ApplicationDate" size="16" />
+        </td>
+      </tr>
+      <tr>
+        <td style="width: 30%">{%(3)Issue Date}</td>
+        <td>
+          <input name="StartDate" size="16">
+          {DATE_FORMAT}
+        </td>
+      </tr>
+      <tr>
+        <td>{%(5)Policy currency denomination}</td>
+        <td>
+          <select name="Currency" id="Currency" onchange="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>{%(10)Policy Term in Years}</td>
+        <td>
+          <input name="PaymentTerm" size="8">
+        </td>
+      </tr>
+      <tr>
+        <td>{%(17)Mode/Method}</td>
+        <td>
+          <select name="ModeMethod" onchange="force_submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <!--%(PAYMENT_DAY_FRAGMENT)-->
+      <tr>
+        <td>{%(107)Premium Collection Day}</td>
+        <td>
+          <select name="PAYMENT_DAY">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <!--%-->
+      <tr>
+        <td>{%(8)Premium Amount}</td>
+        <td>
+          <input name="TOTAL_POLICY_PREMIUM" id="TOTAL_POLICY_PREMIUM" size="20" onchange="document.forms[0].submit()">
+        </td>
+      </tr>
+      <!--%(LIFE_COVER_FRAGMENT)-->
+      <tr>
+        <td>{%(51)Life Cover}</td>
+        <td>
+          <select name="LifeCover" ONCHANGE="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <!--%-->
+      <!--%(INPUT_SUM_ASSURED_FRAGMENT)-->
+      <tr>
+        <td>{%(54)Sum Assured}</td>
+        <td>
+          <input name="FaceAmount" size="20">
+        </td>
+      </tr>
+      <!--%-->
+      <!--%(LIFE_COVER_AMOUNT_FRAGMENT)-->
+      <tr>
+        <td>{%(52)Sum Assured Change Amount}</td>
+        <td>
+          <input type="text" name="LifeCoverAmount">
+        </td>
+      </tr>
+      <!--%-->
+      <!--%(LIFE_COVER_PERCENT_FRAGMENT)-->
+      <tr>
+        <td>{%(53)Life cover percent (Select 100 for Capital Redemption and 101 for Whole of Life)}</td>
+        <td>
+          <input type="text" name="FaceAmountPercent" size=8>
+        </td>
+      </tr>
+      <!--%-->
+      <thead>
+        <tr>
+          <td class="title">{%(11)Fund}</td>
+          <th colspan='5' style="text-align: left">
+            <input type="checkbox" id="FUND_INPUT_OPTION" name="FUND_INPUT_OPTION" />
+            {%(25) Fund input amount option}
+          </th>
+        </tr>
+      </thead>
+      <tr>
+        <td style="width: 30%">{%(12)Asset Manager}</td>
+        <td style="width: 50%">{%(13)Fund}</td>
+        <td>{%(15)Percentage}</td>
+        <td>{%(16)Amount}</td>
+        <!--%(SETUP_FEE_AND_COMMISSION)-->
+        <td>{%(27)Setup Fee %}</td>
+        <td>{%(28)Commission %}</td>
+        <!--%-->
+      </tr>
+      <!--{FUND_TABLE_PLL}-->
+      <tbody id="fund_table">
+      </tbody>
+      <tbody id="fund_total_table">
+        <tr>
+          <td colspan='2'>{%(24)Total}</td>
+          <td>{FUND_PERC_TOTAL}</td>
+          <td>{FUND_AMOUNT_TOTAL}</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td align="left">
+            <input class="button" name="PrevButton" type="submit" value="&lt; {%(100)Previous}">
+          </td>
+          <td colspan='5' align="right">
+            <input name="NextButton" class="button" type="submit" value="{%(101)Next} &gt;">
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  </form>
+</body>
+</html>

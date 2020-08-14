@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Outstanding/Underwriting Requirements}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(1)Outstanding/Underwriting Requirements}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(2)Outstanding Code}</th>
+        <td>{OS_CODE}</td>
+      </tr>
+      <tr>
+        <th>{%(3)Description}</th>
+        <td>
+          <input type="text" name="OS_DESCRIPTION" size=50>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(4)Prevent status change if unresoved}</th>
+        <td>
+          <input type="checkbox" name="UW_REQUIREMENT">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(21)Prevent exceeding free cover limit if unresolved}</th>
+        <td>
+          <input type="checkbox" name="LIMIT_TO_FCL">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(22)Terminate cover when rejected}</th>
+        <td>
+          <input type="checkbox" name="TERMINATE_COVER">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(14)Created for whole policy (not coverage-specific)}</th>
+        <td>
+          <input type="checkbox" name="WHOLE_POLICY">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(20)Created for a whole scheme (group-business only)}</th>
+        <td>
+          <input type="checkbox" name="GROUP_SCHEME">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(5)Requirement Type}</th>
+        <td>
+          <select name="REQ_TYPE">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(11)Payment Required}</th>
+        <td>
+          <input type="checkbox" name="CHARGEABLE">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(13)Number of days reply valid after received}</th>
+        <td>
+          <input type="text" name="VALID_DAYS" size=5>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(23)Number of months reply valid after received}</th>
+        <td>
+          <input type="text" name="VALID_MONTHS" size=5>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(15)SA % increase allowed befor UW}</th>
+        <td>
+          <input type="text" name="SA_COVER_LIMIT_PERCENT" size=5>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(12)Event (list type) generated when created}</th>
+        <td>
+          <input type="text" name="LIST_TYPE" size=30>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(6)Events generated later}</th>
+        <td>
+          <table>
+            <tr>
+              <th>{%(7)Days}</th>
+              <th>{%(8)Event Type}</th>
+            </tr>
+            <!--{TIMELAG_LISTTYPE_TABLE}-->
+            <tr>
+              <td colspan="2">
+                <input type="submit" name="AddValueButtonDays" value="{%(9)Add}">
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(16)Events generated when reply received}</th>
+        <td>
+          <table>
+            <tr>
+              <th>{%(17)Reply status}</th>
+              <th>{%(18)Event Type}</th>
+            </tr>
+            <!--{LETTERON_EVENTTYPE_TABLE}-->
+            <tr>
+              <td colspan="2">
+                <input type="submit" name="AddValueButtonStatus" value="{%(9)Add}">
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(19)Delay upp processing}</th>
+        <td>
+          <input type="checkbox" name="DELAY_UPP">
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SaveButton" value="{%(100)Save}">
+        </td>
+        <td class="return">
+          <a href="?screen_name=OSCODE_CHOOSE&OS_CODE={OS_CODE}">
+            {%(101)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

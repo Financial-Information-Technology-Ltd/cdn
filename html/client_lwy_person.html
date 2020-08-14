@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Client Entry}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body onload="OnLoad()">
+  <form method="post" action="%SERVLET_PATH%">
+    {ERRORS}
+    <!--%(DUPLICATE_CLIENTS)-->
+    <table>
+      <!--{DUPLICATE_CLIENT_LIST}-->
+      <tr>
+        <td colspan="4">
+          <input name="SaveButtonForce" type="submit" value="{%(102)Save Anyway}">
+        </td>
+      </tr>
+    </table>
+    <!--%-->
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(2)Client processing - Individual}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Client No}</th>
+        <td>{ClientKey}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Status Code}</th>
+        <td>
+          <select name="Status">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(5)Title}</th>
+        <td>
+          <select name="Title">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(6)Salutation}</th>
+        <td>
+          <select name="Salutation">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(7)First Name}</th>
+        <td>
+          <input name="FirstName" size="30">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(8)Other Name}</th>
+        <td>
+          <input name="OtherName" size="30">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(9)Surname}</th>
+        <td>
+          <input name="LastName" size="30">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(10)Alpha}</th>
+        <td>{Alpha}</td>
+      </tr>
+      <tr>
+        <th>{%(11)Former Name}</th>
+        <td>
+          <input name="FormerName" size="30">
+        </td>
+      </tr>
+      <!--%(SPECIAL_CLIENT_FIELDS)-->
+      <!--{SPECIAL_CLIENT_FIELDS}-->
+      <!--%(SPECIAL_CLIENT_FIELDS_END)-->
+      <tr>
+        <th>{%(111)VIP}</th>
+        <td>
+          <input name="VIP" type="checkbox">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(112)Consolidate Payout}</th>
+        <td>
+          <input name="ConsolidatePayout" type="checkbox">
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <table>
+            <tr>
+              <th style="width: 30%">{%(68)County}</th>
+              <td>
+                <input name="MailCounty" size="20">
+              </td>
+            </tr>
+            <tr>
+              <th>{%(13)City}</th>
+              <td>
+                <input name="MailCity" size="20">
+              </td>
+            </tr>
+            <tr>
+              <th>{%(50)Mail Address}</th>
+              <td>
+                <TEXTAREA name="MailAddress" cols="80" rows="3"></TEXTAREA>
+              </td>
+            </tr>
+            <tr>
+              <th>{%(15)Country}</th>
+              <td>
+                <select name="MailCountry">
+                  <option value="">&nbsp;</option>
+                </select>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <table>
+            <tr>
+              <th style="width: 30%">{%(71)Home address is different from mail address}</th>
+              <td>
+                <input type="checkbox" name="AddrDiff">
+              </td>
+            </tr>
+            <!--%(AddressFrag)-->
+            <tr>
+              <th>{%(68)County}</th>
+              <td>
+                <input name="County" size="20">
+              </td>
+            </tr>
+            <tr>
+              <th>{%(13)City}</th>
+              <td>
+                <input name="City" size="20">
+              </td>
+            </tr>
+            <tr>
+              <th>{%(12)Address}</th>
+              <td>
+                <TEXTAREA name="Address" cols="80" rows="3"></TEXTAREA>
+              </td>
+            </tr>
+            <tr>
+              <th>{%(15)Country}</th>
+              <td>
+                <select name="Country">
+                  <option value="">&nbsp;</option>
+                </select>
+              </td>
+            </tr>
+            <!--%(AddressFrag_END)-->
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(16)Country of Tax Liability}</th>
+        <td>
+          <select name="TaxCountry">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(28)Tax Number}</th>
+        <td>
+          <input name="TaxNumber">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(17)Web Approval}</th>
+        <td>
+          <input name="WebApproval" type="checkbox">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(18)Documentation Language}</th>
+        <td>
+          <select name="DocumentLanguage">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(72)Client Category}</th>
+        <td>
+          <select name="ClientCategory">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(20)Telephone No}</th>
+        <td>
+          <input name="PhoneNo" size="20">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(21)Mobile Phone No}</th>
+        <td>
+          <input name="MobileNo" size="20">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(22)Fax No}</th>
+        <td>
+          <input name="FaxNo" size="20">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(23)EMail address}</th>
+        <td>
+          <input name="EMail" size="30">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(64)Preferred Communication Methods}</th>
+        <td>{PrefCommMethodsTable}</td>
+      </tr>
+      <tr>
+        <th>{%(24)Nationality}</th>
+        <td>
+          <select name="Nationality">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(46)Second Nationality}</th>
+        <td>
+          <select name="SecondNationality">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(25)Age Admitted}</th>
+        <td>
+          <input name="AgeAdmitted" type="checkbox">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(31)Marital Status}</th>
+        <td>
+          <select name="MaritalStatus">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(32)Sex}</th>
+        <td>
+          <select name="Sex">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(33)Smoker Category}</th>
+        <td>
+          <select name="SmokerCategory">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(34)Birth Date}</th>
+        <td>
+          <input name="BirthDate" size="10">
+          {DATE_FORMAT}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(57)Country of Birth}</th>
+        <td>
+          <select name="CountryOfBirth">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(67)National Insurance Number}</th>
+        <td>
+          <input name="NatInsNumber" size="20">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(66)Identity Type}</th>
+        <td>
+          <select name="IDType">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(35)Identity Card No}</th>
+        <td>
+          <input name="IDNumber" size="20">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(36)ID Issue Date}</th>
+        <td>
+          <input name="IDIssueDate" size="10">
+          {DATE_FORMAT}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(37)ID Issue Place}</th>
+        <td>
+          <input name="IDIssuePlace" size="10">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(38)ID Expiry Date}</th>
+        <td>
+          <input name="IDExpiryDate" size="10">
+          {DATE_FORMAT}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(40)Comments}</th>
+        <td>
+          <textarea name="Comments" cols="80" rows="3"></textarea>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(47)Risk Category}</th>
+        <td>
+          <select name="RiskCategory">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(48)Exclude from Sanctions Check}</th>
+        <td>
+          <input name="ExcludeFromSanctionsCheck" type="checkbox">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(70)External Reference}</th>
+        <td>{ExternalRef}</td>
+      </tr>
+      <tr>
+        <th>{%(81)Bank Verification No.(BVN)}</th>
+        <td>
+          <input name="ExternalRef2" size="20">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(82)CRM Prospect ID}</th>
+        <td>
+          <input name="ExternalRef3" size="20">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(88)Critical Illness Certificate}</th>
+        <td>
+          <input name="CriticalIllnessCertificate" type="checkbox">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(73)Height}</th>
+        <td>
+          <input type="text" name="Height" onchange="changeHeight()" size=3>
+          &nbsp;{%(74)cm}&nbsp;/&nbsp;
+          <input type="text" name="Height_ft" onchange="changeHeightImperial()" size=3>
+          &nbsp;{%(75)ft}&nbsp;
+          <input type="text" name="Height_in" ONCHANGE="changeHeightImperial()" size=3>
+          &nbsp;{%(76)in}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(77)Weight}</th>
+        <td>
+          <input type="text" name="Weight" onchange="changeWeight()" size=6>
+          &nbsp;{%(78)kg}&nbsp;/&nbsp;
+          <input type="text" name="Weight_lb" onchange="changeWeightImperial()" size=3>
+          &nbsp;{%(79)lb}
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <td class="title" colspan=2>{%(59)Employment Details}</td>
+      </tr>
+      <tr>
+        <th width=30%>{%(27)Employment}</th>
+        <td>
+          <input name="Employment" type="radio" value="1" checked>
+          {%(29)Employed}
+          <input name="Employment" type="radio" value="0">
+          {%(30)Self-Employed}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(58)Employer Name}</th>
+        <td>
+          <input name="EmployerName" size="20">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(49)Work Phone No}</th>
+        <td>
+          <input name="WorkPhoneNo" size="20">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(26)Occupation}</th>
+        <td>
+          <input name="Occupation" size="30">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(69)Job Duties}</th>
+        <td>
+          <input name="JobDuties" size="60">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(60)Occupation Type}</th>
+        <td>
+          <input name="OccupationType" size="20">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(56)Number of Years with Company}</th>
+        <td>
+          <input name="EmployedYears" size="10">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(19)Staff Code}</th>
+        <td>
+          <input name="StaffCode" size="20">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(45)Annual Income}</th>
+        <td>
+          <input name="Income" size="20">
+        </td>
+      </tr>
+    </table>
+    <!--%(DEATH_DETAILS)-->
+    <table>
+      <tr>
+        <td class="title" colspan=2>{%(65)Death Details}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(41)Date death notified}</th>
+        <td>
+          <input name="DeathDateNotified" size="10">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(42)Date of Death}</th>
+        <td>
+          <input name="DeathDate" size="10">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(43)Death certificate}</th>
+        <td>
+          <input name="DeathCertificate" type="checkbox">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(44)Cause of Death}</th>
+        <td>
+          <select name="DeathCause">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+    <input type="hidden" name="ProtectDeathOnSettlement" value="1">
+    <!--%-->
+    <table>
+      <tr>
+        <th colspan="3">{%(51)Related To}</th>
+      </tr>
+      <tr>
+        <th>{%(52)Relation Type}</th>
+        <th>{%(53)Related Client No}</th>
+        <th>{%(54)Related Date}</th>
+      </tr>
+      <!--{RELATION_LIST}-->
+      <tr>
+        <td colspan="3">
+          <input name="AddRelationButton" type="submit" value="{%(55)Add}">
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input name="SaveButton" type="submit" value="{%(100)Save}">
+        </td>
+        <td class="return">
+          <a href="?screen_name=%BACK_LINK%">
+            {%(200)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+  <script type="text/javascript">
+function changeHeight()
+{
+  if (!(document.forms[0].elements["Height"]))
+    return;
+  if (!integer_change("Height"))
+    return;
+  element1 = document.forms[0].elements["Height"];
+  element2 = document.forms[0].elements["Height_ft"];
+  element3 = document.forms[0].elements["Height_in"];
+  m_value = parse_float(element1.value);
+  value = Math.round(m_value/2.54);
+  in_value = value%12;
+  ft_value = (value-in_value)/12;
+  element2.value = ft_value;
+  element3.value = in_value;
+}
+function changeHeightImperial(field_name)
+{
+  if (!(document.forms[0].elements["Height"]))
+    return;
+  if (!integer_change(field_name))
+    return;
+  element1 = document.forms[0].elements["Height"];
+  element2 = document.forms[0].elements["Height_ft"];
+  element3 = document.forms[0].elements["Height_in"];
+  ft_value = parse_float(element2.value);
+  in_value = parse_float(element3.value);
+  value = ft_value*12+in_value;
+  element1.value = Math.round(value*2.54);
+}
+function changeWeight()
+{
+  if (!(document.forms[0].elements["Weight"]))
+    return;
+  if (!float_changed("Weight",3))
+    return;
+  element1 = document.forms[0].elements["Weight"];
+  element2 = document.forms[0].elements["Weight_lb"];
+  m_value = parse_float(element1.value);
+  value = m_value/0.45359237;
+  element2.value = Math.round(value);
+}
+function changeWeightImperial()
+{
+  if (!(document.forms[0].elements["Weight"]))
+    return;
+  if (!integer_change("Weight_lb"))
+    return;
+  element1 = document.forms[0].elements["Weight"];
+  element2 = document.forms[0].elements["Weight_lb"];
+  value = parse_float(element2.value);
+  m_value = value*0.45359237;
+  element1.value = format_float(m_value,3);
+}
+function OnLoad()
+{
+  changeHeight();
+  changeWeight();
+  set_focus();
+}
+</script>
+</body>
+</html>

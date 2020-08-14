@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Security Group}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form method="post" action="%SERVLET_PATH%">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(1)Security Group}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(2)Group Code}</th>
+        <td>{GroupCode}</td>
+      </tr>
+      <tr>
+        <th>{%(3)Name}</th>
+        <td>
+          <input type="text" name="GroupName" size=60>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(4)Menu}</th>
+        <td>
+          <select name="Menu">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(5)Allowed Batches}</th>
+        <td>
+          <table>
+            <!--{BATCH_TABLE}-->
+            <tr>
+              <td>
+                <input name="ALLOWED_BATCHES_BUTTON" type="submit" value="{%(99)Add}">
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(6)Payments Out Limits}</th>
+        <td>
+          <table>
+            <tr>
+              <th>{%(7)Currency}</th>
+              <th>{%(8)Payout limit}</th>
+              <th>{%(9)Payout authorisation limit}</th>
+            </tr>
+            <!--{PAYOUT_LIMITS_TABLE}-->
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(10)Allowed assign workflow task}</th>
+        <td>
+          <input type="checkbox" name="AllowedAssignWorkflow">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(26)Allowed un-assign workflow task}</th>
+        <td>
+          <input type="checkbox" name="AllowedUnAssignWorkflow">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(11)Allowed change workflow dates}</th>
+        <td>
+          <input type="checkbox" name="AllowedChangeWorkflowDates">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(28)Allowed change workflow dates set by Task Code}</th>
+        <td>
+          <input type="checkbox" name="AllowedChangeWorkflowDatesTaskCode">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(12)Allowed to see history of a workflow task}</th>
+        <td>
+          <input type="checkbox" name="ALLOW_SEE_WORKFLOW_HISTORY">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(13)Allowed to authorise coupons}</th>
+        <td>
+          <input type="checkbox" name="AllowCouponAuthorisation">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(25)Allowed to maintain Client AEI account types}</th>
+        <td>
+          <input type="checkbox" name="AllowChangeClientAEI">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(14)Restrict Issue Same User}</th>
+        <td>
+          <input type="checkbox" name="RestrictIssueSameUser">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(15)Allow Commission Override }</th>
+        <td>
+          <input type="checkbox" name="RestrictCommissionOverride">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(16)Disable Workflow Cancelled Status}</th>
+        <td>
+          <input type="checkbox" name="DISABLE_WORKFLOW_CANCELLED_STATUS">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(17)Disable Workflow Pending Status }</th>
+        <td>
+          <input type="checkbox" name="DISABLE_WORKFLOW_PENDING_STATUS">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(27)Restrict choice of document assignations }</th>
+        <td>
+          <input type="checkbox" name="RestrictDocumentUploadAssign">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(18)Path to Document Server directory (if user group - specific)}</th>
+        <td>
+          <input type="text" name="PATH_TO_DOC_SERVER_SPOOL" size=60>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(19)Backdate limit for issuing policies (days)}</th>
+        <td>
+          <input type="text" name="ISSUE_BACKDATE_LIMIT" size=6>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(20)Categories of the documents users are allowed to access}</th>
+        <td>
+          <table>
+            <tr>
+              <th>{%(21)Document Category}</th>
+              <th>{%(22)Sensitivity}</th>
+            </tr>
+            <!--{DOCUMENT_SECURITY}-->
+            <tr>
+              <td>
+                <input name="DOCUMENT_SECURITY_BUTTON" type="submit" value="{%(99)Add}">
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(37)Allow Snooze}</th>
+        <td>
+          <input type="checkbox" name="AllowSnooze">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(38)Allow Workflow Task Linking}</th>
+        <td>
+          <input type="checkbox" name="AllowWorkflowTaskLinking">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(39)Allowed to see Underwriting Notes}</th>
+        <td>
+          <input type="checkbox" name="UwrNotes">
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SaveButton" value="{%(23)Save}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(24)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

@@ -1,0 +1,33 @@
+{ERRORS}
+<table class="zebra">
+  <tr>
+    <th colspan="7">{%(1)Payments Out}</th>
+  </tr>
+  <tr>
+    <th>{%(2)%}</th>
+    <th>{%(5)Type}</th>
+    <th>{%(3)Currency}</th>
+    <th>{%(4)Charge Amount}</th>
+    <th>{%(6)Payee No}</th>
+    <th>{%(8)Payee Name}</th>
+    <th>{%(7)Bank No}</th>
+  </tr>
+  <!--{PAYMENTS_OUT_TABLE}-->
+  <!--%(TOTAL_PERCENTAGE)-->
+  <tr>
+    <th colspan="7">
+      <b>{%(20)Total:} </b>
+      {PAYMENTS_OUT_TOTAL}%
+    </th>
+  </tr>
+  <!--%-->
+  <tr>
+    <th>{%(9)Additional Instructions}</th>
+    <th colspan="6">
+      <input type="text" name="AdditionalInstructions" size=70>
+    </th>
+  </tr>
+</table>
+<input type="hidden" name="SearchText" value="{%(10)Search}">
+<input type="hidden" name="CreateText" value="{%(11)Create}">
+<input type="hidden" name="EditText" value="{%(12)Edit}">

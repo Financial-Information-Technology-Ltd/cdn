@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Premium Statement}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan=2>{HELP_LINK}{%(2)Premium Statement}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Policy}</th>
+        <td>{PolicyKey}</td>
+      </tr>
+      <tr>
+        <th>{%(20)Statement Start Date}</th>
+        <td>
+          <input type="text" name="StatementStartDate" size=10>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(21)Statement End Date}</th>
+        <td>
+          <input type="text" name="StatementDate" size=10>
+          <input type="submit" name="RecalcButton" value="{%(22)Recalculate}">
+        </td>
+      </tr>
+      <!--%(PREVIEW_FRAGMENT)-->
+      <tr>
+        <th>{%(4)Opening Balance}</th>
+        <td>{OpeningBalance}</td>
+      </tr>
+      <tr>
+        <th>{%(5)Total Payment Received}</th>
+        <td>{TotalPremiumReceived}</td>
+      </tr>
+      <tr>
+        <th>{%(19)Total Policy Fees}</th>
+        <td>{TotalFee}</td>
+      </tr>
+      <tr>
+        <th>{%(7)Total Withdrawal}</th>
+        <td>{TotalWithdrawal}</td>
+      </tr>
+      <tr>
+        <th>{%(6)Total Interest}</th>
+        <td>{TotalInterest}</td>
+      </tr>
+      <tr>
+        <th>{%(8)Total Risk Premium}</th>
+        <td>{TotalRiskPremium}</td>
+      </tr>
+      <tr>
+        <th>{%(23)Total Bonus}</th>
+        <td>{TotalBonus}</td>
+      </tr>
+      <tr>
+        <th>{%(9)Closing Balance}</th>
+        <td>{InvestmentValue}</td>
+      </tr>
+      <!--%(PREVIEW_FRAGMENT_END)-->
+    </table>
+    <!--%(PREVIEW_FRAGMENT)-->
+    <table>
+      <tr>
+        <th>{%(10)Date}</th>
+        <th>{%(11)Effective Date}</th>
+        <th>{%(12)Description}</th>
+        <th>{%(13)Receipt no}</th>
+        <th>{%(14)Mode of payment}</th>
+        <th>{%(15)Reference no}</th>
+        <th align="right">{%(16)Amount}</th>
+      </tr>
+      <tr>
+        <td colspan=2>&nbsp;</td>
+        <td>{%(17)Opening Balance}</td>
+        <td colspan=3>&nbsp;</td>
+        <td align="right">{OpeningBalance}</td>
+      </tr>
+      <tr>
+        <td>{@PaymentDates}</td>
+        <td>{@PaymentEffectiveDates}</td>
+        <td>{@PaymentsDescriptions}</td>
+        <td>{@ReceiptNos}</td>
+        <td>{@PaymentMethods}</td>
+        <td>{@ReferenceNos}</td>
+        <td align="right">{@PaymentAmounts}</td>
+      </tr>
+      <tr>
+        <td colspan=2>&nbsp;</td>
+        <td>{%(18)Closing Balance}</td>
+        <td colspan=3>&nbsp;</td>
+        <td align="right">{InvestmentValue}</td>
+      </tr>
+    </table>
+    <!--%(PREVIEW_FRAGMENT_END)-->
+    <table class="navigation">
+      <tr>
+        <td>
+          <select name="StatementType"></select>
+          <input type="submit" name="PrintButton" value="{%(100)Print}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

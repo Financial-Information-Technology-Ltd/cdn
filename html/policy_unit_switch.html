@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Unit Switch}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}" />
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(1)Unit Switch}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Policy No}</th>
+        <td>{PolicyKey}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Coverage}</th>
+        <td>{COVERAGE}</td>
+      </tr>
+      <tr>
+        <th>{%(5)Switch Type}</th>
+        <td>
+          <!--{SWITCH_TYPE}-->
+        </td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(6)Fund Specific Charges}</th>
+        <td>
+          <!--{FUND_SPECIFIC_CHARGES}-->
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th>
+          {%(7)Free Switch Allowed:}
+          <!--{FREE_SWITCH_ALLOWED}-->
+        </th>
+        <th>
+          {%(8)Free Switch Taken:}
+          <!--{FREE_SWITCH_TAKEN}-->
+        </th>
+        <th>&nbsp;</th>
+      </tr>
+      <tr>
+        <th colspan="3">
+          {%(9)Switch Basis:}
+          <!--{SWITCH_BASIS}-->
+        </th>
+      </tr>
+      <tr>
+        <th>
+          {%(10)Fee%:}
+          <!--{FEE_PERCENT}-->
+        </th>
+        <th>
+          {%(11)Min:}
+          <!--{FEE_MIN}-->
+        </th>
+        <th>
+          {%(12)Max:}
+          <!--{FEE_MAX}-->
+        </th>
+      </tr>
+      <tr>
+        <th colspan="3">
+          {%(13)Other Switches on the Policy:}
+          <!--{OTHER_SWITCHES}-->
+        </th>
+      </tr>
+    </table>
+    <!--%(PORTFOLIO_DATA)-->
+    <table>
+      <tr>
+        <th>{%(31)Current Portfolio}</th>
+        <td>
+          <!--{CURRENT_PORTFOLIO}-->
+        </td>
+      </tr>
+      <tr>
+        <th>{%(32)New Portfolio}</th>
+        <td>
+          <select name="FUND_PORTFOLIO" ONCHANGE="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+    <!--%-->
+    <table>
+      <tr>
+        <th ROWSPAN="2">{%(14)Policy Funds}</th>
+        <!--%(INITIAL_UNITS_COLUMN)-->
+        <th colspan="2">{%(15)Initial Units}</th>
+        <!--%-->
+        <th colspan="2">{%(16)Accumulation Units}</th>
+        <th ROWSPAN="2">{%(17)Fund Value}</th>
+      </tr>
+      <tr>
+        <th>{%(141)Number}</th>
+        <th>{%(142)Latest Price}</th>
+        <!--%(INITIAL_UNITS_COLUMN)-->
+        <th>{%(141)Number}</th>
+        <th>{%(142)Latest Price}</th>
+        <!--%-->
+      </tr>
+      <!--{FUND_LIST}-->
+    </table>
+    <table>
+      <tr>
+        <th rowspan="2">{%(19)Switch From Funds}</th>
+        <!--%(INITIAL_UNITS_COLUMN)-->
+        <th rowspan="2">{%(191)Unit Type}</th>
+        <!--%-->
+        <!--%(FEE_OVERRIDE_COLUMN)-->
+        <th rowspan="2">{%(20)Fund Specific Charge}</th>
+        <!--%-->
+        <th rowspan="2">
+          <!--{SWITCH_TYPE_DESCRIPTION}-->
+          {%(21)to be switched}
+        </th>
+        <th colspan="<!--{FUND_COUNT}-->">{%(22)% of amount switched - must total 100%}</th>
+      </tr>
+      <!--{FUND_SWITCH_MATRIX}-->
+    </table>
+    <table>
+      <tr>
+        <th style="width: 30%">{%(18)Rebalance Fund Split}</th>
+        <td>
+          <input type="checkbox" name="RebalanceFlag">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(23)Effective Date}</th>
+        <td>
+          <input type="text" name="TransEffectiveDate" size=10>
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SaveButton" value="{%(100)Submit}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(200)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Allowances}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}" />
+</head>
+<body>
+  <form method="post" action="%SERVLET_PATH%">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(2)Allowances}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Code}</th>
+        <td>{KEY}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(4)Description}</th>
+        <td>
+          <input name="DESCRIPTION" size="60" />
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th>{%(5)Duration}</th>
+        <th>{%(6)Percentage}</th>
+      </tr>
+      <!--{ENTRY_LIST}-->
+      <tr>
+        <td colspan="2">
+          <input name="AddButton" type="submit" value="{%(16)Add}" />
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SaveButton" value="{%(100)Save}" />
+        </td>
+        <td class="return">
+          <a href="%SERVLET_PATH%?screen_name=%BACK_LINK%">
+            {%(200)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}" />
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

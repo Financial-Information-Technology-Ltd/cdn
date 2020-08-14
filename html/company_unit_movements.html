@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Company Unit Movements}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td colspan="7">
+          <b>{%(2)Company Unit Movements for} {PolicyKey}</b>
+        </td>
+        <td align="right">
+          <b>
+            <a href="%BACK_LINK%">
+              {%(13)Return}
+              <img src="%BACK_IMAGE%" alt="{%(666)Back}" alt="">
+            </a>
+          </b>
+        </td>
+      </tr>
+    </table>
+    <table class="zebra">
+      <tr>
+        <th ROWSPAN="2">
+          <a href="?screen_name=show_policy_company_unit_movements&PolicyKey={PolicyKey}&SortField=eff_date">{%(3)Eff
+            Date}</a>
+        </th>
+        <th ROWSPAN="2">
+          <a href="?screen_name=show_policy_company_unit_movements&PolicyKey={PolicyKey}&SortField=reason">{%(4)Reason}</a>
+        </th>
+        <th ROWSPAN="2">
+          <a href="?screen_name=show_policy_company_unit_movements&PolicyKey={PolicyKey}&SortField=coverage">{%(5)Cov
+            No}</a>
+        </th>
+        <th ROWSPAN="2">
+          <a href="?screen_name=show_policy_unit_movement&PolicyKey={PolicyKey}&SortField=unit_date">{%(6)Unit Price
+            Date}</a>
+        </th>
+        <th ROWSPAN="2">
+          <a href="?screen_name=show_policy_company_unit_movements&PolicyKey={PolicyKey}&SortField=fund_code">{%(7)Fund}</a>
+        </th>
+        <!--%(INITIAL_UNITS)-->
+        <th colspan="2">{%(81)Initial Units}</th>
+        <!--%-->
+        <th colspan="2">{%(82)Accumulation Units}</th>
+        <th ROWSPAN="2">
+          <a href="?screen_name=show_policy_company_unit_movements&PolicyKey={PolicyKey}&SortField=trans_no">{%(10)Trans.No}</a>
+        </th>
+        <th ROWSPAN="2">
+          <a href="?screen_name=show_policy_company_unit_movements&PolicyKey={PolicyKey}&SortField=reversal_no">{%(11)Rv.No}</a>
+        </th>
+        <th ROWSPAN="2">{%(12)Source}</th>
+      </tr>
+      <tr>
+        <!--%(INITIAL_UNITS)-->
+        <th>
+          <a href="?screen_name=show_policy_company_unit_movements&PolicyKey={PolicyKey}&SortField=fund_change_init">{%(8)Moved}</a>
+        </th>
+        <th>
+          <a href="?screen_name=show_policy_company_unit_movements&PolicyKey={PolicyKey}&SortField=unit_price_init">{%(9)Unit
+            Price}</a>
+        </th>
+        <!--%-->
+        <th>
+          <a href="?screen_name=show_policy_company_unit_movements&PolicyKey={PolicyKey}&SortField=fund_change">{%(8)Moved}</a>
+        </th>
+        <th>
+          <a href="?screen_name=show_policy_company_unit_movements&PolicyKey={PolicyKey}&SortField=unit_price">{%(9)Unit
+            Price}</a>
+        </th>
+      </tr>
+      <!--{UnitMovements}-->
+    </table>
+    <P align="right">
+      <b>
+        <a href="%BACK_LINK%">
+          {%(13)Return}
+          <img src="%BACK_IMAGE%" alt="{%(666)Back}" alt="">
+        </a>
+      </b>
+    </P>
+    <input type="hidden" name="NextText" value="{%(111)&hellip; more &hellip;}">
+    <input type="hidden" name="PrevText" value="{%(112)&hellip; previous &hellip;}">
+  </form>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Facultative Reinsurance}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form method="post" action="%SERVLET_PATH%">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(2)Change Facultative Reinsurance}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Policy No}</th>
+        <td>{PolicyNo}</td>
+      </tr>
+      <tr>
+        <th>{%(5)Coverage No}</th>
+        <td>
+          <select name="CovNo" ONCHANGE="document.forms[0].submit()">
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(4)Coverage SAR}</th>
+        <td>{CoverageSAR}</td>
+      </tr>
+      <tr>
+        <th>{%(6)Client SAR}</th>
+        <td>{ClientSAR}</td>
+      </tr>
+      <tr>
+        <th>{%(7)Plan Limit}</th>
+        <td>{PlanLimit}</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th></th>
+        <th>{%(8)Treaty Code}</th>
+        <th>{%(9)Reinsurer}</th>
+        <th>{%(10)Currency}</th>
+        <th>{%(11)Amount Ceded}</th>
+        <th>{%(12)Lower Limit}</th>
+        <th>{%(13)Upper Limit}</th>
+        <th>{%(14)Share (%)}</th>
+        <th>{%(15)Frequency}</th>
+        <th>{%(16)Incidence}</th>
+        <th>{%(17)SAR Calc Code}</th>
+        <th>{%(18)Use Policy Unitrate}</th>
+        <th>{%(19)Reinsurance Rate}</th>
+        <th>{%(20)Reverse on Surrender}</th>
+        <th>{%(21)Reins Prem Rate Table (if blank, use original terms)}</th>
+        <th>{%(22)Rebate Rate Table}</th>
+        <th></th>
+      </tr>
+      <tr>
+        <th rowspan="{PlanTreatyCount}">{%(23)Plan Treaties}</th>
+        <!--{PLAN_TREATY_LIST}-->
+      <tr>
+        <th rowspan="{FacTreatyCount}">{%(24)Fac Treaties}</th>
+        <!--{FAC_TREATY_LIST}-->
+      <tr>
+        <td><input type="submit" name="AddFacultativeTreatyButton" value="{%(29)Add}"></td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th style="width: 30%">{%(25)Reinsured SAR}</th>
+        <td>{ReinsuredSAR}</td>
+      </tr>
+      <tr>
+        <th>{%(26)Retained}</th>
+        <td>{Retained}</td>
+      </tr>
+      <tr>
+        <th>{%(27)Total SAR}</th>
+        <td>{TotalSAR}</td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SaveButton" value="{%(100)Submit}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Agent Loan}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(1)Agent Loan}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(2)Agent No}</th>
+        <td>{AgentKey}</td>
+      </tr>
+      <tr>
+        <th>{%(3)Agent Name}</th>
+        <td>{AgentName}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Currency}</th>
+        <td>
+          <select name="LOAN_CURRENCY">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(5)Loan Amount}</th>
+        <td>
+          <input type="text" name="LOAN_AMOUNT" size=12>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(6)Start Date}</th>
+        <td>
+          <input type="text" name="START_DATE">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(7)Loan Term (months)}</th>
+        <td>
+          <input type="text" name="LOAN_TERM" size=4>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(8)Loan Type}</th>
+        <td>
+          <select name="LOAN_TP">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+    {PAYMENTS_OUT}
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SaveButton" value="{%(100)Save}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

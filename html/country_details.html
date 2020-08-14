@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Country Details}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(1)Country Details}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(2)Code}</th>
+        <td>{CountryCode}</td>
+      </tr>
+      <tr>
+        <th>{%(25)Alpha-3 Code}</th>
+        <td>
+          <input type="text" name="ALPHA3_CODE" size=3>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(3)Description}</th>
+        <td>
+          <input type="text" name="DESCRIPTION" size=43>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(21)TT Country Name}</th>
+        <td>
+          <input type="text" name="TT_COUNTRY_NAME" size=43>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(4)Cool Off Period}</th>
+        <td>
+          <input type="text" name="COOL_OFF" size=2>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(5)Default Banking Method}</th>
+        <td>
+          <select name="BANKING_METHOD">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(6)Direct Debit Method}</th>
+        <td>
+          <select name="PAYMENT_METHOD">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(8)Bank Sort Code is optional}</th>
+        <td>
+          <input type="checkbox" name="SORT_CODE_OPTIONAL">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(14)Validate Bank Sort Code}</th>
+        <td>
+          <input type="checkbox" name="VALIDATE_SORT_CODE">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(10)Postcode Prefix}</th>
+        <td>
+          <input type="text" name="POSTCODE_PREFIX" size=10>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(13)Bank Account Minimum Length}</th>
+        <td>
+          <input type="text" name="BANK_ACCOUNT_MIN_LENGTH">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(12)Bank Account Maximum Length}</th>
+        <td>
+          <input type="text" name="BANK_ACCOUNT_MAX_LENGTH">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(20)Language}</th>
+        <td>
+          <table>
+            <!--{LANGUAGE_TABLE}-->
+            <tr>
+              <td>
+                <input type="submit" name="LANGUAGE_BUTTON" value="{%(30)Add}">
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(50)Country Risk Category}</th>
+        <td>
+          <select name="RISK_CATEGORY">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(11)Premium Tax Rate (percent of premium)}</th>
+        <td>
+          <input type="text" name="PREMIUM_TAX_RATE" size=10>
+        </td>
+      </tr>
+      <tr>
+      <tr>
+        <th>{%(29)Premium Tax Rate Table (if Premium Tax rate not specified)}</th>
+        <td>
+          <select name="PREMIUM_TAX_RATE_TABLE">
+             <option value=""> &nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(23)New Business Tax Rate (percent of SA)}</th>
+        <td>
+          <input type="text" name="NEW_BUSINESS_TAX_RATE" size=10>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(22)How to format address in documentation}</th>
+        <td>
+          <select name="ADDRESS_FORMAT">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(24)Post Code Look Up Allowed}</th>
+        <td>
+          <input type="checkbox" name="POST_CODE_LOOKUP_ALLOWED">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(26)Sort Order}</th>
+        <td>
+          <input type="text" name="SORT_ORDER" size=4>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(27)ISO Number}</th>
+        <td>
+          <input type="text" name="ISO_NUMBER" size=4>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(28)CRS Start Date}</th>
+        <td>
+          <input type="text" name="CRS_START_DATE" size="12">
+          {DATE_FORMAT}
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SaveCountry" value="{%(99)Save}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(100)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

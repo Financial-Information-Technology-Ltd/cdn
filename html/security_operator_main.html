@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Security Operator}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form method="post" action="%SERVLET_PATH%">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="3">{HELP_LINK}{%(1)Security Operator}</td>
+      </tr>
+      <tr>
+        <th>{%(2)Operator}</th>
+        <td>
+          <input type="text" name="OperatorId">
+        </td>
+        <td>
+          <input type="submit" name="GetOperatorid" value="{%(3)Continue}">
+        </td>
+      </tr>
+    </table>
+    <!--%(OPERATOR_LIST_FRAGMENT)-->
+    <table>
+      <tr>
+        <th>{%(10)ID}</th>
+        <th>{%(11)Name}</th>
+        <th>{%(12)Active}</th>
+        <th>{%(13)System Admin}</th>
+        <th>{%(14)Security Group}</th>
+        <th>{%(15)Language}</th>
+      </tr>
+      <!--{OPERATOR_LIST}-->
+    </table>
+    <!--%-->
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="ListOperators" value="{%(5)List Operators}">
+        </td>
+        <td class="return">
+          <a href="?screen_name=DO_MAIN_PAGE">
+            {%(4)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

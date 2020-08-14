@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Report Criteria}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan=2>{HELP_LINK}{%(1)Report Criteria}</td>
+      </tr>
+      <tr>
+        <th style="width: 20%">{%(2)Report Name}</th>
+        <td>{ReportName}</td>
+      </tr>
+      <tr>
+        <th>{%(3)Description}</th>
+        <td>{Description}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Data File name}</th>
+        <td>{DataFile}</td>
+      </tr>
+      <tr>
+        <th>{%(5)Repeat multivalues}</th>
+        <td>{RepeatMultivalues}</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th colspan=4>{%(6)Selection criteria}</th>
+      </tr>
+      <tr>
+        <th>{%(8)Field Name}</th>
+        <th>{%(9)Operator}</th>
+        <th>{%(10)Value}</th>
+        <th>{%(11)And/Or}</th>
+      </tr>
+      <!--{SELECTION_CRITERIA}-->
+    </table>
+    <table>
+      <tr>
+        <th colspan=2>{%(14)Sort criteria}</th>
+      </tr>
+      <tr>
+        <th>{%(16)Sort Fields}</th>
+        <th>{%(15)Sort Order}</th>
+      </tr>
+      <!--{SORT_ORDER_OPTIONS}-->
+    </table>
+    <table>
+      <tr>
+        <th colspan=4>{%(12)Filter criteria}</th>
+      </tr>
+      <tr>
+        <th>{%(8)Field Name}</th>
+        <th>{%(9)Operator}</th>
+        <th>{%(10)Value}</th>
+        <th>{%(11)And/Or}</th>
+      </tr>
+      <!--{FILTER_CRITERIA}-->
+    </table>
+    <table>
+      <tr>
+        <th colspan=3>{%(17)Output fields}</th>
+      </tr>
+      <tr>
+        <th>{%(18)Display Field}</th>
+        <th>{%(19)Field Format}</th>
+        <th>{%(20)Field Length}</th>
+      </tr>
+      <!--{DISPLAY_LIST}-->
+    </table>
+    <table>
+      <tr>
+        <th style="width: 20%">{%(22)Header}</th>
+        <td colspan=4>{Header}</td>
+      </tr>
+      <tr>
+        <th>{%(23)Footer}</th>
+        <td colspan=4>{Footer}</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <td style="width: 20%">{%(24)Output Format}</td>
+        <td>
+          <select name="ReportOutputType"></select>
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="RunReport" value="{%(25)Run}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(100)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

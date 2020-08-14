@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Unit Withdrawal}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan=2>{HELP_LINK}{%(1)Unit Withdrawal}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Policy No}</th>
+        <td>{PolicyKey}</td>
+      </tr>
+      <tr>
+        <th>{%(10)Coverage No}</th>
+        <td>{CoverageNo}</td>
+      </tr>
+      <tr>
+        <th>{%(7)Plan Name}</th>
+        <td>{PLAN}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Withdrawal Type}</th>
+        <td>{WithdrawalType}</td>
+      </tr>
+      <tr>
+        <th>{%(29)Withdrawal Date}:</th>
+        <td>{WithdrawalDate}</td>
+      </tr>
+      <tr>
+        <th>{%(6)Owner}</th>
+        <td>{OWNERS}</td>
+      </tr>
+      <tr>
+        <th>{%(8)Policy Currency}</th>
+        <td>{CURRENCY}</td>
+      </tr>
+      <tr>
+        <th>{%(9)Minumum Amount}</th>
+        <td>{MINIMUM_AMOUNT}</td>
+      </tr>
+      <!--%(DEPOSIT_FRAGMENT)-->
+      <tr>
+        <th>{%(38)Deposit Balance}</th>
+        <td>{DEPOSIT_BALANCE}</td>
+      </tr>
+      <!--%(DEPOSIT_FRAGMENT_END)-->
+      <!--%(TOTAL_VALUE_FRAGMENT)-->
+      <tr>
+        <th>{%(11)Total withdrawal amount}</th>
+        <td>
+          <input type="text" name="TOTAL_WITHDRAWAL_VALUE">
+        </td>
+      </tr>
+      <!--%(TOTAL_VALUE_FRAGMENT_END)-->
+      <!--%(TOTAL_PERCENT_FRAGMENT)-->
+      <tr>
+        <th>{%(40)Withdrawal percent}</th>
+        <td>
+          <input type="text" name="TOTAL_WITHDRAWAL_PERCENT" size=8>
+        </td>
+      </tr>
+      <!--%(TOTAL_PERCENT_FRAGMENT_END)-->
+      <!--%(MVA_FRAGMENT)-->
+      <tr>
+        <th>{%(36)Market Value Adjustment (percent)}</th>
+        <td>
+          <input type="text" name="MVA_PERCENT" size=8>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(37)Free Withdrawal Amount}</th>
+        <td>
+          <input type="text" name="MAX_FREE_AMOUNT" size=12>
+        </td>
+      </tr>
+      <!--%-->
+    </table>
+    <!--%(FUND_LIST_FRAGMENT)-->
+    <table>
+      <thEAD>
+        <tr>
+          <th>{%(21)Policy Funds}</th>
+          <th>{%(22)Number of Units}</th>
+          <th>{%(23)Latest Price}</th>
+          <th>{%(24)Fund Value} ({CURRENCY})</th>
+          <th>{VALUE_COL_TITLE}</th>
+          <!--%(QUOTE_BODY1)-->
+          <th>{%(25)Withdrawal Units}</th>
+          <th>{%(26)Withdrawal Value}</th>
+          <th>{%(27)Number of Units After Withdrawal}</th>
+          <th>{%(28)Unit Value After Withdrawal} ({CURRENCY})</th>
+          <!--%(QUOTE_BODY1_END)-->
+        </tr>
+      </thEAD>
+      <TBODY>
+        <!--{FUND_LIST}-->
+      </TBODY>
+    </table>
+    <!--%(FUND_LIST_FRAGMENT_END)-->
+    <!--%(QUOTE_BODY2)-->
+    <table>
+      <tr>
+        <th style="width: 30%">{%(31)Total Withdrawal}</th>
+        <td>{WITHDRAWAL_TOTAL}</td>
+      </tr>
+      <tr>
+        <th>{%(32)Penalty}</th>
+        <td>{WITHDRAWAL_PENALTY}</td>
+      </tr>
+      <tr>
+        <th>{%(41)Fee}</th>
+        <td>{WITHDRAWAL_FEE}</td>
+      </tr>
+      <!--%(TRADE_FRAGMENT)-->
+      <tr>
+        <th>{%(33)Trade Fee}</th>
+        <td>{WITHDRAWAL_TRADE_FEE}</td>
+      </tr>
+      <!--%(TRADE_FRAGMENT_END)-->
+      <tr>
+        <th>{%(35)Reorganisation Bonus}</th>
+        <td>{INVESTOR_BONUS}</td>
+      </tr>
+      <tr>
+        <th>{%(351)Terminal Bonus}</th>
+        <td>{TERMINAL_BONUS}</td>
+      </tr>
+      <!--%(TBMVR_FRAGMENT)-->
+      <tr>
+        <th>{%(42)TB/MVR Bonus}</th>
+        <td>{WITHDRAWAL_TBMVR}</td>
+      </tr>
+      <!--%(TBMVR_FRAGMENT_END)-->
+      <tr>
+        <th>{%(34)Net Withdrawal}</th>
+        <td>{NET_WITHDRAWAL}</td>
+      </tr>
+      <tr>
+        <th>{%(39)Tax}</th>
+        <td>{TAX_AMOUNT}</td>
+      </tr>
+    </table>
+    <!--%(QUOTE_BODY2_END)-->
+    {PAYMENTS_OUT}
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="PrevButton" value="{%(101)Previous}">
+        </td>
+        <td align="right">
+          <input type="submit" name="NextButton" value="{%(102)Next}">
+          <input type="submit" name="SubmitButton" value="{%(100)Submit}">
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

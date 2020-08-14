@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Agent Endorsement}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form method="post" action="%SERVLET_PATH%">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(2)Agent endorsement}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Agent No}</th>
+        <td>{AgentKey}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Name}</th>
+        <td>{AgentName}</td>
+      </tr>
+      <tr>
+        <th>{%(5)Reason}</th>
+        <td>{Reason}</td>
+      </tr>
+      <tr>
+        <th>{%(6)Date/Time}</th>
+        <td>{Date} {Time}</td>
+      </tr>
+      <tr>
+        <th>{%(8)User}</th>
+        <td>{UserId}</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th>{%(11)Field}</th>
+        <th>{%(12)Old Value}</th>
+        <th>{%(13)New Value}</th>
+      </tr>
+      <!--{CHANGE_LIST}-->
+    </table>
+    <table class="navigation">
+      <tr>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Beneficiaries}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan=2>{HELP_LINK}{%(2)Beneficiaries}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Policy No}</th>
+        <td>{PolicyKey}</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th colspan=3>{%(10)Primary Beneficiaries}</th>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(15)Clause Code}</th>
+        <td colspan=2>
+          <select name="BeneficiaryClauseCode_1" onchange="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(11)Client}</th>
+        <th>{%(13)Share}</th>
+        <th>{%(14)Text}</th>
+      </tr>
+      <!--{PrimaryBeneficiaryTable}-->
+      <tr>
+        <td>&nbsp;</td>
+        <td colspan=2>
+          <input type="text" name="PrimTotal" READONLY DISABLED>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(16)Clause Text}</th>
+        <td colspan=2>
+          <input name="BeneficiaryClauseText_1" size=60 onchange="document.forms[0].submit()">
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th colspan=3>{%(20)Secondary Beneficiaries}</th>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(15)Clause Code}</th>
+        <td colspan=2>
+          <select name="BeneficiaryClauseCode_2" onchange="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(11)Client}</th>
+        <th>{%(13)Share}</th>
+        <th>{%(14)Text}</th>
+      </tr>
+      <!--{SecondaryBeneficiaryTable}-->
+      <tr>
+        <td>&nbsp;</td>
+        <td colspan=2>
+          <input type="text" name="SecTotal" READONLY DISABLED>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(16)Clause Text}</th>
+        <td colspan=2>
+          <input name="BeneficiaryClauseText_2" size=60 onchange="document.forms[0].submit()">
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th colspan=3>{%(21)Tertiary Beneficiaries}</th>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(15)Clause Code}</th>
+        <td colspan=2>
+          <select name="BeneficiaryClauseCode_3" onchange="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(11)Client}</th>
+        <th>{%(13)Share}</th>
+        <th>{%(14)Text}</th>
+      </tr>
+      <!--{TertiaryBeneficiaryTable}-->
+      <tr>
+        <td>&nbsp;</td>
+        <td colspan=2>
+          <input type="text" name="TertTotal" READONLY DISABLED>
+        </td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(16)Clause Text}</th>
+        <td colspan=2>
+          <input name="BeneficiaryClauseText_3" size=60 onchange="document.forms[0].submit()">
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th colspan=3>{%(22)Quaternary Beneficiaries}</th>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(15)Clause Code}</th>
+        <td colspan=2>
+          <select name="BeneficiaryClauseCode_4" onchange="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(11)Client}</th>
+        <th>{%(13)Share}</th>
+        <th>{%(14)Text}</th>
+      </tr>
+      <!--{QuaternaryBeneficiaryTable}-->
+      <tr>
+        <td>&nbsp;</td>
+        <td colspan=2>
+          <input type="text" name="QuatTotal" READONLY DISABLED>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(16)Clause Text}</th>
+        <td colspan=2>
+          <input name="BeneficiaryClauseText_4" size=60 onchange="document.forms[0].submit()">
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SubmitButton" value="{%(100)Submit}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+<script type="text/javascript">
+function share_change(field_name,prefix)
+{
+  if (!float_changed(field_name,2))
+    return false;
+  c_element = document.forms[0].elements[prefix+"BenCount"];
+  v_count = parseInt(c_element.value,10);
+  if (isNaN(v_count))
+    v_count = 0;
+  total = 0;
+  for (index=0; index<v_count; index++)
+  {
+    name = prefix+"BenShare_"+index;
+    element = document.forms[0].elements[name];
+    if (element.value!="")
+      total += parse_float(element.value);
+  }
+  t_element = document.forms[0].elements[prefix+"Total"];
+  t_element.value = format_float(total,2);
+  return true;
+}
+</script>
+</html>

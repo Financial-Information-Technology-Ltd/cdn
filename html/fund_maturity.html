@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Maturity}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(2)Process Maturity}</td>
+      </tr>
+      <tr>
+        <th width=30%>{%(3)Fund Code}</th>
+        <td>{FUND_CODE}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Fund Name}</th>
+        <td>{FUND_NAME}</td>
+      </tr>
+      <tr>
+        <th>{%(5)User Id}</th>
+        <td>{USER_ID}</td>
+      </tr>
+      <tr>
+        <th>{%(6)Effective Date}</th>
+        <td>{EffectiveDate}</td>
+      </tr>
+      <tr>
+        <th>{%(7)Maturity Rate}</th>
+        <td>
+          <input type="text" name="MatRate" size=10>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(8)Confirm Maturity Rate}</th>
+        <td>
+          <input type="text" name="MatRate2" size=10>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(9)Password}</th>
+        <td>
+          <input type="PASSWORD" name="UserPassword">
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input name="ProcessMaturityButton" type="submit" value="{%(101)Process Maturity}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(103)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

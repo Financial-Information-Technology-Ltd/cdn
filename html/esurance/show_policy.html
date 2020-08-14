@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(2)Policy Details}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan=2>{HELP_LINK}{%(2)Policy Details}</td>
+      </tr>
+      <tr>
+        <th colspan="2">{%(1)Agent} {AGENT_NO} - {AGENT_NAME}</th>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Policy No}</th>
+        <td>{PolicyKey}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Policy Owner}</th>
+        <td>{PolicyOwner}</td>
+      </tr>
+      <tr>
+        <th>&nbsp;</th>
+        <td>{OwnerAddress}</td>
+      </tr>
+      <tr>
+        <th>{%(5)Joint Owner}</th>
+        <td>{PolicyJointOwner}</td>
+      </tr>
+      <tr>
+        <th>{%(6)Policy Status}</th>
+        <td>
+          {PolicyStatus}
+          <!--%(UNDERWRITING)-->
+          --
+          <a href="?screen_name=unresolved_underwriting&PolicyKey={PolicyKey}&agentNo={AgentNo}">{%(40)Underwriting}</a>
+          <!--%-->
+        </td>
+      </tr>
+      <tr>
+        <th>{%(7)Issue Date}</th>
+        <td>{PolicyIssueDate}</td>
+      </tr>
+      <tr>
+        <th>{%(9)Dynamic Option}</th>
+        <td>{DynamicOption}</td>
+      </tr>
+      <tr>
+        <th>{%(10)Application No}</th>
+        <td>{ApplicationNo}</td>
+      </tr>
+      <tr>
+        <th>{%(11)Total Policy Value}</th>
+        <td>{TotalPolicyValue}</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th colspan="7">{%(12)Coverages}</th>
+      </tr>
+      <tr>
+        <th>{%(14)Plan Name}</th>
+        <th>{%(15)Mode Method}</th>
+        <th align="right">{%(16)Face Amount}</th>
+        <th align="right">{%(17)Premium}</th>
+        <th>{%(18)Paid to Date}</th>
+        <th align="right">{%(19)Payment Term}</th>
+        <th>{%(21)Underwritten}</th>
+      </tr>
+      <!--{COVERAGE_TABLE}-->
+    </table>
+    <table>
+      <tr>
+        <th colspan="5">{%(22)Funds}</th>
+      </tr>
+      <tr>
+        <th>{%(23)Fund}</th>
+        <th>{%(24)Fund Name}</th>
+        <th align="right">{%(25)Number of Units}</th>
+        <th align="right">{%(26)Unit Price}</th>
+        <th align="right">{%(27)Fund Value}</th>
+      </tr>
+      <!--{FUND_TABLE}-->
+    </table>
+    <table>
+      <tr>
+        <th colspan="2">{%(28)Life assured}</th>
+      </tr>
+      <tr>
+        <th>{%(29)CovNo}</th>
+        <th>{%(31)Name}</th>
+      </tr>
+      <!--{LIFE_ASSURED}-->
+    </table>
+    <table>
+      <tr>
+        <th colspan="3">{%(32)Beneficiaries}</th>
+      </tr>
+      <tr>
+        <th align="right">{%(35)Share}</th>
+        <th>{%(34)Name}</th>
+        <th>{%(33)Level}</th>
+      </tr>
+      <!--{BENEFICIARIES}-->
+    </table>
+    <table class="fkeys">
+      <tr>
+        <td>
+          <b>
+            <a href="?screen_name=policy_activity&PolicyKey={PolicyKey}{ReturnTo}">{%(36)Policy Accounting}</a>
+          </b>
+        </td>
+        <td>
+          <b>
+            <a href="?screen_name=unit_movements&PolicyKey={PolicyKey}{ReturnTo}">{%(37)Unit Movements}</a>
+          </b>
+        </td>
+        <td>
+          <b>
+            <a href="?screen_name=show_all_policy_commissions&PolicyKey={PolicyKey}{ReturnTo}">{%(38)Commissions}</a>
+          </b>
+        </td>
+        <!--%(IMAGE_LIST)-->
+        <td>
+          <b>
+            <a href="?screen_name=show_policy_images&PolicyKey={PolicyKey}{ReturnTo}">{%(41)Documents}</a>
+          </b>
+        </td>
+        <!--%-->
+      </tr>
+    </table>
+    <p align="right">
+      <b>
+        <a href="%BACK_LINK%">
+          {%(39)Return}
+          <img src="/lf/images/back.gif">
+        </a>
+      </b>
+    </p>
+  </form>
+</body>
+</html>

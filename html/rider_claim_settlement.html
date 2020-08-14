@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Rider Claim Settlement}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(1)Rider Claim Settlement}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Policy number}</th>
+        <td>{PolicyNo}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Policy plan}</th>
+        <td>{BasePlan}</td>
+      </tr>
+      <tr>
+        <th>{%(5)Policy status}</th>
+        <td>{BaseStatus}</td>
+      </tr>
+      <tr>
+        <th>{%(6)Owner}</th>
+        <td>{Owner}</td>
+      </tr>
+      <tr>
+        <th>{%(7)Rider}</th>
+        <td>{ClaimCoverage}</td>
+      </tr>
+      <tr>
+        <th>{%(8)Rider status}</th>
+        <td>{CoverageStatus}</td>
+      </tr>
+    </table>
+    <!--%(DEATH_CLAIM_FRAGMENT)-->
+    <table>
+      <tr>
+        <th>&nbsp;</th>
+        <th>{%(11)First Person}</th>
+        <th>{%(12)Second Person}</th>
+      </tr>
+      <tr>
+        <th>{%(13)Client}</th>
+        <td>{FirstLifeCode}</td>
+        <td>{SecondLifeCode}</td>
+      </tr>
+      <tr>
+        <th>{%(14)Notification Date}</th>
+        <td>{FirstLifeNotificationDate}</td>
+        <td>{SecondLifeNotificationDate}</td>
+      </tr>
+      <tr>
+        <th>{%(15)Insurance Event Date}</th>
+        <td>{FirstLifeEventDate}</td>
+        <td>{SecondLifeEventDate}</td>
+      </tr>
+      <tr>
+        <th>{%(16)Certificate}</th>
+        <td>{FirstLifeCertificate}</td>
+        <td>{SecondLifeCertificate}</td>
+      </tr>
+      <tr>
+        <th>{%(17)Cause}</th>
+        <td>{FirstLifeCause}</td>
+        <td>{SecondLifeCause}</td>
+      </tr>
+    </table>
+    <!--%-->
+    <!--%(JOB_LOSS_CLAIM_FRAGMENT)-->
+    <table>
+    <tr>
+      <th style="width: 30%">{%(20)Job Loss Client}</th>
+      <td>{Client}</td>
+    </tr>
+    <tr>
+      <th>{%(21)Notification Date}</th>
+      <td>
+        <input type="text" name="NotificationDate">
+      </td>
+    </tr>
+    <tr>
+      <th>{%(22)Insurance Event Date}</th>
+      <td>
+        <input type="text" name="EventDate">
+      </td>
+    </tr>
+    <tr>
+      <th>{%(23)Certificate}</th>
+      <td>
+        <input type="checkbox" name="Certificate">
+      </td>
+    </tr>
+    </table>
+    <!--%-->
+    <!--%(BENEFICIARIES_FRAGMENT)-->
+    <table>
+      <tr>
+        <th colspan="4">{%(31)Beneficiaries}</th>
+      </tr>
+      <tr>
+        <th style="width: 15%">{%(32)Share}</th>
+        <th style="width: 15%">{%(33)Number}</th>
+        <th>{%(34)Name}</th>
+        <th>{%(35)Level}</th>
+      </tr>
+      <!--{BENEFICIARIES}-->
+    </table>
+    <!--%-->
+    <table>
+      <tr>
+        <th colspan="2">{%(51)Benefit Amount}</th>
+        <td>{BENEFIT_AMOUNT}</td>
+      </tr>
+      <tr>
+        <th colspan="2">{%(52)Reorganisation Bonus}</th>
+        <td>{INVESTOR_BONUS}</td>
+      </tr>
+      <tr>
+        <th colspan="2">{%(53)Postponed Amount}</th>
+        <td>{POSTPONED_AMOUNT}</td>
+      </tr>
+      <tr>
+        <th colspan="3">{%(61)Adjustment amounts}</th>
+      </tr>
+      <!--{ADJUSTMENT_DETAILS}-->
+      <tr>
+        <td colspan="3">
+          <input type="submit" name="AdjButton" value="{%(62)Add}">
+        </td>
+      </tr>
+      <tr>
+        <th colspan="2">{%(63)Total Payment}</th>
+        <td>{TOTAL_PAYMENT}</td>
+      </tr>
+    </table>
+    <!--%(PAYMENTS_OUT)-->
+    {PAYMENTS_OUT}
+    <!--%(PAYMENTS_OUT_END)-->
+    <table>
+      <tr>
+        <th>{%(71)Claim Comments}</th>
+        <td colspan="2">
+          <TEXTAREA name="CLAIM_COMMENTS" ROWS="4" COLS="100"></TEXTAREA>
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="ProcessButton" value="{%(100)Settle the Claim}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

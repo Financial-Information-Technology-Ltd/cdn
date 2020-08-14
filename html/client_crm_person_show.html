@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Client}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form method="post" action="%SERVLET_PATH%">
+    <table class="clientCms">
+      <tbody>
+      <tr>
+        <th class="title" colspan="3">
+          <span style="float: right; padding-right: 50px;" class="labeled-bold">{ClientKey}</span>
+        </th>
+      </tr>
+      <tr>
+        <th style="width: 35%;" ><span class="labeled">{Title} {FirstName} {OtherName}</span> <span class="labeled-bold">{LastName}</span></th>
+        <th  class="labeled">{Sex}</th>
+        <th style="width: 35%;"  class="labeled">{BirthDate}</th>
+      </tr>
+      <tr>
+        <td  style="width: 30px;">
+          <table style="width:100%">
+            <tbody>
+               <tr>
+                 <th class="labeled-bold">{%(5)mobile} </th>
+                 <td class="labeled"><span class="labeled-floated">{MobileNo}</span><input id="SendMobileSmsButton" name="SendMobileSmsButton" type="button" value="{%(18)sms}" style="float: right;" ></td>
+               </tr>
+               <tr>
+                 <th class="labeled-bold">{%(6)home}</th>
+                 <td class="labeled"><span class="labeled-floated"> {PhoneNo}</span><input id="SendHomeSmsButton" name="SendHomeSmsButton" type="button" value="{%(18)sms}" style="float: right;" ></td>
+               </tr>
+               <tr>
+                 <th class="labeled-bold">{%(7)email}</th>
+                 <td><span class="labeled-floated">{EMail}</span> <input id="SendEmailButton" name="SendEmailButton" type="button" value="{%(19)email}" style="float: right;"></td>
+               </tr>
+               <tr>
+                 <th class="labeled-bold">{%(8)address}</th>
+                 <td>
+                   <div><span class="labeled-address" style="margin-top: 5px">{Address}</span></div>
+                   <div><span class="labeled-address">{City}</span></div>
+                   <div><span class="labeled-address">{County}</span></div>
+                   <div><span class="labeled-address">{PostCode}</span></div>
+                   <div><span class="labeled-address" style="margin-bottom: 10px">{Country}</span></div>
+                 </td>
+               </tr>
+            </tbody>
+          </table>
+      </tbody>
+    </table>
+    <table>
+      <tr>
+        <th>{%(9)rag}</th>
+        <th>{%(10)task}</th>
+        <th>{%(11)status}</th>
+        <th>{%(12)subject}</th>
+        <th>{%(13)assigned to}</th>
+        <th>{%(14)start}</th>
+        <th>{%(15)due}</th>
+      </tr>
+      <!--{TASK_LIST}-->
+    </table>
+    <table class="navigation">
+      <tbody>
+      <tr>
+        <td style="width: 35%;">
+          <a href="%NEW_WORKFLOW_LINK%" class="input" style="margin-right: 10px;">{%(16)new workflow}</a>
+          <a href="%DETAILS_LINK%" class="input">{%(17)details}</a>
+          <a href="%WORKFLOWS_LINK%" class="input">{%(23)workflow}</a>
+          <a href="%DOCSTORE_LINK%" class="input">{%(24)DocStore}</a>
+        </td>
+        <td></td>
+        <td style="width: 35%;" class="return">
+          <a href="%BACK_LINK%">
+            {%(200)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <div id="smsModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close sendSmsClose">&times;</span>
+          <h2>{%(20)Send Sms}</h2>
+        </div>
+        <div class="modal-body">
+          <input type="hidden" id="sendsmsfrom"  name="sendsmsfrom"/>
+          <label for="smsDescription" style="font-size: 14px; margin-top: 20px;">Description:</label>
+          <input type="text" id="smsDescription"  name="smsDescription" class="popup_input full_width" />
+          <label for="smsMessage" style="font-size: 14px; margin-top: 20px;">Message:</label>
+          <textarea rows="10"  id="smsMessage" name="smsMessage" class="popup_input full_width"></textarea>
+          <label for="smsSecret" style="font-size: 14px; margin-top: 20px;">Password:</label>
+          <input id="smsSecret" name="smsSecret" class="popup_input full_width" type="password"></input>
+        </div>
+        <div class="modal-footer">
+          <input  name="sendMobileSms" type="submit" value="{%(21)Send Sms}" class="popup_input" >
+        </div>
+      </div>
+    </div>
+    <div id="emailModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close sendEmailClose">&times;</span>
+          <h2>{%(22)Send Email}</h2>
+        </div>
+        <div class="modal-body">
+          <label for="emailSubject" style="margin-top: 10px;">Subject:</label>
+          <input type="text" id="emailSubject"  name="emailSubject" class="popup_input full_width" />
+          <label for="emailMessage">Message:</label>
+          <textarea rows="10"  id="emailMessage" name="emailMessage" class="popup_input full_width"></textarea>
+          <label for="emailSecret" style="font-size: 14px; margin-top: 20px;">Password:</label>
+          <input id="emailSecret" name="emailSecret" class="popup_input full_width" type="password"></input>
+        </div>
+        <div class="modal-footer">
+          <input  name="sendEmail" type="submit" value="{%(22)Send Email}" class="popup_input"/>
+        </div>
+      </div>
+    </div>
+    <div id="basePopup" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content alert-modal">
+        <div class="modal-header">
+          <span class="close basePopupClose">&times;</span>
+          <h2>{BASS_HEADER_TITLE}</h2>
+        </div>
+        <div class="modal-body" style="padding: 15px; min-height: 100px">
+          {ERRORS}
+        </div>
+        <div class="modal-footer">
+          <input  id="bassPopupClose" name="bassPopupClose" type="button" value="{%(32)Close}" class="popup_input"/>
+        </div>
+      </div>
+    </div>
+  </form>
+  <script src={TINY_EDITOR}></script>
+  <script>
+    var trigger = {TRIGGER};
+    function setupSms(){
+      var smsModal = document.getElementById("smsModal");
+      var sendMobileSmsBtn = document.getElementById("SendMobileSmsButton");
+      var sendHomeSmsBtn = document.getElementById("SendHomeSmsButton");
+      var sendSmsSpan = document.getElementsByClassName("sendSmsClose")[0];
+      var sendsmsfrom = document.getElementsByName("sendsmsfrom")[0];
+      sendMobileSmsBtn.onclick = function() {
+        smsModal.style.display = "block";
+        sendsmsfrom.value = "mobile";
+        console.log(sendsmsfrom)
+      };
+      sendHomeSmsBtn.onclick = function() {
+        smsModal.style.display = "block";
+        sendsmsfrom.value = "phone";
+        console.log(sendsmsfrom)
+      };
+      sendSmsSpan.onclick = function() {
+        smsModal.style.display = "none";
+      }
+    }
+    function setupEmail(){
+      var emailModal = document.getElementById("emailModal");
+      var sendEmailBtn = document.getElementById("SendEmailButton");
+      var sendEmailSpan = document.getElementsByClassName("sendEmailClose")[0];
+      sendEmailBtn.onclick = function() {
+        emailModal.style.display = "block";
+        tinymce.init({
+          selector: 'textarea#emailMessage',
+          height: 300,
+          plugins : 'advlist link lists',
+          menubar: 'edit view'
+        });
+      };
+      sendEmailSpan.onclick = function() {
+        emailModal.style.display = "none";
+      }
+    }
+    function closeOnClkWindow() {
+      var emailModal = document.getElementById("emailModal");
+      var smsModal = document.getElementById("smsModal");
+      var basePopup = document.getElementById("basePopup");
+      window.onclick = function(event) {
+        if (event.target == smsModal) {
+          smsModal.style.display = "none";
+        }else if (event.target == emailModal) {
+          emailModal.style.display = "none";
+        }
+        else if (event.target == basePopup) {
+          basePopup.style.display = "none";
+        }
+      }
+    }
+    setupSms();
+    setupEmail();
+    closeOnClkWindow();
+    if(trigger!=""){
+      var basePopup = document.getElementById("basePopup");
+      var basePopupClose = document.getElementsByClassName("basePopupClose")[0];
+      bassPopupClose = document.getElementById("bassPopupClose");
+      basePopupClose.onclick = function() {
+        basePopup.style.display = "none";
+      }
+      bassPopupClose.onclick = function() {
+        basePopup.style.display = "none";
+      }
+      basePopup.style.display = "block";
+    }
+  </script>
+</body>
+</html>

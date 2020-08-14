@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<!DOCTYPE SkinDescription SYSTEM "menu.dtd">
+<Skin>
+  <Description>Nemian eSurance</Description>
+  <ImageName>$PATH/nemian_logo.gif</ImageName>
+  <StylesheetPath>$PATH/nemian_esurance.css</StylesheetPath>
+</Skin>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Payments Out List}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(1)Payments Out List}
+          <a href="?screen_name=DO_MAIN_PAGE">
+            <span class="return_link">Return</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(2)Choose payment out record to authorise}
+        </th>
+        <td align="right">&nbsp;</td>
+      </tr>
+    </table>
+    <table class="zebra">
+      <tr>
+        <th>
+          <a href="?screen_name=SHOW_PAYMENTS_OUT_LIST&SortField=@ID">{%(4)Key}</a>
+        </th>
+        <th>
+          <a href="?screen_name=SHOW_PAYMENTS_OUT_LIST&SortField=REASON">{%(6)Reason}</a>
+        </th>
+        <th>
+          <a href="?screen_name=SHOW_PAYMENTS_OUT_LIST&SortField=CURRENCY">{%(7)Currency}</a>
+        </th>
+        <th>
+          <a href="?screen_name=SHOW_PAYMENTS_OUT_LIST&SortField=GROSS_PAY">{%(8)Gross Amount}</a>
+        </th>
+        <th>{%(9)Net Amount}</th>
+        <th>
+          <a href="?screen_name=SHOW_PAYMENTS_OUT_LIST&SortField=POLICY_NO">{%(10)Policy}</a>
+        </th>
+        <th>
+          <a href="?screen_name=SHOW_PAYMENTS_OUT_LIST&SortField=CREATED_USER">{%(12)Created User}</a>
+        </th>
+        <th>
+          <a href="?screen_name=SHOW_PAYMENTS_OUT_LIST&SortField=CREATED_DATE">{%(14)Created Date}</a>
+        </th>
+        <th>{%(16)Created Time}</th>
+        <th>
+          <a href="?screen_name=SHOW_PAYMENTS_OUT_LIST&SortField=LAST_UPDATED_USER">{%(18)Last Changed User}</a>
+        </th>
+      </tr>
+      <!--{PAYMENTS_OUT_TABLE}-->
+    </table>
+    <table class="navigation">
+      <tr>
+        <td></td>
+        <td class="return">
+          <a href="?screen_name=DO_MAIN_PAGE">
+            {%(101)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

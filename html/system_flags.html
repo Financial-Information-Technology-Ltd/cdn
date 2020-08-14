@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)System Flags}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan=2>{HELP_LINK}{%(1)System Flags}</td>
+      </tr>
+      <tr>
+        <th width=30%>{%(2)Key}</th>
+        <td>{Key}</td>
+      </tr>
+      <tr>
+        <th>{%(3)Accounting Basis}</th>
+        <td>
+          <select name="ACCTG_BASIS">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(4)Funded Initial Units}</th>
+        <td>
+          <input type="checkbox" name="FUNDED_INITIAL_UNITS">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(5)Standard Price Margin}</th>
+        <td>
+          <input type="checkbox" name="STD_PRICE_MARGIN">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(20)Include Fluctuation Accounting}</th>
+        <td>
+          <input type="checkbox" name="INCLUDE_FLUCT_ACCTG">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(7)Multiple Cash Books}</th>
+        <td>
+          <select name="MULTIPLE_CASH_BOOK">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(8)Pricing Basis}</th>
+        <td>
+          <select name="PRICING_BASIS">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(10)Forward backdate limit (days)}</th>
+        <td>
+          <input type="text" name="FORWARD_TRAN_EFF_DT_BACK_DT_LIMIT" size=5>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(13)Prevent Duplicate Client Creation}</th>
+        <td>
+          <input type="checkbox" name="CLIENT_DUPLICATE_CHECK">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(15)Process to import bank transactions}</th>
+        <td>
+          <select name="BANK_TRANS_IMPORT_PROC">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(17)ID Number check}</th>
+        <td>
+          <select name="ID_NUMBER_CHECK">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(21)Unique Application Number Check}</th>
+        <td>
+          <input type="checkbox" name="UNIQUE_APPLICATION_NO_CHECK">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(19)Pseudo for reversing unreconciled bank transactions}</th>
+        <td>
+          <input type="text" name="UNRECONCILED_REVERSE_PSEUDO">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(22)Policy and unit accounting get to GENACCTRN immediately}</th>
+        <td>
+          <input type="checkbox" name="THROUGH_ACCT">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(29)Multiple Trades for Allocation}</th>
+        <td>
+          <input type="checkbox" name="MULTIPLE_TRADE_ALLOCATION">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(30)Multiple Trades for Switches}</th>
+        <td>
+          <input type="checkbox" name="MULTIPLE_TRADE_SWITCH">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(31)Payment Out CCY must be Policy CCY}</th>
+        <td>
+          <input type="checkbox" name="PO_CCY_FIXED_POLICY_CCY">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(33)Policy Accounting Journals require second User approval}</th>
+        <td>
+          <input type="checkbox" name="POLICY_JOURNAL_APPROVAL">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(32)Commission Journals require second User approval}</th>
+        <td>
+          <input type="checkbox" name="COMMISSION_JOURNAL_APPROVAL">
+        </td>
+      </tr>
+    </table>
+    <!--%(PAYMENT_CCY)-->
+    <table>
+      <tr>
+        <th colspan=2>{%(12)Payment Out Currencies}</th>
+      </tr>
+      <!--{PAYMENT_OUT_CCY_TABLE}-->
+      <!--%(PAYMENT_CCY_END)-->
+      <tr>
+        <th>{%(23)Structured Note:}</th>
+        <td>
+          <table>
+            <tr>
+              <td>{%(24)Structured Note currency}</td>
+              <td>{%(25)Structured Note policy}</td>
+              <td>{%(27)Structured Note Cash Funds}</td>
+              <td>{%(28)Pending Transaction Cash Funds}</td>
+            </tr>
+            <!--{STRUCTURED_NOTE_TABLE}-->
+            <tr>
+              <td>
+                <input type="submit" name="AddStructuredNoteButton" value="{%(26)Add}">
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SaveButton" value="{%(100)Save}">
+        </td>
+        <td class="return">
+          <b>
+            <a href="?screen_name=DO_MAIN_PAGE">
+              {%(101)Return}
+              <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+            </a>
+          </b>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

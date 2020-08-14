@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Standard Letter}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan=2>{HELP_LINK}{%(2)Standard Letter}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Merge Code}</th>
+        <td>{MergeKey}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Description}</th>
+        <td>
+          <input type="text" name="Description" size=60>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(5)Table Name}</th>
+        <td>
+          <select name="TableName">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(15)Template Type}</th>
+        <td>
+          <select name="TemplateType" ONCHANGE="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(6)Template Name}</th>
+        <td>
+          <input type="text" name="TemplateName" size=40>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(7)Enforce Language Tag}</th>
+        <td>
+          <input type="checkbox" name="ApplyLanguage">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(37)Include Group No}</th>
+        <td>
+          <input type="checkbox" name="IncludeGroupNo">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(42)Attach Document to Workflow Task Code}</th>
+        <td>
+          <select name="WORKFLOW_CODE">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(38)Document Category}</th>
+        <td>
+          <select name="DOC_CATEGORY">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(39)Sensitivity}</th>
+        <td>
+          <input type="text" name="SENSITIVITY" size=4>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(30)Send By Email}</th>
+        <td>
+          <input type="checkbox" name="SendEmail">
+        </td>
+      </tr>
+      <!--%(EmailDetailsFragment)-->
+      <tr>
+        <th>{%(31)Email To}</th>
+        <td>
+          <input type="text" name="EmailTo" size=30>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(32)Email CC}</th>
+        <td>
+          <input type="text" name="EmailCC" size=30>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(33)Email BCC}</th>
+        <td>
+          <input type="text" name="EmailBCC" size=30>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(34)Email Subject}</th>
+        <td>
+          <input type="text" name="EmailSubject" size=60>
+          &nbsp;
+          <input type="checkbox" name="EmailSubjectUseTemplate">
+          {%(36)Use template}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(35)Email Body Text}</th>
+        <td>
+          <input type="text" name="EmailBody" size=60>
+          &nbsp;
+          <input type="checkbox" name="EmailBodyUseTemplate">
+          {%(36)Use template}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(45)Email Body HTML}</th>
+        <td>
+          <input type="text" name="EmailBodyHTML" size=60>
+          &nbsp;
+          <input type="checkbox" name="EmailBodyHTMLUseTemplate">
+          {%(36)Use template}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(43)Save Email}</th>
+        <td>
+          <input type="checkbox" name="SaveEmail">
+          &nbsp;{%(44)To Folder}&nbsp;
+          <input type="text" name="SaveEmailFolder" size=30>
+        </td>
+      </tr>
+      <!--%-->
+      <tr>
+        <th>{%(50)Send By SMS}</th>
+        <td>
+          <input type="checkbox" name="SendSMS">
+        </td>
+      </tr>
+      <!--%(SMSDetailsFragment)-->
+      <tr>
+        <th>{%(51)SMS To}</th>
+        <td>
+          <table><!--{SMSToTable}-->
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(55)SMS Body Text}</th>
+        <td>
+          <input type="text" name="SMSBody" size=60>
+        </td>
+      </tr>
+      <!--%-->
+      <!--%(MQTTFragment)-->
+      <tr>
+        <th>{%(56)Publish to MQTT}</th>
+        <td>
+          <input type="checkbox" name="SendMQTT">
+        </td>
+      </tr>
+      <!--%-->
+      <tr>
+        <th>{%(57)Webhook URL}</th>
+        <td>
+          <input type="text" name="WebhookURL" size="64">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(41)Enforce PDF}</th>
+        <td>
+          <input type="checkbox" name="PDFEnforce">
+        </td>
+      </tr>
+    </table>
+    <!--%(MERGE_PROGRAM_FRAGMENT)-->
+    <table>
+      <tr>
+        <th style="width: 30%">{%(40)Merge Program}</th>
+        <td>
+          <input type="text" name="MergeProgram" size=40>
+          <input type="BUTTON" name="MergeProgramButton" value="&hellip;" class="ellipsis" ONCLICK="searchMergeProgram()">
+        </td>
+      </tr>
+    </table>
+    <!--%-->
+    <table>
+      <tr>
+        <th colspan=4>{%(8)Calls letters}</th>
+      <tr>
+      <tr>
+        <td>{%(21)Call template}</td>
+        <td>{%(22)Key Type}</td>
+        <td>{%(23)Key Value}</td>
+        <td>{%(24)Label Prefix}</td>
+      </tr>
+      <!--{EXTENDS_MERGE_LIST}-->
+      <tr>
+        <td colspan=4>
+          <input type="submit" name="AddExtendsButton" value="{%(9)Add}">
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th>{%(11)Label}</th>
+        <th>{%(12)Type}</th>
+        <th>{%(13)Name}</th>
+        <th>{%(14)Conversion}</th>
+        <th>&nbsp;</th>
+      </tr>
+      <!--{ENTRY_TABLE}-->
+      <tr>
+        <td colspan=4>
+          <input type="submit" name="AddEntryButton" value="{%(20)Add}">
+        </td>
+      </tr>
+    </table>
+    <input type="hidden" name="InsertButtonText" value="{%(97)Insert}">
+    <input type="hidden" name="SearchButtonText" value="{%(98)Search}">
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SaveButton" value="{%(100)Submit}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+  <script type="text/javascript">
+function show_search_list(pos)
+{
+  field_name = "FieldName_"+pos;
+  field_type_name = "Type_"+pos;
+  t_element = document.forms[0].elements[field_type_name];
+  if (t_element!=null)
+  {
+    d_element = document.forms[0].elements["TableName"]; 
+    dict_name = d_element.value;
+    if (t_element.value=="F")
+    {
+      search_dict_list(field_name,dict_name);
+    }
+    else
+    {
+      path = "?screen_name=do_search_symb_list&ReturnField="+field_name+"&DictName="+dict_name;
+      new_window = window.open(path,'LIFEfitSetupMerge',"location=no,toolbar=no,status=no,menubar=no,hotkeys=no,resizable=yes,scrollbars=yes,width=600,height=400");
+      new_window.focus();
+    }
+  }
+}
+function show_extends_search_list(pos)
+{
+  field_name = "ExtendsFieldName_"+pos;
+  field_type_name = "ExtendsType_"+pos;
+  t_element = document.forms[0].elements[field_type_name];
+  if (t_element!=null)
+  {
+    d_element = document.forms[0].elements["TableName"]; 
+    dict_name = d_element.value;
+    if (t_element.value=="F")
+    {
+      search_dict_list(field_name,dict_name);
+    }
+    else
+    {
+      path = "?screen_name=do_search_symb_list&ReturnField="+field_name+"&DictName="+dict_name;
+      new_window = window.open(path,'LIFEfitSetupMerge',"location=no,toolbar=no,status=no,menubar=no,hotkeys=no,resizable=yes,scrollbars=yes,width=600,height=400");
+      new_window.focus();
+    }
+  }
+}
+function searchMergeProgram()
+{
+  d_element = document.forms[0].elements["TableName"]; 
+  dict_name = d_element.value;
+  path = "?screen_name=do_search_merge_program&ReturnField=MergeProgram&DictName="+dict_name;
+  new_window = window.open(path,'LIFEfitSetupMerge',"location=no,toolbar=no,status=no,menubar=no,hotkeys=no,resizable=yes,scrollbars=yes,width=600,height=400");
+  new_window.focus();
+}
+</script>
+</body>
+</html>

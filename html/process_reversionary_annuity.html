@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Process Reversionary Annuity}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  {ERRORS}
+  <form action="%SERVLET_PATH%" method="post">
+    <table>
+      <tr>
+        <td class="title" colspan=2>{HELP_LINK}{%(2)Process Reversionary Annuity}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Policy No}</th>
+        <td>{PolicyKey}</td>
+      </tr>
+      <tr>
+        <th>{%(4)New Annuitant}</th>
+        <td>{JointOwnerKey} - {JointOwnerName}</td>
+      </tr>
+      <tr>
+        <th>{%(5)Current Annuity Amount}</th>
+        <td>{CurrentAnnuityAmount}</td>
+      </tr>
+      <tr>
+        <th>{%(6)Reversionary Percentage}</th>
+        <td>{ReversionaryPercentage}</td>
+      </tr>
+      <tr>
+        <th>{%(7)New Annuity Amount}</th>
+        <td>{NewAnnuityAmount}</td>
+      </tr>
+      <tr>
+        <th>{%(8)Payment Method}</th>
+        <td>
+          <select name="PaymentMethod" ONCHANGE="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <!--%(BANK_NO_FRAGMENT)-->
+      <tr>
+        <th>{%(9)Bank Account}</th>
+        <td>
+          <select name="BankNo">
+            <option value="">&nbsp;</option>
+          </select>
+          <input name="AddAnAccount" value="New Account" onclick="create_bank('Payee','ipayment')" type="BUTTON">
+        </td>
+      </tr>
+      <!--%-->
+      <!--%(PAYEE_NAME_FRAGMENT)-->
+      <tr>
+        <th>{%(10)Payee Name}</th>
+        <td>
+          <input TYPE='TEXT' NAME='PayeeName'>
+        </td>
+      </tr>
+      <!--%-->
+      <tr>
+        <th>{%(11)Password}</th>
+        <td>
+          <input type="password" name="Password" AUTOCOMPLETE="OFF">
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SubmitButton" value="{%(100)Submit}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

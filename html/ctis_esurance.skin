@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<!DOCTYPE SkinDescription SYSTEM "menu.dtd">
+<Skin>
+  <Description>CTIS eSurance</Description>
+  <ImageName>$PATH/ctis_logo.png</ImageName>
+  <PBImageName>$PATH/ctis_logo.png</PBImageName>
+  <StylesheetPath>$PATH/ctis_esurance.css</StylesheetPath>
+</Skin>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)General Ledger}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan=2>{HELP_LINK}{%(2)General Ledger}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Account No}</th>
+        <td>{AccountNo}</td>
+      </tr>
+      <tr>
+        <th>{%(5)Company}</th>
+        <td>{Company}</td>
+      </tr>
+      <tr>
+        <th>{%(6)Branch}</th>
+        <td>{Branch}</td>
+      </tr>
+      <tr>
+        <th>{%(7)Currency}</th>
+        <td>{Currency}</td>
+      </tr>
+      <tr>
+        <th>{%(9)Account Type}</th>
+        <td>
+          <select name="AccountTp">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(10)Account Name}</th>
+        <td>
+          <input type="text" name="AccountName" size=40>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(12)Ledger Code}</th>
+        <td>
+          <select name="LedgerCode">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th>{%(21)Year}</th>
+        <th>{%(22)Actual/Budget}</th>
+        <th>{%(23)Beginning Balance}</th>
+        <th>{%(24)Total Balance}</th>
+      </tr>
+      <!--{BALANCE_TABLE}-->
+    </table>
+    <table>
+      <tr>
+        <th>{%(21)Year}</th>
+        <th>{%(31)January Totals}</th>
+        <th>{%(32)February Totals}</th>
+        <th>{%(33)March Totals}</th>
+        <th>{%(34)April Totals}</th>
+      </tr>
+      <!--{FIRST_MONTH_TABLE}-->
+      <tr>
+        <th>{%(21)Year}</th>
+        <th>{%(35)May Totals}</th>
+        <th>{%(36)June Totals}</th>
+        <th>{%(37)July Totals}</th>
+        <th>{%(38)August Totals}</th>
+      </tr>
+      <!--{SECOND_MONTH_TABLE}-->
+      <tr>
+        <th>{%(21)Year}</th>
+        <th>{%(39)September Totals}</th>
+        <th>{%(40)October Totals}</th>
+        <th>{%(41)November Totals}</th>
+        <th>{%(42)December Totals}</th>
+      </tr>
+      <!--{THIRD_MONTH_TABLE}-->
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SubmitButton" value="{%(100)Submit}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

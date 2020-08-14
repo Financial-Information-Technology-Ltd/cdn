@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Step 1}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan=2>{HELP_LINK}{%(2)First Annuitant}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Title}</th>
+        <td>
+          <select name="Owner_Title">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(4)First Name}</th>
+        <td>
+          <input name="Owner_FirstName" size="30">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(5)Surname}</th>
+        <td>
+          <input name="Owner_LastName" size="30">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(6)Sex}</th>
+        <td>
+          <input name="Owner_Sex" type="radio" value="M">
+          {%(81)Male}
+          <input name="Owner_Sex" type="radio" value="F">
+          {%(82)Female}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(7)Birth Date}</th>
+        <td>
+          <input name="Owner_BirthDate">
+          {DATE_FORMAT}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(8)Postal Address State}</th>
+        <td>
+          <input type="text" name="Owner_MailCounty" size="20">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(9)Postal Address City}</th>
+        <td>
+          <input type="text" name="Owner_MailCity" size="20">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(10)Postal Address}</th>
+        <td>
+          <TEXTAREA name="Owner_MailAddress" COLS="50" ROWS="3"></TEXTAREA>
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <td class="title" colspan=2>{%(11)Second Annuitant}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Title}</th>
+        <td>
+          <select name="JointOwner_Title">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(4)First Name}</th>
+        <td>
+          <input name="JointOwner_FirstName" size="30">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(5)Surname}</th>
+        <td>
+          <input name="JointOwner_LastName" size="30">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(6)Sex}</th>
+        <td>
+          <input name="JointOwner_Sex" type="radio" value="M">
+          {%(81)Male}
+          <input name="JointOwner_Sex" type="radio" value="F">
+          {%(82)Female}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(7)Birth Date}</th>
+        <td>
+          <input name="JointOwner_BirthDate">
+          {DATE_FORMAT}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(8)Postal Address State}</th>
+        <td>
+          <input type="text" name="JointOwner_MailCounty" size="20">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(9)Postal Address City}</th>
+        <td>
+          <input type="text" name="JointOwner_MailCity" size="20">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(10)Postal Address}</th>
+        <td>
+          <TEXTAREA name="JointOwner_MailAddress" COLS="50" ROWS="3"></TEXTAREA>
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td align="left">
+          <input name="ExitButton" class="button" type="submit" value="{%(103)Exit}" onclick="confirm_nb_exit()">
+        </td>
+        <td align="right">
+          <input name="NextButton" class="button" type="submit" value="{%(102)Next} &gt;">
+        </td>
+      </tr>
+    </table>
+    <input type="hidden" name="Owner_Category" value="I">
+  </form>
+</body>
+</html>

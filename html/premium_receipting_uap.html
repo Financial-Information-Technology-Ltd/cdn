@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Premium Receipting - Cash Payments}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(1)Premium Receipting - Cash Payments}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(2)Policy No}</th>
+        <td>
+          <input type="text" name="PolicyKey">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(4)Owner Name}</th>
+        <td>
+          <input type="text" name="OwnerName">
+        </td>
+      </tr>
+    </table>
+    <!--%(SEARCH_DATA)-->
+    <table>
+      <tr>
+        <th>{%(41)Policy No}</th>
+        <th>{%(42)Application No}</th>
+        <th>{%(43)Owner}</th>
+        <th>{%(44)Status}</th>
+        <th>{%(45)Issue Date}</th>
+        <th>{%(46)Paid to Date}</th>
+      </tr>
+      <!--{POLICY_LIST}-->
+    </table>
+    <!--%-->
+    <!--%(TRANSACTION_DATA)-->
+    <table>
+      <tr>
+        <th>{%(11)Policy Status}</th>
+        <td>{POLICY_STATUS}</td>
+      </tr>
+      <tr>
+        <th>{%(12)Plan}</th>
+        <td>{PLAN_NAME}</td>
+      </tr>
+      <tr>
+        <th>{%(13)Client}</th>
+        <td>{CLIENT_INFO}</td>
+      </tr>
+      <tr>
+        <th>{%(14)Paid to Date}</th>
+        <td>{PAID_TO_DATE}</td>
+      </tr>
+      <tr>
+        <th>{%(15)Suspense Amount}</th>
+        <td>{SUSPENSE}</td>
+      </tr>
+      <tr>
+        <th>{%(18)Next Premium Amount}</th>
+        <td>{PREMIUM_AMOUNT}</td>
+      </tr>
+      <tr>
+        <th>{%(16)Amount Due}</th>
+        <td>
+          <b>{AMOUNT_DUE}</b>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(17)Policy Currency}</th>
+        <td>{POLICY_CURRENCY}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(21)Payment Type}</th>
+        <td>
+          <select name="PaymentType" ONCHANGE="document.forms[0].submit();">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(22)Currency}</th>
+        <td>
+          <select name="Currency">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <!--%(LOAN_REPAYMENT)-->
+      <tr>
+        <th>{%(25)This is a loan repayment}</th>
+        <td>
+          <input type="checkbox" name="LoanRepayment">
+        </td>
+      </tr>
+      <!--%-->
+      <!--%(LOAN_PARAMS)-->
+      <tr>
+        <th>{%(26)Loan to repay}</th>
+        <td>
+          <select name="LoanId" ONCHANGE="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(27)Total amount to repay}</th>
+        <td>{LOAN_AMOUNT_TO_CLOSE}</td>
+      </tr>
+      <!--%-->
+       <tr>
+        <th>{%(23)Amount}</th>
+        <td>
+          <input type="text" name="Amount">
+        </td>
+      </tr>
+     <tr>
+     <th>{%(20)Commission Amount Withheld}</th>
+        <td>
+          <input type="text" name="CommissionAmount" size=14>
+        </td>
+      </tr>
+     <tr>
+     <th>{%(28)Training Levy Withheld}</th>
+        <td>
+          <input type="text" name="LevyAmount" size=14>
+        </td>
+      </tr>
+
+      <!--%(CASH_PSEUDO)-->
+      <tr>
+        <th>{%(31)Cash PSEUDO}</th>
+        <td>{CASH_PSEUDO}</td>
+      </tr>
+      <!--%(CASH_PSEUDO_END)-->
+      <tr>
+        <th>{%(19)Effective Date}</th>
+        <td>
+          <input type="text" name="EFF_DATE">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(32)Cleared Date}</th>
+        <td>{ClearedDate}</td>
+      </tr>
+      <tr>
+        <th>{%(24)Cheque No}</th>
+        <td>
+          <input type="text" name="ChequeNo">
+        </td>
+      </tr>
+    </table>
+    <!--%(TRANSACTION_DATA_END)-->
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SubmitButton" value="{%(100)Submit}">
+          <input type="submit" name="ContinueButton" value="{%(102)Continue}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

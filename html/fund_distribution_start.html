@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Distribution}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(2)Freeze policies for distribution}</td>
+      </tr>
+      <tr>
+        <th width=30%>{%(11)Fund Code}</th>
+        <td>{FUND_CODE}</td>
+      </tr>
+      <tr>
+        <th>{%(12)Fund Name}</th>
+        <td>{FUND_NAME}</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th colspan=2>{%(61)Distribution:}</th>
+      </tr>
+      <tr>
+        <th width=1%>{%(62)Month}</th>
+        <th>{%(63)Action}</th>
+      </tr>
+      <!--{DISTRIBUTION_DATE_LIST}-->
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input name="FreezePoliciesButton" type="submit" value="{%(101)Run Freeze Policies Process}">
+          <input name="UnfreezePoliciesButton" type="submit" value="{%(102)Run Unfreeze Policies Process}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(103)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

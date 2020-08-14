@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(2)Policy Commission Entriess}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan=2>{HELP_LINK}{%(2)Policy Commission Entriess}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Agent}</th>
+        <td>{AGENT_NO} - {AGENT_NAME}</td>
+      </tr>
+      <tr>
+        <th>{%(9)Policy No}</th>
+        <td>{PolicyKey}</td>
+      </tr>
+    </table>
+    <table class="zebra">
+      <tr>
+        <th>{%(4)Agent}</th>
+        <th>{%(6)Effective Date}</th>
+        <th align="right">{%(5)Paid Commission}</th>
+        <th>{%(7)Statement Group}</th>
+        <th>{%(10)Statement Date}</th>
+      </tr>
+      <!--{COMMISSION_LIST}-->
+    </table>
+    <p align="right">
+      <b>
+        <a href="%BACK_LINK%">
+          {%(8)Return}
+          <img src="/lf/images/back.gif">
+        </a>
+      </b>
+    </p>
+  </form>
+</body>
+</html>

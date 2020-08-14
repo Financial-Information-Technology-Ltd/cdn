@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Company Details}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(1)Company Details}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(2)Company code}</th>
+        <td>{COMPANY_CODE}</td>
+      </tr>
+      <tr>
+        <th>{%(3)Company name}</th>
+        <td>
+          <input type="text" name="COMPANY_NAME" size=33>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(5)Next policy number}</th>
+        <td>
+          <input type="text" name="COMPANY_NEXT_POL_NO" size=10>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(7)Currency}</th>
+        <td>
+          <select name="CURRENCY">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(12)Company year end (DDMM)}</th>
+        <td>
+          <input type="text" name="COMPANY_YEAR_END" size=4>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(15)Last NL Transfer Date}</th>
+        <td>{LAST_NL_TRANSFER}</td>
+      </tr>
+      <tr>
+        <th>{%(16)RIP warning percentage}</th>
+        <td>
+          <input type="text" name="RIP_WARN_PERC" size=5>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(35)Credit account number}</th>
+        <td>
+          <input type="text" name="CREDIT_ACCOUNT_NO" size=11>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(21)Quarter End Dates (DDMM)}</th>
+        <td>
+          <table>
+            <!--{QUARTER_END_DATES_TABLE}-->
+            <tr>
+              <td>
+                <input type="submit" name="QUARTER_END_DATES_BUTTON" value="{%(22)Add}">
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(24)EMail Policy Docs}</th>
+        <td>
+          <input type="text" name="EMAIL" size=26>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(25)EMail Commission Statement}</th>
+        <td>
+          <input type="text" name="EMAIL_COMMISSIONS" size=26>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(28)EMail Group Documents}</th>
+        <td>
+          <input type="text" name="EMAIL_GROUP_DOCUMENTS" size=26>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(27)Direct Debit method}</th>
+        <td>
+          <select name="DD_PAYMENT_METHOD">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(50)Registration Number}</th>
+        <td>
+          <input type="text" name="RegistrationNo" size=20>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <table>
+            <tr>
+              <th style="width: 30%">{%(51)Address}</th>
+              <td>
+                <TEXTAREA name="Address" COLS="60" ROWS="3"></TEXTAREA>
+              </td>
+            </tr>
+            <tr>
+              <th>{%(52)City}</th>
+              <td>
+                <input type="text" name="City" size="30">
+              </td>
+            </tr>
+            <tr>
+              <th>{%(53)Post Code}</th>
+              <td>
+                <input type="text" name="PostCode" size="10">
+              </td>
+            </tr>
+            <tr>
+              <th>{%(54)Country}</th>
+              <td>
+                <select name="Country">
+                  <option value="">&nbsp;</option>
+                </select>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(55)Phone Number}</th>
+        <td>
+          <input type="text" name="PhoneNo" size=20>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(56)Fax Number}</th>
+        <td>
+          <input type="text" name="FaxNo" size=20>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(34)Unit Statement Print at Policy Anniversary}</th>
+        <td>
+          <input type="checkbox" name="UNIT_STATEMENT_PRINT">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(79)Suppress Anniversary Unit Statement for eSurance Clients}</th>
+        <td>
+          <input type="checkbox" name="UNIT_STATEMENT_SUPPRESS_ESURANCE_CLIENTS">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(38)Block Cash Receipting by Policy Status}</th>
+        <td>
+          <input type="checkbox" name="CASH_RECEIPT_BLOCK_BY_STATUS">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(36)Agent Persistency %}</th>
+        <td>
+          <input type="text" name="AGENT_PERSISTENCY_PERC">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(37)Agent Persistency Months}</th>
+        <td>
+          <input type="text" name="AGENT_PERSISTENCY_MTHS">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(47)Commission Statement Template}</th>
+        <td>
+          <input type="text" name="CommissionStatementTemplate" size="30">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(48)Payment Register Template}</th>
+        <td>
+          <input type="text" name="PaymentRegisterTemplate" size="30">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(62)Cheque File Name}</th>
+        <td>
+          <input type="text" name="CHEQUE_FILE_NAME" size="30">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(63)Cheque File Dir}</th>
+        <td>
+          <input type="text" name="CHEQUE_FILE_DIR" size="30">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(64)BACS DOS Dir}</th>
+        <td>
+          <input type="text" name="BACS_DIR" size="30">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(65)XYZ Agent Salary Basis}</th>
+        <td>
+          <select name="AGSAL_BASIS">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(69)Assumed Number of Agents Per Unit}</th>
+        <td>
+          <input type="text" name="ASSUMED_NO_OF_AGENTS_PER_UNIT" size="5">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(68)Months to GDPR}</th>
+        <td>
+          <input type="text" name="MthsToGdpr" size="5">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(41)Accounting period &amp; Nl acc period:}</th>
+        <td>
+          <table>
+            <tr>
+              <th>{%(42)Accounting period}</th>
+              <th>{%(43)Nl acc period}</th>
+            </tr>
+            <!--{ACCOUNTING_TABLE}-->
+            <tr>
+              <td colspan=2>
+                <input type="submit" name="AddPeriodButton" value="{%(22)Add}">
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(44)Reorganization Bonus}</th>
+        <td>
+          <table>
+            <tr>
+              <th>{%(45)Start Date}</th>
+              <th>{%(46)Rate (%)}</th>
+            </tr>
+            <!--{REORG_BONUS_LIST}-->
+            <tr>
+              <td colspan=2>
+                <input type="submit" name="AddReorgBonusButton" value="{%(22)Add}">
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(57)Authorisation Tiers}</th>
+        <td>
+          <table id="AUTHORISATIONTIERS">
+            <tr>
+              <th colspan="2">{AUTHORISATION_TIER_HEADER}</th>
+            </tr>
+            <tr>
+              <th>{%(58)Currency}</th>
+              <th>{%(59)Payout Limit}</th>
+            </tr>
+            <!--{AUTHORISATION_TIER_FORM}-->
+          </table>
+          <table>
+            <tr>
+              <td>
+                <input type="submit" name="AuthorisationTierAdd" value="{%(61)Add}">
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(60)Voice Check Verification Attempts}</th>
+        <td>
+          <input type="text" name="VoiceCheckVerification" size="30">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(66)Mad SortCod}</th>
+        <td>
+          <input type="text" name="MadSortCode" size="30">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(67)Mad Account Number}</th>
+        <td>
+          <input type="text" name="MadAccountNumber" size="30">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(70)Days from prem receipt to surrender query}</th>
+        <td>
+          <input type="text" name="DAYS_FROM_RECEIPT" size="5">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(71)Suspicious Premium Threshold %}</th>
+        <td>
+          <input type="text" name="SUSPICIOUS_PREMIUM_THRESHOLD">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(72)Default Direct Agent}</th>
+        <td>
+          <input type="text" name="DEFAULT_DIRECT_AGENT" size="6" ONCHANGE="document.forms[0].submit()">
+          {AGENT_NAME}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(78)Policy relationship to block maturity / surrender payout}</th>
+        <td>
+          <select name="ASSIGNEE_RELATIONSHIP">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+<!-- Company Workflow Configuration -->
+    <fieldset>
+      <legend>Company Workflow Configuration</legend>
+      <table>
+        <tr>
+          <th >{%(73)Esurance Workflow Task}</th>
+          <td>
+            <select name="ESURANCE_WORKFLOW_TASK">
+              <option value="">&nbsp;</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <th>{%(74)Quote Workflow Task}</th>
+          <td>
+            <select name="QUOTE_WORKFLOW_TASK">
+              <option value="">&nbsp;</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <th>{%(75)Quote Workflow Task Start Days}</th>
+          <td>
+            <input name="QUOTE_WORKFLOW_TASK_START_DAYS" size=80>
+          </td>
+        </tr>
+        <tr>
+          <th>{%(76)Referral Workflow Task}</th>
+          <td>
+            <select name="REFERRAL_WORKFLOW_TASK">
+              <option value="">&nbsp;</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <th>{%(77)Referrer Workflow Task Start Days}</th>
+          <td>
+            <input name="REFERRAL_WORKFLOW_TASK_START_DAYS" size=80>
+          </td>
+        </tr>
+      </table>
+    </fieldset>
+    <table>
+      <tr>
+        <td class="title" colspan="3">{%(202)SMS Interface Parameters}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(203)URL to SMS system}</th>
+        <td colspan="2">
+          <input type="text" name="SMS_URL" size="50">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(204)Mobile No Parameter}</th>
+        <td colspan="2">
+          <input type="text" name="SMS_MOBILE_NO_PARAMETER" size="50">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(205)Message Parameter}</th>
+        <td colspan="2">
+          <input type="text" name="SMS_MESSAGE_PARAMETER" size="50">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(206)Text file path}</th>
+        <td colspan="2">
+          <input type="text" name="SMS_TEXT_FILE_PATH" size="50">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(207)Send SMS to both Mobile numbers}</th>
+        <td colspan="2">
+          <input type="checkbox" name="SMS_BOTH_MOBILE_NO">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(208)Other Parameters}</th>
+        <th width="1px">{%(209)Name}</th>
+        <th>{%(210)Value}</th>
+      </tr>
+      <!--{SMS_OTHER_PARAMETERS}-->
+      <tr>
+        <td></td>
+        <td>
+          <input type="submit" name="ADD_SMS_OTHER_PARAMETER_BUTTON" value="{%(211)Add}">
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SaveCompany" value="{%(99)Save}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(100)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

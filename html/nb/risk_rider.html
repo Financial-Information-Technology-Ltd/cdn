@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)New Rider}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan=2>{HELP_LINK}{%(2)New Rider}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Policy No}</th>
+        <td>{PolicyKey}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Plan}</th>
+        <td>{Plan}</td>
+      </tr>
+      <tr>
+        <th>{%(5)Application Date}</th>
+        <td>
+          <input type="text" name="ApplicationDate" size=10>
+          {DATE_FORMAT}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(10)Life Assured}</th>
+        <td>
+          <input type="text" name="FirstLifeKey" ONCHANGE="document.forms[0].submit()">
+          <input type="BUTTON" value="{%(104)Search Client}" ONCLICK="search_client('FirstLifeKey',true)">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(11)Life Assured Name}</th>
+        <td>{FirstLife_FullName}</td>
+      </tr>
+      <tr>
+        <th>{%(12)Life Assured Sex}</th>
+        <td>{FirstLife_Sex}</td>
+      </tr>
+      <tr>
+        <th>{%(13)Life Assured Date of Birth}</th>
+        <td>{FirstLife_BirthDate}</td>
+      </tr>
+      <tr>
+        <th>{%(6)Face Amount}</th>
+        <td>
+          <input type="text" name="FaceAmount">
+        </td>
+      </tr>
+    </table>
+    <!--%(AGENT_FRAGMENT)-->
+    <table>
+      <tr>
+        <th>{%(31)Agent No}</th>
+        <td>
+          <input type="text" name="AgentNo" ONCHANGE="document.forms[0].submit()">
+          <input type="BUTTON" value="{%(105)Search Agent}" ONCLICK="search_agent('AgentNo',true)">
+          {AGENT_NAME}
+        </td>
+      </tr>
+    </table>
+    <!--%(AGENT_FRAGMENT_END)-->
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="ProcessButton" value="{%(100)Process}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)License Information}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}" />
+</head>
+<body>
+  <form method="post" action="%SERVLET_PATH%">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(2)License Information}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Agent No}</th>
+        <td>{AGENT_NO}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(5)Agent Name}</th>
+        <td>{AGENT_NAME}</td>
+      </tr>
+      <tr>
+        <th>{%(6)Received Terms of Business}</th>
+        <td>
+          <input name="TermsReceived" type="checkbox">
+        </td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(7)Date Agent Accepted}</th>
+        <td>
+          <input name="AcceptedDate" size="10">
+        </td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(8)Agreement Date}</th>
+        <td>
+          <input name="AgreementDate" size="10">
+        </td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(23)Agreement Expiry Date}</th>
+        <td>
+          <input name="AGREEMENT_EXPIRY_DT" size="10">
+        </td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(9)Company Registration}</th>
+        <td>
+          <input name="CompanyRegistrationDate" size="10">
+        </td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(10)Personal Guarantee}</th>
+        <td>
+          <input name="PersonalGuaranteeDate" size="10">
+        </td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(11)Broker Registration}</th>
+        <td>
+          <input name="BrokerRegistrationDate" size="10">
+        </td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(21)COP Insurance Date}</th>
+        <td>
+          <input name="COPInsuranceDate" size="10">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(24)Expiry Warning Sent}</th>
+        <td>
+          <input name="AGREEMENT_EXPIRY_WARNING_SENT" type="checkbox">
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th colspan="2">{%(12)Commission Agreements}</th>
+      </tr>
+      <tr>
+        <th>{%(13)Plan Code}</th>
+        <th>{%(14)Agreed Rate}</th>
+      </tr>
+      <!--{AGREEMENT_LIST}-->
+      <tr>
+        <td colspan="2">
+          <input name="AddPlanButton" type="submit" value="{%(15)Add}">
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th>{%(16)Licensed Country}</th>
+        <th>{%(20)Name of regulator}</th>
+        <th>{%(17)Type}</th>
+        <th>{%(18)Certificate Number}</th>
+        <th>{%(19)Initial License Date}</th>
+        <th>{%(22)Date Last Checked}</th>
+      </tr>
+      <!--{LICENCE_LIST}-->
+      <tr>
+        <td colspan="5">
+          <input name="AddCountryButton" type="submit" value="{%(15)Add}">
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SaveButton" value="{%(100)Save}">
+          <input type="submit" name="EditButton" value="{%(102)Modify}">
+        </td>
+        <td class="return">
+          <a href="%SERVLET_PATH%?screen_name=%BACK_LINK%">
+            {%(200)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

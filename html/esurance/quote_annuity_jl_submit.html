@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Quotation Saved}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body ONLOAD="on_load()">
+  <form method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan=2>{HELP_LINK}{%(2)Application Saved}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)First Annuitant}</th>
+        <td>{OWNER_NAME}</td>
+      </tr>
+      <tr>
+        <th>{%(7)Second Annuitant}</th>
+        <td>{SecondAnnuitant}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Start date}</th>
+        <td>{START_DATE}</td>
+      </tr>
+      <tr>
+        <th>{%(5)Annuity Amount}</th>
+        <td>{ANNUITY_PAYMENT_AMOUNT}</td>
+      </tr>
+      <tr>
+        <th>{%(6)Annuity Frequency}</th>
+        <td>{ANNUITY_FREQUENCY}</td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td align="left">
+          <input class="button" name="PrintButton" type="submit" value="{%(103)Print}">
+        </td>
+        <td align="right">
+          <input class="button" name="FinishButton" type="submit" value="{%(102)Finish}">
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+<script type="text/javascript">
+function on_load()
+{
+  doc_link ="{QUOTE_DOC_LINK}";
+  if (doc_link!="")
+    window.open(doc_link, "_blank");
+}
+</script>
+</html>

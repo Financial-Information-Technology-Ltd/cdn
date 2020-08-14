@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Group Fund Premium Split}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(1)Group Fund Premium Split}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(2)Scheme Number}</th>
+        <td>{GroupKey}</td>
+      </tr>
+      <tr>
+        <th>{%(3)Scheme Owner}</th>
+        <td>{SchemeOwner}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Policy Number}</th>
+        <td>{PolicyKey}</td>
+      </tr>
+      <tr>
+        <th>{%(5)Currency}</th>
+        <td>{Currency}</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th colspan=99>{%(7)Current Fund Split}</th>
+      </tr>
+      <tr>
+        <th>{%(8)Fund Code}</th>
+        <th>{%(9)Fund Name}</th>
+        <th>{%(10)Currency}</th>
+        <th align="right">{%(11)Split (%)}</th>
+      </tr>
+      <!--{CURRENT_SPLIT_TABLE}-->
+    </table>
+    <!--%(SPLIT_CHANGE_FRAGMENT)-->
+    <table>
+      <tr>
+        <th colspan=99>{%(12)New Fund Split}</th>
+      </tr>
+      <tr>
+        <th>{%(8)Fund Code}</th>
+        <th>{%(9)Fund Name}</th>
+        <th>{%(10)Currency}</th>
+        <th align="right">{%(11)Split (%)}</th>
+      </tr>
+      <!--{NEW_SPLIT_TABLE}-->
+    </table>
+    <!--%(SPLIT_CHANGE_FRAGMENT_END)-->
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SubmitButton" value="{%(100)Submit}">
+        </td>
+        <td class="return" align="right">
+          <b>
+            <a href="%BACK_LINK%">
+              {%(101)Return}
+              <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+            </a>
+          </b>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

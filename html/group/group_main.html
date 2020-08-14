@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Group Workbench}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form method="post" action="%SERVLET_PATH%">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="3">{HELP_LINK}{%(1)Group Workbench}</td>
+      </tr>
+      <tr>
+        <th width=30%>{%(3)Group Client}</th>
+        <td width=1%>
+          <input type="text" name="ClientKey" value="">
+        </td>
+        <td>
+          <input type="submit" name="ShowGroupClientButton" value="{%(4)Show Client}">
+        </td>
+      </tr>
+      <!--%(EDIT_CLIENT_FRAGMENT)-->
+      <tr>
+        <th>{%(5)New Scheme Owner}</th>
+        <td>&nbsp;</td>
+        <td>
+          <input type="submit" name="NewGroupClientButton" value="{%(6)Create New Owner}">
+        </td>
+      </tr>
+      <!--%-->
+      <tr>
+        <th>{%(7)Group No}</th>
+        <td>
+          <input type="text" name="GroupKey">
+        </td>
+        <td>
+          <input type="submit" name="ShowGroupButton" value="{%(8)Show Group}">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(2)Scheme Policy Number}</th>
+        <td>
+          <input type="text" name="GroupPolicyNo">
+        </td>
+        <td>
+          <input type="submit" name="ShowSchemeButton" value="{%(28)Show Scheme}">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(17)Scheme By Member PAY NO}</th>
+        <td>
+          <input type="text" name="MemberPayNo">
+        </td>
+        <td>
+          <input type="submit" name="ShowSchemeByMemberButton" value="{%(28)Show Scheme}">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(9)Plan for new group}</th>
+        <td>
+          <select name="BasePlan">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+        <td>
+          <input type="submit" name="NewGroupButton" value="{%(10)New Group}">
+        </td>
+      </tr>
+      <!--%(AgentQuoteFragment)-->
+      <tr>
+        <th>{%(26)Agent for quote}</th>
+        <td>
+          <input name="QuoteAgentNo" size=10>
+          <input type="BUTTON" name="AGENT_BUTTON" value="&hellip;" class="ellipsis" ONCLICK="search_agent('QuoteAgentNo',false)">
+        </td>
+        <td>
+          <input type="submit" name="AgentQuotesButton" value="{%(27)Show Active Quotes}">
+        </td>
+      </tr>
+      <!--%-->
+    </table>
+    <table>
+      <tr>
+        <th width=30%>{%(11)Pending Groups}</th>
+        <td>&nbsp;</td>
+        <td>
+          <input type="submit" name="PendingButton" value="{%(12)Show Pending Groups}">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(13)Active Groups}</th>
+        <td>&nbsp;</td>
+        <td>
+          <input type="submit" name="ActiveButton" value="{%(14)Show Active Groups}">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(15)Terminated Groups}</th>
+        <td>&nbsp;</td>
+        <td>
+          <input type="submit" name="TerminatedButton" value="{%(16)Show Terminated Groups}">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(22)Group Name}</th>
+        <td>
+          <input name="SearchGroupName" size="50">
+        </td>
+        <td>
+          <input type="submit" name="SearchGroupButton" value="{%(23)Search by Name}">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(24)Registration Number}</th>
+        <td>
+          <input name="SearchGroupRegNo" size="50">
+        </td>
+        <td>
+          <input type="submit" name="SearchGroupRegNoButton" value="{%(25)Search by Company Registration Number}">
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th>{%(31)Group Key}</th>
+        <th>{%(33)Scheme Policy Number}</th>
+        <th>{%(32)Group Owner}</th>
+        <th>{%(35)Owner Reg No}</th>
+        <th>{%(34)Group Status}</th>
+        <th>{%(36)Scheme Name}</th>
+        <th>{%(37)Risk Commencement Date}</th>
+      </tr>
+      <!--{GROUP_SEARCH_RESULTS}-->
+    </table>
+    <table class="navigation">
+      <tr>
+        <td class="return">
+          <a href="?screen_name=DO_MAIN_PAGE">
+            {%(100)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

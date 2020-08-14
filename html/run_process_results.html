@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Processing results}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form method="post" action="%SERVLET_PATH%">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" align=left>{HELP_LINK} {%(2)Processing results}</td>
+      </tr>
+      <tr>
+        <th>{RESULTS}</th>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td class="return">
+          <a href="?screen_name=DO_MAIN_PAGE">
+            {%(200)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

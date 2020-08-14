@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Policy Top Up Payments}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form method="post" action="%SERVLET_PATH%">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(1)Policy Top Up Payments}</td>
+      </tr>
+      <tr>
+        <th>{%(2)Policy No}</th>
+        <td>{PolicyNo}</td>
+      </tr>
+      <tr>
+        <th>{%(3)Name}</th>
+        <td>{Name}</td>
+      </tr>
+      <tr>
+        <th>{%(9)Coverage No}</th>
+        <td>
+          <select name="CoverageNo">
+            <option value=""></option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(4)Premium}</th>
+        <td>
+          <input name="PremiumAmount">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(5)Eff Date}</th>
+        <td>
+          <input name="EffectiveDate">
+          {DATE_FORMAT}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(6)Initial Fee}</th>
+        <td>
+          <input name="InitialFee">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(7)Initial Comm}</th>
+        <td>
+          <input name="InitialComm">
+        </td>
+      </tr>
+      <!--%(CashPseudo)-->
+      <tr>
+        <th>{%(8)Cash Pseudo}</th>
+        <td>
+          <select name="CashPseudo"></select>
+        </td>
+      </tr>
+      <!--%-->
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input name="SaveButton" type="submit" value="{%(10)Submit}">
+        </td>
+        <td class="return">
+          <a href="%SERVLET_PATH%?screen_name=MAKE_TOPUP_PAYMENTS">
+            {%(11)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+    <input type="hidden" name="PolicyNo">
+  </form>
+</body>
+</html>

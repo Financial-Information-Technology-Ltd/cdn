@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>{%(1)Process progress}</title>
+<head>
+<meta charset="utf-8" />
+<!-- Please leave this line as is. Do not change-->
+<meta http-equiv="R1efresh" content="{REFRESH_INTERVAL}">
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body onload="scrollTo(0,1000000);">
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(2)Process}</td>
+      </tr>
+      <!--%(STILL_RUNNING)-->
+      <tr>
+        <th>{%(3)Process is running}</th>
+      </tr>
+      <!--%-->
+      <!--%(FINISHED)-->
+      <tr>
+        <th>{%(4)Process has finished.}</th>
+      </tr>
+      <!--{RESULT_URLS}-->
+      <!--%-->
+      <tr>
+        <td>{BATCH_MESSAGES}</td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="RefreshButton" value="{%(100)Refresh}">
+        </td>
+        <td class="return">
+          <a href="?screen_name={RETURNTO}">
+            {%(200)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+    <input type="hidden" name="UrlText" value="{%(5)For results please click here}">
+  </form>
+</body>
+<!--%(AUTOREFRESH)-->
+<script>
+  setTimeout('document.forms[0].submit()',{REFRESH_INTERVAL}*1000);
+</script>
+<!--%-->
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Choose a Policy}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form method="post" action="%SERVLET_PATH%">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="3">{HELP_LINK}{%(1)Choose a Policy}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(2)Policy No}</th>
+        <td style="width: 1%">
+          <input type="text" name="PolicyKey">
+        </td>
+        <td>
+          <input type="submit" name="SubmitPolicy" value="{%(3)Show Policy}">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(6)Application Number}</th>
+        <td>
+          <input type="text" name="ApplicationNo">
+        </td>
+        <td>
+          <input type="submit" name="SubmitApplicationNo" value="{%(7)Show Policy}">
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">&nbsp;</td>
+      </tr>
+      <tr>
+        <th>{%(8)Agent Number}</th>
+        <td>
+          <input type="text" name="AgentNo">
+        </td>
+        <td ROWSPAN="4">
+          <input type="submit" name="SubmitSearch" value="{%(9)Show policies}">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(10)Class Code}</th>
+        <td>
+          <select name="ClassCode">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(11)Status}</th>
+        <td>
+          <select name="StatusCode">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(12)External Reference}</th>
+        <td>
+          <input type="text" name="ExternalRef">
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td class="return">
+          <b>
+            <a href="?screen_name=do_main_page">
+              {%(100)Return}
+              <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+            </a>
+          </b>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>{%(1)Back Dated Job Loss Claim}</title>
+  <link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+<form action="%SERVLET_PATH%" method="post">
+  {ERRORS}
+  <table>
+    <tr>
+      <td class="title" colspan=2>{HELP_LINK}{%(2)Back Dated Job Loss Claim}</td>
+    </tr>
+    <tr>
+      <th style="width: 30%">{%(3)Policy number}</th>
+      <td>{PolicyNo}</td>
+    </tr>
+    <tr>
+      <th>{%(4)Job Loss plan}</th>
+      <td>{JobLossPlan}</td>
+    </tr>
+    <tr>
+      <th>{%(5)Policy status}</th>
+      <td>{BaseStatus}</td>
+    </tr>
+    <tr>
+      <th>{%(6)Owner}</th>
+      <td>{Owner}</td>
+    </tr>
+    <tr>
+      <th>{%(7)Expiry Date}</th>
+      <td>{EtiExpiryDate}</td>
+    </tr>
+    <tr>
+      <th>{%(10)Job Loss Date}</th>
+      <td>
+        <input type="text" name="JobLossDate">
+      </td>
+    </tr>
+  </table>
+  <table class="navigation">
+    <tr>
+      <td>
+        <input type="submit" name="BackDateJobLossButton" value="{%(100) Claim}">
+      </td>
+      <td class="return">
+        <a href="%BACK_LINK%">
+          {%(101)Return}
+          <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+        </a>
+      </td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

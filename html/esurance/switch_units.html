@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Switch Request}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body ONLOAD="initialise()">
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan=2>{HELP_LINK}{%(1)Switch Requested</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(2)Scheme Owner}</th>
+        <td>{SchemeOwner}</td>
+      </tr>
+      <tr>
+        <th>{%(3)Membership Number}</th>
+        <td>{PolicyKey}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Name}</th>
+        <td>{PolicyOwner}</td>
+      </tr>
+      <tr>
+        <th>{%(5)Currency}</th>
+        <td>{Currency}</td>
+      </tr>
+      <tr>
+        <th>{%(7)Free switch allowed}</th>
+        <td>{FreeSwitchAllowed}</td>
+      </tr>
+      <tr>
+        <th>{%(8)Switches Taken:}</th>
+        <td>{FreeSwitchTaken}</td>
+      </tr>
+      <tr>
+        <th>{%(9)Min Switch Charge:}</th>
+        <td>{Currency} {MinSwitchCharge}</td>
+      </tr>
+      <tr>
+        <th>{%(39)Min Switch Value:}</th>
+        <td>{Currency} {MinSwitchValue}</td>
+      </tr>
+      <!--%(COVERAGE_SECTION)-->
+      <tr>
+        <th>{%(6)Coverage No}</th>
+        <td>
+          <select name="CoverageNo" ONCHANGE="document.forms[0].submit()"></select>
+        </td>
+      </tr>
+      <!--%-->
+      <tr>
+        <th>{%(26)Redirect}</th>
+        <td>
+          <input type="checkbox" name="Redirect">
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th colspan="8">{%(28)Fund Value at Latest Price by Fund}</th>
+      </tr>
+      <tr>
+        <th>{%(37)Fund Code}</th>
+        <th>{%(29)Fund Name}</th>
+        <th>{%(30)Fund Ccy}</th>
+        <th align="right">{%(31)Fund Units}</th>
+        <th align="right">{%(32)Fund Price}</th>
+        <th align="right">{%(33)Fund Value}</th>
+        <th align="right">{%(34)Exchange Rate}</th>
+        <th align="right">{%(35)Pension Value}</th>
+      </tr>
+      <!--{MEMBER_FUND_TABLE}-->
+      <tr>
+        <th></th>
+        <th colspan="6">{%(36)Total Value}</th>
+        <th align="right">{TotalValue}</th>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th colspan="4" style="width: 45%">{%(10)Switch from Funds:}</th>
+        <th ROWSPAN="99" style="width: 1%">&nbsp;&nbsp;</th>
+        <th colspan="5" style="width: 45%">{%(11)Switch to Funds:}</th>
+      </tr>
+      <tr>
+        <th>{%(12)Fund Code}</th>
+        <th>{%(13)Fund Name}</th>
+        <th align='RIGHT'>{%(14)Existing Units}</th>
+        <th align='RIGHT'>{%(15)% of units for switch}</th>
+        <th>{%(17)Fund Code}</th>
+        <th>{%(18)Fund Name}</th>
+        <th>{%(19)Fund Ccy}</th>
+        <th>{%(20)Fund Type}</th>
+        <th align='RIGHT'>{%(21)%}</th>
+      </tr>
+      <!--{FUND_TABLE}-->
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SubmitButton" value="{%(100)Submit}">
+        </td>
+        <td class="return" align="right">
+          <b>
+            <a href="%BACK_LINK%">
+              {%(101)Return}
+              <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+            </a>
+          </b>
+        </td>
+      </tr>
+    </table>
+    <input type="hidden" name="NewFundIndex" value="">
+    <input type="hidden" name="AddButtonText" value="{%(102)Add}">
+    <input type="hidden" name="DelButtonText" value="{%(103)Del}">
+  </form>
+  <div id="FundChooser" style="display: none; width: 450px; height: 450px; overflow: auto">
+    <table>
+      <tr>
+        <td class="title" colspan="4">{%(22)Please select a fund:}
+          <a href="javascript:hideFundChooser();">
+            <span class="return_link">{%(23)Close}</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(17)Fund Code}</th>
+        <th>{%(18)Fund Name}</th>
+        <th>{%(19)Fund Ccy}</th>
+        <th>{%(20)Fund Type}</th>
+      </tr>
+      <!--{POPUP_FUND_TABLE}-->
+    </table>
+  </div>
+  <script type="text/javascript">
+function initialise()
+{
+	var i = 0;
+	while ((document.getElementById("TotalSwitchToValue_"+i)))
+	{
+		updateTotalSwitchToValue(i);
+		i++;
+	}
+	document.forms[0].elements["SubmitButton"].onclick = onClickSubmit;
+	set_focus();
+}
+function updateTotalSwitchToValue(i)
+{
+	var j = 0;
+	var total_switch_to_value = 0;
+	while ((document.forms[0].elements["SWITCH_TO_VALUE_"+i+"_"+j]))
+	{
+		float_changed("SWITCH_TO_VALUE_"+i+"_"+j,3);
+    if (parse_float(document.forms[0].elements["SWITCH_TO_VALUE_"+i+"_"+j].value)!="")
+      total_switch_to_value += parse_float(document.forms[0].elements["SWITCH_TO_VALUE_"+i+"_"+j].value);
+		j++;
+	}
+	document.getElementById("TotalSwitchToValue_"+i).innerHTML = format_float(total_switch_to_value,3);
+	return total_switch_to_value; 
+}
+function onClickSubmit(e)
+{
+	var i = 0;
+	var empty = true;
+	while ((document.forms[0].elements["SWITCH_VALUE_"+i]))
+	{
+		if (parse_float(document.forms[0].elements["SWITCH_VALUE_"+i].value)!="")
+		  empty = false;
+		i++;
+	}
+	if (empty)
+	{
+		alert("{%(27)Switch is empty!}");
+		return false;
+	}
+  var i = 0;
+	while ((document.getElementById("TotalSwitchToValue_"+i)))
+	{
+		if (parse_float(document.forms[0].elements["SWITCH_VALUE_"+i].value)!="" && updateTotalSwitchToValue(i)!=100)
+		{
+			alert("{%(24)Fund percentages must add up to 100%!}");
+			return false;
+		}
+		i++;
+	}
+	var answer = confirm("{%(25)This switch will be processed at the next possible dealing date - please confirm that you wish to proceed.}");
+	if (!answer)
+	{
+    var e = window.event || e;
+		if (e && e.stopPropagation)
+			e.stopPropagation();
+		else
+			e.cancelBubble = true;
+		return false;
+	}
+	else
+	  return true;
+}
+function hideFundChooser()
+{
+	document.getElementById("FundChooser").style.display = "none";
+	document.forms[0].elements['NewFundIndex'].value = "";
+}
+function showFundChooser(i)
+{
+	document.forms[0].elements['NewFundIndex'].value = i;
+	document.getElementById("FundChooser").style.position = "absolute";
+	document.getElementById("FundChooser").style.top = getOffset(document.forms[0].elements["AddButton_"+i]).top+document.forms[0].elements["AddButton_"+i].clientHeight;
+	document.getElementById("FundChooser").style.left = getOffset(document.forms[0].elements["AddButton_"+i]).left;
+	document.getElementById("FundChooser").style.display = "";
+}
+function chooseFund(code)
+{
+	document.forms[0].elements['NewFundCode_'+document.forms[0].elements['NewFundIndex'].value].value = code;
+	document.forms[0].submit();
+}
+function getOffset(el)
+{
+	var x = 0;
+	var y = 0;
+	while( el && !isNaN( el.offsetLeft ) && !isNaN( el.offsetTop ) )
+	{
+		x += el.offsetLeft - el.scrollLeft;
+		y += el.offsetTop - el.scrollTop;
+		el = el.offsetParent;
+	}
+	return { top: y, left: x };
+}
+</script>
+</body>
+</html>

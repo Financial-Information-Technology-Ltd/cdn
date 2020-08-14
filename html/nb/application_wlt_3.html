@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Step 3}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form method="post" action="%SERVLET_PATH%">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(2)Beneficiaries}</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th colspan=8>{%(11)Primary Beneficiaries}</th>
+      </tr>
+      <tr>
+        <!--%(PrimClientCodeColumn)-->
+        <th>{%(21)Client}</th>
+        <!--%-->
+        <th>{%(17)First Name}</th>
+        <th>{%(18)Middle Name}</th>
+        <th>{%(19)Last Name}</th>
+        <th>{%(27)Date of Birth}</th>
+        <th>{%(23)Relationship}</th>
+        <th>{%(24)NIN}</th>
+        <th>{%(22)Share}</th>
+      </tr>
+      <!--{PrimaryBeneficiaries}-->
+      <tr>
+        <th>{%(28)Clause Text}</th>
+        <td colspan=7>
+          <input type="text" name="BeneficiaryClauseText_1" size=60 onchange="document.forms[0].submit()">
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th colspan=8>{%(13)Secondary Beneficiaries}</th>
+      </tr>
+      <tr>
+        <!--%(SecClientCodeColumn)-->
+        <th>{%(21)Client}</th>
+        <!--%-->
+        <th>{%(17)First Name}</th>
+        <th>{%(18)Middle Name}</th>
+        <th>{%(19)Last Name}</th>
+        <th>{%(27)Date of Birth}</th>
+        <th>{%(23)Relationship}</th>
+        <th>{%(24)NIN}</th>
+        <th>{%(22)Share}</th>
+      </tr>
+      <!--{SecondaryBeneficiaries}-->
+      <tr>
+        <th>{%(28)Clause Text}</th>
+        <td colspan=7>
+          <input type="text" name="BeneficiaryClauseText_2" size=60 onchange="document.forms[0].submit()">
+        </td>
+      </tr>
+    </table>
+    <!--%(AGENT_DETAILS)-->
+    <table>
+      <tr>
+        <th style="width: 30%">{%(40)Agent Code}</th>
+        <td>
+          <input type="text" name="AgentNo" onchange="document.forms[0].submit()">
+          <input type="BUTTON" NAME="SearchAgentButton" value="{%(105)Search Agent}"
+            ONCLICK="search_agent('AgentNo',true)">
+          {AGENT_NAME}
+        </td>
+      </tr>
+    </table>
+    <!--%-->
+    <table class="navigation">
+      <tr>
+        <td align="left">
+          <input class="button" name="PrevButton" type="submit" value="&lt; {%(101)Previous}">
+        </td>
+        <td align="center">
+      <!--%(SaveButtonFragment)-->
+          <input class="button" name="SaveButton" type="submit" value="{%(144)Save} &gt;">
+      <!--%-->
+        </td>
+        <td align="right">
+          <input class="button" name="SubmitButton" type="submit" value="{%(102)Submit} &gt;">
+      <!--%(SubmitEmailButtonFragment)-->
+          <input class="button" name="SubmitEmailButton" type="submit" value="{%(103)Submit &amp; Email} &gt;">
+      <!--%-->
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

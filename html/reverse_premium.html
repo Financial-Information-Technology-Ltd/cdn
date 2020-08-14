@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Reverse Premium}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form method="post" action="%SERVLET_PATH%">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(2)Reverse Premium}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Policy No}</th>
+        <td>{PolicyNo}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Paid to Date}</th>
+        <td>{PaidToDate}</td>
+      </tr>
+      <tr>
+        <th>{%(5)Premium Amount}</th>
+        <td>{PremiumAmount}</td>
+      </tr>
+      <tr>
+        <th>{%(6)Currency}</th>
+        <td>{Currency}</td>
+      </tr>
+      <tr>
+        <th>{%(7)Original Transaction Description}</th>
+        <td>{OldDescription}</td>
+      </tr>
+      <tr>
+        <th>{%(8)Original Transaction No}</th>
+        <td>{OldTransNo}</td>
+      </tr>
+      <tr>
+        <th>{%(11)Reason}</th>
+        <td>
+          <select name="Reason">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(12)Charge Amount}</th>
+        <td>
+          <select name="ChargeAmount">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(14)Description}</th>
+        <td>
+          <input type="text" name="Description" size=50>
+        </td>
+      </tr>
+      <!--%(LEAVE_IN_SUSPENSE_FRAGMENT)-->
+      <tr>
+        <th>{%(15)Leave money in suspense}</th>
+        <td>
+          <input type="checkbox" name="LeaveInSuspense">
+        </td>
+      </tr>
+      <!--%-->
+      <tr>
+        <th>{%(16)Effective Date}</th>
+        <td>
+          <input type="text" name="EffectiveDate" size=10>
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="ProcessButton" value="{%(101)Process}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(102)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

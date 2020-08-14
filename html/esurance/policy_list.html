@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Policy List}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table class="zebra">
+      <tr>
+        <td class="title" colspan=8>{HELP_LINK}{%(1)Policy List}</td>
+      </tr>
+      <!--%(PAGE_LIST)-->
+      <tr>
+        <th colspan=8>{%(22)Pages:} - {PageList}</th>
+      </tr>
+      <!--%-->
+      <tr>
+        <th>
+          <a href="{HeaderPath}&Sort=PolicyNo">{%(11)Number}</a>
+        </th>
+        <th>
+          <a href="{HeaderPath}&Sort=AgentRefNo">{%(12)Unit Code}</a>
+        </th>
+        <th>
+          <a href="{HeaderPath}&Sort=AgentNo">{%(13)Agent Code}</a>
+        </th>
+        <th>
+          <a href="{HeaderPath}&Sort=FirstName">{%(14)Given Name}</a>
+        </th>
+        <th>
+          <a href="{HeaderPath}&Sort=LastName">{%(15)Family Name}</a>
+        </th>
+        <th>
+          <a href="{HeaderPath}&Sort=Status">{%(16)Status}</a>
+        </th>
+        <th>
+          <a href="{HeaderPath}&Sort=StatusDate">{%(17)Status Date}</a>
+        </th>
+        <th>{%(18)Errors}</th>
+      </tr>
+      <!--{POLICY_LIST}-->
+    </table>
+    <table class="navigation">
+      <tr>
+          <!--%(DOWNLOAD_FRAGMENT)-->
+        <td>
+          <a href="{DOWNLOAD_LINK}">{%(21)Download in CSV format}</a>
+        </td>
+          <!--%-->
+        <td align="right">
+          <b>
+            <a href="%BACK_LINK%">
+              {%(7)Return}
+              <img src="/lf/images/back.gif">
+            </a>
+          </b>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

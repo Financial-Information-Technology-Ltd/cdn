@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Periodic Processing Groups}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(1)Periodic Processing Groups}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(2)Code}</th>
+        <td>{PROCESS_CODE}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Title}</th>
+        <td>
+          <input type="text" name="REPT_TITLE" size=60>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(3)Allow only one process to run at a time}</th>
+        <td>
+          <input type="checkbox" name="REPT_EXCLU_SYS_USE">
+        </td>
+      </tr>
+      <!--%(PREVENT_RUN_WITHOUT_VAL_PRICES)-->
+      <tr>
+        <th>{%(5)Prevent run without valuation prices}</th>
+        <td>
+          <input type="checkbox" name="PREVENT_RUN_WITHOUT_VAL_PRICES">
+        </td>
+      </tr>
+      <!--%-->
+    </table>
+    <table>
+      <tr>
+        <th style="width: 1%">{%(21)Type}</th>
+        <th style="width: 1%">{%(23)Run}</th>
+        <th style="width: 1%">{%(22)Process Name}</th>
+        <th style="width: 1%">{%(24)Parameter}</th>
+        <th>&nbsp;</th>
+      </tr>
+      <!--{BATCH_TABLE}-->
+      <tr>
+        <td>
+          <input type="submit" name="AddEntryButton" value="{%(12)Add}">
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SaveBatch" value="{%(13)Save}">
+        </td>
+        <td class="return">
+          <a href="?screen_name=BATCH_CODE_CHOOSE&BatchCode={PROCESS_CODE}">
+            {%(14)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

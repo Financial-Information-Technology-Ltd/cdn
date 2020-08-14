@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Translate Message}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan=3>{HELP_LINK}{%(3)Translate message}</td>
+      </tr>
+      <tr>
+        <th width=30%>{%(4)Language}</th>
+        <td>{LANGUAGE}</td>
+      </tr>
+    </table>
+    <table class="zebra">
+      <tr>
+        <th>{%(11)MsgNo}</th>
+        <th style="width: 45%">{%(12)Original Text}</th>
+        <th style="width: 45%">{%(13)Translated Text}</th>
+        <th>&nbsp;</th>
+      </tr>
+      <!--{MESSAGE_LIST}-->
+    </table>
+    <input type="hidden" name="SaveText" value="{%(21)Save}">
+    <table class="navigation">
+      <tr>
+        <td>&nbsp;</td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

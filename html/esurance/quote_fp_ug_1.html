@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(20)Step 1}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form method="post" action="%SERVLET_PATH%">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan=2>{HELP_LINK}{%(2)Life Assured}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)First Name}</th>
+        <td>
+          <input name="FirstLife_FirstName" size="30">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(4)Surname}</th>
+        <td>
+          <input name="FirstLife_LastName" size="30">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(5)Sex}</th>
+        <td>
+          <input name="FirstLife_Sex" type="radio" value="M">
+          {%(6)Male}
+          <input name="FirstLife_Sex" type="radio" value="F">
+          {%(7)Female}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(8)Birth Date}</th>
+        <td>
+          <input name="FirstLife_BirthDate" size="10">
+          {DATE_FORMAT}
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <td class="title" colspan="2">{%(9)Policy Details}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(10)Payment Frequency}</th>
+        <td>
+          <select name="Frequency">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <!--%(INPUT_SUM_ASSURED_FRAGMENT)-->
+      <tr>
+        <th>{%(11)Sum Assured}</th>
+        <td>
+          <input name="FaceAmount" size="10">
+        </td>
+      </tr>
+      <!--%-->
+    </table>
+    <table class="navigation">
+      <tr>
+        <td align="left">
+          <input name="ExitButton" class="button" type="submit" value="{%(103)Exit}" onclick="confirm_nb_exit()">
+        </td>
+        <td align="right">
+          <input class="button" name="SubmitButton" type="submit" value="{%(102)Next} &gt;">
+        </td>
+      </tr>
+    </table>
+    <input type="hidden" name="LifeComesFirst" value="1">
+    <input type="hidden" name="Owner_Category" value="I">
+  </form>
+</body>
+</html>

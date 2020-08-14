@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Payment from Agent}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(1)Payment from Agent}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Agent}</th>
+        <td>{AGENT_NAME}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Currency}</th>
+        <td>
+          <select name="Currency">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(5)Amount}</th>
+        <td>
+          <input type="text" name="PaymentAmount" size=10>
+        </td>
+      </tr>
+      <!--%(CashPseudo)-->
+      <tr>
+        <th>{%(6)Cash Book}</th>
+        <td>
+          <select name="CashPseudo">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <!--%-->
+      <!--%(AGENT_LOANS_FRAGMENT)-->
+      <tr>
+        <th>{%(11)Loan Repayment}</th>
+        <td>
+          <input type="checkbox" name="LoanRepayment">
+        </td>
+      </tr>
+      <!--%(AGENT_LOAN)-->
+      <tr>
+        <th>{%(12)Loan}</th>
+        <td>
+          <select name="LoanKey" ONCHANGE="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(13)Loan Date}</th>
+        <td>{LOAN_START_DATE}</td>
+      </tr>
+      <tr>
+        <th>{%(14)Loan Amount}</th>
+        <td>{LOAN_AMOUNT}</td>
+      </tr>
+      <tr>
+        <th>{%(15)Loan Balance}</th>
+        <td>{LOAN_BALANCE}</td>
+      </tr>
+      <tr>
+        <th>{%(16)Loan Repayment Amount}</th>
+        <td>{REPAYMENT_AMOUNT}</td>
+      </tr>
+      <!--%(AGENT_LOAN_END)-->
+      <!--%(AGENT_LOANS_FRAGMENT_END)-->
+      <tr>
+        <th>{%(7)Description}</th>
+        <td>
+          <TEXTAREA name="Description" COLS=60 ROWS=3></TEXTAREA>
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SaveButton" value="{%(8)Save}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(9)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

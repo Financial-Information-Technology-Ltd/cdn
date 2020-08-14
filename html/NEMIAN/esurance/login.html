@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Login to Esurance.}</title>
+<link rel="stylesheet" type="text/css" href="/lf/Nemian_Stylesheet.css">
+<style>
+table {
+	background-color: #FFFFFF
+}
+
+tbody {
+	background-color: #FFFFFF
+}
+</style>
+</head>
+<body ONLOAD="on_load()" BGCOLOR="#F78D1F">
+  {ERRORS}
+  <div align="center">
+    <form action="%SERVLET_PATH%" method="post">
+      <div style="text-align: center;">
+        <table style="width: 648">
+          <tr>
+            <td colspan="2" style="width: 638">
+              <p align="center">
+                <img src="/lf/images/nemianlogo.jpg" style="width: 630" height="126">
+            </td>
+          </tr>
+          <tr>
+            <td style="width: 117">&nbsp;</td>
+            <td style="width: 513">&nbsp;</td>
+          </tr>
+          <tr>
+            <td colspan="2" style="background-color: #71315B" style="width: 638">
+              <h1>
+                &nbsp;
+                <font color="#FFFFFF">{%(1)Login to Esurance.}</font>
+              </h1>
+            </td>
+          </tr>
+          <tr>
+            <td style="width: 117">&nbsp;</td>
+            <td style="width: 513">&nbsp;</td>
+          </tr>
+          <tr>
+            <td style="width: 630" colspan="2">
+              <b> {%(2)Please type your User name and password}</b>
+            </td>
+          </tr>
+          <tr>
+            <td style="width: 117">&nbsp;</td>
+            <td style="width: 513">&nbsp;</td>
+          </tr>
+          <tr>
+            <td style="width: 117">{%(3)User Name}</td>
+            <td>
+              <input name="UserName" AUTOCOMPLETE="OFF">
+            </td>
+          </tr>
+          <tr>
+            <td style="width: 117">{%(4)Password}</td>
+            <td>
+              <input name="Password" type="PASSWORD" AUTOCOMPLETE="OFF">
+            </td>
+          </tr>
+          <tr>
+            <td style="width: 117">&nbsp;</td>
+            <td style="width: 513">
+              <input name="SubmitButton" type="submit" value="{%(5)Logon}"
+                style="background-color: #73305B; color: #FFFFFF">
+            </td>
+          </tr>
+          <tr>
+            <td colspan=2 align="right">
+              <img src="/lf/images/powered.gif">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <input type="hidden" name="SCREEN_NAME" value="LOGIN">
+    </form>
+  </div>
+</body>
+<script type="text/javascript">
+function on_load()
+{
+  element = document.forms[0].elements["UserName"];
+  element.focus();
+}
+</script>
+</html>

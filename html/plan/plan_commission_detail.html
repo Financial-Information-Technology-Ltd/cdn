@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Plan Commission Detail}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr title="class">
+        <td class="title" colspan=2>{HELP_LINK}{%(1)Plan Commission Detail}</td>
+      </tr>
+      <tr>
+        <th width=30%>{%(2)Plan Code}</th>
+        <td>{PlanCode}</td>
+      </tr>
+      <tr>
+        <th>{%(3)Plan Name}</th>
+        <td>{PlanName}</td>
+      </tr>
+      <tr>
+        <th>{%(26)Commission Type}</th>
+        <td>
+          <table>
+            <!--{COMM_TYPES_TABLE}-->
+            <tr>
+              <td colspan="2">
+                <input type="submit" name="AddCommTypeButton" value="{%(53)Add}">
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(36)Fixed Commission Amount}</th>
+        <td>
+          <input type="text" name="FIXED_COMMISSION_AMOUNT" size=10>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(5)Rider Commission}</th>
+        <td>
+          <select name="RIDER_COMMISSION_FLAG">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(7)Override Commission Calculation}</th>
+        <td>
+          <select name="OVERRIDE_COMM_CALC" ONCHANGE="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(6)Override Percent Table (to be used with calculate code "2")}</th>
+        <td>
+          <select name="OVERRIDE_COMM_TABLE">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(41)How many years to pay override renewal commissions}</th>
+        <td>
+          <input type="text" name="OVERRIDE_RENEWAL_YEARS" size=3>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(8)Prefinanced rate table}</th>
+        <td>
+          <select name="PREFINANCED_COMM_TABLE">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(10)Use same agent as on main plan}</th>
+        <td>
+          <input type="checkbox" name="AGENT_ON_MAIN_PLAN">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(12)Allow Pattern Code Override}</th>
+        <td>
+          <input type="checkbox" name="ALLOW_PATTERN_ORIDE" ONCHANGE="document.forms[0].submit()">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(13)Pattern codes}</th>
+        <td>
+          <table>
+            <!--{COMM_PATTERN_CODES_TABLE}-->
+            <tr>
+              <td>
+                <input type="submit" name="COMM_PATTERN_CODES_BUTTON" value="{%(19)Add}">
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(32)Commissions by Agent Type}</th>
+        <td>
+          <table>
+            <tr>
+              <th>{%(33)Agent Type}</th>
+              <th>{%(34)Commissions on application (%)}</th>
+              <th>{%(35)Override commissions (%)}</th>
+              <th>{%(40)Renewal Override Commission (%)}</th>
+            </tr>
+            <!--{AGENT_TYPE_COMM}-->
+            <tr>
+              <td colspan=4>
+                <input type="submit" name="AddAgentTypeButton" value="{%(19)Add}">
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(15)Consultant type}</th>
+        <td>
+          <select name="CON_COMM_TYPE">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(23)Clawback Basis}</th>
+        <td>
+          <select name="CLAWBACK_BASIS">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(25)Clawback Period (months)}</th>
+        <td>
+          <input type="text" name="CLAWBACK_PERIOD" size=4>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(42)Clawback Rate Table}</th>
+        <td>
+          <select name="CLAWBACK_RATE_TABLE">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(14)Do not clawback unearned commission if writing agent endorsed}</th>
+        <td>
+          <input type="checkbox" name="NO_CLAWBACK_ON_AGENT_ENDORSEMENT">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(39)Accounting when writing off commissions}</th>
+        <td>
+          <input type="checkbox" name="WRITE_OFF_COMM_ACCOUNTING">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(27)Init Comm Give Up Code}</th>
+        <td>
+          <select name="ICOMM_GIVE_UP_CALC_CD">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(29)Max Init Comm Give Up}</th>
+        <td>
+          <input type="text" name="MAX_ICOMM_GIVE_UP">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(31)Earnings Frequency}</th>
+        <td>
+          <select name="EARNINGS_FREQUENCY">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(37)Commissions at status J}</th>
+        <td>
+          <input type="checkbox" name="COMM_AT_STATUS_J">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(38)Commissions at complete pending status}</th>
+        <td>
+          <input type="checkbox" name="COMM_AT_STATUS_PAB">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(43) Referral %}</th>
+        <td>
+          <input type="text" name="REFERRAL_PERC" size=10>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(44) Direct Split %}</th>
+        <td>
+          <table style="width: 35%;">
+            <tr>
+              <th>{%(33)Agent Type}</th>
+              <th>{%(43) Referral %}</th>
+            </tr>
+            <!--{DIRECT_AGENT_SPLIT}-->
+            <tr>
+              <td colspan=4>
+                <input type="submit" name="AddDirectSplitButton" value="{%(19)Add}">
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(45) Referral Basis}</th>
+        <td>
+          <select name="REFERRAL_BASIS">
+            <option></option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(46) Referral Remuneration %}</th>
+        <td>
+          <input type="text" name="REFERRAL_REMUN_PERC" size=10>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(47) Override Referral Remuneration %}</th>
+        <td>
+          <input type="text" name="ORIDE_REFERRAL_REMUN_PERC" size=10>
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SaveButton" value="{%(100)Save}">
+        </td>
+        <td class="return">
+          <b>
+            <a href="%BACK_LINK%">
+              {%(101)Return}
+              <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+            </a>
+          </b>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

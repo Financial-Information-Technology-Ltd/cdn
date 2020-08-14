@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(20)Step 1}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form method="post" action="%SERVLET_PATH%">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(1)Owner}</td>
+      </tr>
+      <tr>
+        <td style="width: 30%">{%(31)Owner Number (if already exists)}</td>
+        <td>
+          <input type="text" name="OwnerKey" onchange="document.forms[0].submit()">
+          <input type="BUTTON" value="{%(104)Search Client}" ONCLICK="search_client('OwnerKey',true)">
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <input name="Owner_Title" type="radio" value="I_MR" checked>
+          {%(2)Mr}
+          <input name="Owner_Title" type="radio" value="I_MRS">
+          {%(3)Mrs}
+        </td>
+      </tr>
+      <tr>
+        <td>{%(5)Personal Numeric Code}</td>
+        <td>
+          <input type="text" name="Owner_NIN">
+        </td>
+      </tr>
+      <tr>
+        <td>{%(6)Surname}</td>
+        <td>
+          <input name="Owner_LastName" size="30">
+        </td>
+      </tr>
+      <tr>
+        <td>{%(7)First Name}</td>
+        <td>
+          <input name="Owner_FirstName" size="30">
+        </td>
+      </tr>
+      <tr>
+        <td>{%(8)Other Names}</td>
+        <td>
+          <input name="Owner_OtherNames" size="30">
+        </td>
+      </tr>
+      <tr>
+        <td>{%(9)Date Of Birth}</td>
+        <td>
+          <input name="Owner_BirthDate" size="10">
+          {DATE_FORMAT}
+        </td>
+      </tr>
+      <tr>
+        <td>{%(10)Nationality}</td>
+        <td>
+          <select name="Owner_Nationality">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>{%(11)Country of residence}</td>
+        <td>
+          <select name="Owner_Country">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>{%(12)Street, Number}</td>
+        <td>
+          <input name="Owner_Address" size="50">
+        </td>
+      </tr>
+      <tr>
+        <td>{%(13)Town, City}</td>
+        <td>
+          <input name="Owner_City" size="20">
+        </td>
+      </tr>
+      <tr>
+        <td>{%(14)Municipality/region}</td>
+        <td>
+          <input name="Owner_County" size="20">
+        </td>
+      </tr>
+      <tr>
+        <td>{%(15)Postal Code}</td>
+        <td>
+          <input name="Owner_PostCode" size="20">
+        </td>
+      </tr>
+      <tr>
+        <td>{%(21)Telephone}</td>
+        <td>
+          <input name="Owner_PhoneNo" size="20">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input checked name="Owner_Employment" type="radio" value="1">
+          {%(22)Employed}
+          <input name="Owner_Employment" type="radio" value="0">
+          {%(16)Self-Employed}&nbsp; {%(17)Profession}:
+        </td>
+        <td>
+          <input name="Owner_Occupation" size="30">
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td align="left">
+          <input name="ExitButton" class="button" type="submit" value="Exit" onclick="confirm_nb_exit()">
+        </td>
+        <td align="right">
+          <input name="NextButton" class="button" type="submit" value="{%(19)Next} &gt;">
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

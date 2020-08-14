@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Workflow Schedule}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table class="zebra">
+      <tr>
+        <td class="title" colspan="7">{HELP_LINK}{%(2)Workflow Schedule}</td>
+      </tr>
+      <tr>
+        <th>{%(5)Active}</th>
+        <th>{%(6)Task}</th>
+        <th>{%(7)Next Date}</th>
+        <th>{%(8)Frequency}</th>
+        <th>{%(9)Start Date}</th>
+        <th>{%(10)End Date}</th>
+        <th>{%(11)Description}</th>
+      </tr>
+      <!--{ITEM_LIST}-->
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="CreateNewButton" value="{%(20)Create New Item}">
+          <input type="submit" name="ShowInactiveButton" value="{%(21)Show Inactive Items}">
+          <input type="submit" name="HideInactiveButton" value="{%(22)Hide Inactive Items}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

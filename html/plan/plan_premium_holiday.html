@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Plan Premium Holiday}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    <b>{ERRORS}</b>
+    <table>
+      <tr>
+        <td class="title" colspan=2>{HELP_LINK}{%(1)Plan Premium Holiday}</td>
+      </tr>
+      <tr>
+        <th width=30%>{%(2)Plan Code}</th>
+        <td>{PlanCode}</td>
+      </tr>
+      <tr>
+        <th>{%(3)Plan Name}</th>
+        <td>{PlanName}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Premium holiday basis}</th>
+        <td>
+          <select name="PREM_HOL_BASIS">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(5)Fee Calculation Basis}</th>
+        <td>
+          <table>
+            <!--{PREM_HOLIDAY_TABLE}-->
+            <tr>
+              <td>
+                <input type="submit" name="AddValueButton" value="{%(7)Add}">
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(8)Fee percentage}</th>
+        <td>
+          <input type="text" name="MAINT_FEE_PERC">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(9)Min holiday period}</th>
+        <td>
+          <input type="text" name="HOL_MIN_PERIOD">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(10)Max holiday period}</th>
+        <td>
+          <input type="text" name="HOL_MAX_PERIOD">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(11)Max holidays}</th>
+        <td>
+          <input type="text" name="MAX_HOLS">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(14)Minimum Policy value required for Premium Holiday}</th>
+        <td>
+          <input type="text" name="MIN_POL_VALUE_PREMIUM_HOLIDAY">
+          <select name="MINIMUM_POLICY_VALUE_PH_BASIS" ONCHANGE="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(12)Number of Days Before Re-Issue to Send Letter}</th>
+        <td>
+          <input type="text" name="PREM_HOL_LETTER_DAYS">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(13)Do not allow Premium Holiday if policy within initial accumulation units period}</th>
+        <td>
+          <input type="checkbox" name="PH_ALLOWED_AFTER_INITIAL_ACCUM_UNITS_PERIOD">
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SaveButton" value="{%(100)Save}">
+        </td>
+        <td class="return">
+          <b>
+            <a href="%BACK_LINK%">
+              {%(101)Return}
+              <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+            </a>
+          </b>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

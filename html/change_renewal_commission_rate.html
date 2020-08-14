@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Change Renewal Commission Rates}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan=2>{HELP_LINK}{%(2)Change Renewal Commission Rates}</td>
+      </tr>
+      <tr>
+        <th width=30%>{%(3)Policy}</th>
+        <td>{PolicyKey}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Owner}</th>
+        <td>{PolicyOwner}</td>
+      </tr>
+      <tr>
+        <th>{%(5)Product}</th>
+        <td>{PlanName}</td>
+      </tr>
+    </table>
+    <table>
+      <!--%(CommStartShowFrag)-->
+      <tr>
+        <th style="width: 30%">{%(16)Commission Start Date}:</th>
+        <td>{COMM_START_DATE}</td>
+      </tr>
+      <!--%-->
+      <!--%(CommStartInFrag)-->
+      <tr>
+        <th style="width: 30%">{%(19)Commission Start Date}:</th>
+        <td>
+          <input type="text" name="COMM_START_DATE">
+        </td>
+      </tr>
+      <!--%-->
+      <tr>
+        <th>&nbsp;</th>
+        <th>{%(11)Plan}</th>
+        <th>{%(12)Status}</th>
+        <th>{%(13)Agent}</th>
+        <th>{%(14)Current Rates}</th>
+        <th>{%(15)New Rate}</th>
+        <th>{%(17)End Date}</th>
+        <th>{%(18)Delete}<th>
+      </tr>
+      <!--{COVERAGE_LIST}-->
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="ProcessButton" value="{%(100)Process}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

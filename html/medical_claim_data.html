@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Medical Claim}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <div class="othererror">
+    <!--%(PAYMENT_MESSAGE_1)-->
+      {%(16)The payment amount has been reduced due to the Claim Excess Amount}.<br>
+    <!--%-->
+    <!--%(PAYMENT_MESSAGE_2)-->
+      {%(17)The payment amount has been reduced due to the Maximum Claim Amount per Year}.<br>
+    <!--%-->
+    <!--%(PAYMENT_MESSAGE_3)-->
+      {%(19)The payment amount has been reduced as total claims cannot exceed the Sum Assured}.<br>
+    <!--%-->
+    <!--%(PAYMENT_MESSAGE_4)-->
+      {%(20)The payment amount has been reduced as total claims for the group cannot exceed the Group Sum Assured}.<br>
+    <!--%-->
+    <!--%(CONFIRMATION_MESSAGE)-->
+      {%(13)A payment out will be created for the amount of {PaymentAmount}}.
+      <input type="submit" name="ConfirmButton" value="{%(102)Confirm}">
+      <input type="submit" name="CancelButton" value="{%(103)Cancel}">
+    <!--%-->
+    </div>
+    <table>
+      <tr>
+        <td class="title" colspan=2>{HELP_LINK}{%(2)Medical Claim}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Policy number}</th>
+        <td>{PolicyNo}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Policy plan}</th>
+        <td>{BasePlan}</td>
+      </tr>
+      <tr>
+        <th>{%(5)Policy status}</th>
+        <td>{BaseStatus}</td>
+      </tr>
+      <tr>
+        <th>{%(6)Owner}</th>
+        <td>{Owner}</td>
+      </tr>
+      <tr>
+        <th>{%(7)Rider}</th>
+        <td>{ClaimCoverage}</td>
+      </tr>
+      <tr>
+        <th>{%(8)Rider status}</th>
+        <td>{CoverageStatus}</td>
+      </tr>
+      <tr>
+        <th>{%(11)Total claims allowed per policy year}</th>
+        <td>{MaxClaimAmtPerYr}</td>
+      </tr>
+      <tr>
+        <th>{%(10)Amount claimed this policy year}</th>
+        <td>{MedicalClaimsTotal}</td>
+      </tr>
+    <!--%(GROUP_SUM_ASSURED_FRAGMENT)-->
+      <tr>
+        <th>{%(14)Group Sum Assured}</th>
+        <td>{GroupSumAssured}</td>
+      </tr>
+      <tr>
+        <th>{%(15)Group Sum Assured already claimed this policy year}</th>
+        <td>{GroupMedicalClaimsTotal}</td>
+      </tr>
+    <!--%-->
+      <tr>
+        <th>{%(9)Excess}</th>
+        <td>{ClaimExcess}</td>
+      </tr>
+      <tr>
+        <th>{%(12)Bill amount}</th>
+        <td>
+          <input type="text" name="CLAIM_AMOUNT" />
+        </td>
+      </tr>
+    </table>
+    <!--%(PAYMENTS_OUT)-->
+    {PAYMENTS_OUT}
+    <!--%(PAYMENTS_OUT_END)-->
+    <table>
+      <tr>
+        <th>{%(18)Claim Comments}</th>
+        <td colspan="2">
+          <TEXTAREA name="CLAIM_COMMENTS" ROWS="4" COLS="100"></TEXTAREA>
+        </td>
+      </tr>
+    </table>
+    <!--%(NAVIGATION)-->
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="ProcessButton" value="{%(100)Process}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+    <!--%-->
+  </form>
+</body>
+</html>

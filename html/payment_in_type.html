@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Cash Payment Type}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(1)Cash Payment Type}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Code}</th>
+        <td>{PaymentType}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Name}</th>
+        <td>
+          <input type="text" name="Name" size=40>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(5)Days to Clear}</th>
+        <td>
+          <input type="text" name="DaysToClear" size=3>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(9)Use original effective date when reconciling transaction}</th>
+        <td>
+          <input type="checkbox" name="ORIG_DT_AT_RECONCILIATION">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(17)List Type}</th>
+        <td>
+          <input type="text" name="LIST_TYPE" size=40>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(18)Pseudo Group}</th>
+        <td>
+          <select name="PseudoGroup" ONCHANGE="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(6)Cash Pseudo}</th>
+        <td>
+          <select name="CashPseudo">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(8)Currency (if missing - allow different currencies)}</th>
+        <td>
+          <select name="Currency">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(11)Language:}</th>
+        <td>
+          <table>
+            <tr>
+              <td>{%(12)Languages}</td>
+              <td>{%(13)Name Translation}</td>
+            </tr>
+            <!--{LANGUAGE_TABLE}-->
+            <tr>
+              <td>
+                <input type="submit" name="AddLanguageButton" value="{%(14)Add}">
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(15)Branches}</th>
+        <td>
+          <table>
+            <!--{BRANCH_TABLE}-->
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(16) }Add to security</th>
+        <td>
+          <input type="checkbox" name="ADD_TO_SECURITY">
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SaveButton" value="{%(100)Save}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

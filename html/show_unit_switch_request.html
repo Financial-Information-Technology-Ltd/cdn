@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Units Switch Request}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(1)Units Switch Request}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Policy No}</th>
+        <td>{PolicyKey}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Created Date}</th>
+        <td>{CreatedDate}</td>
+      </tr>
+      <tr>
+        <th>{%(5)Created Time}</th>
+        <td>{CreatedTime}</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th>{%(21)From Fund}</th>
+        <th>{%(22)Percent}</th>
+        <th>{%(23)To Funds}</th>
+        <th>{%(24)Share}</th>
+      </tr>
+      <!--{FUND_LIST}-->
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="CancelSwitchRequestButton" value="{%(102)Cancel Switch Request}"
+            ONCLICK="return confirmDelete();">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+  <script type="text/javascript">
+function confirmDelete()
+{
+  reply = confirm("{%(103)Are you sure you wish to delete special clause?}");
+  return reply;
+}
+</script>
+</body>
+</html>

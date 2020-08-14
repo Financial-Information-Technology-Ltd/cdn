@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Status Change - Maturity Settlement}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan=2>{HELP_LINK}{%(1)Status Change - Maturity Settlement}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Policy number}</th>
+        <td>{POLICY_NO}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Coverage number}</th>
+        <td>{COVERAGE_NO}</td>
+      </tr>
+      <tr>
+        <th>{%(6)Plan code}</th>
+        <td>{PLAN_DETAILS}</td>
+      </tr>
+      <tr>
+        <th>{%(7)Owner}</th>
+        <td>{OWNER_DETAILS}</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th style="width: 30%">Settlement Details</th>
+        <th style="width: 30%">{%(11)Effective Date}</th>
+        <td>{EFF_DATE}</td>
+      </tr>
+      <tr>
+        <th>&nbsp;</th>
+        <th>{%(12)Currency}</th>
+        <td>{CCY}</td>
+      </tr>
+      <tr>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <th>&nbsp;</th>
+        <th>{%(13)Maturity Amount}</th>
+        <td>{MATURITY_AMOUNT}</td>
+      </tr>
+      <!--%(BONUS_FRAGMENT)-->
+      <tr>
+        <th>&nbsp;</th>
+        <th>{%(31)Reversionary Bonus}</th>
+        <td>{REVERSIONARY_BONUS_AMOUNT}</td>
+      </tr>
+      <tr>
+        <th>&nbsp;</th>
+        <th>{%(32)Interim Bonus}</th>
+        <td>{INTERIM_BONUS_AMOUNT}</td>
+      </tr>
+      <tr>
+        <th>&nbsp;</th>
+        <th>{%(33)Terminal Bonus}</th>
+        <td>{TERMINAL_BONUS_AMOUNT}</td>
+      </tr>
+      <!--%-->
+    </table>
+    <table>
+      <tr>
+        <th style="width: 30%">{%(14)Adjustments}</th>
+        <th style="width: 30%">{%(18)Type}</th>
+        <th>{%(19)Amount}</th>
+      </tr>
+      <!--{ADJUSTMENT_DETAILS}-->
+      <tr>
+        <th style="width: 30%">&nbsp;</th>
+        <td colspan="2">
+          <input type="submit" name="AdjButton" value="{%(98)Add}" class="BUTTON">
+        </td>
+      </tr>
+      <tr>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <th>&nbsp;</th>
+        <th>{%(17)Payment Amount}</th>
+        <th>{PAYMENT_AMOUNT}</th>
+      </tr>
+    </table>
+    {PAYMENTS_OUT}
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="ProcessSettlementButton" value="{%(100)Submit Settlement}" class="BUTTON">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

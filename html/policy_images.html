@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Policy Documents}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}" />
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}
+          {%(1)Policy Documents}
+          <a href="%BACK_LINK%">
+            <span class="return_link">Return</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(2)Documents attached to the policy}</th>
+      </tr>
+      <tr>
+        <th>{%(3)Policy} {PolicyKey}</th>
+      </tr>
+    </table>
+    <table class="zebra">
+      <tr>
+        <th>
+          <a href="{SortPath}&SortField=title">{%(5)Title}</a>
+        </th>
+        <th>
+          <a href="{SortPath}&SortField=file_name">{%(6)File Name}</a>
+        </th>
+        <th>
+          <a href="{SortPath}&SortField=date">{%(4)Date}</a>
+        </th>
+        <th>{%(7)Time}</th>
+        <th>
+          <a href="{SortPath}&SortField=user">{%(8)User}</a>
+        </th>
+        <th>{%(9)S}</th>
+        <th>
+          <a href="{SortPath}&SortField=doc_box">{%(10)Box}</a>
+        </th>
+      </tr>
+      <!--{POLICY_DOC_IMAGES}-->
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="AddButton" value="{%(100)Add}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

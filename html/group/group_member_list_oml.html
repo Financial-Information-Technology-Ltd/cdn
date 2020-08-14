@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Group Scheme Members}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(1)Group Scheme Members}
+          <a href="%BACK_LINK%">
+            <span class="return_link">{%(101)Return}</span>
+          </a>
+      </tr>
+      <tr>
+        <th width=20%>{%(3)Scheme Number}</th>
+        <td>{SCHEME_CODE}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Scheme Owner}</th>
+        <td>{GROUP_OWNER}</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <td class="title" align="left" width=20%>{%(10)Member Selection}</td>
+        <td width=60%></td>
+        <td width=20%></td>
+      </tr>
+      <tr>
+        <th width=20%>{%(11)Member Surname}</th>
+        <td width=60%>
+          <input type="TEXT" name="SearchMemberName">
+        </td>
+        <td width=20%></td>
+      </tr>
+      <tr>
+        <th width=20%>{%(12)Member Date of Birth}</th>
+        <td width=60%>
+          <input type="TEXT" name="SearchMemberDOB" SIZE=10>
+        </td>
+        <td width=20%></td>
+      </tr>
+      <tr>
+        <th width=20%>{%(13)Member Employee ID}</th>
+        <td width=60%>
+          <input type="TEXT" name="SearchPayNo">
+        </td>
+        <td width=20%></td>
+      </tr>
+      <tr>
+        <th width=20%>{%(14)Members in Underwriting}</th>
+        <td width=60%>
+          <input name="ShowUW" type="checkbox">
+        </td>
+        <td width=20%></td>
+      </tr>
+      <tr>
+        <th width=20%>{%(15)Members greater than Free Cover Limit}</th>
+        <td width=60%>
+          <input name="ShowFCL" type="checkbox">
+          &nbsp;
+        </td>
+        <td width=20%></td>
+      </tr>
+      <tr>
+        <th width=20%>{%(19)Members On Hold}</th>
+        <td width=60%>
+          <input name="ShowOnHold" type="checkbox">
+          &nbsp;
+        </td>
+        <td width=20%></td>
+      </tr>
+      <tr>
+        <th width=20%>{%(16)Subgroup}</th>
+        <td width=60%>
+          <SELECT name="SubgroupNumber">
+            <option value="">&nbsp;</option>
+          </SELECT>
+        </td>
+        <td width=20%></td>
+      </tr>
+      <tr>
+        <th width=20%></th>
+        <td width=60%>
+          <input type="Submit" name="SearchButton" Value="{%(17)Search}">
+        </td>
+        <th width=20% align="right">{%(18)Members Selected:}&nbsp;{MEMBERS_SELECTED}</th>
+      </tr>
+    </table>
+    <!--%(PAGE_BUTTONS)-->
+    <table>
+      <tr>
+        <td align="left" style="width: 33%">
+          <input type="submit" name="PrevButton" value="{%(111)Previous Page}">
+        </td>
+        <td align="center" style="width: 33%">
+          <input type="submit" name="AllButton" value="{%(113)All Members}">
+        </td>
+        <td align="right">
+          <input type="submit" name="NextButton" value="{%(112)Next Page}">
+        </td>
+      </tr>
+    </table>
+    <!--%-->
+    <table>
+      <tr>
+        <th>
+          <a href="?screen_name=SHOW_MEMBER_LIST&SortField=Number&GroupKey={GroupKey}">{%(50)No}</a>
+        </th>
+        <th>
+          <a href="?screen_name=SHOW_MEMBER_LIST&SortField=PayNo&GroupKey={GroupKey}">{%(62)Pay No}</a>
+        </th>
+        <th>
+          <a href="?screen_name=SHOW_MEMBER_LIST&SortField=Name&GroupKey={GroupKey}">{%(51)Name}</a>
+        </th>
+        <!--%(SUBGROUP_COLUMN)-->
+        <th>{%(52)Subgroup}</th>
+        <!--%-->
+        <th>
+          <a href="?screen_name=SHOW_MEMBER_LIST&SortField=BirthDate&GroupKey={GroupKey}">{%(53)Birth Date}</a>
+        </th>
+        <th align="right">{%(54) Face Amount}</th>
+        <th align="right">{%(55)Premium}</th>
+        <th>{%(56)Certificate}</th>
+        <th>{%(57)Status}</th>
+        <th>{%(59)Hold}</th>
+        <th>{%(60)Select}</th>
+      </tr>
+      <!--{MEMBER_LIST_PREMIUM_OML}-->
+    </table>
+    <input type="hidden" name="EditButtonText" value="{%(60)Select}">
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="AddNewMember" value="{%(102)Add Member}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="/lf/images/back.gif">
+          </a>
+        </td>
+      </tr>
+    </table>
+    <input type="hidden" name="LEAVE_TEXT" value="{%(61)Leave Date}" />
+  </form>
+</body>
+</html>

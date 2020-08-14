@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)New Rider}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan=2>{HELP_LINK}{%(2)New rider}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Policy No}</th>
+        <td>{PolicyKey}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Plan}</th>
+        <td>{Plan}</td>
+      </tr>
+      <tr>
+        <th>{%(5)Application Date}</th>
+        <td>
+          <input type="text" name="ApplicationDate" size=10>
+          {DATE_FORMAT}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(51)Maturity Date}</th>
+        <td>
+          <input type="text" name="EndDate" size=10>
+          {DATE_FORMAT}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(6)Premium}</th>
+        <td>
+          <input type="text" name="Premium">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(9)Premium End Date}</th>
+        <td>
+          <input type="text" name="PremEndDate" size=10>
+          {DATE_FORMAT}>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(7)Same agent as on main plan}</th>
+        <td>
+          <input type="checkbox" name="SameAgentAsBase">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(8)Rider Commission}</th>
+        <td>
+          <select name="RiderCommissionFlag"></select>
+        </td>
+      </tr>
+    </table>
+    <!--%(FUND_FRAGMENT)-->
+    <table>
+      <tr>
+        <th colspan=2>{%(20)Funds}</th>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(21)Fund Code}</th>
+        <th>{%(22)Fund Percentage(%)}</th>
+      </tr>
+      <!--{INVESTMENT_PERCENTAGE_TABLE}-->
+    </table>
+    <!--%(FUND_FRAGMENT_END)-->
+    <!--%(AGENT_FRAGMENT)-->
+    <table>
+      <tr>
+        <th>{%(31)Agent No}</th>
+        <td>
+          <input type="text" name="AgentNo" ONCHANGE="document.forms[0].submit()">
+          <input type="BUTTON" value="{%(105)Search Agent}" ONCLICK="search_agent('AgentNo',true)">
+          {AGENT_NAME}
+        </td>
+      </tr>
+    </table>
+    <!--%(AGENT_FRAGMENT_END)-->
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="ProcessButton" value="{%(100)Process}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

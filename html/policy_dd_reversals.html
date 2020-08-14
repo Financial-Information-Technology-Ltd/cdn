@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Direct Debit reversal}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form method="post" action="%SERVLET_PATH%">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan=2>{HELP_LINK}{%(1)Direct Debit reversal}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(2)Batch No}</th>
+        <td>{BATCH_NO}</td>
+      </tr>
+      <tr>
+        <th>{%(3)Submitted for batch}</th>
+        <td>
+          {SUBMITTED}
+          <input type="submit" name="UnsubmitButton" value="{%(19)Unsubmit}">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(4)Processed Date}</th>
+        <td>{PROCESSED}</td>
+      </tr>
+      <tr>
+        <th>{%(5)Effective Date}</th>
+        <td>
+          <input name="EffectiveDate" type="text" size=10>
+          {DATE_FORMAT}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(6)Batch Total}</th>
+        <td>
+          <input name="BatchTotal" type="text" size=12>
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th>{%(8)Policy}</th>
+        <th>{%(9)Payer}</th>
+        <th>{%(20)Account No}</th>
+        <th>{%(10)Reason}</th>
+        <th>{%(11)Bank Charges}</th>
+        <th>{%(12)Last Premium}</th>
+        <th>{%(13)Total}</th>
+        <th>{%(14)Date}</th>
+        <th>&nbsp;</th>
+        <th>{%(15)Delete}</th>
+      </tr>
+      <!--{POLICY_LIST}-->
+      <tr>
+        <td colspan="6">
+          <!--%(Update)-->
+          <input name="UpdateButton" type="submit" value="{%(16)Update}">
+          &nbsp;&nbsp;
+          <!--%-->
+          <!--%(Add)-->
+          <input name="AddButton" type="submit" value="{%(17)Add}">
+          &nbsp;&nbsp;
+          <!--%-->
+        </td>
+        <td align="right">{ENTERED_TOTAL}</td>
+        <td colspan=2>&nbsp;</td>
+        <td>
+          <!--%(Delete)-->
+          <input name="DelButton" type="submit" value="{%(18)Delete}">
+          <!--%-->
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <!--%(Save)-->
+        <td>
+          <input name="SaveButton" type="submit" value="{%(98)Save}">
+        </td>
+        <td>
+          <input name="ProcessButton" type="submit" value="{%(99)Submit}">
+        </td>
+        <!--%-->
+        <td class="return">
+          <a href="%SERVLET_PATH%?screen_name=MAKE_DD_REVERSALS&BatchNo={BATCH_NO}">
+            {%(100)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+    <input type="hidden" name="EditText" value="{%(97)Edit}">
+  </form>
+</body>
+<script type="text/javascript">
+function policyNumberChange(policy_field,charge_field)
+{
+  element1 = document.forms[0].elements[policy_field];
+  policy_no = element1.value;
+  url = "?screen_name=DD_BANK_CHARGE_CALC&policy_no="+policy_no;
+  request =  new XMLHttpRequest();
+  request.open("GET",url,false);
+  request.send(null);
+  value = request.responseText;
+  element2 = document.forms[0].elements[charge_field];
+  element2.value = value;
+}
+</script>
+</html>

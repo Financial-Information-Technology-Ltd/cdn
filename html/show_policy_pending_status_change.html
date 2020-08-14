@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Policy Pending Activity/Status Change}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form method="post" action="%SERVLET_PATH%">
+    <!--%(AddSWQuestions)-->
+    <table>
+      <!--%(SWQuestion1)-->
+      <tr>
+        <th>{%(28)Warning - Switch hasn't started - do you want to cancel?}</th>
+      </tr>
+      <!--%-->
+      <!--%(SWQuestion2)-->
+      <tr>
+        <th>{%(29)Warning - Switch has been part processed - do you want to cancel ?}</th>
+      </tr>
+      <!--%-->
+      <tr>
+        <td>
+          <input name="ConfirmButton" type="submit" value="{%(30)Confirm}">
+        </td>
+        <td>
+          <input name="CancelButton" type="submit" value="{%(31)Cancel}">
+        </td>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+    <!--%(AddSWQuestions_END)-->
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(1)Policy Pending Activity/Status Change}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Policy No}</th>
+        <td>{PolicyKey}</td>
+      </tr>
+      <tr>
+        <th>{%(5)Type}</th>
+        <td>{Type}</td>
+      </tr>
+      <tr>
+        <th>{%(6)Effective Date}</th>
+        <td>{EffectiveDate}</td>
+      </tr>
+      <!--%(TARGET_STATUS_ROW)-->
+      <tr>
+        <th>{%(7)Target Status}</th>
+        <td>{TargetStatus}</td>
+      </tr>
+      <!--%-->
+      <tr>
+        <th>{%(8)Created on}</th>
+        <td>{CreatedDate} {CreatedTime}</td>
+      </tr>
+      <tr>
+        <th>{%(9)Created by}</th>
+        <td>{CreatedUser}</td>
+      </tr>
+    </table>
+    <!--%(FUWD_TABLE)-->
+    <table>
+      <tr>
+        <td class="title" colspan=2>{%(51)Unit Withdrawal}</td>
+      </tr>
+      <tr>
+        <th>{%(60)Coverage No}</th>
+        <td>{CoverageNo}</td>
+      </tr>
+      <tr>
+        <th>{%(57)Plan Name}</th>
+        <td>{PLAN}</td>
+      </tr>
+      <tr>
+        <th>{%(54)Withdrawal Type}</th>
+        <td>{WithdrawalType}</td>
+      </tr>
+      <tr>
+        <th>{%(79)Withdrawal Date}:</th>
+        <td>{WithdrawalDate}</td>
+      </tr>
+      <tr>
+        <th>{%(56)Owner}</th>
+        <td>{OWNERS}</td>
+      </tr>
+      <tr>
+        <th>{%(58)Policy Currency}</th>
+        <td>{CURRENCY}</td>
+      </tr>
+      <tr>
+        <th>{%(59)Minimum Amount}</th>
+        <td>{MINIMUM_AMOUNT}</td>
+      </tr>
+    </table>
+    <table>
+      <thEAD>
+        <tr>
+          <th>{%(71)Policy Funds}</th>
+          <th>{%(72)Number of Units}</th>
+          <th>{%(73)Latest Price}</th>
+          <th>{%(74)Fund Value} ({CURRENCY})</th>
+          <th>{VALUE_COL_TITLE}</th>
+        </tr>
+      </thEAD>
+      <TBODY>
+        <!--{FUND_LIST}-->
+      </TBODY>
+    </table>
+    <!--%-->
+    <!--%(FUSW_TABLE)-->
+    <table>
+      <tr>
+        <td class="title" colspan="2">{%(151)Switch Details}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(153)Policy No}</th>
+        <td>{PolicyKey}</td>
+      </tr>
+      <tr>
+        <th>{%(154)Coverage}</th>
+        <td>{COVERAGE}</td>
+      </tr>
+      <tr>
+        <th>{%(155)Switch Type}</th>
+        <td>
+          {SWITCH_TYPE}
+        </td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(156)Fund Specific Charges}</th>
+        <td>
+          {FUND_SPECIFIC_CHARGES}
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th>{%(19)Switch From Funds}</th>
+        <th>
+          {SWITCH_TYPE_DESCRIPTION}
+          {%(21)to be switched}
+        </th>
+        <th>{%(26)Switch To Fund}</th>
+        <th>{%(22)% of amount switched}</th>
+      </tr>
+      <!--{FUND_SWITCH_MATRIX}-->
+    </table>
+    <!--%-->
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="CancelPendingStatusChangeButton"
+            value="{%(102)Cancel Pending Activity/Status Change}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Licence Details}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" enctype="multipart/form-data" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(1)Licence Details}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Server Name}</th>
+        <td>{ServerName}</td>
+      </tr>
+      <tr>
+        <th>{%(5)Expiry Date}</th>
+        <td>{ExpiryDate}</td>
+      </tr>
+      <tr>
+        <th>{%(2)Config Code}</th>
+        <td>
+          <input type="text" id="ConfigCode" name="ConfigCode" size="45" readonly="readonly">
+          <input type="button" onclick="myFunction()" value="{%(3)Copy to clipboard}">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(6)New Authorisation Token}</th>
+        <td>
+          <input type="file" name="AuthorisationToken" id="AuthorisationToken" />
+          <label for="AuthorisationToken">{%(7)Choose a file}</label>
+          <input type="submit" value="{%(8)Update}" name="UpdateButton">
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td class="return">
+          <b>
+            <a href="%BACK_LINK%">
+              {%(101)Return}
+              <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+            </a>
+          </b>
+        </td>
+      </tr>
+    </table>
+  </form>
+  <script>
+			function myFunction() {
+				var copyText = document.getElementById("ConfigCode");
+				copyText.select();
+				copyText.setSelectionRange(0, 99999);
+				document.execCommand("copy");
+			}
+		</script>
+</body>
+</html>

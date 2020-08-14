@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Member Changes}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(1)Member Changes}
+          <a href="%BACK_LINK%">
+            <span class="return_link">{%(101)Return}</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <th width=30%>{%(2)Scheme number}</th>
+        <td>{SCHEME_CODE}</td>
+      </tr>
+      <tr>
+        <th>{%(3)Member No}</th>
+        <td>{MEMBER_NO}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Member Name}</th>
+        <td>{MEMBER_NAME}</td>
+      </tr>
+      <tr>
+        <th>{%(5)Policy No}</th>
+        <td>{POLICY_NO}</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th>{%(6)Effective Date}</th>
+        <th>{%(7)Field Name}</th>
+        <th>{%(8)Old Value}</th>
+        <th colspan="2">{%(9)New Value}</th>
+      </tr>
+      <!--{MEMBER_CHANGE_LIST}-->
+    </table>
+    <input type="hidden" name="CancelButtonText" value="{%(19)Cancel}">
+    <table class="navigation">
+      <tr>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+  <script type="text/javascript">
+function confirmCancel(e)
+{
+  reply = confirm("{%(105)Are you sure you wish to cancel?}");
+  return reply;
+}
+</script>
+</body>
+</html>

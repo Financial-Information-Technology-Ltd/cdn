@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Unit Reversal}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}" />
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(1)Unit Reversal}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Policy No}</th>
+        <td>{PolicyKey}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Client}</th>
+        <td>{ClientName}</td>
+      </tr>
+      <tr>
+        <th>{%(5)Transaction Number}</th>
+        <td>{TransNo}</td>
+      </tr>
+      <tr>
+        <th>{%(6)Date}</th>
+        <td>{TransDate}</td>
+      </tr>
+      <tr>
+        <th>{%(7)Unit Date}</th>
+        <td>{UnitDate}</td>
+      </tr>
+      <tr>
+        <th>{%(8)Reason}</th>
+        <td>{ReasonCode} {ReasonDescription}</td>
+      </tr>
+      <tr>
+        <th>{%(9)Operator}</th>
+        <td>{Operator}</td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <table>
+            <tr>
+              <th>{%(10)Coverage}</th>
+              <th>{%(11)Hold Cash}</th>
+            </tr>
+            <!--{COV_LIST}-->
+          </table>
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th style="width: 30%">{%(13)Process unit reversal}</th>
+        <td>
+          <input type="checkbox" name="Deallocation">
+        </td>
+      </tr>
+      <!--%(REALLOCATION_FRAGMENT)-->
+      <tr>
+        <th>{%(12)Create FUTURE event for reallocation}</th>
+        <td>
+          <input type="checkbox" name="Reallocation">
+        </td>
+      </tr>
+      <!--%-->
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SubmitButton" value="{%(100)Submit}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(200)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

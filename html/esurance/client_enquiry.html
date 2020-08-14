@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Client Enquiry}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="3">{HELP_LINK}{%(1)Client Enquiry}</td>
+      </tr>
+      <tr>
+        <th style="width: 20%">{%(3)Owner Name}</th>
+        <td style="width: 20%">
+          <input name="OwnerName" type="text">
+        </td>
+        <td rowspan=2>
+          <input name="SubmitFilter" type="submit" value="{%(101)Search}">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(4)Agent Code}</th>
+        <td>
+          <input type="text" name="AgentNo">
+        </td>
+      </tr>
+    </table>
+    <!--%(CLIENT_LIST_TABLE)-->
+    <table class="zebra">
+      <tr>
+        <th>
+          <a>{%(11)First Name}</a>
+        </th>
+        <th>
+          <a>{%(12)Last Name}</a>
+        </th>
+        <th>
+          <a>{%(13)Date of Birth}</a>
+        </th>
+        <th>
+          <a>{%(14)Phone No}</a>
+        </th>
+        <th>
+          <a>{%(15)Address}</a>
+        </th>
+      </tr>
+      <!--{CLIENT_LIST}-->
+    </table>
+    <!--%-->
+    <table class="navigation">
+      <tr>
+        <th>&nbsp;</th>
+        <th class="return">
+          <a href="%BACK_LINK%">
+            {%(102)Return}
+            <img src="/lf/images/back.gif" alt="">
+          </a>
+        </th>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

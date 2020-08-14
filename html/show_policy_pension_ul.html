@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Policy Details}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(1)Policy Details}
+          <a href="#Coverages">
+            <span class="return_link">Coverages</span>
+          </a>
+          <a href="#LifeAssured">
+            <span class="return_link">Life Assured</span>
+          </a>
+          <a href="#Links">
+            <span class="return_link">Links</span>
+          </a>
+          <a href="%BACK_LINK%">
+            <span class="return_link">{%(101)Return}</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(2)Policy No}</th>
+        <td>
+          <table>
+            <tr>
+              <td style="font-size: 12pt; font-weight: bold;" align="left">{PolicyKey}</td>
+              <td align="right">
+                <input type="submit" name="NotesButton" value="{%(110)Notes}">
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <!--%(COMPLIANCE_ISSUES)-->
+      <tr>
+        <th></th>
+        <td class="othererror">{%(126)ALERT: Compliance Issues with}&nbsp;{ComplianceAlertKeys}</td>
+      </tr>
+      <!--%-->
+      <!--%(ENDORSEMENTS_INFO)-->
+    </table>
+    <table>
+      <tr class="othererror">
+        <th colspan="3">{%(91)Pending Endorsements}</th>
+      </tr>
+    </table>
+    <!--{ENDORSEMENTS_TABLE}-->
+    <table>
+      <!--%-->
+      <!--%(UNDERWRITING_INFO)-->
+    </table>
+    <table>
+      <tr class="othererror">
+        <th colspan="3">
+          {%(92)This policy has outstanding underwriting requirements! Click }
+          <a href="?screen_name=show_policy_uwrreq&PolicyKey={PolicyKey}">{%(93)here}</a>
+          {%(94) for details.}
+        </th>
+      </tr>
+    </table>
+    <table>
+      <!--%-->
+      <tr>
+        <th style="width: 30%">{%(3)External Reference}</th>
+        <td>{ExternalRef}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Agent}</th>
+        <td>{AGENT_NO}</td>
+      </tr>
+      <!--%(SERVICING_AGENT)-->
+      <tr>
+        <th>{%(5)Servicing Agent}</th>
+        <td>{ServicingAgent}</td>
+      </tr>
+      <!--%-->
+      <tr>
+        <th>{%(6)Policy Owner}</th>
+        <td>{PolicyOwner}</td>
+      </tr>
+      <tr>
+        <th>{%(7)Address}</th>
+        <td>{OwnerAddress}</td>
+      </tr>
+      <!--%(IMPORTANT_NOTES)-->
+      <tr>
+        <th>{%(127)Important Note(s)}</th>
+        <td class="othererror">{ImportantNotes}</td>
+      </tr>
+      <!--%-->
+      <tr>
+        <th>{%(9)Policy Status}</th>
+        <td>
+          {PolicyStatus}
+          <!--%(UNDERWRITING)-->
+          --
+          <a href="?screen_name=show_policy_uwrreq&PolicyKey={PolicyKey}">{%(99)Underwriting}</a>
+          <!--%-->
+        </td>
+      </tr>
+      <tr>
+        <th>{%(10)Issue Date}</th>
+        <td>{PolicyIssueDate}</td>
+      </tr>
+      <tr>
+        <th>{%(12)Application No}</th>
+        <td>{ApplicationNo}</td>
+      </tr>
+      <tr>
+        <th>{%(13)Application Date}</th>
+        <td>{ApplicationDate}</td>
+      </tr>
+      <tr>
+        <th>{%(14)Total Policy Value}</th>
+        <td>
+          {TotalPolicyValue}&nbsp;
+          <a href="?screen_name=show_policy_value_graph&PolicyKey={PolicyKey}" TARGET="_blank">{%(97)History}</a>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(15)Total Premium}</th>
+        <td>{TotalNFPremium}</td>
+      </tr>
+      <tr>
+        <th>{%(16)Payment Out Suspense}</th>
+        <td>{PayoutSuspense}</td>
+      </tr>
+      <tr>
+        <th>{%(17)Currency}</th>
+        <td>{Currency}</td>
+      </tr>
+      <tr>
+        <th>{%(18)Group Scheme No}</th>
+        <td>{SchemeNo}</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th colspan="9">
+          <a id="Coverages">{%(19)Coverages}</a>
+        </th>
+      </tr>
+      <tr>
+        <th>{%(20)Plan Name}</th>
+        <th>{%(21)Status}</th>
+        <th>{%(22)Mode Method}</th>
+        <th>{%(23)Premium}</th>
+        <th>{%(24)Annualized Premium}</th>
+        <th>{%(25)Paid to Date}</th>
+        <th>{%(26)Prem Term Date}</th>
+        <th>{%(27)Issue Date}</th>
+        <th>{%(28)End Date}</th>
+      </tr>
+      <!--{COVERAGE_TABLE_4}-->
+    </table>
+    <table>
+      <tr>
+        <th colspan="11">{%(29)Funds}</th>
+      </tr>
+      <tr>
+        <th ROWSPAN="2">{%(30)Fund}</th>
+        <th ROWSPAN="2">{%(31)Fund Name}</th>
+        <!--%(CCY_SPECIFIC)-->
+        <th ROWSPAN="2">{%(32)Fund Currency}</th>
+        <!--%-->
+        <!--%(INITIAL_UNITS)-->
+        <th colspan="3">{%(33)Initial Units}</th>
+        <!--%-->
+        <th ROWSPAN="2">{%(34)Accumulation Units}</th>
+        <th ROWSPAN="2">{%(35)Price}</th>
+        <th ROWSPAN="2">{%(36)Fund Value}</th>
+        <!--%(CCY_SPECIFIC)-->
+        <th ROWSPAN="2">{%(37)Policy Currency Value}</th>
+        <!--%-->
+      </tr>
+      <tr>
+        <!--%(INITIAL_UNITS)-->
+        <th>{%(38)Policy}</th>
+        <th>{%(39)Company}</th>
+        <th>{%(40)Price}</th>
+        <!--%-->
+      </tr>
+      <!--{FUND_TABLE}-->
+    </table>
+    <table>
+      <tr>
+        <th style="width: 30%">{%(41)Suspense}</th>
+        <td>{Suspense}</td>
+      </tr>
+      <tr>
+        <th>{%(42)Branch}</th>
+        <td>{Branch}</td>
+      </tr>
+      <tr>
+        <th>{%(43)Surrender Value}</th>
+        <td>{SurrenderValue}</td>
+      </tr>
+      <tr>
+        <th>{%(44)Withdrawal Penalty}</th>
+        <td>{SurrenderPenaltyAmount}</td>
+      </tr>
+      <tr>
+        <th>{%(46)Net Surrender Value}</th>
+        <td>{NetSurrenderValue}</td>
+      </tr>
+      <tr>
+        <th>{%(47)Death Benefit}</th>
+        <td>{FinalBenefit}</td>
+      </tr>
+      <tr>
+        <th>{%(48)Voucher Type}</th>
+        <td>{BILL_TYPE}</td>
+      </tr>
+    </table>
+    <span>
+      <a id="Links"></a>
+    </span>
+    <table>
+      <!--{TRANSACTION_LINKS}-->
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="MaintainButton" value="{%(100)Maintenance}">
+          <input type="submit" name="PrintDocumentButton" value="{%(102)Print Document}">
+          <input type="submit" name="PrintLetterButton" value="{%(103)Print Letter}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

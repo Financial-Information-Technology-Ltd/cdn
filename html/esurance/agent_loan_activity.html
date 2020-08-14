@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Agent Loan History}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan=2>{HELP_LINK}{%(1)Agent Loan History}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(2)Agent No}</th>
+        <td>{AgentKey}</td>
+      </tr>
+      <tr>
+        <th>{%(3)Agent Name}</th>
+        <td>{AgentName}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Loan Amount}</th>
+        <td>{LoanAmount}</td>
+      </tr>
+      <tr>
+        <th>{%(5)Loan Term}</th>
+        <td>{LoanTerm}</td>
+      </tr>
+      <tr>
+        <th>{%(6)Interest Rate}</th>
+        <td>{InterestRate}</td>
+      </tr>
+      <tr>
+        <th>{%(7)Loan Issue Date}</th>
+        <td>{StartDate}</td>
+      </tr>
+      <tr>
+        <th>{%(8)Repayment Frequency}</th>
+        <td>{RepaymentFrequency}</td>
+      </tr>
+      <tr>
+        <th>{%(9)Repayment Amount}</th>
+        <td>{RepaymentAmount}</td>
+      </tr>
+      <tr>
+        <th>{%(10)Final Payment Date}</th>
+        <td>{LoanLastDate}</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th>{%(21)Date}</th>
+        <th>{%(22)Repayment}</th>
+        <th>{%(23)Outstanding Balance}</th>
+        <th>{%(24)Statement}</th>
+      </tr>
+      <!--{LOAN_ACTIVITY_LIST}-->
+    </table>
+    <table class="navigation">
+      <tr>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Policy Annuities}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body onload="initialise()">
+  <form method="post" action="%SERVLET_PATH%">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(2)Policy Annuities}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Policy No}</th>
+        <td>{PolicyKey}</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th>{%(11)Start Date}</th>
+        <th>{%(16)Payee}</th>
+        <th>{%(12)Next Pay Amount}</th>
+        <th>{%(13)Pay Frequency}</th>
+        <th>{%(14)Next Pay Date}</th>
+        <th>{%(15)End Date}</th>
+      </tr>
+      <!--{ANNUITY_TABLE}-->
+    </table>
+    <table class="navigation">
+      <tr>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

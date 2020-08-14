@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Commission Type Banding Structures}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form method="post" action="%SERVLET_PATH%">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK} {%(2)Commission Type Banding Structures}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Commission Type}</th>
+        <td>{COMM_TYPE_KEY}</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th>{%(4)Modifier Type}</th>
+        <th>{%(5)Modifier Term}</th>
+        <th>{%(6)Modifier Amount}</th>
+      </tr>
+      <!--{BAND_TABLE}-->
+      <tr>
+        <td colspan="3">
+          <input name="AddBandButton" type="submit" value="{%(50)Add}">
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SaveButton" value="{%(100)Save}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(200)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

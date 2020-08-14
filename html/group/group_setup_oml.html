@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Scheme Setup}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <!--%(OMNILIFE_PLAN)-->
+      <!-- Required for all oml life plans-->
+      <!--%-->
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(167)Group Details}</td>
+      </tr>
+      <tr>
+        <th width=30%>{%(2)Scheme number}</th>
+        <td>{SCHEME_CODE}</td>
+      </tr>
+      <tr>
+        <th>{%(3)Group Owner}</th>
+        <td>
+          <input type="text" name="ClientKey" size=20 ONCHANGE="force_submit();">
+          <input type="Button" name="SearchClientButton" value="{%(98)Search Client}"
+            ONCLICK="search_client('ClientKey',true)">
+          {OWNER_NAME}
+        </td>
+      </tr>
+      <tr>
+        <th width=30%>{%(59)Base Plan}</th>
+        <td>
+          <select name="BASE_PLAN" ONCHANGE="force_submit();">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(116)Principle Employer}</th>
+        <td>
+          <input type="text" name="PRINCIPLE_EMPLOYER" size=20 ONCHANGE="force_submit();">
+          <input type="Button" name="SearchPrincipalEmployerButton" value="{%(99)Search Client}"
+            ONCLICK="search_client('PRINCIPLE_EMPLOYER',true)">
+          {PRINCIPLE_EMPLOYER}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(117)Scheme Name}</th>
+        <td>
+          <input type="text" name="SCHEME_NAME" size=100>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(118)External Ref}</th>
+        <td>
+          <input type="text" name="EXTERNAL_REF" size=10>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(127)Quotation Number}</th>
+        <td>
+          <input type="text" name="QUOTATION_NUMBER" size=100>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(119)Company code}</th>
+        <td>
+          <select name="COMPANY_CD" ONCHANGE="force_submit();">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(120)Company number}</th>
+        <td>
+          <input type="text" name="CLIENT_EMPLOYER_REG_NO" size=10>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(121)Tax Regime}</th>
+        <td>
+          <select name="CLIENT_UK_TAX_STATUS">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(153)Lead Scheme}</th>
+        <td>
+          <input type="text" name="LEAD_SCHEME_NO" ONCHANGE="force_submit();">
+          <input type="BUTTON" name="SearchGroupButton" value="{%(154)Search Group}"
+            ONCLICK="search_group('LEAD_SCHEME_NO',true)">
+          {LEAD_SCHEME_NAME}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(122)PSTR Number}</th>
+        <td>
+          <input type="text" name="CLIENT_TAX_NUMBER" size=10>
+        </td>
+      </tr>
+      <!--%(ASSOCIATED_EMPLOYER_FRAGMENT)-->
+      <tr>
+        <th width=30%>{%(130)Associated Employers}</th>
+        <td>
+          <table>
+            <!--{EMPLOYER_LIST}-->
+            <tr>
+              <td>
+                <input type="submit" name="AddEmployerButton" value="{%(135)Add}">
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <!--%-->
+    </table>
+    <table>
+      <tr>
+        <td class="title" colspan="2">{%(165)Cover Period}</td>
+      </tr>
+      <tr>
+        <th width=30%>{%(24)Scheme Commencement date}</th>
+        <td>
+          <input type="text" name="SCHEME_RCD" size=10>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(123)Renewal Date}</th>
+        <td>
+          <input type="text" name="RENEWAL_DATE" size=10>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(124)Rate Guarantee Start}</th>
+        <td>
+          <input type="text" name="RATE_GUARANTEE_START" size=10>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(125)Rate Guarantee End}</th>
+        <td>
+          <input type="text" name="RATE_GUARANTEE_END" size=10>
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <td class="title" colspan="2">{%(170)Payment Details}</td>
+      </tr>
+      <tr>
+        <th>{%(27)Currency}</th>
+        <td>
+          <select name="CURRENCY">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th width=30%>{%(28)Mode method}</th>
+        <td>
+          <select id="MODE_METHOD" name="MODE_METHOD" ONCHANGE="force_submit();">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <!--%(FIRST_PAYMENT_FRAGMENT)-->
+      <tr>
+        <th>{%(128)First Collection Date}</th>
+        <td>
+          <input type="text" name="FIRST_PAYMENT_DATE" size=10>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(129)First Collection Amount}</th>
+        <td>
+          <input type="text" name="FIRST_PAYMENT_AMOUNT" size=10>
+        </td>
+      </tr>
+      <!--%-->
+      <!--%(SUBSEQUENT_PAYMENT_FRAGMENT)-->
+      <tr>
+        <th>{%(23)Payment Day}</th>
+        <td>
+          <select name="PAYMENT_DAY">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(131)Subsequent Payment Amount}</th>
+        <td>
+          <input type="text" name="PAYMENT_AMOUNT" size=10>
+        </td>
+      </tr>
+      <!--%-->
+    </table>
+    <!--%(BANK_DETAILS_DD)-->
+    <table>
+      <tr>
+        <td class="title" colspan="2">{%(155)Bank Details}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(168)Payor}</th>
+        <td>
+          <input type="text" name="PayerKey" size="10" onchange="force_submit();">
+          <input type="BUTTON" name="SearchPayerButton" value="{%(169)Search Payer}"
+            ONCLICK="search_client('PayerKey',true)">
+          {PAYER_NAME}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(156)Sort Code}</th>
+        <td>
+          <input name="SortCode" size="10" onchange="force_submit();">
+          <input type="BUTTON" name="SearchSortCodeButton" value="{%(157)Find Branch}"
+            ONCLICK="search_sortcode('SortCode',true)">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(158)Bank Name}</th>
+        <td>
+          <input name="BankName" size="50">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(159)Branch Name}</th>
+        <td>
+          <input name="BranchName" size="50">
+        </td>
+      </tr>
+      <!-- Bank Address fields not currently required
+      <tr>
+        <th>{%(160)Bank Address}</th>
+        <td><input name="BankAddress" size="50"></td>
+      </tr>
+      <tr>
+        <th>{%(161)Bank City}</th>
+        <td><input name="BankCity" size="30"></td>
+      </tr>
+      <tr>
+        <th>{%(162)Bank County}</th>
+        <td><input name="BankCounty" size="30"></td>
+      </tr>
+      -->
+      <tr>
+        <th>{%(163)Account Number}</th>
+        <td>
+          <input name="BankAccountNumber" size="20">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(164)Account Name}</th>
+        <td>
+          <input name="BankAccountName" size="60">
+        </td>
+      </tr>
+    </table>
+    <!--%-->
+    <table>
+      <tr>
+        <td class="title" colspan="2">{%(166)Policy Details}</td>
+      </tr>
+      <tr>
+        <th width=30%>{%(25)Signed off}</th>
+        <td>{SIGN_OFF_DATE}</td>
+      </tr>
+      <tr>
+        <th>{%(26)Policy Number}</th>
+        <td>{MASTER_POLICY_NUMBER}</td>
+      </tr>
+      <tr>
+        <th>{%(22)Scheme status}</th>
+        <td>{STATUS}</td>
+      </tr>
+      <tr>
+        <th>{%(148)Member Data Loaded}</th>
+        <td>
+          <select name="MEMBER_DATA_LOADED">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(53)Documentation Language}</th>
+        <td>
+          <select name="SCHEME_LANGUAGE">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(133)Scheme Administrator}</th>
+        <td>
+          <select name="SCHEME_ADMINISTRATOR">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <!--%(OMNILIFE_AGENT_FRAGMENT)-->
+      <!--%-->
+      <tr>
+        <th>{%(134)Omnilife Agent}</th>
+        <td>
+          <select name="INTERNAL_AGENT_NUMBER">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(149)Trust}</th>
+        <td>
+          <select name="TRUST_CLIENT">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(150)Redundancy Cover}</th>
+        <td>
+          <input type="checkbox" name="REDUNDANCY_COVER" size="50">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(151)Catastrophic Event Limit}</th>
+        <td>
+          <input type="text" name="CATASTROPHIC_EVENT_LIMIT" size="10">
+        </td>
+      </tr>
+      <tr>
+        <th width=30%>{%(126)Scheme Eligibility Text}</th>
+        <td>
+          <TEXTAREA name="ELIGIBILITY_TEXT" COLS="100" ROWS="2"></TEXTAREA>
+        </td>
+      </tr>
+      <tr>
+        <th width=30%>{%(152)Temporary Absence Text}</th>
+        <td>
+          <TEXTAREA name="TEMPORARY_ABSENCE_TEXT" COLS="100" ROWS="2"></TEXTAREA>
+        </td>
+      </tr>
+    </table>
+    <!--%(INCOME_PROTECTION_FRAGMENT)-->
+    <table>
+      <tr>
+        <td class="title" colspan="4">{%(138)Income Protection}</td>
+      </tr>
+      <tr>
+        <th width=30%>{%(139)Limited Payment Period (Years)}</th>
+        <td>
+          <input type="text" name="LIMITED_PAYMENT_PERIOD" size=10>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(140)Deferred Period (Weeks)}</th>
+        <td>
+          <input type="text" name="DEFERRED_PERIOD" size=10>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(141)Increase Rate}</th>
+        <td>
+          <input type="text" name="INCREASE_RATE" size=10>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(142)Cease Age}</th>
+        <td>
+          <input type="text" name="CEASE_AGE" size=10>
+        </td>
+      </tr>
+    </table>
+    <!--%-->
+    <table>
+      <tr>
+        <td class="title" colspan="7">{%(45)Base Coverage Configuration}</td>
+      </tr>
+      <tr>
+        <th>{%(29)Sum Assured Basis}</th>
+        <td>
+          <select name="SA_BASIS" ONCHANGE="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th width=30%>{%(30)Sum Assured Value}</th>
+        <td>
+          <input type="text" name="SA_VALUE" size=12>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(56)Unit Rate}</th>
+        <td>
+          <input type="text" name="UNIT_RATE" size=12>
+          <input type="hidden" name="UNIT_RATE_OLD">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(57)Base Rate}</th>
+        <td>
+          <input type="text" name="BASE_RATE" size=12 ONCHANGE="document.forms[0].submit()">
+          <input type="hidden" name="BASE_RATE_OLD">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(58)Reinsurance Rate}</th>
+        <td>
+          <input type="text" name="REINSURANCE_RATE" size=12 ONCHANGE="document.forms[0].submit()">
+          <input type="hidden" name="REINSURANCE_RATE_OLD">
+        </td>
+      </tr>
+      <!--%(PREMIUM_RATES_TABLE_FRAGMENT)-->
+      <tr>
+        <th>{%(79)Premium Rate Table}</th>
+        <td>
+          <select name="PREMIUM_RATES_TABLE" ONCHANGE="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <!--%-->
+      <tr>
+        <th>{%(40)Adjustment Percent}</th>
+        <td>
+          <input type="text" name="ADJUSTMENT_PERCENT" size=12>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(41)Policy Fee Per Member}</th>
+        <td>
+          <input type="text" name="MEMBER_FEE" size=12>
+        </td>
+      </tr>
+      <!--%(INIT_COMM)-->
+      <tr>
+        <th>{%(42)Initial Commission}</th>
+        <td>
+          <input type="text" name="INIT_COMM_PERC" size=12>
+        </td>
+      </tr>
+      <!--%-->
+      <tr>
+        <th>{%(43)Free Cover Limit}</th>
+        <td>
+          <input type="text" name="FREE_COVER" size=12>
+          <input name="FREE_COVER_AT_SUBGROUP_HIDDEN" type="hidden" value="Y">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(44)Reinsurance Treaties}</th>
+        <td>{REINS_TREATY_LIST}</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <td class="title" colspan="14">{%(66)Rider Configuration}</td>
+      </tr>
+      <tr>
+        <th colspan="{PLAN_CHOICE_PLAN_COLS}">{%(67)Product}</th>
+        <!--%(PLAN_CHOICE_SA_BASIS)-->
+        <th>{%(73)SA Basis}</th>
+        <!--%-->
+        <!--%(PLAN_CHOICE_SA_AMOUNT)-->
+        <th align='RIGHT'>{%(68)SA Amount}</th>
+        <!--%-->
+        <!--%(PLAN_CHOICE_SA_MULTIPLY)-->
+        <th align='RIGHT'>{%(69)SA as multiply of salary}</th>
+        <!--%-->
+        <!--%(PLAN_CHOICE_PREMIUM_AMOUNT)-->
+        <th align='RIGHT'>{%(70)Premium amount}</th>
+        <!--%-->
+        <!--%(PLAN_CHOICE_PREMIUM_PERCENT)-->
+        <th align='RIGHT'>{%(71)Premium as percent of salary}</th>
+        <!--%-->
+        <!--%(PLAN_CHOICE_FREE_COVER)-->
+        <th align='RIGHT'>{%(77)Free Cover Limit}</th>
+        <!--%-->
+        <!--%(PLAN_CHOICE_UNIT_RATE_OVERRIDE)-->
+        <th align='RIGHT'>{%(72)Unit rate}</th>
+        <!--%-->
+        <!--%(PLAN_CHOICE_BASE_RATE_OVERRIDE)-->
+        <th align='RIGHT'>{%(136)Base rate}</th>
+        <th align='RIGHT'>{%(137)Reinsurance rate}</th>
+        <!--%-->
+        <!--%(PLAN_CHOICE_ADJUSTMENT_PERCENT)-->
+        <th align='RIGHT'>{%(74)Adjustment Percent}</th>
+        <!--%-->
+        <!--%(PLAN_CHOICE_COMMISSION)-->
+        <th align='RIGHT'>{%(75)Init Commission}</th>
+        <!--%-->
+        <!--%(POLICY_FEE_PER_MEMBER)-->
+        <th align='RIGHT'>{%(50)Policy Fee Per Member}</th>
+        <!--%-->
+        <!--%(PLAN_CHOICE_INCREASE_RATE)-->
+        <th align='RIGHT'>{%(80)IP Increase Rate}</th>
+        <!--%-->
+        <!--%(PLAN_CHOICE_REINS_TREATY)-->
+        <th>{%(78)Reinsurance Treaties}</th>
+        <!--%-->
+      </tr>
+      <!--{PLAN_CHOICE_OVERRIDE_FRAGMENT}-->
+    </table>
+    <table>
+      <tr>
+        <td class="title" colspan="4">{%(143)Risk Details}</td>
+      </tr>
+      <tr>
+        <th>{%(144)Plan Code}</th>
+        <th>{%(145)Source}</th>
+        <th>{%(146)Optional for Subgroup}</th>
+        <th>{%(147)Optional for Member}</th>
+      </tr>
+      <!--{RISK_PLANS}-->
+      <tr>
+        <td colspan="4">
+          <input type="submit" name="AddRiskPlanButton" value="{%(76)Add}">
+        </td>
+      </tr>
+    </table>
+    <!--%(COINSURANCE_FRAGMENT)-->
+    <table>
+      <tr>
+        <td class="title" colspan="3">{%(46)Co-Insurance Details}</td>
+      </tr>
+      <tr>
+        <th width=30%>{%(47)Co-Insurance Company}</th>
+        <th width=10%>{%(48)Share}</th>
+        <th>{%(49)Lead Coinsurer}</th>
+      </tr>
+      <!--{COINSURER_LIST}-->
+      <tr>
+        <td colspan="3">
+          <input type="submit" name="AddCoinsurerButton" value="{%(96)Add}">
+        </td>
+      </tr>
+    </table>
+    <!--%-->
+    <table>
+      <tr>
+        <td class="title" colspan="5">{%(91)Commission Details}</td>
+      </tr>
+      <tr>
+        <th style="width: 10%">{%(92)Agent No}</th>
+        <th>{%(93)Agent Name}</th>
+        <th>{%(94)Contact Name}</th>
+        <th>{%(95)Share}</th>
+        <th>{%(97)Agency}</th>
+      </tr>
+      <!--{AGENT_LIST_OML}-->
+      <tr>
+        <td colspan="3">
+          <input type="submit" name="AddAgentButton" value="{%(96)Add}">
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <td class="title" colspan="3">{%(111)Subgroup Details}</td>
+      </tr>
+      <!--{SUBGROUP_LIST}-->
+      <tr>
+        <td colspan="3">
+          <input type="submit" name="AddSubgroupButton" value="{%(112)Add}">
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SaveButton" value="{%(100)Save}">
+          <input type="submit" name="ModifyButton" value="{%(102)Modify}">
+          <input type="submit" name="SignOffButton" value="{%(103)Sign Off}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="/lf/images/back.gif">
+          </a>
+        </td>
+      </tr>
+    </table>
+    <input name="site" value="OMNILIFE" type="hidden" />
+  </form>
+  <script>
+			var e = document.getElementById("MODE_METHOD");
+			var selected = e.options[e.selectedIndex].value;
+			if (selected != "AC") {
+				document.getElementById("RENEWAL_DATE").value = '';
+				document.getElementById("RENEWAL_DATE").disabled = true;
+			}
+		</script>
+</body>
+</html>

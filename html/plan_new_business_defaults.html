@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Plan New Business Defaults}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan=2>{HELP_LINK}{%(1)Plan New Business Defaults}</td>
+      </tr>
+      <tr>
+        <th width=30%>{%(2)Key}</th>
+        <td>{Key}</td>
+      </tr>
+      <tr>
+        <th>{%(3)Plan Name}</th>
+        <td>{PlanName}</td>
+      </tr>
+      <tr>
+        <th>{%(5)Maturity Type}</th>
+        <td>
+          <select name="MAT_TYPE">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(6)Maturity At}</th>
+        <td>
+          <input type="text" name="MAT_AT" size=6>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(7)Mode Method}</th>
+        <td>
+          <select name="MODE_METHOD">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2>
+          <table>
+            <tr>
+              <th colspan=2>{%(4)Fund Code and Optional Fund Percentage}</th>
+            </tr>
+            <tr>
+              <th>{%(8)Fund Code}</th>
+              <th>{%(9)Fund Percentage}</th>
+            </tr>
+            <!--{FUND_DETAILS_TABLE}-->
+            <tr>
+              <td colspan=2>
+                <input type="submit" name="AddFundButton" value="{%(10)Add}">
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(12)Commission Percent}</th>
+        <td>
+          <input type="text" name="COMM_PC">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(35)Renewal Commission Percent}</th>
+        <td>
+          <input type="text" name="RENEWAL_COMM_PERCENT">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(37)Investment Advisor Commission Percent}</th>
+        <td>
+          <input type="text" name="INVESTMENT_ADVISOR_COMM_PERCENT">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(15)Application Date}</th>
+        <td>
+          <select name="APPLICATION_DATE">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(16)No of Segments}</th>
+        <td>
+          <input type="text" name="SEG_NO" size=4>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(18)Owner}</th>
+        <td>
+          <input type="text" name="OWNER" size=10 ONCHANGE="document.forms[0].submit()">
+          <input type="BUTTON" value="&hellip;" class="ellipsis" name="OwnerButton" ONCLICK="search_client('OWNER',true)">
+          {OWNER_NAME}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(19)Agent No}</th>
+        <td>
+          <input type="text" name="AGENT_CODE" size=10 ONCHANGE="document.forms[0].submit()">
+          <input type="BUTTON" value="&hellip;" class="ellipsis" ONCLICK="search_agent('AGENT_CODE',true)">
+          {AGENT_NAME}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(20)Annuity term months}</th>
+        <td>
+          <input type="text" name="ANT_TERM_MONS" size=4>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(21)Annuity term years}</th>
+        <td>
+          <input type="text" name="ANT_TERM_YRS" size=4>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(25)Income Option}</th>
+        <td>
+          <select name="INCOME_OPTION">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(26)Income Percent}</th>
+        <td>
+          <input type="text" name="INCOME_PERCENT">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(28)Death Benefit Option}</th>
+        <td>
+          <select name="UL_OPTION">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(29)Sum Assured Percent}</th>
+        <td>
+          <input type="text" name="FACE_AMT_MULT">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(30)Premium Tax Prefinance Term}</th>
+        <td>
+          <input type="text" name="TAX_PREFINANCE_TERM" size=4>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(31)Premium Escalation}</th>
+        <td>
+          <input type="checkbox" name="PREMIUM_ESCALATION">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(32)Sum Assured}</th>
+        <td>
+          <input type="text" name="SUM_ASSURED">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(33)Distribution Option}</th>
+        <td>
+          <select name="DISTRIBUTION_OPTION">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(34)Risk Class}</th>
+        <td>
+          <select name="RISK_CLASS">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(36)Default Lifefit policy number into external Ref}</th>
+        <td>
+          <input type="checkbox" name="DEFAULT_EXTERNAL_REF">
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SaveButton" value="{%(100)Save}">
+        </td>
+        <td class="return">
+          <b>
+            <a href="%BACK_LINK%">
+              {%(101)Return}
+              <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+            </a>
+          </b>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

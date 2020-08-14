@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Web User Security}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(1)Web User Security}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)User Name}</th>
+        <td>{WEB_CODE}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Name}</th>
+        <td>
+          <input type="text" name="SURNAME" size=100>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(5)Language}</th>
+        <td>
+          <select name="LANGUAGE_CODE">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(6)Agent No}</th>
+        <td>
+          <input type="text" name="AGENT_NO" size=10 ONCHANGE="document.forms[0].submit()">
+          <!--%(SEARCH_AGENT)-->
+          <input type="BUTTON" value="{%(105)Search Agent}" ONCLICK="search_agent('AGENT_NO',true)">
+          <!--%-->
+          {AGENT_NAME}
+        </td>
+      </tr>
+      <!--%(CLIENT_NO)-->
+      <tr>
+        <th>{%(14)Client No}</th>
+        <td>
+          <input type="text" name="CLIENT_NO" size=10 ONCHANGE="document.forms[0].submit();">
+          <input type="BUTTON" value="{%(106)Search Client}" ONCLICK="search_client('CLIENT_NO',true)">
+          {CLIENT_NAME}
+        </td>
+      </tr>
+      <!--%-->
+      <tr>
+        <th>{%(15)Reinsurance Company}</th>
+        <td>
+          <select name="REINSURANCE_COMPANY">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(7)E-Mail}</th>
+        <td>
+          <input type="text" name="EMAIL" size=40>
+        </td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(8)Allowed Functions}</th>
+        <td>
+          <table>
+            <!--{FUNCTIONS}-->
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(9)Web Site}</th>
+        <td>
+          <select name="WEB_SITES_ALLOWED">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(10)Active}</th>
+        <td>
+          <input type="checkbox" name="ACTIVE">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(16)Allowed IP addresses (if empty - all are allowed)}</th>
+        <td>
+          <table>
+            <!--{ALLOWED_IPS}-->
+            <tr>
+              <td>
+                <input name="IP_ADDRESS_BUTTON" type="submit" value="{%(99)Add}">
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(17)SSL Client Certificate Serial Number}</th>
+        <td>
+          <input type="text" name="SSL_CERT_NO" size=70>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(18)Allow access via SOAP}</th>
+        <td>
+          <input type="checkbox" name="ALLOW_SOAP">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(20)Allow access via REST}</th>
+        <td>
+          <input type="checkbox" name="ALLOW_REST">
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <td class="title" colspan="2">{%(19)Allowed Web Services}</td>
+      </tr>
+      <!--{ALLOWED_WEB_SERVICES}-->
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SaveButton" value="{%(100)Save}">
+          &nbsp;&nbsp;
+          <input type="submit" name="SensitiveButton" value="{%(11)Sensitive Information}">
+          &nbsp;&nbsp;
+          <input type="submit" name="PasswordEnquiryButton" value="{%(12)Password Enquiry}">
+          &nbsp;&nbsp;
+          <input type="submit" name="ChangePasswordButton" value="{%(13)Change Password}">
+          &nbsp;&nbsp;
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

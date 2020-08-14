@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Bill}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(1)Bill}</td>
+      </tr>
+      <tr>
+        <th width=30%>{%(3)Scheme number}</th>
+        <td>{SCHEME_CODE}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Group Owner}</th>
+        <td>{OWNER_NO} {OWNER_NAME}</td>
+      </tr>
+      <tr>
+        <th width=30%>{%(5)Scheme status}</th>
+        <td>{STATUS}</td>
+      </tr>
+      <tr>
+        <th>{%(6)Scheme RCD}</th>
+        <td>{SCHEME_RCD}</td>
+      </tr>
+      <tr>
+        <th>{%(7)Paid to date}</th>
+        <td>{PAID_TO_DATE}</td>
+      </tr>
+      <tr>
+        <td align="left">
+          <input type="submit" name="PrevButton" value="{%(111)Previous Page}">
+        </td>
+        <td align="right">
+          <input type="submit" name="NextButton" value="{%(112)Next Page}">
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th>{%(11)Member Name}</th>
+        <th>{%(12)Nat.Ins.No}</th>
+        <th>{%(13)Form No}</th>
+        <th>{%(14)Month}</th>
+        <th>{%(15)Year}</th>
+        <th>{%(16)Employer Contribution}</th>
+        <th>{%(17)Employee Contribution}</th>
+        <th>{%(18)Total}</th>
+        <th>
+          <input type="checkbox" name="SELECT_ALL" ONCHANGE="document.forms[0].submit()">
+          &nbsp;{%(19)Include}
+        </th>
+      </tr>
+      <!--{MEMBER_LIST}-->
+    </table>
+    <table class="navigation">
+      <tr>
+        <td style="width: 1%">
+          <input type="submit" name="SaveButton" value="{%(100)Save}">
+        </td>
+        <td style="width: 1%">
+          <input type="submit" name="ExportButton" value="{%(102)Export}">
+        </td>
+        <td style="width: 1%">
+          <input type="submit" name="ImportButton" value="{%(103)Import}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="/lf/images/back.gif">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

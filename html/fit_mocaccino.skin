@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<!DOCTYPE SkinDescription SYSTEM "menu.dtd">
+<Skin>
+  <Description>FIT Mocaccino</Description>
+  <ImageName>$PATH/yolk.png</ImageName>
+  <StylesheetPath>$PATH/mocaccino.css</StylesheetPath>
+  <StylesheetPathRtl>$PATH/train_stylesheet.css</StylesheetPathRtl>
+  <MenuStyle>$PATH/menu_var_mocaccino.js</MenuStyle>
+</Skin>

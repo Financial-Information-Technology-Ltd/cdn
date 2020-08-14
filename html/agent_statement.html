@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Commissions}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(1)Commissions}
+          <a href="%SERVLET_PATH%?screen_name=%BACK_LINK%">
+            <span class="return_link">{%(200)Return}</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Agent No}</th>
+        <td>{AgentKey}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Agent Name}</th>
+        <td>{AgentName}</td>
+      </tr>
+      <tr>
+        <th>{%(5)Statement No}</th>
+        <td>{StatementNo}</td>
+      </tr>
+      <tr>
+        <th>{%(6)Statement Date}</th>
+        <td>{StatementDate}</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th>{%(11)Effective Date}</th>
+        <th>{%(12)Coverage}</th>
+        <th>{%(13)Policy No}</th>
+        <th>{%(14)Currency}</th>
+        <th>{%(15)Earned Comm}</th>
+        <th>{%(16)Amount Paid}</th>
+        <th>{%(17)Ind}</th>
+      </tr>
+      <!--{COMMISSION_LIST}-->
+    </table>
+    <table>
+      <tr class="navigation">
+        <td class="return">
+          <a href="%SERVLET_PATH%?screen_name=%BACK_LINK%">
+            {%(200)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

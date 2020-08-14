@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Unit Accounting}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}" />
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table class="zebra">
+      <tr>
+        <td class="title" colspan="8">{HELP_LINK}
+          {%(2)Unit Accounting for} {PolicyKey}
+          <a href="%BACK_LINK%">
+            <span class="return_link">{%(13)Return}</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <a href="?screen_name=show_policy_unitacctrn&PolicyKey={PolicyKey}&SortField=date">{%(4)Created Date}</a>
+        </th>
+        <th>
+          <a href="?screen_name=show_policy_unitacctrn&PolicyKey={PolicyKey}&SortField=eff_date">{%(5)Eff Date}</a>
+        </th>
+        <th>
+          <a href="?screen_name=show_policy_unitacctrn&PolicyKey={PolicyKey}&SortField=reason">{%(6)Reason}</a>
+        </th>
+        <th>
+          <a href="?screen_name=show_policy_unitacctrn&PolicyKey={PolicyKey}&SortField=coverage">{%(7)Coverage}</a>
+        </th>
+        <th>
+          <a href="?screen_name=show_policy_unitacctrn&PolicyKey={PolicyKey}&SortField=unit_date">{%(8)Unit Date}</a>
+        </th>
+        <th>
+          <a href="?screen_name=show_policy_unitacctrn&PolicyKey={PolicyKey}&SortField=trans_no">{%(9)Trans.No}</a>
+        </th>
+        <th>{%(10)Fund}</th>
+        <th>{%(11)Source}</th>
+      </tr>
+      <!--{UNITACCTRN_TABLE}-->
+    </table>
+    <table class="navigation">
+      <tr>
+        <td align="right">
+          <b>
+            <a href="%BACK_LINK%">
+              {%(13)Return}
+              <img src="%BACK_IMAGE%" alt="{%(666)Back}" />
+            </a>
+          </b>
+        </td>
+      </tr>
+    </table>
+    <input type="hidden" name="NextText" value="{%(111)&hellip; more &hellip;}">
+    <input type="hidden" name="PrevText" value="{%(112)&hellip; previous &hellip;}">
+  </form>
+</body>
+</html>

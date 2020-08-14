@@ -1,0 +1,117 @@
+<table>
+  <tr>
+    <td class="title" colspan="2">{HELP_LINK}{%(11)Regular Income Payment Details}</td>
+  </tr>
+  <tr>
+    <td style="width: 30%">{%(13)Payment frequency}</td>
+    <td>
+      <select name="RIFrequency">
+        <option value="">&nbsp;</option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td>{%(24)Payment method}</td>
+    <td>
+      <select name="RIPaymentType" onchange="document.forms[0].submit()">
+        <option value="">&nbsp;</option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td>{%(7)Payee No (if exists)}</td>
+    <td>
+      <input name="RIPayeeKey" size="7" onchange="document.forms[0].submit()">
+      <input type="BUTTON" name="RIPayeeKeyButton" value="{%(104)Search Client}"
+        ONCLICK="search_client('RIPayeeKey',true)">
+      {PayeeName}
+    </td>
+  </tr>
+  <tr>
+    <td>{%(8)Bank Account}</td>
+    <td>
+      <select name="RIBankNo" onchange="document.forms[0].submit()">
+        <option value="">&nbsp;</option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td>{%(12)Payee Name}</td>
+    <td>
+      <input name="RIPayeeName" size="55">
+    </td>
+  </tr>
+  <tr>
+    <td>{%(14)Sort Code}</td>
+    <td>
+      <input name="RISortCode" size="20">
+    </td>
+  </tr>
+  <tr>
+    <td>{%(15)Account Number}</td>
+    <td>
+      <input name="RIBankAccount" size="20">
+    </td>
+  </tr>
+  <tr>
+    <td>{%(16)Payment Currency}</td>
+    <td>
+      <select name="RICurrency">
+        <option value="">&nbsp;</option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td>{%(17)First Payment}</td>
+    <td>
+      <input name="FirstPaymentDate" size="10">
+      ({DATE_FORMAT})
+    </td>
+  </tr>
+  <tr>
+    <td>{%(18)Final Payment}</td>
+    <td>
+      <input name="FinalPaymentDate" size="10">
+      ({DATE_FORMAT})
+    </td>
+  </tr>
+  <tr>
+    <td>{%(19)Withdrawal Type}</td>
+    <td>
+      <select name="RIWithdrawalType">
+        <option value="">&nbsp;</option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td>{%(20)Annual Percentage}</td>
+    <td>
+      <input name="RIPercentage" size="10">
+    </td>
+  </tr>
+  <tr>
+    <td>{%(21)Annual Amount}</td>
+    <td>
+      <input name="RIAmount" size="10">
+    </td>
+  </tr>
+  <tr>
+    <th>{%(25)Deduct from all funds}</th>
+    <td>
+      <input type="checkbox" name="RIFromAllFunds">
+    </td>
+  </tr>
+  <tr>
+    <td>{%(22)From Funds}</td>
+    <td>
+      <table>
+        <!--{FROM_FUNDS_TABLE}-->
+        <tr>
+          <td>
+            <input type="submit" name="RIAddFund" value="{%(23)Add Fund}">
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>

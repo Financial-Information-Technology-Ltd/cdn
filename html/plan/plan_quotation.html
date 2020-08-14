@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Plan Quotation}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr title="class">
+        <td class="title" colspan=2>{HELP_LINK}{%(1)Plan Quotation}</td>
+      </tr>
+      <tr>
+        <th width=30%>{%(2)Plan Code}</th>
+        <td>{PlanCode}</td>
+      </tr>
+      <tr>
+        <th>{%(3)Plan Name}</th>
+        <td>{PlanName}</td>
+      </tr>
+      <tr>
+        <th>{%(11)Quote Process}</th>
+        <td>
+          <select name="QUOTE_PROCESS">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(12)Group Quote Process}</th>
+        <td>
+          <select name="GROUP_QUOTE_PROCESS">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(13)Group Member Quote Process}</th>
+        <td>
+          <select name="GROUP_MEMBER_QUOTE_PROCESS">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(14)Illustration Growth Rates}</th>
+        <td>
+          <table>
+            <!--{ILLUSTRATION_GROWTH_RATES}-->
+            <tr>
+              <td>
+                <input type="submit" name="ILLUSTRATION_GROWTH_RATE_BUTTON" value="{%(99)Add}">
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(15)Period for which quotaion is valid (days)}</th>
+        <td>
+          <input type="text" name="QUOTE_VALID_DAYS" size=4>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(16)Trust Plan Code}</th>
+        <td>
+          <input type="text" name="TRUST_PLAN_CODE" size=12>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(17)Disable Soap Topup}</th>
+        <td>
+          <input TYPE="CHECKBOX" name="DISABLE_SOAP_TOPUP">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(18)Allow Quote Update}</th>
+        <td>
+          <input TYPE="CHECKBOX" name="ALLOW_QUOTE_UPDATE">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(19)Quote Years}</th>
+        <td>
+          <input type="text" name="QUOTE_YEARS" size=4>
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SaveButton" value="{%(100)Save}">
+        </td>
+        <td class="return">
+          <b>
+            <a href="%BACK_LINK%">
+              {%(101)Return}
+              <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+            </a>
+          </b>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

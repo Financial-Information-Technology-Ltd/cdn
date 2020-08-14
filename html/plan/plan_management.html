@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Plan Management}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan=2>{HELP_LINK}{%(1)Plan Management}</td>
+      </tr>
+      <tr>
+        <th width=30%>{%(2)Plan Code}</th>
+        <td>{PlanCode}</td>
+      </tr>
+      <tr>
+        <th>{%(3)Plan Name}</th>
+        <td>{PlanName}</td>
+      </tr>
+      <tr>
+        <th>{%(6)Management Freq}</th>
+        <td>
+          <select name="MAN_CHG_FREQ">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(7)Incidence}</th>
+        <td>
+          <select name="INCIDENCE">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(8)Effect On Company Units}</th>
+        <td>
+          <select name="MAN_ON_COY_UNITS">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(9)Management Details}</th>
+        <td>
+          <table>
+            <tr>
+              <th>{%(10)Date}</th>
+              <th>{%(11)Basis}</th>
+              <th>{%(12)Amount}</th>
+              <th>{%(13)Perc}</th>
+              <th>{%(14)Table}</th>
+              <!--{MANAGEMENT_TABLE}-->
+              <td>
+                <input type="submit" name="AddValueButton" value="{%(15)Add}">
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SaveButton" value="{%(100)Save}">
+        </td>
+        <td class="return">
+          <b>
+            <a href="%BACK_LINK%">
+              {%(101)Return}
+              <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+            </a>
+          </b>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+<script type="text/javascript">
+  function clear_rate(index)
+  {
+    element = document.forms[0].elements["MAN_FEE_TABLE_"+index];
+    if (element!=null && element.value!="")
+    {
+      element = document.forms[0].elements["MAN_FEE_PRC_"+index];
+      if (element!=null)
+      {
+        if (element.type=="select-one")
+        {
+          element.selectedIndex=0;
+        }
+        else
+        {
+          element.value = "";
+        }
+      }
+    }
+  }
+  function clear_table(index)
+  {
+    if (!float_changed("MAN_FEE_PRC_"+index,3))
+      return false;
+    element = document.forms[0].elements["MAN_FEE_PRC_"+index];
+    if (element!=null && element.value!="")
+    {
+      element = document.forms[0].elements["MAN_FEE_TABLE_"+index];
+      if (element!=null)
+      {
+        if (element.type=="select-one")
+        {
+          element.selectedIndex=0;
+        }
+        else
+        {
+          element.value = "";
+        }
+      }
+    }
+    return true;
+  }
+</script>
+</html>

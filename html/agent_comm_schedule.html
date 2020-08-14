@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Commission Schedules / Agent Contracts}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form method="post" action="%SERVLET_PATH%">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(1)Commission Schedules / Agent Contracts}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(2)Contract Schedule Code}</th>
+        <td>{SCHEDULE_KEY}</td>
+      </tr>
+    </table>
+    <table class="zebra">
+      <tr>
+        <th>{%(4)Comm Type}</th>
+        <th>{%(5)Comm Rates Stub}</th>
+        <th>{%(6)Perc To Advance}</th>
+        <th>{%(7)Earnings Pattern}</th>
+        <th>{%(8)Payment Pattern}</th>
+      </tr>
+      <!--{ENTRY_LIST}-->
+      <tr>
+        <th class="fkeys" colspan="5">
+          <input name="AddButton" type="submit" value="{%(15)Add}">
+        </th>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SaveButton" value="{%(100)Save}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(200)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

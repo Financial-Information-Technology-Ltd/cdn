@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Group Agent Endorsements}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(1)Group Agent Endorsements}
+          <a href="%BACK_LINK%">
+            <span class="return_link">{%(200)Return}</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Scheme No}</th>
+        <td>{SchemeNo}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Scheme Owner}</th>
+        <td>{SchemeOwner}</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <td class="title" colspan="5">{%(5)Commission Details}</td>
+      </tr>
+      <tr>
+        <th>{%(6)Agent No}</th>
+        <th>{%(7)Agent Name}</th>
+        <th>{%(8)Contact Name}</th>
+        <th>{%(9)Share}</th>
+        <th>{%(10)Agency}</th>
+      </tr>
+      <!--{AGENT_LIST_OML}-->
+    </table>
+    <table>
+      <tr>
+        <td class="title" colspan="7">{%(20)Agent Endorsements}</td>
+      </tr>
+      <tr>
+        <th>{%(21)Effective Date}</th>
+        <th>{%(22)Field}</th>
+        <th>{%(23)Old Value}</th>
+        <th>{%(24)New Value}</th>
+        <th>{%(25)User}</th>
+        <th>{%(26)Posted Date}</th>
+        <th></th>
+      </tr>
+      <!--{GROUP_AGENT_ENDORSEMENT_LIST}-->
+    </table>
+    <input type="hidden" name="CancelButtonText" value="{%(27)Cancel}">
+    <table class="navigation">
+      <tr>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="/lf/images/back.gif">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+  <script type="text/javascript">
+    function confirmCancel(e)
+    {
+        reply = confirm("{%(105)Are you sure you wish to cancel?}");
+        return reply;
+    }
+</script>
+</body>
+</html>
