@@ -22,6 +22,7 @@
 				<xsd:complexType>
 					<xsd:sequence>
 						<xsd:element name="RequestResult" type="tns:RequestResult" />
+						<xsd:element name="message" type="xsd:string" nillable="false" minOccurs="0" maxOccurs="1"/>
 					</xsd:sequence>
 				</xsd:complexType>
 			</xsd:element>
