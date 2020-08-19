@@ -18,9 +18,9 @@
         <Command>DO_CLIENT_MAIN</Command>
       </Item>
       <Submenu id="SUB_AGENT">
-        <Prompt>Agent SubMenu</Prompt>
+        <Prompt>Agent</Prompt>
         <Item>
-          <Prompt>Agent Workbench</Prompt>
+          <Prompt>Workbench</Prompt>
           <Command>DO_AGENT_MAIN</Command>
         </Item>
         <Item>
@@ -37,7 +37,7 @@
         </Item>
       </Submenu>
       <Item>
-        <Prompt>Policy Diary Entries</Prompt>
+        <Prompt>Diary Entry</Prompt>
         <Command>DO_SHOW_POLICY_DIARY_ENTRY</Command>
       </Item>
     </Submenu>
@@ -45,6 +45,10 @@
       <Prompt>Group</Prompt>
       <Item>
         <Prompt>Group Workbench</Prompt>
+        <Command>DO_GROUP_MAIN</Command>
+      </Item>
+      <Item>
+        <Prompt>Relationship Manager Workbench</Prompt>
         <Command>DO_GROUP_MAIN</Command>
       </Item>
     </Submenu>
@@ -99,7 +103,7 @@
           <Command>MOVE_AGENT_BALANCE</Command>
         </Item>
         <Item>
-          <Prompt>Commission Journals</Prompt>
+          <Prompt>Comm Journal</Prompt>
           <Command>MAKE_COMM_ACC_JRNLS</Command>
         </Item>
         <Item>
@@ -148,7 +152,7 @@
     <Submenu id="SUB_SUPPORT_FILE">
       <Prompt>Support Files</Prompt>
       <Submenu id="SUB_SUPPORT_AGENT">
-        <Prompt>Commission Setup</Prompt>
+        <Prompt>Agent</Prompt>
         <Item>
           <Prompt>Agent Types</Prompt>
           <Command>CHOOSE_AGENT_TYPE</Command>
@@ -344,7 +348,7 @@
         </Item>
       </Submenu>
       <Item>
-        <Prompt>Plans</Prompt>
+        <Prompt>Product Workbench</Prompt>
         <Command>CHOOSE_PLAN</Command>
       </Item>
       <Submenu id="SUB_SUPPORT_REINSURANCE">
@@ -429,7 +433,7 @@
       </Item>
     </Submenu>
     <Submenu id="SUB_ADMINISTRATION">
-      <Prompt>Administration</Prompt>
+      <Prompt>Admin</Prompt>
       <Item>
         <Prompt>System Dates</Prompt>
         <Command>SYSTEM_DATES</Command>
@@ -439,7 +443,7 @@
         <Command>DD_DATES</Command>
       </Item>
       <Item>
-        <Prompt>Run Batch</Prompt>
+        <Prompt>Run Batches</Prompt>
         <Command>CHOOSE_BATCH</Command>
       </Item>
       <Item>
@@ -648,7 +652,7 @@
       <Submenu id="SUB_SECURITY">
         <Prompt>Security/Processes</Prompt>
         <Item>
-          <Prompt>User IDs</Prompt>
+          <Prompt>Operator Setup</Prompt>
           <Command>SECURITY</Command>
         </Item>
         <Item>

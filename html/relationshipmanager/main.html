@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Relationship Manager}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(2)Relationship Manager}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Relationship Manager}</th>
+        <td>
+          <select name="RelationshipSManager" ONCHANGE="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+    <!--%(RELATIONSHIP_MANAGER_SNIPPET)-->
+    <table>
+      <tr>
+        <th>Group Number</th>
+        <th>Owner</th>
+        <th>Policy</th>
+        <th>Status</th>
+        <th>Risk commence</th>
+        <th>Renewal Date</th>
+        <th>Relationship Manager</th>
+        <th>Relationship sub Manager</th>
+        <th>Agent</th>
+        <th>Premium outstanding</th>
+        <th>Credit note due days</th>
+        <th>Credit note overdue days</th>
+      </tr>
+      <!--{RELATIONSHIP_MANAGER_TABLE}-->
+    </table>
+    <!--%-->
+    <table class="navigation">
+      <tr>
+        <td>
+
+        </td>
+        <td class="return">
+          <a href="?screen_name=do_main_page">
+            {%(100)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

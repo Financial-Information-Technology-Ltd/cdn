@@ -62,6 +62,10 @@
         <Prompt>Group Workbench</Prompt>
         <Command>DO_GROUP_MAIN</Command>
       </Item>
+      <Item>
+        <Prompt>Relationship Manager Workbench</Prompt>
+        <Command>SHOW_RELATIONSHIP_MANAGER</Command>
+      </Item>
     </Submenu>
     <Submenu id="SUB_PAYMENT">
       <Prompt>Premium/Payment</Prompt>

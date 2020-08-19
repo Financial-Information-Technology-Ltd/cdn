@@ -894,8 +894,9 @@
         <Command>PROCESS_GROUP_DOCUMENT</Command>
         <Command>PROCESS_GROUP_UPLOAD_DOC_IMAGE</Command>
         <Command>SHOW_AGENT_COMMISSION</Command>
-	    	<Command>PROCESS_AGENT_COMMISSION</Command>
-	    	<Command>PROCESS_AGENT_ENDORSEMENTS</Command>
+        <Command>PROCESS_AGENT_COMMISSION</Command>
+        <Command>PROCESS_AGENT_ENDORSEMENTS</Command>
+        <Command>SHOW_RELATIONSHIP_MANAGER</Command>
 	  </CommandRelation>
     <CommandRelation>
         <MainCommand>DO_SHOW_POLICY_DIARY_ENTRY</MainCommand>
