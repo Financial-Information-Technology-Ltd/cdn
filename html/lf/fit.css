@@ -431,7 +431,7 @@ table {
 	margin-bottom: 6
 }
 
-tbody {
+tbody ,thead {
 	color: var(--darker);
 	text-align: left;
 	line-height: 100%;
@@ -479,7 +479,13 @@ tbody th {
 tr {
 	height: 25px;
 }
-
+th.header-hover{
+	cursor: pointer;
+}
+th.header-hover:hover{
+	cursor: pointer;
+	color: #f68c1e;
+}
 textarea {
 	text-align: left;
 	line-height: 100%;

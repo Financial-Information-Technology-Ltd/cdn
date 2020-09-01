@@ -8,6 +8,34 @@
 		<xsd:schema targetNamespace="LIFEfitData/types"
 			xmlns="http://www.w3.org/2001/XMLSchema"
 			xmlns:tns="LIFEfitData/types" elementFormDefault="qualified">
+			<xsd:element name="RMWorkbenchRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="Login" type="tns:LoginData" />
+						<xsd:element name="SchemeNo" type="xsd:string" nillable="false" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="RMWorkbenchResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="RequestResult" type="tns:RequestResult" />
+						<xsd:element name="GroupNo" type="xsd:string"/>
+						<xsd:element name="Owner" type="xsd:string"/>
+						<xsd:element name="PolicyNo" type="xsd:string"/>
+						<xsd:element name="Status" type="xsd:string"/>
+						<xsd:element name="RiskCommence" type="xsd:date"/>
+						<xsd:element name="RenewalDate" type="xsd:date"/>
+						<xsd:element name="RelationshipManager" type="xsd:string"/>
+						<xsd:element name="RelationshipSubManager" type="xsd:string"/>
+						<xsd:element name="Agent" type="xsd:string"/>
+						<xsd:element name="BilledInCurrentPeriod" type="xsd:double"/>
+						<xsd:element name="PremiumOutstanding" type="xsd:double"/>
+						<xsd:element name="CreditNoteDue" type="xsd:integer"/>
+						<xsd:element name="CreditNoteOverDue" type="xsd:integer"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
 			<xsd:element name="EndorseSumAssuredRequest">
 				<xsd:complexType>
 					<xsd:sequence>
@@ -1795,7 +1823,6 @@
 								 nillable="true" minOccurs="0" maxOccurs="unbounded" />
 				</xsd:sequence>
 			</xsd:complexType>
-
 			<xsd:complexType name="BankAccountPolicyRelationshipData">
 				<xsd:sequence>
 					<xsd:element name="Policy" type="xsd:string" />
@@ -3763,6 +3790,15 @@
 	<message name="EndorseSumAssuredOutput">
 		<part name="EndorseSumAssuredResponse" element="fittype:EndorseSumAssuredResponse" />
 	</message>
+
+	<message name="RMWorkbenchInput">
+		<part name="RMWorkbenchRequest" element="fittype:RMWorkbenchRequest" />
+	</message>
+	<message name="RMWorkbenchOutput">
+		<part name="RMWorkbenchResponse" element="fittype:RMWorkbenchResponse" />
+	</message>
+
+
 	<message name="UpdateClientFieldInput">
 		<part name="UpdateClientFieldRequest" element="fittype:UpdateClientFieldRequest" />
 	</message>
@@ -4215,6 +4251,10 @@
 		<operation name="EndorseSumAssured">
 			<input message="lifefit:EndorseSumAssuredInput" />
 			<output message="EndorseSumAssuredOutput" />
+		</operation>
+		<operation name="GetRMWorkbench">
+			<input message="lifefit:RMWorkbenchInput" />
+			<output message="RMWorkbenchOutput" />
 		</operation>
 		<operation name="ClientFieldUpdate">
 			<input message="lifefit:UpdateClientFieldInput" />
@@ -5292,6 +5332,16 @@
 				<soap:body use="literal" />
 			</output>
 		</operation>
+		<operation name="GetRMWorkbench">
+			<soap:operation soapAction="getRMWorkbench" style="document"/>
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+
 		<operation name="ClientFieldUpdate">
 			<soap:operation soapAction="clientFieldUpdate" style="document"/>
 			<input>
