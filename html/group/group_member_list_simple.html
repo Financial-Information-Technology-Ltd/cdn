@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Scheme Members}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(1)Scheme Members}
+          <a href="%BACK_LINK%">
+            <span class="return_link">{%(101)Return}</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <th width=30%>{%(3)Scheme number}</th>
+        <td>{SCHEME_CODE}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Scheme Owner}</th>
+        <td>{GROUP_OWNER}</td>
+      </tr>
+    </table>
+    <!--%(PAGE_BUTTONS)-->
+    <table class="navigation">
+      <tr>
+        <td align="left" style="width: 33%">
+          <input type="submit" name="PrevButton" value="{%(111)Previous Page}">
+        </td>
+        <td align="center" style="width: 33%">
+          <input type="submit" name="AllButton" value="{%(113)All Members}">
+        </td>
+        <td align="right">
+          <input type="submit" name="NextButton" value="{%(112)Next Page}">
+        </td>
+      </tr>
+    </table>
+    <!--%-->
+    <table>
+      <tr>
+        <th>
+          <a href="?screen_name=SHOW_MEMBER_LIST&SortField=Number&GroupKey={GroupKey}">{%(11)No}</a>
+        </th>
+        <th>
+          <a href="?screen_name=SHOW_MEMBER_LIST&SortField=Name&GroupKey={GroupKey}">{%(12)Name}</a>
+        </th>
+        <!--%(SUBGROUP_COLUMN)-->
+        <th>{%(13)Subgroup}</th>
+        <!--%-->
+        <th>{%(16)Certificate}</th>
+        <th>{%(17)Status}</th>
+        <th>&nbsp;</th>
+      </tr>
+      <!--{MEMBER_LIST_SIMPLE}-->
+    </table>
+    <input type="hidden" name="EditButtonText" value="{%(19)Edit}">
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="AddNewMember" value="{%(102)Add Member}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="/lf/images/back.gif">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

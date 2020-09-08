@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Member Level Mortality Rates}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body ONLOAD="initialise()">
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan=2>{HELP_LINK}{%(1)Member Level Mortality Rates}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(2)Scheme Owner}</th>
+        <td>{SchemeOwner}</td>
+      </tr>
+      <tr>
+        <th>{%(3)Membership Number}</th>
+        <td>{MemberNo}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Member Name}</th>
+        <td>{PolicyOwner}</td>
+      </tr>
+      <tr>
+        <th>{%(5)Certificate Number}</th>
+        <td>{PolicyKey}</td>
+      </tr>
+      <!--%(EffectiveDate)-->
+      <tr>
+        <th>{%(8)Change Effective Date}</th>
+        <td>
+          <input type="text" name="ChangeDate">
+        </td>
+      </tr>
+      <!--%-->
+    </table>
+    <table>
+      <tr>
+        <th colspan="2">{%(6)Coverage}</th>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(7)Plan Name}</th>
+        <th style="width: 20%">{%(10)Mortality Rating Reason}</th>
+        <th>{%(9)Mortality Rating}</th>
+      </tr>
+      <tr>
+        <td>{BasePlan}</td>
+        <td>
+          <input type="text" name="BASE_MORT_LOADING_REASON" size=30>
+        </td>
+        <td>
+          <input type="text" name="BASE_MORT_LOADING" size=8>
+        </td>
+      </tr>
+      <!--{MORTALITY_LOADING_LIST}-->
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SubmitButton" value="{%(100)Submit}">
+          <input type="button" name="approveModalBtn" id="approveModalBtn" value="{%(102)Approve }">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+    <div id="approveModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content" style="width: 30%">
+        <div class="modal-header">
+          <span class="close approveModalClose">&times;</span>
+          <h2>{%(103)Approve Mortality Rating}</h2>
+        </div>
+        <div class="modal-body">
+          <label for="secret" style="font-size: 14px; margin-top: 20px;">Password:</label>
+          <input type="password" id="secret"  name="secret" class="popup_input full_width" />
+        </div>
+        <div class="modal-footer">
+          <input  name="ApproveBtn" type="submit" value="{%(104)Approve}" class="popup_input" >
+        </div>
+      </div>
+    </div>
+  </form>
+<script>
+  function setupApproveModal(){
+    var smsModal = document.getElementById("approveModal");
+    var sendSmsBtn = document.getElementById("approveModalBtn");
+    var sendSmsSpan = document.getElementsByClassName("approveModalClose")[0];
+    sendSmsBtn.onclick = function() {
+      smsModal.style.display = "block";
+    };
+    sendSmsSpan.onclick = function() {
+      smsModal.style.display = "none";
+    }
+  }
+  setupApproveModal();
+</script>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Workflow Task Code}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan=2>{HELP_LINK}{%(2)Workflow Task Code}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Code:}</th>
+        <td>{Code}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Name}</th>
+        <td>
+          <input type="text" name="Name" size=60>
+        </td>
+      </tr>
+      <!--%(TARGETS_DAYS_FRAGMENT)-->
+      <tr>
+        <th>{%(5)Due after (days)}</th>
+        <td>
+          <input type="text" name="DueDays" size=5>
+          &nbsp;
+          <img class="traffic_light" src="{IMAGE_PATH}red.png" ALT="red">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(6)Target day after (days)}</th>
+        <td>
+          <input type="text" name="TargetDays" size=5>
+          &nbsp;
+          <img class="traffic_light" src="{IMAGE_PATH}amber.png" ALT="amber">
+        </td>
+      </tr>
+      <!--%-->
+      <!--%(TARGETS_HOURS_FRAGMENT)-->
+      <tr>
+        <th>{%(14)Due after (hours:minutes)}</th>
+        <td>
+          <input type="text" name="DueHours" size=5>
+          :
+          <input type="text" name="DueMinutes" size=5>
+          &nbsp;
+          <img class="traffic_light" src="{IMAGE_PATH}red.png" ALT="red">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(15)Target time after (hours:minutes)}</th>
+        <td>
+          <input type="text" name="TargetHours" size=5>
+          :
+          <input type="text" name="TargetMinutes" size=5>
+          &nbsp;
+          <img class="traffic_light" src="{IMAGE_PATH}amber.png" ALT="yellow">
+        </td>
+      </tr>
+      <!--%-->
+      <!--%(WORKFLOW_TASK_GROUP_FRAGMENT)-->
+      <tr>
+        <th>{%(18)Workflow Group }</th>
+        <td>
+          <select name="WorkflowTaskGroup">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <!--%-->
+      <tr>
+        <th>{%(7)Default User Group}</th>
+        <td>
+          <select name="DefaultUserGroup">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(17)Default User }</th>
+        <td>
+          <select name="DefaultUser">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(19)Default to Scheme Administrator}</th>
+        <td>
+          <input name="DefaultToSchemeAdmin" type="checkbox">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(8)Description}</th>
+        <td>
+          <TEXTAREA ROWS=3 COLS=60 name="Description"></TEXTAREA>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(9)Tasks on completion}</th>
+        <td>
+          <table>
+            <tr>
+              <th style="width: 1%" rowspan="2">{%(11)Task}</th>
+              <th colspan="2">{%(12)Delay}</th>
+              <th style="width: 1%" rowspan="2">{%(32)Optional}</th>
+            </tr>
+            <tr>
+              <th>Time</th>
+              <th>Or until</th>
+            </tr>
+            <!--{NEXT_TASK_TABLE}-->
+            <tr>
+              <td colspan=2>
+                <input type="submit" name="AddNextTaskButton" value="{%(10)Add}">
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(13)Link to function}</th>
+        <td>
+          <select name="PolicyFunction">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(16)Unique For Policy}</th>
+        <td>
+          <input name="UniqueForPolicy" type="checkbox">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(20)Hidden from manual selection}</th>
+        <td>
+          <input name="HiddenFromSelection" type="checkbox">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(23)Prevent manual closing}</th>
+        <td>
+          <input name="PreventManualClosing" type="checkbox">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(21)Assign to policy creator}</th>
+        <td>
+          <input name="ASSIGN_TO_POLICY_CREATOR" type="checkbox">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(22)Assign by workload}</th>
+        <td>
+          <input name="ASSIGN_BY_WORKLOAD" type="checkbox">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(24)Event On Creation}</th>
+        <td>
+          <input type="text" name="EventOnCreation" size=30>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(29)Event On Assignment}</th>
+        <td>
+          <input type="text" name="EventOnAssignment" size=30>
+        </td>
+      </tr>
+
+      <tr>
+        <th>{%(25)Event On Completion}</th>
+        <td>
+          <input type="text" name="EventOnCompletion" size=30>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(26)Verification Codes}</th>
+        <td>
+          <table>
+            <tr>
+              <th style="width: 1%">{%(27)Verification Code}</th>
+              <th style="width: 100px">{%(28)Required}</th>
+            </tr>
+            <!--{WORKFLOW_VERIFICATION_TABLE}-->
+            <tr>
+              <td colspan=2>
+                <input type="submit" name="AddVerificationButton" value="{%(10)Add}">
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(30)Restrict to Companies}</th>
+        <td>
+          <table>
+            <!--{WORKFLOW_COMPANIES}-->
+            <tr>
+              <td>
+                <input type="submit" name="ADD_WORKFLOW_COMPANY_BUTTON" value="{%(31)Add}">
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(33)Available on Esurance Contact Page}</th>
+        <td>
+          <input name="AvailOnESContact" type="checkbox">
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SaveButton" value="{%(100)Save}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

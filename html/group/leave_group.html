@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Leave Group}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(2)Leave Group}</td>
+      </tr>
+      <tr>
+        <th width=30%>{%(3)Policy No}</th>
+        <td>{POLICY_NO}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Policy Owner}</th>
+        <td>{OWNER}</td>
+      </tr>
+      <tr>
+        <th>{%(5)Policy Status}</th>
+        <td>{STATUS}</td>
+      </tr>
+      <tr>
+        <th>{%(6)Policy Paid To Date}</th>
+        <td>{PAID_TO_DATE}</td>
+      </tr>
+      <tr>
+        <th>{%(11)Scheme Number}</th>
+        <td>{GROUP_NO}</td>
+      </tr>
+      <tr>
+        <th>{%(12)Scheme Owner}</th>
+        <td>{GROUP_OWNER_NAME}</td>
+      </tr>
+      <tr>
+        <th>{%(13)Scheme status}</th>
+        <td>{GROUP_STATUS}</td>
+      </tr>
+      <tr>
+        <th>{%(14)Effective Date}</th>
+        <td>
+          <input type="text" name="EffectiveDate">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(15)Voucher Type}</th>
+        <td>
+          <select name="BillType">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th>{%(21)Coverage}</th>
+        <th>{%(22)Mode Method}</th>
+        <th>{%(23)Status}</th>
+        <th>{%(24)Source of Funds}</th>
+        <th>{%(25)New plan}</th>
+        <th>{%(27)Old Premium}</th>
+        <th>{%(28)New Premium}</th>
+        <th>{%(26)New status}</th>
+      </tr>
+      <!--{COVERAGE_LIST}-->
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="ProcessButton" value="{%(100)Process}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="/lf/images/back.gif">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

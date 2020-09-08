@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Step 2}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form method="post" action="%SERVLET_PATH%">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(2)Policy Details}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Policy Term}</th>
+        <td>
+          <input name="MaturityYears" size="8">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(4)Payment Frequency}</th>
+        <td>
+          <select name="Frequency">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(5)Calculate Option}</th>
+        <td>
+          <select name="CalcAsPremiumSell" ONCHANGE="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <!--%(INPUT_SUM_ASSURED_FRAGMENT)-->
+      <tr>
+        <th>{%(6)Sum Assured}</th>
+        <td>
+          <input name="FaceAmount" size="10">
+        </td>
+      </tr>
+      <!--%-->
+      <!--%(INPUT_PREMIUM_FRAGMENT)-->
+      <tr>
+        <th>{%(7)Input Total Premium}</th>
+        <td>
+          <input type="checkbox" name="INPUT_TOTAL_PREMIUM">
+        </td>
+      </tr>
+      <!--%(PremiumFragment)-->
+      <tr>
+        <th>{%(8)Premium Amount}</th>
+        <td>
+          <input name="PremiumAmount" size="20">
+        </td>
+      </tr>
+      <!--%-->
+      <!--%(TotalPremiumFragment)-->
+      <tr>
+        <th>{%(9)Total Premium Amount}</th>
+        <td>
+          <input name="TOTAL_POLICY_PREMIUM" size="20">
+        </td>
+      </tr>
+      <!--%-->
+      <!--%-->
+      <tr>
+        <th>{%(10)Currency}</th>
+        <td>
+          <select name="Currency">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+    <!--%(ADDITIONAL_RIDERS)-->
+    <table>
+      <tr>
+        <th colspan="4">{%(11)Additional Riders}</th>
+      </tr>
+      <tr>
+        <th style="width: 40">&nbsp;</th>
+        <th>{%(12)}Product</th>
+        <th>{%(13)}&nbsp;</th>
+        <th>{%(14)}&nbsp;</th>
+      </tr>
+      <!--{RIDER_LIST}-->
+    </table>
+    <!--%-->
+    <table class="navigation">
+      <tr>
+        <td align="left">
+          <input class="button" name="PrevButton" type="submit" value="&lt; {%(101)Previous}">
+        </td>
+        <td align="right">
+          <input class="button" name="SubmitButton" type="submit" value="{%(102)Next} &gt;">
+        </td>
+      </tr>
+    </table>
+    <input type="hidden" name="DOCN_LANGUAGE" value="EN">
+  </form>
+</body>
+</html>

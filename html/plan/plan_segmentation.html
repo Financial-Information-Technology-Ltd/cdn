@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Plan Segmentation}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan=2>{HELP_LINK}{%(1)Plan Segmentation}</td>
+      </tr>
+      <tr>
+        <th width=30%>{%(2)Plan Code}</th>
+        <td>{PlanCode}</td>
+      </tr>
+      <tr>
+        <th>{%(3)Plan Name}</th>
+        <td>{PlanName}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Segmentation}</th>
+        <td>
+          <input type="checkbox" name="SEGMENTATION">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(5)Max No of Segs}</th>
+        <td>
+          <input type="text" name="MAX_SEG_NO" size=4>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(6)Policy Fee Per Seg}</th>
+        <td>
+          <input type="text" name="SEG_POLICY_FEE">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(7)Max Policy Fee}</th>
+        <td>
+          <input type="text" name="MAX_POLICY_FEE">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(8)Min. Seg Premium Single}</th>
+        <td>
+          <input type="text" name="MIN_SEG_PREM_SINGLE">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(9)Min. Seg Premium Monthly}</th>
+        <td>
+          <input type="text" name="MIN_SEG_PREM_MTHLY">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(10)Min. Seg Premium Annually}</th>
+        <td>
+          <input type="text" name="MIN_SEG_PREM_ANN">
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SaveButton" value="{%(100)Save}">
+        </td>
+        <td class="return">
+          <b>
+            <a href="%BACK_LINK%">
+              {%(101)Return}
+              <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+            </a>
+          </b>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

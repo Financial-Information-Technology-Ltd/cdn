@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Step 3}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form method="post" action="%SERVLET_PATH%">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(2)Policy Details}</td>
+      </tr>
+      <tr>
+        <td style="width: 30%">{%(5)Application Date}</td>
+        <td>
+          <input name="ApplicationDate" size="12">
+          {DATE_FORMAT}
+        </td>
+      </tr>
+      <tr>
+        <td>{%(6)Application Number}</td>
+        <td>
+          <input name="ApplicationNumber" size="16">
+        </td>
+      </tr>
+      <tr>
+        <td>{%(4)Start Date}</td>
+        <td>
+          <input name="PremiumStartDate" size="12">
+          {DATE_FORMAT}
+        </td>
+      </tr>
+      <tr>
+        <td>{%(8)Premium Amount}</td>
+        <td>
+          <input name="PremiumAmount" onchange="total_premium()" size="20">
+        </td>
+      </tr>
+      <tr>
+        <td>{%(11)Mode/Method}</td>
+        <td>
+          <select name="ModeMethod" onchange="total_premium()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>{%(12)Voucher Type}</td>
+        <td>
+          <select name="BillType">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>{%(13)Currency}</td>
+        <td>
+          <select name="Currency">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>{%(18)Documentation Language}</td>
+        <td>
+          <select name="DocumentLanguage"></select>
+        </td>
+      </tr>
+      <tr>
+        <td>{%(21)Signature on application}</td>
+        <td>
+          <input type="checkbox" name="DOCUMENTS_COMPLETE">
+        </td>
+      </tr>
+    </table>
+    <!--%(ADDITIONAL_RIDERS)-->
+    <table>
+      <tr>
+        <th colspan="4">{%(41)Additional Riders}</th>
+      </tr>
+      <tr>
+        <th style="width: 40">&nbsp;</th>
+        <th>{%(42)Plan}</th>
+        <th>{%(43)Face Amount}</th>
+        <th>{%(44)Premium}</th>
+      </tr>
+      <!--{RIDER_LIST}-->
+    </table>
+    <!--%-->
+    <table>
+      <tr>
+        <td class="title" colspan="2">{%(7)Funds}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Fund}</th>
+        <th>{%(9)Share}</th>
+      </tr>
+      <!--{INVESTMENT_PERCENTAGE_TABLE}-->
+    </table>
+    <table class="navigation">
+      <tr>
+        <td align="left">
+          <input class="button" name="PrevButton" type="submit" value="&lt; {%(19)Previous}">
+        </td>
+        <td align="right">
+          <input class="button" name="NextButton" type="submit" value="{%(20)Next} &gt;">
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

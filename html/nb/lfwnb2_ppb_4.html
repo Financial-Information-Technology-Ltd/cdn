@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Step 4}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form method="post" action="%SERVLET_PATH%">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title">{HELP_LINK}{%(3)Additional parameters}</td>
+      </tr>
+    </table>
+    <!--%(OVERRIDE_FEES_TABLE)-->
+    <table>
+      <tr>
+        <th colspan="3">{%(21)Override Fee Table}</th>
+      </tr>
+      <tr>
+        <th>{%(22)Band (policy value)}</th>
+        <th>{%(23)Policy Admin Fee}</th>
+        <th>{%(24)Intermediary trail fee}</th>
+      </tr>
+      <!--{FEES_TABLE}-->
+      <tr>
+        <td colspan=3>
+          <input type="submit" name="AddFeeButton" value="{%(25)Add}">
+        </td>
+      </tr>
+    </table>
+    <!--%-->
+    <!--%(SEGMENTS_TABLE_FRAGMENT)-->
+    <table>
+      <tr>
+        <th colspan="3">{%(31)Segmentation}</th>
+      </tr>
+      <tr>
+        <td colspan="3">
+          {%(32)Amount/Percent}
+          <select name="SEGMENT_TYPE" ONCHANGE="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">{%(33)Gross premium:} {ALL_SEGMENTS_PREMIUM}</td>
+      </tr>
+      <tr>
+        <th>Segment No</th>
+        <th>Percentage</th>
+        <th>Premium</th>
+      </tr>
+      <!--{SEGMENTS_TABLE}-->
+      <tr>
+        <td colspan=3>
+          <input type="submit" name="AddSegmentButton" value="{%(25)Add}">
+        </td>
+      </tr>
+    </table>
+    <!--%-->
+    {REGULAR_INCOME_PAYMENT_INCLUDE}
+    <table>
+      <tr>
+        <th colspan="2">{%(2)Beneficiaries}</th>
+      </tr>
+    </table>
+    <table id="Beneficiary">
+      <tr>
+        <td style="width: 30%">{%(9)Client Code (if exists)}</td>
+        <td>
+          <input name="BeneficiaryKey" size="10" ONCHANGE="document.forms[0].submit()">
+          <input type="BUTTON" name="BeneficiaryCodeButton" value="{%(104)Search Client}">
+        </td>
+      </tr>
+      <tr>
+        <td>{%(5)Last Name}</td>
+        <td>
+          <input name="Beneficiary_LastName" size="30">
+        </td>
+      </tr>
+      <tr>
+        <td>{%(6)First Name}</td>
+        <td>
+          <input name="Beneficiary_FirstName" size="30">
+        </td>
+      </tr>
+      <tr>
+        <td>{%(4)Birth Date}</td>
+        <td>
+          <input name="Beneficiary_BirthDate" size="10">
+          {DATE_FORMAT}
+        </td>
+      </tr>
+      <tr>
+        <td>{%(7)Share (%)}</td>
+        <td>
+          <input name="Beneficiary_Share" size="20">
+        </td>
+      </tr>
+      <tr>
+        <td>{%(30)Type (%)}</td>
+        <td>
+          <input type="radio" checked name="Beneficiary_Type" value="1">
+          {%(10)Primary}
+          <input type="radio" name="Beneficiary_Type" value="0">
+          {%(11)Secondary}
+        </td>
+      </tr>
+    </table>
+    <table id="Beneficiary">
+      <tr>
+        <td>
+          <input type="submit" value="{%(8)Add a beneficiary}" name="AddBenButton">
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td align="left">
+          <input class="button" name="PrevButton" type="submit" value="&lt; {%(101)Previous}">
+        </td>
+        <td align="right">
+          <input class="button" name="NextButton" type="submit" value="{%(102)Next} &gt;">
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+<script type="text/javascript">
+function change_s_percent(field_name)
+{
+  if (!float_changed(field_name,2))
+    return;
+  total = 0.0;
+  total_amount = 0.0;
+  element = document.forms[0].elements["NumberOfSegments"];
+  count = parseInt(element.value);
+  if (count<1)
+    count = 1;
+  element = document.forms[0].elements["ALL_SEGMENTS_PREMIUM"];
+  total_premium = parse_float(element.value);
+  for (number=1; number<count; number++)
+  {
+    f_name = "SEGMENT_PERCENT_"+number;
+    element = document.forms[0].elements[f_name];
+    if (element==null)
+      break;
+    if (element.value.length>0)
+      percent = parse_float(element.value);
+     else
+      percent = 0;
+    total += percent;
+    f_name = "SEGMENT_PREMIUM_"+number;
+    element = document.forms[0].elements[f_name];
+    premium = total_premium*percent/100;
+    element.value = format_float(premium,2);
+    total_amount += premium
+  }
+  f_name = "SEGMENT_PERCENT_0";
+  element = document.forms[0].elements[f_name];
+  element.value = format_float(100.0-total);
+  f_name = "SEGMENT_PREMIUM_0";
+  element = document.forms[0].elements[f_name];
+  element.value = format_float(total_premium-total_amount,2);
+}
+function change_s_premium(field_name)
+{
+  if (!float_changed(field_name,2))
+    return;
+  total = 0.0;
+  total_amount = 0.0;
+  element = document.forms[0].elements["NumberOfSegments"];
+  count = parseInt(element.value);
+  if (count<1)
+    count = 1;
+  element = document.forms[0].elements["ALL_SEGMENTS_PREMIUM"];
+  total_premium = parse_float(element.value);
+  for (number=1; number<count; number++)
+  {
+    f_name = "SEGMENT_PREMIUM_"+number;
+    element = document.forms[0].elements[f_name];
+    if (element==null)
+      break;
+    if (element.value.length>0)
+      premium = parse_float(element.value);
+     else
+      premium = 0;
+    total_amount += premium;
+    f_name = "SEGMENT_PERCENT_"+number;
+    element = document.forms[0].elements[f_name];
+    percent = premium*100/total_premium;
+    element.value = format_float(percent,2);
+    total += percent
+  }
+  f_name = "SEGMENT_PERCENT_0";
+  element = document.forms[0].elements[f_name];
+  element.value = format_float(100.0-total);
+  f_name = "SEGMENT_PREMIUM_0";
+  element = document.forms[0].elements[f_name];
+  element.value = format_float(total_premium-total_amount,2);
+}
+</script>
+</html>

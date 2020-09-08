@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)New Policy}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form method="post" action="%SERVLET_PATH%">
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(2)Validation Errors}</td>
+      </tr>
+      <tr>
+        <td>{VALIDATION_ERRORS}</td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input name="NextButton" class="button" type="submit" value="{%(3)OK} &gt;">
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

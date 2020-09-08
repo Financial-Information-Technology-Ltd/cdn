@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Scheme Member}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(1)Scheme Member}</td>
+      </tr>
+      <tr>
+        <th width=30%>{%(2)Scheme Number}</th>
+        <td>{SCHEME_CODE}</td>
+      </tr>
+      <tr>
+        <th>{%(3)Member No}</th>
+        <td>{MEMBER_NO}</td>
+      </tr>
+      <!--%(PENDING_CHANGES_MSG)-->
+      <tr class="othererror">
+        <th colspan=2>
+          <a href="?screen_name=MEMBER_CHANGE_LIST&GroupKey={SCHEME_CODE}&MemberNo={MEMBER_NO}">{%(65)Changes are
+            pending for this member}</a>
+        </th>
+      </tr>
+      <!--%-->
+      <!--%(EffectiveDate)-->
+      <tr>
+        <th>{%(4)Change Effective Date}</th>
+        <td>
+          <input type="text" name="ChangeDate">
+        </td>
+      </tr>
+      <!--%-->
+      <tr>
+        <th>{%(7)Subgroup}</th>
+        <td>
+          <select name="Subgroup" ONCHANGE="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(5)First Name}</th>
+        <td>
+          <input type="text" name="FirstName" size=40>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(6)Last Name}</th>
+        <td>
+          <input type="text" name="LastName" size=20>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(8)Address}</th>
+        <td>
+          <TEXTAREA name="Address" COLS=40></TEXTAREA>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(9)City}</th>
+        <td>
+          <input type="text" name="City">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(10)Post Code}</th>
+        <td>
+          <input type="text" name="PostCode">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(11)Country}</th>
+        <td>
+          <select name="Country">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(12)Sex}</th>
+        <td>
+          <select name="Sex">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(13)Birth Date}</th>
+        <td>
+          <input type="text" name="BirthDate" size=10>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(14)Pay No}</th>
+        <td>
+          <input type="text" name="PayNo">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(15)Salary} ({SALARY_FREQUENCY})</th>
+        <td>
+          <input type="text" name="Salary">
+        </td>
+      </tr>
+      <!--%(ALLOWANCES_AMOUNT_FRAGMENT)-->
+      <tr>
+        <th>{%(33)Allowances Amount} ({SALARY_FREQUENCY})</th>
+        <td>
+          <input type="text" name="ALLOWANCES_AMOUNT">
+        </td>
+      </tr>
+      <!--%-->
+      <tr>
+        <th>{%(16)Nationality}</th>
+        <td>
+          <select name="Nationality">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(17)ID Number}</th>
+        <td>
+          <input type="text" name="IdNumber">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(18)ID Expiry Date}</th>
+        <td>
+          <input type="text" name="IdExpiryDate">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(19)Nat.Insurance No}</th>
+        <td>
+          <input type="text" name="NatInsNo">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(20)Company Joining Date}</th>
+        <td>
+          <input type="text" name="DateJoinedCompany">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(21)Group Joining Date}</th>
+        <td>
+          <input type="text" name="DateJoinedGroup">
+        </td>
+      </tr>
+      <!--%(DateLeftGroup)-->
+      <tr>
+        <th>{%(22)Group Leaving Date}</th>
+        <td>
+          <input type="text" name="DateLeftGroup">
+        </td>
+      </tr>
+      <!--%-->
+    </table>
+    <table>
+      <tr>
+        <td class="title" colspan=8>{%(23)Dependantsd</td>
+      </tr>
+      <tr>
+        <th>{%(24)Surname}</th>
+        <th>{%(25)First Name}</th>
+        <th>{%(34)Sum Assured}</th>
+        <th>{%(26)Sex}</th>
+        <th>{%(27)Birth Date}</th>
+        <th>{%(28)Relation}</th>
+        <th>{%(29)No}</th>
+        <th>&nbsp;</th>
+      </tr>
+      <!--{DEPENDANTS_LIST}-->
+      <tr>
+        <td colspan=7>
+          <input type="submit" name="DEPENDANTS_BUTTON" value="{%(103)Add}">
+        </td>
+      </tr>
+    </table>
+    <input type="hidden" name="DeleteText" value="{%(104)Delete}">
+    <table>
+      <tr>
+        <th>{%(30)Coverage}</th>
+        <th>{%(31)Source}</th>
+        <th>{%(32)Include}</th>
+      </tr>
+      <!--{PLAN_LIST_SOURCE}-->
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SaveButton" value="{%(100)Save}">
+          <input type="submit" name="EditButton" value="{%(107)Edit}">
+          <input type="submit" name="DocumentsButton" value="{%(102)Documents}">
+          <input type="submit" name="MortalityButton" value="{%(106)Mortality Rates}">
+          <input type="submit" name="LeaveButton" value="{%(108)Leave Scheme}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="/lf/images/back.gif">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

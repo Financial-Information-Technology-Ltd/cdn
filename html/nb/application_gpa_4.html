@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Step 4}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form method="post" action="%SERVLET_PATH%">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(2)Beneficiaries}</td>
+      </tr>
+    </table>
+    <table id="Beneficiary">
+      <!--%(Beneficiary_KEY)-->
+      <tr>
+        <th style="width: 30%">{%(11)Client Code (if exists)}</th>
+        <td>
+          <input name="BeneficiaryKey" size="10" ONCHANGE="document.forms[0].submit()">
+          <input type="BUTTON" name="BeneficiaryCodeButton" value="{%(104)Search Client}">
+        </td>
+      </tr>
+      <!--%-->
+      <tr>
+        <th style="width: 30%">{%(4)External Reference}</th>
+        <td>
+          <input type="text" name="Beneficiary_ExternalRef" size="30">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(12)First Name}</th>
+        <td>
+          <input name="Beneficiary_FirstName" size="30">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(14)Middle Name}</th>
+        <td>
+          <input name="Beneficiary_OtherNames" size="30">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(13)Last Name}</th>
+        <td>
+          <input name="Beneficiary_LastName" size="30">
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <input type="RADIO" name="Owner_Title" value="I_MR" onclick="document.forms[0].submit()">
+          {%(8)Mr}
+          <input type="RADIO" name="Owner_Title" value="I_MRS" onclick="document.forms[0].submit()">
+          {%(9)Mrs}
+          <input type="RADIO" name="Owner_Title" value="I_MISS" onclick="document.forms[0].submit()">
+          {%(10)Miss}
+          <input type="RADIO" name="Owner_Title" value="I_OTHER" onclick="document.forms[0].submit()">
+          {%(7)Other}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(55)DOB}</th>
+        <td>
+          <input name="Beneficiary_BirthDate" size="30">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(18)Gender}</th>
+        <td>
+          <input type="RADIO" name="Owner_Sex" value="M">
+          {%(19)Male}
+          <input type="RADIO" name="Owner_Sex" value="F">
+          {%(20)Female}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(56)E-mail}</th>
+        <td>
+          <input name="Beneficiary_EMail" size="30">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(15)Mobile No}</th>
+        <td>
+          <input name="Beneficiary_MobileNo" size="10">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(31)ID Type}</th>
+        <td>
+          <select name="Beneficiary_IDType">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(32)ID Number}</th>
+        <td>
+          <input type="text" name="Beneficiary_IDNo" size="20">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(33)ID Issue Place}</th>
+        <td>
+          <input type="text" name="Beneficiary_IDIssuePlace" size="20">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(34)ID Expiry Date}</th>
+        <td>
+          <input type="text" name="Beneficiary_IDExpiryDate" size="20">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(16)Relationship}</th>
+        <td>
+          <select name="Beneficiary_Relationship">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(17)Share (%)}</th>
+        <td>
+          <input name="Beneficiary_Share" size="8">
+        </td>
+      </tr>
+    </table>
+    <table id="Beneficiary">
+      <tr>
+        <td style="width: 30%"></td>
+        <td>
+          <input type="submit" class="button" name="AddBenButton" value="{%(21)Add a beneficiary}">
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td align="left">
+          <input class="button" name="PrevButton" type="submit" value="&lt; {%(99)Previous}">
+        </td>
+        <td align="right">
+          <input class="button" name="NextButton" type="submit" value="{%(100)Next} &gt;">
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

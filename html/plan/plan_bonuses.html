@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Plan Bonuses}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan=2>{HELP_LINK}{%(1)Plan Bonuses}</td>
+      </tr>
+      <tr>
+        <th width=30%>{%(2)Plan Code}</th>
+        <td>{PlanCode}</td>
+      </tr>
+      <tr>
+        <th>{%(3)Plan Name}</th>
+        <td>{PlanName}</td>
+      </tr>
+      <tr>
+        <th>{%(33)Reversionary Bonus Rates}</th>
+        <td>
+          <select name="REVERSIONARY_BONUS_RATES" ONCHANGE="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(37)Reversionary Bonus Calculation Type}</th>
+        <td>
+          <select name="REVERSIONARY_BONUS_TYPE">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(39)Reversionary Bonus Delay in Months}</th>
+        <td>
+          <input type="text" name="REVERSIONARY_BONUS_DELAY" size=7>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(34)Interim Bonus Rates}</th>
+        <td>
+          <select name="INTERIM_BONUS_RATES">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(38)Interim Bonus Calculation Type}</th>
+        <td>
+          <select name="INTERIM_BONUS_TYPE">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(35)Terminal Bonus Type}</th>
+        <td>
+          <select name="TERM_BONUS_TYPE" ONCHANGE="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(36)Terminal Bonus Rate Table}</th>
+        <td>
+          <select name="TERM_BONUS_RATE_TABLE">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(18)Investor Bonus Type}</th>
+        <td>
+          <select name="INVESTOR_BONUS_TYPE" ONCHANGE="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(31)Investor Bonus retained charge (%)}</th>
+        <td>
+          <input type="text" name="INVESTOR_BONUS_RETAIN_RATE" size=7>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(32)Investor Bonus retained limit (%)}</th>
+        <td>
+          <input type="text" name="INVESTOR_BONUS_RETAIN_LIMIT" size=7>
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SaveButton" value="{%(100)Save}">
+        </td>
+        <td class="return">
+          <b>
+            <a href="%BACK_LINK%">
+              {%(101)Return}
+              <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+            </a>
+          </b>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

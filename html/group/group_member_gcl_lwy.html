@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Scheme Member}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(1)Scheme Member}</td>
+      </tr>
+      <tr>
+        <th width=30%>{%(3)Scheme number}</th>
+        <td>{SCHEME_CODE}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Member No}</th>
+        <td>{MEMBER_NO}</td>
+      </tr>
+      <tr>
+        <th>{%(19)Policy No}</th>
+        <td>{POLICY_NO}</td>
+      </tr>
+      <!--%(PENDING_CHANGES_MSG)-->
+      <tr class="othererror">
+        <th colspan=2>
+          <a href="?screen_name=MEMBER_CHANGE_LIST&GroupKey={SCHEME_CODE}&MemberNo={MEMBER_NO}">{%(65)Changes are
+            pending for this member}</a>
+        </th>
+      </tr>
+      <!--%-->
+      <!--%(EffectiveDate)-->
+      <tr>
+        <th>{%(34)Change Effective Date}</th>
+        <td>
+          <input type="text" name="ChangeDate">
+        </td>
+      </tr>
+      <!--%-->
+      <tr>
+        <th>{%(15)Employee ID}</th>
+        <td>
+          <input type="text" name="PayNo">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(47)Title}</th>
+        <td>
+          <select name="Title">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(6)First Name}</th>
+        <td>
+          <input type="text" name="FirstName" size=40>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(22)Maiden Name}</th>
+        <td>
+          <input type="text" name="FormerName" size=30>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(5)Surname}</th>
+        <td>
+          <input type="text" name="LastName" size=30>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(13)Sex}</th>
+        <td>
+          <select name="Sex">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(21)Marital Status}</th>
+        <td>
+          <select name="MaritalStatus">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(14)Birth Date}</th>
+        <td>
+          <input type="text" name="BirthDate" size=10>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(29)Place of Birth}</th>
+        <td>
+          <input type="text" name="PlaceOfBirth">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(35)Term (months)}</th>
+        <td>
+          <input type="text" name="Term">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(36)ID Type}</th>
+        <td>
+          <select name="IDType">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(18)ID Number}</th>
+        <td>
+          <input type="text" name="IdNumber">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(8)Address}</th>
+        <td>
+          <TEXTAREA name="Address" COLS=50 ROWS=4></TEXTAREA>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(12)County}</th>
+        <td>
+          <select name="County">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(9)City}</th>
+        <td>
+          <input type="text" name="City">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(11)Post Code}</th>
+        <td>
+          <input type="text" name="PostCode">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(25)Home Phone No}</th>
+        <td>
+          <input type="text" name="PhoneNo">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(26)Office telephone}</th>
+        <td>
+          <input type="text" name="WorkPhoneNo">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(27)Mobile telephone}</th>
+        <td>
+          <input type="text" name="MobileNo">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(23)Email Address}</th>
+        <td>
+          <input type="text" name="EMailAddr" size=40>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(7)Subgroup}</th>
+        <td>
+          <select name="Subgroup" ONCHANGE="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(39)Loan Interest Rate}</th>
+        <td>
+          <input type="text" name="LoanInterestRate">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(31)Company Joining Date}</th>
+        <td>
+          <input type="text" name="DateJoinedCompany">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(32)Group Joining Date}</th>
+        <td>
+          <input type="text" name="DateJoinedGroup">
+        </td>
+      </tr>
+      <!--%(DateLeftGroup)-->
+      <tr>
+        <th>{%(33)Group Leaving Date}</th>
+        <td>
+          <input type="text" name="DateLeftGroup">
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <td class="title" colspan="2">{%(73)Set Fixed Sum Assured}</td>
+      </tr>
+      <tr>
+        <th>{%(37)Coverage}</th>
+        <th>{%(38)Sum Assured}</th>
+      </tr>
+      <tr>
+        <td>{BASE_PLAN}</td>
+        <td>
+          <input type="text" name="BaseSumAssured">
+        </td>
+      </tr>
+      <!--{PLAN_LIST_SUM_ASSURED}-->
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SaveButton" value="{%(100)Save}">
+          <input type="submit" name="EditButton" value="{%(107)Edit}">
+          <input type="submit" name="DocumentsButton" value="{%(102)Documents}">
+          <input type="submit" name="LeaveButton" value="{%(108)Leave Scheme}">
+          <input type="submit" name="BeneButton" value="{%(109)Beneficiaries}">
+          <input type="submit" name="MortalityButton" value="{%(106)Mortality Rates}">
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="/lf/images/back.gif">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

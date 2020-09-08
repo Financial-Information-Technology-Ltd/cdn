@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Group Business}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan=2>{HELP_LINK}{%(2)Group Business Product parameters}</td>
+      </tr>
+      <tr>
+        <th width=30%>{%(3)Plan Code}</th>
+        <td>{PlanCode}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Plan Name}</th>
+        <td>{PlanName}</td>
+      </tr>
+      <tr>
+        <th>{%(5)Stabilization fund}</th>
+        <td>
+          <input type="checkbox" name="STABILIZATION_FUND">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(25)Postpone member update until premium payment}</th>
+        <td>
+          <input type="checkbox" name="POSTPONE_MEMBER_UPDATE">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(7)Source of funds}</th>
+        <td>
+          <select name="INVESTMENT_SOURCE">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(8)Certificate key structure}</th>
+        <td>
+          <select name="GROUP_CERT_KEY_STRUCT">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(9)File Layout produced by calculate bill}</th>
+        <td>
+          <select name="GROUP_FILE_LAYOUT_OPTION">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(10)Premium payment is optional for group members}</th>
+        <td>
+          <input type="checkbox" name="OPTIONAL_PREMIUM_GROUP">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(11)Premium is paid starting with the earliest paid to date}</th>
+        <td>
+          <input type="checkbox" name="GROUP_PREMIUM_CYCLES">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(12)Bill required when reconciling bank payment}</th>
+        <td>
+          <input type="checkbox" name="BILL_REQUIRED">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(13)Process to import membership information}</th>
+        <td>
+          <select name="GROUP_MEMBER_IMPORT_PROCESS">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(31)Process to export membership information}</th>
+        <td>
+          <select name="GROUP_MEMBER_EXPORT_PROCESS">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(14)Do not recalculate sum assured and premium on certificate after issue}</th>
+        <td>
+          <input type="checkbox" name="NO_CALC_CERTIFICATE_POST_ISSUE">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(15)Allowed Sum Assured basis}</th>
+        <td>
+          <table>
+            <!--{GROUP_SA_BASIS_TABLE}-->
+            <tr>
+              <td>
+                <input type="submit" name="GROUP_SA_BASIS_BUTTON" value="{%(20)Add}">
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(18)Allowed Sum Assured Multiplicators}</th>
+        <td>
+          <table>
+            <!--{GROUP_ALLOWED_SUM_ASSURED_MULT}-->
+            <tr>
+              <td>
+                <input type="submit" name="GROUP_ALLOWED_SUM_ASSURED_MULT_BUTTON" value="{%(20)Add}">
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <!--%(CAP_FACT_TABLE)-->
+      <tr>
+        <th>{%(40)Pension Capitalisation Factor Table (Value)}</th>
+        <td>
+          <select name="PENSION_CAP_FACTOR_TABLE">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(42)Discount Factor Table (Value)}</th>
+        <td>
+          <select name="DISCOUNT_TABLE">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(43)National Insurance Table}</th>
+        <td>
+          <select name="NI_TABLE">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(46)National Insurance Table 2}</th>
+        <td>
+          <select name="NI_TABLE_2">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <!--%-->
+      <tr>
+        <th>{%(16)Allowed Premium basis}</th>
+        <td>
+          <table>
+            <!--{GROUP_PREMIUM_BASIS_TABLE}-->
+            <tr>
+              <td>
+                <input type="submit" name="GROUP_PREMIUM_BASIS_BUTTON" value="{%(20)Add}">
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(19)Allowed Premium Percentages}</th>
+        <td>
+          <table>
+            <!--{GROUP_ALLOWED_PREMIUM_PERCENT}-->
+            <tr>
+              <td>
+                <input type="submit" name="GROUP_ALLOWED_PREMIUM_PERCENT_BUTTON" value="{%(20)Add}">
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(17)Create rider for dependants}</th>
+        <td>
+          <input type="checkbox" name="GROUP_INCLUDE_DEPENDANTS">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(102)Exclude Sum Assured from members total sum assured}</th>
+        <td>
+          <input type="checkbox" name="EXCL_SA">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(21)Minimum number of members}</th>
+        <td>
+          <input type="text" name="MIN_GROUP_MEMBERS" size=5>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(26)Maximum number of members}</th>
+        <td>
+          <input type="text" name="MAX_GROUP_MEMBERS" size=5>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(44)Minimum Annual Group Premium}</th>
+        <td>
+          <input type="text" name="GROUP_MINIMUM_PREMIUM_AMT">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(22)Keep Sum Assured above Free Cover Limit for initial period (days)}</th>
+        <td>
+          <input type="text" name="SA_ABOVE_FCL_DAYS" size=5>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(23)For leavers and joiners, use calculation based on annual premium}</th>
+        <td>
+          <input type="checkbox" name="PRO_RATA_PREMIUM_CALC">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(45)For leavers, include date of leaving in member's cover period}</th>
+        <td>
+          <input type="checkbox" name="MEMBERS_COVER_INCLUDES_LEAVING_DATE">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(24)Create a Web User for the group owner when group is issued}</th>
+        <td>
+          <input type="checkbox" name="GROUP_OWNER_USER_ON_ISSUE">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(27)Member can choose from all riders available on plan}</th>
+        <td>
+          <input type="checkbox" name="GROUP_MEMBER_ALL_RIDERS">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(28)What should happen on group surrender}</th>
+        <td>
+          <select name="GROUP_SURRENDER_TP">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(29)Days before the renewal date when the renewal process starts}</th>
+        <td>
+          <input type="text" name="PRE_RENEWAL_DAYS" size=3>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(30)Use new country at group renewal}</th>
+        <td>
+          <input type="checkbox" name="UPDATE_COUNTRY_AT_RENEWAL">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(32)Create Workflow at scheme renewal}</th>
+        <td>
+          <input type="checkbox" name="CREATE_WORKFLOW_AT_SCHEME_RENEWAL">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(35)Group Annual Renewable Lapse/Reinstatement}</th>
+        <td>
+          <input type="checkbox" name="GROUP_RENEWAL_LAPSE_REINSTATE">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(41)Calculate from Renewal Start date}</th>
+        <td>
+          <input type="checkbox" name="CALC_FROM_RENEWAL_DATE">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(33)Free Cover Limit CalcuLation Rate Table}</th>
+        <td>
+          <select name="FCL_RATE_TABLE">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(34)Free Cover Maximum Rate Table}</th>
+        <td>
+          <select name="FCL_MAXIMUM_RATE_TABLE">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <!--%(OML_FUL_IP_VALUE)-->
+      <tr>
+        <th>{%(36)Forward Underwriting Limit Table (Value)}</th>
+        <td>
+          <select name="FUL_GL_VALUE">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(37)Forward Underwriting Limit Table (Percent)}</th>
+        <td>
+          <select name="FUL_GL_PERC">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <!--%-->
+      <tr>
+        <th>{%(38)Use Scheme Premium Balance}</th>
+        <td>
+          <input type="checkbox" name="USE_SCHEME_PREMIUM_BALANCE" />
+      </tr>
+      <tr>
+        <th>{%(39)Costing Method}</th>
+        <td>
+          <select name="COSTING_METHOD">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(47)Export Bill Format}</th>
+        <td>
+          <select name="EXPORT_BILL_FORMAT">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SaveButton" value="{%(100)Save}">
+        </td>
+        <td class="return">
+          <b>
+            <a href="%BACK_LINK%">
+              {%(101)Return}
+              <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+            </a>
+          </b>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

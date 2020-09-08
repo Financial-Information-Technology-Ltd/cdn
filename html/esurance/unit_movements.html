@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(11)Unit Movements}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan=7>{HELP_LINK}{%(11)Unit Movements}</td>
+      </tr>
+      <!--%(INDIVIDUAL_DATA)-->
+      <tr>
+        <th style="width: 30%">{%(2)Unit Movements for}</th>
+        <td>{PolicyKey}</td>
+      </tr>
+      <tr>
+        <th>{%(16)Owner Name}</th>
+        <td>{PolicyOwner}</td>
+      </tr>
+      <!--%-->
+      <!--%(AGENT_DATA)-->
+      <tr>
+        <th>{%(1)Agent}</th>
+        <td>{AGENT_NO} -- {AGENT_NAME}</td>
+      </tr>
+      <!--%-->
+      <!--%(GROUP_DATA)-->
+      <tr>
+        <th style="width: 30%">{%(12)Scheme Owner}</th>
+        <td>{SchemeOwner}</td>
+      </tr>
+      <tr>
+        <th>{%(13)Membership Number}</th>
+        <td>{PolicyKey}</td>
+      </tr>
+      <tr>
+        <th>{%(14)Member Name}</th>
+        <td>{PolicyOwner}</td>
+      </tr>
+      <!--%-->
+      <tr>
+        <th>{%(15)Currency}</th>
+        <td>{Currency}</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th>{%(6)Unit Price Date}</th>
+        <th>{%(4)Reason}</th>
+        <th>{%(3)Eff Date}</th>
+        <th>{%(7)Fund}</th>
+        <th>{%(9)Ccy}</th>
+        <th align="right">{%(8)Moved}</th>
+        <th align="right">{%(5)Unit Price}</th>
+      </tr>
+      <!--{UnitMovements}-->
+    </table>
+    <p align="right">
+      <b>
+        <a href="%BACK_LINK%">
+          {%(10)Return}
+          <img src="/lf/images/back.gif">
+        </a>
+      </b>
+    </p>
+  </form>
+</body>
+</html>

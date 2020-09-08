@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Group Agent Commissions}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(1)Group Agent Commissions}
+          <a href="%BACK_LINK%">
+            <span class="return_link">{%(200)Return}</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Scheme No}</th>
+        <td>{SchemeNo}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Scheme Owner}</th>
+        <td>{SchemeOwner}</td>
+      </tr>
+      <tr>
+        <th>{%(20)Reason}</th>
+        <td>
+          <select name="Reason">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(21)Agent No}</th>
+        <td>
+          <input type="text" name="AgentKey">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(22)Start Date}</th>
+        <td>
+          <input type="text" name="StartDate">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(23)Show commissions due only}</th>
+        <td>
+          <input type="checkbox" name="CommDueOnly">
+        </td>
+      </tr>
+      <tr>
+        <th>&nbsp;</th>
+        <td>
+          <input type="submit" name="AgentCommissionButton" value="{%(24)Submit}">
+        </td>
+      </tr>
+    </table>
+    <!--%(COMMISSION_TABLE_FRAGMENT)-->
+    <table>
+      <tr>
+        <th>{%(13)Effective Date}</th>
+        <th>{%(5)Coverage}</th>
+        <th>{%(6)Policy No}</th>
+        <th>{%(7)Currency}</th>
+        <th>{%(8)Earned Comm}</th>
+        <th>{%(9)Amount Paid}</th>
+        <th>{%(10)Ind}</th>
+        <th>{%(11)Statement Printed}</th>
+        <th>{%(12)Statement No}</th>
+      </tr>
+      <!--{COMMISSION_LIST}-->
+    </table>
+    <!--%-->
+    <!--%(COMMISSION_TABLE_FRAGMENT_OML)-->
+    <table>
+      <tr>
+        <th>{%(14)Agency}</th>
+        <th>{%(15)Agent}</th>
+        <th>{%(26)Effective Date}</th>
+        <th>{%(16)Description}</th>
+        <th>{%(7)Currency}</th>
+        <th>{%(17)Net Payment}</th>
+        <th>{%(18)Percent}</th>
+        <th>{%(19)Amount}</th>
+        <th>{%(11)Statement Printed}</th>
+        <th>{%(12)Statement No}</th>
+      </tr>
+      <!--{COMMISSION_LIST}-->
+    </table>
+    <!--%-->
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="GroupCommissionEndorsementsButton" value="{%(100)Endorsements">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%}">
+            {%(101)Return}
+            <img src="/lf/images/back.gif">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

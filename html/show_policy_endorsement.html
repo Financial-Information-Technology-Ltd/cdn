@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Policy Endorsement Entry}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form method="post" action="%SERVLET_PATH%">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(1)Policy Endorsement Entry}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Policy No}</th>
+        <td>{PolicyKey}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Coverage}</th>
+        <td>{Coverage}</td>
+      </tr>
+      <tr>
+        <th>{%(5)Type}</th>
+        <td>{Type}</td>
+      </tr>
+      <tr>
+        <th>{%(6)Date/Time}</th>
+        <td>{Date} {Time}</td>
+      </tr>
+      <tr>
+        <th>{%(7)Effective Date}</th>
+        <td>{EffectiveDate}</td>
+      </tr>
+      <tr>
+        <th>{%(8)User}</th>
+        <td>{UserId}</td>
+      </tr>
+      <!--%(CLIENT_RELATIONS)-->
+      <tr>
+        <th>{%(9)Client}</th>
+        <td>{ClientNo}</td>
+      </tr>
+      <tr>
+        <th>{%(11)Client's role}</th>
+        <td>{ClientRelations}</td>
+      </tr>
+      <!--%-->
+      <tr>
+        <th>{%(10)Pending}</th>
+        <td>{Pending}</td>
+      </tr>
+    </table>
+    <table class="zebra">
+      <tr>
+        <th>{%(21)Field}</th>
+        <th>{%(22)Old Value}</th>
+        <th>{%(23)New Value}</th>
+      </tr>
+      <!--{CHANGE_LIST}-->
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="CancelPendingEndorsementButton" value="{%(102)Cancel Endorsement}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Upload group bill}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}" />
+</head>
+<body>
+  <form method="post" ENCTYPE="multipart/form-data" action="%SERVLET_PATH%">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan=2>{HELP_LINK}{%(2)Upload group bill}</td>
+      </tr>
+      <tr>
+        <th>{%(11)CSV file name}</th>
+        <td>
+          <input type="file" name="UploadFileName" id="UploadFileName">
+          <label for="UploadFileName">{%(15)Choose a file}</label>
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="UploadButton" value="{%(100)Upload}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="/lf/images/back.gif">
+          </a>
+        </td>
+      </tr>
+    </table>
+    <input type="hidden" name="ERROR_1" value="{%(201)Wrong number of values in line}">
+    <input type="hidden" name="ERROR_2" value="{%(202)National insurance number is not specified in line}">
+    <input type="hidden" name="ERROR_3" value="{%(203)National insurance number not found}">
+    <input type="hidden" name="ERROR_4" value="{%(204)Too many payments for member}">
+    <input type="hidden" name="ERROR_5" value="{%(205)Error reading Employer contribution}">
+    <input type="hidden" name="ERROR_6" value="{%(206)Error reading Employee contribution}">
+    <input type="hidden" name="ERROR_7" value="{%(207)Employer contribution doesn't match}">
+    <input type="hidden" name="ERROR_8" value="{%(208)Employee contribution doesn't match}">
+  </form>
+<script>
+  function myFunction() {
+    var copyText = document.getElementById("ConfigCode");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999);
+    document.execCommand("copy");
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Update Doc Box}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form method="post" action="%SERVLET_PATH%">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(2)Update Document Box}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Operator}</th>
+        <td>{UserId}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Name}</th>
+        <td>{UserName}</td>
+      </tr>
+      <tr>
+        <th>{%(5)New Document Box}</th>
+        <td>
+          <input type="text" name="DocBox" AUTOCOMPLETE="OFF">
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="UpdateButton" value="{%(99)Save}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(100)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

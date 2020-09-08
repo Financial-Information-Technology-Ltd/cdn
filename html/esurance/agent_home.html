@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Welcome}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title">{HELP_LINK}{%(1)Welcome} {AGENT_NAME}</td>
+      </tr>
+      <tr>
+        <td>{%(12)Last Login:} {LAST_USER_LOGIN}</td>
+      </tr>
+      <!--%(NewBusiness)-->
+      <tr>
+        <td>
+          <a href="?screen_name=new_business">{%(2)New Business}</a>
+        </td>
+      </tr>
+      <!--%-->
+      <!--%(Enquiries)-->
+      <tr>
+        <td>
+          <a href="?screen_name=do_policy_enquiry">{%(3)Policy Enquiries}</a>
+        </td>
+      </tr>
+      <!--%-->
+      <!--%(ClientEnquiries)-->
+      <tr>
+        <td>
+          <a href="?screen_name=do_client_enquiry">{%(15)Client Enquiries}</a>
+        </td>
+      </tr>
+      <!--%-->
+      <!--%(Commissions)-->
+      <!--<tr><td> <a href="?screen_name=do_show_agent_statements">{%(6)Commission Statements}</a></td></tr>-->
+      <tr>
+        <td>
+          <a href="?screen_name=do_show_agent_stmt_docs">{%(7)Download Commission Statement}</a>
+        </td>
+      </tr>
+      <!--%-->
+      <!--%(AgentPremiums)-->
+      <tr>
+        <td>
+          <a href="?screen_name=do_show_agent_premiums">{%(10)Download Premiums}</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="?screen_name=download_outstanding_premiums_by_date">{%(13)Download Outstanding Premiums}</a>
+        </td>
+      </tr>
+      <!--%-->
+      <!--%(AgentReceipts)-->
+      <tr>
+        <td>
+          <a href="?screen_name=do_show_agent_receipts">{%(16)Download Receipt Information}</a>
+        </td>
+      </tr>
+      <!--%-->
+      <!--%(AGENT_LOAN_FRAGMENT)-->
+      <tr>
+        <td>
+          <a href="?screen_name=do_show_agent_loans">{%(14)Show Loans}</a>
+        </td>
+      </tr>
+      <!--%-->
+      <!--%(GroupSchemes)-->
+      <tr>
+        <td>
+          <a href="?screen_name=do_group_business">{%(8)Group Schemes}</a>
+        </td>
+      </tr>
+      <!--%-->
+      <tr>
+        <td>
+          <a href="?screen_name=do_change_password">{%(11)Change Password}</a>
+        </td>
+      </tr>
+      <!--%(Admin)-->
+      <tr>
+        <td>
+          <a href="?screen_name=do_administration">{%(4)System Administration}</a>
+        </td>
+      </tr>
+      <!--%-->
+      <!--%(DoLogout)-->
+      <tr>
+        <td>
+          <a href="?screen_name=do_logoff">{%(5)Logout}</a>
+        </td>
+      </tr>
+      <!--%-->
+      <!--%(SelectAgent)-->
+      <tr>
+        <td>
+          <a href="?screen_name=select_agent">{%(9)Select Agent}</a>
+        </td>
+      </tr>
+      <!--%-->
+    </table>
+  </form>
+</body>
+</html>

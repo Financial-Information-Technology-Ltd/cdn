@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Unit Rate Values}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<form action="%SERVLET_PATH%" method="post">
+  {ERRORS}
+  <table>
+    <tr>
+      <td class="title" colspan=2>{HELP_LINK}{%(2)Setting column and rows}</td>
+    </tr>
+    <tr>
+      <th style="width: 30%">{%(5)Table}</th>
+      <td>{KEY1}</td>
+    </tr>
+    <tr>
+      <th>{SR_KEY2}</th>
+      <td>{KEY2}</td>
+    </tr>
+    <tr>
+      <th>{SR_KEY3}</th>
+      <td>{KEY3}</td>
+    </tr>
+    <tr>
+      <th>{SR_KEY4}</th>
+      <td>{KEY4}</td>
+    </tr>
+    <tr>
+      <th>{SR_KEY5}</th>
+      <td>{KEY5}</td>
+    </tr>
+    <tr>
+      <th>{SR_KEY8}</th>
+      <td>{KEY8}</td>
+    </tr>
+    <tr>
+      <th>{%(12)Version}</th>
+      <td>{KEY7}</td>
+    </tr>
+  </table>
+  <table>
+    <tr>
+      <td VALIGN="TOP">
+        <table>
+          <tr>
+            <th>{%(20)Columns}</th>
+          </tr>
+          <!--{COLUMN_TABLE}-->
+          <tr>
+            <td>
+              <input type="submit" name="AddColumnButton" value="{%(21)Add}">
+            </td>
+          </tr>
+        </table>
+      </td>
+      <td VALIGN="TOP">
+        <table>
+          <tr>
+            <th>{%(30)Rows}</th>
+          </tr>
+          <!--{ROW_TABLE}-->
+          <tr>
+            <td>
+              <input type="submit" name="AddRowButton" value="{%(31)Add}">
+            </td>
+          </tr>
+        </table>
+      </td>
+  </table>
+  <table class="navigation">
+    <tr>
+      <td>
+        <input type="submit" name="SubmitButton" value="{%(100)Save}">
+      </td>
+      <td class="return">
+        <a href="%BACK_LINK%">
+          {%(101)Return}
+          <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+        </a>
+      </td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

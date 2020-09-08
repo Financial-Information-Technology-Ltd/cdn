@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Member Quote}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body ONLOAD="on_load()">
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(1)Member Quote}</td>
+      </tr>
+      <tr>
+        <th width=30%>{%(2)Scheme Owner}</th>
+        <td>{OWNER_NAME}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Policy No}</th>
+        <td>{POLICY_NO}</td>
+      </tr>
+      <tr>
+        <th>{%(3)Member Name}</th>
+        <td>{MEMBER_NAME}</td>
+      </tr>
+      <tr>
+        <th>{%(5)Currency}</th>
+        <td>{CURRENCY}</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <td class="title" colspan=7>{%(30)Fund Selection}</td>
+      </tr>
+      <tr>
+        <th>{%(32)Fund Code}</th>
+        <th>{%(34)Fund Name}</th>
+        <th>{%(36)Currency}</th>
+        <th>{%(38)Asset Category}</th>
+        <th align="right">{%(40)Historic Growth (%)}</th>
+        <th align="right">{%(42)Share (%)}</th>
+        <th align="right">{%(44)Example Return (%)}</th>
+      </tr>
+      <!--{FUND_SELECTION_LIST}-->
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="GenerateQuoteButton" value="{%(100)Generate Quote}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="/lf/images/back.gif">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+<script type="text/javascript">
+function on_load()
+{
+  doc_link ="{QUOTE_DOC_LINK}";
+  if (doc_link!="")
+    window.open(doc_link, "_blank");
+}
+</script>
+</html>

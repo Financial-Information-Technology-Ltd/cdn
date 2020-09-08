@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Step 5}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form method="post" action="%SERVLET_PATH%">
+    {ERRORS}
+    <table>
+      <tr>
+        <th colspan="2">{HELP_LINK}{%(2)Beneficiaries}</th>
+      </tr>
+      <tr>
+        <td colspan="2">{%(3)If no beneficiaries are specified by the policy owner, by default his legal heirs will
+          be the beneficiary/ies}</td>
+      </tr>
+    </table>
+    <table id="Beneficiary">
+      <tr>
+        <td style="width: 30%">{%(31)Client Code (if exists)}</td>
+        <td>
+          <input name="BeneficiaryKey" size="10" ONCHANGE="document.forms[0].submit()">
+          <input type="BUTTON" name="BeneficiaryCodeButton" value="{%(104)Search Client}">
+        </td>
+      </tr>
+      <tr>
+        <td>{%(5)Last Name}</td>
+        <td>
+          <input name="Beneficiary_LastName" size="30">
+        </td>
+      </tr>
+      <tr>
+        <td>{%(6)First Name}</td>
+        <td>
+          <input name="Beneficiary_FirstName" size="30">
+        </td>
+      </tr>
+      <tr>
+        <td>{%(4)Birth Date}</td>
+        <td>
+          <input name="Beneficiary_BirthDate" size="10">
+          {DATE_FORMAT}
+        </td>
+      </tr>
+      <tr>
+        <td>{%(10)Relationship}</td>
+        <td>
+          <select name="Beneficiary_Relationship">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>{%(7)Share (%)}</td>
+        <td>
+          <input name="Beneficiary_Share" size="20">
+        </td>
+      </tr>
+    </table>
+    <table id="Beneficiary">
+      <tr>
+        <td style="width: 30%"></td>
+        <td>
+          <input class="button" type="submit" value="{%(8)Add a beneficiary}" name="AddBenButton">
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <td class="title" colspan=2>{%(71)Guardian (required if a beneficiary is below 18 years of age)}</td>
+      </tr>
+      <!--%(Guardian_KEY)-->
+      <tr>
+        <th style="width: 30%">{%(72)Guardian Number (if client already exists on the system)}</th>
+        <td>
+          <input type="text" name="GuardianKey" size=8 ONCHANGE="document.forms[0].submit()">
+          <input type="BUTTON" value="{%(104)Search Client}" ONCLICK="search_client('GuardianKey',true)">
+        </td>
+      </tr>
+      <!--%-->
+      <tr>
+        <th style="width: 30%">{%(73)Surname}</th>
+        <td>
+          <input type="text" name="Guardian_LastName" size="30">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(74)First Name}</th>
+        <td>
+          <input type="text" name="Guardian_FirstName" size="30">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(76)Date of Birth}</th>
+        <td>
+          <input type="text" name="Guardian_BirthDate">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(77)Address}</th>
+        <td>
+          <input name="Guardian_Address" size="50">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(78)City}</th>
+        <td>
+          <input name="Guardian_City" size="20">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(79)Country}</th>
+        <td>
+          <select name="Guardian_Country">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(80)Relationship to Life Assured}</th>
+        <td>
+          <select name="Guardian_Relationship">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+    <table>
+      <!--%(BRANCH_CODES)-->
+      <tr>
+        <th style="width: 30%">{%(9)Branch Code}</th>
+        <td>{BranchCode}</td>
+      </tr>
+      <!--%-->
+      <tr>
+        <th style="width: 30%">{%(18)Agent Code}</th>
+        <td>
+          <input type="text" name="AgentNo" size=10 onchange="document.forms[0].submit()">
+          <input type="BUTTON" value="{%(105)Search Agent}" ONCLICK="search_agent('AgentNo',true)">
+          {AGENT_NAME}
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td align="left">
+          <input class="button" name="PrevButton" type="submit" value="&lt; {%(19)Previous}">
+        </td>
+        <td align="right">
+          <input class="button" name="SubmitButton" type="submit" value="{%(100)Submit} &gt;">
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Agent Loans}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan=2>{HELP_LINK}{%(1)Agent Loans}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(2)Agent No}</th>
+        <td>{AgentKey}</td>
+      </tr>
+      <tr>
+        <th>{%(3)Agent Name}</th>
+        <td>{AgentName}</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th>{%(11)Start Date}</th>
+        <th>{%(12)Loan Amount}</th>
+        <th>{%(13)Interest Rate}</th>
+        <th>{%(14)Term}</th>
+        <th>{%(15)Regular Repayment}</th>
+        <th>{%(16)Loan Balance}</th>
+        <th>{%(17)Loan Repayment Balance}</th>
+        <th>{%(18)Loan Type}</th>
+        <th>&nbsp;</th>
+      </tr>
+      <!--{AGENT_LOAN_LIST}-->
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="NewAgentLoanButton" value="{%(100)Create New Loan}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+    <input type="hidden" name="HistoryText" value="{%(21)History}">
+  </form>
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Plan Escalation}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan=2>{HELP_LINK}{%(1)Plan Escalation}</td>
+      </tr>
+      <tr>
+        <th width=30%>{%(2)Plan Code}</th>
+        <td>{PlanCode}</td>
+      </tr>
+      <tr>
+        <th>{%(3)Plan Name}</th>
+        <td>{PlanName}</td>
+      </tr>
+      <tr>
+        <th>{%(5)Allow escalation}</th>
+        <td>
+          <input type="checkbox" name="AUTO_PREM_ESCALATION">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(6)Premium Frequency}</th>
+        <td>
+          <select name="PREM_ESC_FREQUENCY">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(7)Premium Basis}</th>
+        <td>
+          <select name="PREM_ESCALATION_BASIS">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(8)Premium Rate (percent)}</th>
+        <td>
+          <input type="text" name="PREM_ESCALATION_RATE" size=7>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(10)Plan for "Slicing" escalation}</th>
+        <td>
+          <select name="PREM_ESCALATION_PLAN">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(11)Benefit Frequency}</th>
+        <td>
+          <select name="BEN_ESC_FREQUENCY">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(12)Benefit Basis}</th>
+        <td>
+          <select name="BEN_ESC_BASIS" ONCHANGE="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(13)Benefit Rate (percent)}</th>
+        <td>
+          <input type="text" name="BEN_ESC_RATE" size=7>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(14)Benefit Index}</th>
+        <td>
+          <select name="BEN_ESC_INDEX">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(16)Maximum Benefit Multiplier}</th>
+        <td>
+          <input type="text" name="BEN_ESC_MAX_MULT">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(15)Recalculations when escalating benefit}</th>
+        <td>
+          <select name="BEN_ESC_RECALCULATION">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(20)Fee Basis}</th>
+        <td>
+          <select name="PREM_ESCALATION_FEE_BASIS">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(21)Fee Rate}</th>
+        <td>
+          <input type="text" name="PREM_ESCALATION_FEE_RATE" ONBLUR="clear_fee_table()">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(22)Fee Table}</th>
+        <td>
+          <select name="PREM_ESCALATION_FEE_TABLE" ONCHANGE="clear_fee_rate()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(23)Commission Basis}</th>
+        <td>
+          <select name="ESC_COM_BASIS">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(24)Commission Rate}</th>
+        <td>
+          <input type="text" name="ESC_COM_RATE">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(25)Override Commission Table}</th>
+        <td>
+          <select name="ESC_COM_TABLE">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(31)Send letter before next indexation (number of days)}</th>
+        <td>
+          <input type="text" name="DAYS_BEFORE_NEXT_INDEXATION" size=6>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(32)Do not recalculate premium/face amount after escalation}</th>
+        <td>
+          <input type="checkbox" name="DO_NOT_RECALC_INDEXED">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(33)Allowed Sum Assured Escalation Rates}</th>
+        <td>
+          <table>
+            <!--{ALLOWED_SA_ESCALATION_RATE_TABLE}-->
+            <tr>
+              <td>
+                <input type="submit" name="ALLOWED_SA_ESCALATION_RATE_BUTTON" value="{%(35)Add}">
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(34)Allowed Premium Escalation Rates}</th>
+        <td>
+          <table>
+            <!--{ALLOWED_PREM_ESCALATION_RATE_TABLE}-->
+            <tr>
+              <td>
+                <input type="submit" name="ALLOWED_PREM_ESCALATION_RATE_BUTTON" value="{%(35)Add}">
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SaveButton" value="{%(100)Save}">
+        </td>
+        <td class="return">
+          <b>
+            <a href="%BACK_LINK%">
+              {%(101)Return}
+              <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+            </a>
+          </b>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+<script type="text/javascript">
+  function clear_fee_rate()
+  {
+    element = document.forms[0].elements["PREM_ESCALATION_FEE_TABLE"];
+    if (element!=null && element.value!="")
+    {
+      element = document.forms[0].elements["PREM_ESCALATION_FEE_RATE"];
+      if (element!=null)
+        element.value = "";
+    }
+  }
+  function clear_fee_table()
+  {
+    element = document.forms[0].elements["PREM_ESCALATION_FEE_RATE"];
+    if (element!=null && element.value!="")
+    {
+      element = document.forms[0].elements["PREM_ESCALATION_FEE_TABLE"];
+      if (element!=null)
+        element.value = "";
+    }
+  }
+</script>
+</html>

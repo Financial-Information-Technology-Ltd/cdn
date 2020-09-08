@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Policy Accounting Entry}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan=2>{HELP_LINK}{%(1)Policy Accounting Entry}</td>
+      </tr>
+      <tr>
+        <th width=30%>{%(6)Transaction Code}</th>
+        <td>{TRANS_CODE}</td>
+      </tr>
+      <tr>
+        <th>{%(3)Date}</th>
+        <td>{DATE}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Time}</th>
+        <td>{TIME}</td>
+      </tr>
+      <tr>
+        <th>{%(7)Policy}</th>
+        <td>{PolicyKey}</td>
+      </tr>
+      <tr>
+        <th>{%(8)Coverage No}</th>
+        <td>{COVERAGE_NO}</td>
+      </tr>
+      <tr>
+        <th>{%(25)Operator}</th>
+        <td>{OPERATOR}</td>
+      </tr>
+      <tr>
+        <th>{%(26)Transation No}</th>
+        <td>{TRANS_NO}</td>
+      </tr>
+      <tr>
+        <th>{%(9)Currency}</th>
+        <td>{CURRENCY}</td>
+      </tr>
+      <tr>
+        <th>{%(32)Cheque No}</th>
+        <td>{CHEQUE_NO}</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <td VALIGN="TOP">
+          <table>
+            <tr>
+              <th>{%(10)Cash}</th>
+              <td>{CASH}</td>
+            </tr>
+            <tr>
+              <th>{%(14)Effective date}</th>
+              <td>{EFFDATE}</td>
+            </tr>
+            <tr>
+              <th>{%(15)Paid to date}</th>
+              <td>{PAID_TO_DT}</td>
+            </tr>
+            <tr>
+              <th>{%(16)Loan}</th>
+              <td>{LOAN}</td>
+            </tr>
+            <tr>
+              <th>{%(17)Suspense}</th>
+              <td>{SUSPENSE}</td>
+            </tr>
+          </table>
+        </td>
+        <td VALIGN="TOP">
+          <table>
+            <tr>
+              <th>{%(11)Premium}</th>
+              <td style="text-align: right">{PREMIUM}</td>
+              <td style="text-align: right">{GROSS_PREMIUM}</td>
+            </tr>
+            <tr>
+              <th>{%(13)Coverage}</th>
+              <th>{%(12)Cov.Premium Net}</th>
+              <th>{%(29)Cov.Premium Gross}</th>
+            </tr>
+            <!--{PREMIUM_TABLE}-->
+          </table>
+        </td>
+      </tr>
+    </table>
+    <table class="zebra">
+      <tr>
+        <th>{%(18)Account}</th>
+        <th>{%(28)Pseudos}</th>
+        <th style="text-align: right">{%(19)Amount}</th>
+        <th>{%(22)Currency}</th>
+        <th>{%(20)Agent}</th>
+        <th>{%(33)Coverage}</th>
+      </tr>
+      <!--{ACCOUNT_TABLE}-->
+    </table>
+    <table>
+      <tr>
+        <td>
+          <b>{%(23)Description:}</b>
+          {DESCRIPTION}
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td class="return">
+          <b>
+            <a href="%BACK_LINK%">
+              {%(101)Return}
+              <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+            </a>
+          </b>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

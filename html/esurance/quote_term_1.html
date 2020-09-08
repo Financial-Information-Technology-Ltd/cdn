@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(20)Step 1}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form method="post" action="%SERVLET_PATH%">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan=2>{HELP_LINK}{%(1)Owner}</td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <input name="Owner_Title" type="radio" value="I_MR" checked>
+          {%(2)Male}
+          <input name="Owner_Title" type="radio" value="I_MRS">
+          {%(3)Female}
+        </td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(5)Surname}</th>
+        <td>
+          <input name="Owner_LastName" size="30">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(6)First Name}</th>
+        <td>
+          <input name="Owner_FirstName" size="30">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(7)Birth Date}</th>
+        <td>
+          <input name="Owner_BirthDate" size="10">
+          {DATE_FORMAT}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(15)Smoker}</th>
+        <td>
+          <select name="Owner_Smoker">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <td class="title" colspan=2>{%(11)Life Assured (if different from owner)}</td>
+      </tr>
+      <tr>
+        <td colspan=2>
+          <input name="FirstLife_Title" type="radio" value="I_MR" checked>
+          {%(2)Male}
+          <input name="FirstLife_Title" type="radio" value="I_MRS">
+          {%(3)Female}
+        </td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(5)Surname}</th>
+        <td>
+          <input name="FirstLife_LastName" size="30">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(6)First Name}</th>
+        <td>
+          <input name="FirstLife_FirstName" size="30">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(7)Birth Date}</th>
+        <td>
+          <input name="FirstLife_BirthDate" size="10">
+          {DATE_FORMAT}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(15)Smoker}</th>
+        <td>
+          <select name="FirstLife_Smoker">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td align="left">
+          <input name="ExitButton" class="button" type="submit" value="{%(103)Exit}" onclick="confirm_nb_exit()">
+        </td>
+        <td align="right">
+          <input name="NextButton" class="button" type="submit" value="{%(102)Next} &gt;">
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

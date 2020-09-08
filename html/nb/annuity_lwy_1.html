@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Step 1}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form method="post" action="%SERVLET_PATH%">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(26)Annuity Details}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(27)Source Of Premium}</th>
+        <td>
+          <select name="ANNUITY_SourceOfPremium" onchange="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <td class="title" colspan="2">{%(2)First Annuitant}</td>
+      </tr>
+      <!--%(Owner_KEY)-->
+      <tr>
+        <th style="width: 30%">{%(3)Annuitant Number (if already exists)}</th>
+        <td>
+          <input type="text" name="OwnerKey" ONCHANGE="document.forms[0].submit()">
+          <input type="BUTTON" value="{%(104)Search Client}" ONCLICK="search_client('OwnerKey',true)">
+        </td>
+      </tr>
+      <!--%-->
+      <tr>
+        <th style="width: 30%">{%(6)Surname}</th>
+        <td>
+          <input type="text" name="Owner_LastName" size="30">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(4)First Name}</th>
+        <td>
+          <input type="text" name="Owner_FirstName" size="30">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(5)Middle Name}</th>
+        <td>
+          <input type="text" name="Owner_OtherNames" size="30">
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <input type="RADIO" name="Owner_Title" value="I_MR" ONCLICK="document.forms[0].submit()">
+          {%(91)Mr}
+          <input type="RADIO" name="Owner_Title" value="I_MRS" ONCLICK="document.forms[0].submit()">
+          {%(92)Mrs}
+          <input type="RADIO" name="Owner_Title" value="I_MISS" ONCLICK="document.forms[0].submit()">
+          {%(93)Miss}
+          <input type="RADIO" name="Owner_Title" value="I_OTHER" ONCLICK="document.forms[0].submit()">
+          {%(94)Other}
+          <input type="text" name="Owner_TitleSalutation">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(22)Postal Address State}</th>
+        <td>
+          <input type="text" name="Owner_MailCounty" size="20">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(8)Postal Address City}</th>
+        <td>
+          <input type="text" name="Owner_MailCity" size="20">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(7)Postal Address}</th>
+        <td>
+          <TEXTAREA name="Owner_MailAddress" COLS="50" ROWS="3"></TEXTAREA>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(9)Is home/business address different from postal address?}</th>
+        <td>
+          <input type="checkbox" name="Owner_AddrDiff">
+        </td>
+      </tr>
+      <!--%(Owner_AddressFrag)-->
+      <tr>
+        <th>{%(23)Home State}</th>
+        <td>
+          <input type="text" name="Owner_County" size="20">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(11)Home City}</th>
+        <td>
+          <input type="text" name="Owner_City" size="20">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(10)Home Address}</th>
+        <td>
+          <TEXTAREA name="Owner_Address" COLS="50" ROWS="3"></TEXTAREA>
+        </td>
+      </tr>
+      <!--%(Owner_AddressFrag_END)-->
+      <tr>
+        <th>{%(12)Occupation}</th>
+        <td>
+          <input type="text" name="Owner_Occupation" size="40">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(13)Email}</th>
+        <td>
+          <input type="text" name="Owner_EMail" size="40">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(14)Date of Birth}</th>
+        <td>
+          <input type="text" name="Owner_BirthDate" size="10">
+          {DATE_FORMAT}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(15)Gender}</th>
+        <td>
+          <input type="RADIO" name="Owner_Sex" value="M">
+          {%(86)Male}
+          <input type="RADIO" name="Owner_Sex" value="F">
+          {%(87)Female}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(16)Telephone Number}</th>
+        <td>
+          <input type="text" name="Owner_PhoneNo" size="20">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(17)PenCom Number}</th>
+        <td>
+          <input type="text" name="Owner_NIN" size="12">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(18)Tax Identification No.}</th>
+        <td>
+          <input type="text" name="Owner_TaxNumber" size="12">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(35)Bank Verification NO. (BVN)}</th>
+        <td>
+          <input type="text" name="Owner_ExternalRef2" size="12">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(34)AnnualIncome No.}</th>
+        <td>
+          <input type="text" name="Owner_AnnualIncome" size="12">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(19)Marital Status}</th>
+        <td>
+          <select name="Owner_MaritalStatus">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(20)Nationality}</th>
+        <td>
+          <select name="Owner_Nationality">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(24)Preferred communication methods}</th>
+        <td>{Owner_PrefCommMethodsTable}</td>
+      </tr>
+      <tr>
+        <th>{%(25)Age Admitted}</th>
+        <td>
+          <input type="checkbox" name="Owner_AgeAdmitted">
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <td class="title" colspan="2">{%(33)Second Annuitant}</td>
+      </tr>
+      <!--%(Owner_KEY)-->
+      <tr>
+        <th style="width: 30%">{%(3)Annuitant Number (if already exists)}</th>
+        <td>
+          <input type="text" name="JointOwnerKey" ONCHANGE="document.forms[0].submit()">
+          <input type="BUTTON" value="{%(104)Search Client}" ONCLICK="search_client('JointOwnerKey',true)">
+        </td>
+      </tr>
+      <!--%-->
+      <tr>
+        <th style="width: 30%">{%(6)Surname}</th>
+        <td>
+          <input type="text" name="JointOwner_LastName" size="30">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(4)First Name}</th>
+        <td>
+          <input type="text" name="JointOwner_FirstName" size="30">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(5)Middle Name}</th>
+        <td>
+          <input type="text" name="JointOwner_OtherNames" size="30">
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <input type="RADIO" name="JointOwner_Title" value="I_MR" ONCLICK="document.forms[0].submit()">
+          {%(91)Mr}
+          <input type="RADIO" name="JointOwner_Title" value="I_MRS" ONCLICK="document.forms[0].submit()">
+          {%(92)Mrs}
+          <input type="RADIO" name="JointOwner_Title" value="I_MISS" ONCLICK="document.forms[0].submit()">
+          {%(93)Miss}
+          <input type="RADIO" name="JointOwner_Title" value="I_OTHER" ONCLICK="document.forms[0].submit()">
+          {%(94)Other}
+          <input type="text" name="JointOwner_TitleSalutation">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(22)Postal Address State}</th>
+        <td>
+          <input type="text" name="JointOwner_MailCounty" size="20">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(8)Postal Address City}</th>
+        <td>
+          <input type="text" name="JointOwner_MailCity" size="20">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(7)Postal Address}</th>
+        <td>
+          <TEXTAREA name="JointOwner_MailAddress" COLS="50" ROWS="3"></TEXTAREA>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(9)Is home/business address different from postal address?}</th>
+        <td>
+          <input type="checkbox" name="JointOwner_AddrDiff">
+        </td>
+      </tr>
+      <!--%(Owner_AddressFrag)-->
+      <tr>
+        <th>{%(23)Home State}</th>
+        <td>
+          <input type="text" name="JointOwner_County" size="20">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(11)Home City}</th>
+        <td>
+          <input type="text" name="JointOwner_City" size="20">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(10)Home Address}</th>
+        <td>
+          <TEXTAREA name="JointOwner_Address" COLS="50" ROWS="3"></TEXTAREA>
+        </td>
+      </tr>
+      <!--%(Owner_AddressFrag_END)-->
+      <tr>
+        <th>{%(12)Occupation}</th>
+        <td>
+          <input type="text" name="JointOwner_Occupation" size="40">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(13)Email}</th>
+        <td>
+          <input type="text" name="JointOwner_EMail" size="40">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(14)Date of Birth}</th>
+        <td>
+          <input type="text" name="JointOwner_BirthDate" size="10">
+          {DATE_FORMAT}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(15)Gender}</th>
+        <td>
+          <input type="RADIO" name="JointOwner_Sex" value="M">
+          {%(86)Male}
+          <input type="RADIO" name="JointOwner_Sex" value="F">
+          {%(87)Female}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(16)Telephone Number}</th>
+        <td>
+          <input type="text" name="JointOwner_PhoneNo" size="20">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(17)PenCom Number}</th>
+        <td>
+          <input type="text" name="JointOwner_NIN" size="12">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(18)Tax Identification No.}</th>
+        <td>
+          <input type="text" name="JointOwner_TaxNumber" size="12">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(36)Bank Verification NO. (BVN)}</th>
+        <td>
+          <input type="text" name="JointOwner_ExternalRef2" size="12">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(19)Marital Status}</th>
+        <td>
+          <select name="JointOwner_MaritalStatus">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(20)Nationality}</th>
+        <td>
+          <select name="JointOwner_Nationality">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(24)Preferred communication methods}</th>
+        <td>{JointOwner_PrefCommMethodsTable}</td>
+      </tr>
+      <tr>
+        <th>{%(25)Age Admitted}</th>
+        <td>
+          <input type="checkbox" name="JointOwner_AgeAdmitted">
+        </td>
+      </tr>
+    </table>
+    <input type="hidden" name="FirstLifeIsDifferent_HIDDEN" value="N">
+    <!--%(FINANCIAL_QUESTIONS_FRAGMENT)-->
+    <table>
+      <tr>
+        <td style="width: 30%"></td>
+        <td>{%(31)Yes}</td>
+        <td>{%(32)No}</td>
+      </tr>
+      <!--{FINANCIAL_QUESTIONS}-->
+    </table>
+    <!--%(FINANCIAL_QUESTIONS_FRAGMENT_END)-->
+    <table class="navigation">
+      <tr>
+        <td align="left">
+          <input type="submit" name="ExitButton" class="button" value="Exit" ONCLICK="confirm_nb_exit()">
+        </td>
+        <td align="right">
+          <input type="submit" name="NextButton" class="button" value="{%(100)Next} &gt;">
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

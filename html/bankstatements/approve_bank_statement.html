@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Approve a Bank Statement}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan=3>{HELP_LINK}{%(1)Approve a Bank Statement}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(2)Bank name}</th>
+        <td>
+          {{BANK_NAME}}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Account number}</th>
+        <td>
+          {{ACCOUNT_NUMBER}}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(4)Statement number}</th>
+        <td>
+          {{STATEMENT_NUMBER}}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(5)Statement date}</th>
+        <td>
+          {{STATEMENT_DATE}}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(6)Opening Balance}</th>
+        <td>
+          {{OPENING_BALANCE}}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(7)Closing Balance}</th>
+        <td>
+          {{CLOSING_BALANCE}}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(8)Total credit}</th>
+        <td>
+          {{TOTAL_CREDIT}}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(9)Total debit}</th>
+        <td>
+          {{TOTAL_DEBIT}}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(10)Statement transaction count}</th>
+        <td>
+          {{TRANSACTION_COUNT}}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(11)Company}</th>
+        <td>
+          {{COMPANY}}</td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="ApproveButton" value="{%(100)Approve}">
+        </td>
+        <td class="return">
+          <b>
+            <a href="?screen_name=SHOW_IMPORT_BANK_STATEMENT">
+              {%(101)Return}
+              <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+            </a>
+          </b>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Policy Details}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}
+          {%(1)Policy Details}
+          <a href="#Coverages">
+            <span class="return_link">Coverages</span>
+          </a>
+          <a href="#LifeAssured">
+            <span class="return_link">Life Assured</span>
+          </a>
+          <a href="#Links">
+            <span class="return_link">Links</span>
+          </a>
+          <a href="%BACK_LINK%">
+            <span class="return_link">{%(101)Return}</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(3)Policy No}</th>
+        <td>
+          <table>
+            <tr>
+              <td style="font-size: 12pt; font-weight: bold;" align="left">{PolicyKey}</td>
+              <td align="right">
+                <input type="submit" name="NotesButton" value="{%(110)Notes}">
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <!--%(COMPLIANCE_ISSUES)-->
+      <tr>
+        <th></th>
+        <td class="othererror">{%(126)ALERT: Compliance Issues with}&nbsp;{ComplianceAlertKeys}</td>
+      </tr>
+      <!--%-->
+      <tr>
+        <th>{%(95)Company}</th>
+        <td>{CompanyName}</td>
+      </tr>
+    </table>
+    <!--%(ENDORSEMENTS_INFO)-->
+    <table>
+      <tr class="othererror">
+        <th colspan="3">{%(91)Pending Endorsements}</th>
+      </tr>
+      <!--{ENDORSEMENTS_TABLE}-->
+    </table>
+    <!--%-->
+    <!--%(UNDERWRITING_INFO)-->
+    <table>
+      <tr class="othererror">
+        <th colspan="3">
+          {%(201)This policy has outstanding underwriting requirements!}
+          <a href="?screen_name=show_policy_uwrreq&PolicyKey={PolicyKey}">{%(202)Click here for details}</a>
+        </th>
+      </tr>
+    </table>
+    <!--%-->
+    <table>
+      <tr>
+        <th>{%(2)Agent}</th>
+        <td>{AGENT_NO}</td>
+      </tr>
+      <!--%(SERVICING_AGENT)-->
+      <tr>
+        <th>{%(9)Servicing Agent}</th>
+        <td>{ServicingAgent}</td>
+      </tr>
+      <!--%-->
+      <tr>
+        <th>{%(4)Policy Owner}</th>
+        <td>{PolicyOwner}</td>
+      </tr>
+      <tr>
+        <th>&nbsp;</th>
+        <td>{OwnerAddress}</td>
+      </tr>
+      <tr>
+        <th>{%(5)Joint Owner}</th>
+        <td>{PolicyJointOwner}</td>
+      </tr>
+      <!--%(IMPORTANT_NOTES)-->
+      <tr>
+        <th>{%(127)Important Note(s)}</th>
+        <td class="othererror">{ImportantNotes}</td>
+      </tr>
+      <!--%-->
+      <tr>
+        <th>{%(6)Policy Status}</th>
+        <td>
+          {PolicyStatus}
+          <!--%(UNDERWRITING)-->
+          --
+          <a href="?screen_name=show_policy_uwrreq&PolicyKey={PolicyKey}">{%(99)Underwriting}</a>
+          <!--%-->
+        </td>
+      </tr>
+      <tr>
+        <th>{%(10)Application No}</th>
+        <td>{ApplicationNo}</td>
+      </tr>
+      <tr>
+        <th>{%(11)Application Date}</th>
+        <td>{ApplicationDate}</td>
+      </tr>
+      <tr>
+        <th>{%(8)Total Premium}</th>
+        <td>{TotalNFPremium}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(71)Suspense}</th>
+        <td>{Suspense}</td>
+      </tr>
+      <tr>
+        <th>{%(13)Currency}</th>
+        <td>{Currency}</td>
+      </tr>
+      <tr>
+        <th>{%(40)Annuity Amount}</th>
+        <td>{AnnuityAmount}</td>
+      </tr>
+      <tr>
+        <th>{%(41)Annuity Payment Frequency}</th>
+        <td>{AnnuityPaymentFrequency}</td>
+      </tr>
+      <tr>
+        <th>{%(42)Annuity Guaranteed Period}</th>
+        <td>{AnnuityGuaranteedPeriod}</td>
+      </tr>
+      <tr>
+        <th>{%(43)Spouse Reversionary Percentage}</th>
+        <td>{AnnuityReversionaryPercentage}</td>
+      </tr>
+      <tr>
+        <th>{%(44)Annuity Escalation Rate}</th>
+        <td>{AnnuityEscalationRate}</td>
+      </tr>
+      <tr>
+        <th>{%(45)Annuity Source Of Premium}</th>
+        <td>{AnnuitySourceOfPremium}</td>
+      </tr>
+      <tr>
+        <th>{%(46)Pension Fund Administrator}</th>
+        <td>{AnnuityPensionFundAdministrator}</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th colspan="{COV_TABLE_5_COLS}">
+          <a id="Coverages">{%(21)Coverages}</a>
+        </th>
+      </tr>
+      <tr>
+        <th>{%(52)Cov No}</th>
+        <th>{%(22)Plan Name}</th>
+        <th>{%(23)Status}</th>
+        <th>{%(25)Mode Method}</th>
+        <th>{%(24)Lives}</th>
+        <!--%(SUM_ASSURED_FRAGMENT)-->
+        <th>{%(26)Sum Assured}</th>
+        <!--%-->
+        <th>{%(27)Premium}</th>
+        <!--%(ANNUAL_PREMIUM_FRAGMENT)-->
+        <th>{%(28)Annualized Premium}</th>
+        <!--%-->
+        <th>{%(35)Issue Date}</th>
+        <!--%(PAID_TO_DATE_FRAGMENT)-->
+        <th>{%(29)Paid to Date}</th>
+        <!--%-->
+      </tr>
+      <!--{COVERAGE_TABLE_5}-->
+    </table>
+    <table>
+      <tr>
+        <th colspan="9">
+          <a id="LifeAssured">{%(51)Life assured}</a>
+        </th>
+      </tr>
+      <tr>
+        <th>{%(52)Cov No}</th>
+        <th>{%(53)Client No}</th>
+        <th>{%(54)Sex}</th>
+        <th>{%(55)Smoker}</th>
+        <th>{%(56)Issue Age}</th>
+        <th>{%(58)Status}</th>
+        <th>{%(57)Name}</th>
+        <th>{%(210)Age Rating}</th>
+        <th>{%(211)Loading}</th>
+      </tr>
+      <!--{LIFE_ASSURED}-->
+    </table>
+    <table>
+      <tr>
+        <th colspan="4">{%(61)Beneficiaries}</th>
+      </tr>
+      <tr>
+        <th style="width: 20%">{%(62)Share}</th>
+        <th>{%(63)Name}</th>
+        <th>{%(64)Level}</th>
+        <th>{%(65)Relationship}</th>
+      </tr>
+      <!--{BENEFICIARIES}-->
+      <!--%(CLAUSE_TEXT)-->
+      <tr>
+        <th>{%(18)Clause}</th>
+        <td>{Clause}</td>
+      </tr>
+      <!--%-->
+    </table>
+    <table>
+      <tr>
+        <th style="width: 30%">{%(123)Payment Out Suspense}</th>
+        <td>{PayoutSuspense}</td>
+      </tr>
+      <tr>
+        <th>{%(85)Documentation Language}</th>
+        <td>{DocLanguage}</td>
+      </tr>
+      <tr>
+        <th>{%(75)Branch}</th>
+        <td>{Branch}</td>
+      </tr>
+    </table>
+    <span>
+      <a id="Links"></a>
+    </span>
+    <table>
+      <!--{TRANSACTION_LINKS}-->
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="MaintainButton" value="{%(100)Maintenance}">
+          <input type="submit" name="PrintDocumentButton" value="{%(102)Print Document}">
+          <input type="submit" name="PrintLetterButton" value="{%(103)Print Letter}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

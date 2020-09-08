@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Premiums}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan=2>{HELP_LINK}{%(1)Premiums}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Agent No}</th>
+        <td>{AGENT_NO}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Agent Name}</th>
+        <td>{AGENT_NAME}</td>
+      </tr>
+      <tr>
+        <th>{%(5)Start Date}</th>
+        <td>
+          <input type="text" name="DateFrom">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(6)End Date}</th>
+        <td>
+          <input type="text" name="DateTo">
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <input type="submit" name="ProcessButton" value="{%(101)Download}">
+        </th>
+        <td align="right">
+          <b>
+            <a href="%BACK_LINK%">
+              {%(7)Return}
+              <img src="/lf/images/back.gif">
+            </a>
+          </b>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Web Security Group}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(1)Web Security Group}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(2)Group Code}</th>
+        <td>{GROUP_CODE}</td>
+      </tr>
+      <tr>
+        <th>{%(3)Name}</th>
+        <td>{GROUP_NAME}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Home Page}</th>
+        <td>
+          <select name="HOME_PAGE">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(21)Categories of the documents users are allowed to access}</th>
+        <td>
+          <table>
+            <tr>
+              <th>{%(22)Document Category}</th>
+              <th>{%(23)Sensitivity}</th>
+            </tr>
+            <!--{DOCUMENT_SECURITY}-->
+            <tr>
+              <td>
+                <input type="submit" name="DOCUMENT_SECURITY_BUTTON" value="{%(102)Add}">
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SaveButton" value="{%(100)Save}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Valuation}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan=2>{HELP_LINK}{%(2)Show Policy Value}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(10)Policy}</th>
+        <td>{PolicyKey}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(11)Valuation Date}</th>
+        <td>
+          <input type="text" name="ValuationDate">
+          <input type="submit" name="ChooseDate" value="{%(12)Submit}">
+        </td>
+      </tr>
+    </table>
+    <!--%(FUND_VALUE_FRAGMENT)-->
+    <table>
+      <tr>
+        <th>{%(21)Fund}</th>
+        <th>{%(23)Fund Name}</th>
+        <th>{%(24)Currency}</th>
+        <!--%(INITIAL_UNITS)-->
+        <th>{%(251)Initial Units}</th>
+        <!--%-->
+        <th>{%(25)Accumulated Units}</th>
+        <th>{%(26)Fund Currency Value}</th>
+        <th>{%(27)Policy Currency Value}</th>
+      </tr>
+      <!--{POLICY_VALUE_TABLE}-->
+    </table>
+    <!--%(FUND_VALUE_FRAGMENT_END)-->
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="PrintStatement" value="{%(31)Print Statement}">
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

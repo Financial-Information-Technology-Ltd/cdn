@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Payments out for} {PolicyKey}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table class="zebra">
+      <tr>
+        <td class="title" colspan="10">{HELP_LINK}{%(1)Payments out for} {PolicyKey}</td>
+      </tr>
+      <tr>
+        <th>
+          <a
+            href="%SERVLET_PATH%?screen_name=SHOW_POLICY_PAYMENTS_OUT_LIST&PolicyKey={PolicyKey}&SortField=CREATED_DATE">{%(14)Created
+            Date}</a>
+        </th>
+        <th>
+          <a href="%SERVLET_PATH%?screen_name=SHOW_POLICY_PAYMENTS_OUT_LIST&PolicyKey={PolicyKey}&SortField=REASON">{%(6)Reason}</a>
+        </th>
+        <th>{%(9)Net Amount}</th>
+        <th>
+          <a
+            href="%SERVLET_PATH%?screen_name=SHOW_POLICY_PAYMENTS_OUT_LIST&PolicyKey={PolicyKey}&SortField=AUTHORISED_DATE">{%(16)Authorised
+            Date}</a>
+        </th>
+      </tr>
+      <!--{PAYMENTS_OUT_TABLE}-->
+    </table>
+    <table class="navigation">
+      <tr>
+        <td></td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

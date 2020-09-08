@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Group Business}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  {ERRORS}
+  <form action="%SERVLET_PATH%" method="post">
+    <table>
+      <tr>
+        <td class="title" colspan="6">{HELP_LINK}{%(2)Group Schemes}</td>
+      </tr>
+      <tr>
+        <th>
+          <a href="{HeaderPath}&Sort=SchemeName">{%(10)Name}</a>
+        </th>
+        <th>
+          <a href="{HeaderPath}&Sort=PolicyNo">{%(12)Policy}</a>
+        </th>
+        <th>{%(14)Product}</th>
+        <th>
+          <a href="{HeaderPath}&Sort=Status">{%(16)Status}</a>
+        </th>
+        <th>{%(18)Issue Date}</th>
+        <th>
+          <a href="{HeaderPath}&Sort=PaidToDate">{%(20)Paid To Date}</a>
+        </th>
+      </tr>
+      <!--{GROUP_LIST}-->
+    </table>
+    <table class="navigation">
+      <tr>
+        <td class="return">
+          <b>
+            <a href="?screen_name=do_home">
+              {%(101)Return}
+              <img src="/lf/images/back.gif">
+            </a>
+          </b>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

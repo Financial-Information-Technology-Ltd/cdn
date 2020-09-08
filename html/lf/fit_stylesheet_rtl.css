@@ -1,0 +1,191 @@
+* {
+	font-family: tahoma;
+	font-size: 8pt
+}
+
+basefont {
+	text-align: right;
+	line-height: 100%
+}
+
+body {
+	text-align: right;
+	line-height: 100%;
+	margin: 6px 10px;
+}
+
+button {
+	color: white;
+	font-weight: normal;
+	background-color: #93507b;
+}
+
+submit {
+	color: white;
+	font-weight: normal;
+	background-color: #93507b;
+}
+
+.button {
+	color: white;
+	font-weight: normal;
+	background-color: #93507b;
+}
+
+.title {
+	font-size: 10pt;
+	font: normal;
+	background-color: #93507b;
+	color: white;
+}
+
+.subtitle1 {
+	font-size: 10pt;
+	font: normal;
+	background-color: #993366;
+	color: white;
+}
+
+.protectcolor {
+	color: #111111;
+	font-weight: normal;
+}
+
+.absenterror {
+	font: normal;
+	color: red;
+}
+
+.othererror {
+	font: normal;
+	color: red;
+}
+
+.return_link {
+	color: white;
+}
+
+span {
+	font-weight: normal
+}
+
+form {
+	background-color: #ffffff
+}
+
+h1 {
+	letter-spacing: 0.5pt;
+	color: #ffffff;
+	background-color: #93507b;
+	font-size: 8pt;
+	font-weight: normal;
+	line-height: 100%;
+	margin-top: 6px;
+	margin-bottom: 6px;
+}
+
+h2 {
+	font-style: normal;
+	line-height: 100%;
+	margin-top: 6px;
+	margin-bottom: 6px;
+}
+
+h3 {
+	line-height: 100%;
+	margin-top: 6px;
+	margin-bottom: 6px;
+}
+
+head {
+	font-variant: small-caps;
+	letter-spacing: 2.5pt;
+	color: #ffffff;
+	font-weight: normal;
+	background-color: #00406e
+}
+
+.navigation {
+	text-align: right;
+	line-height: 150%;
+	margin: 6px 0;
+	background-color: white;
+	border: thin none;
+}
+
+.return {
+	text-align: left;
+	line-height: 150%;
+	margin: 6px 0;
+	background-color: white;
+	font: normal;
+}
+
+table {
+	text-align: right;
+	line-height: 150%;
+	background-color: #efe1eb;
+	margin: 6px 0;
+	border-collapse: collapse;
+	border-color: #ffffff;
+	width: 100%;
+}
+
+.default {
+	text-align: right;
+	line-height: 150%;
+	background-color: #efe1eb;
+	margin: 6px 0;
+}
+
+tbody {
+	color: #555555;
+	text-align: right;
+	line-height: 150%;
+	margin: 6px 0 6px 15px;
+	border-color: #ffffff;
+}
+
+.color1 {
+	background-color: white;
+}
+
+th {
+	text-align: right;
+	color: #efe1eb;
+	border-color: #ffffff;
+}
+
+td {
+	border-color: #ffffff;
+}
+
+textarea {
+	text-align: right;
+	line-height: 100%;
+	margin-top: 6px;
+	margin-bottom: 6px;
+}
+
+a:link {
+	color: #93507b;
+	text-decoration: none
+}
+
+a:visited {
+	color: #93507b;
+	text-decoration: none
+}
+
+a:hover {
+	color: #f68c1e;
+	text-decoration: underline
+}
+
+.lighter {
+	background-color: #ffffff;
+}
+
+.darker {
+	background-color: #eeeeee
+}

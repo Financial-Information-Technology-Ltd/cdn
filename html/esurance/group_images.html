@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Group Documents}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan=2>{HELP_LINK}{%(2)Documents attached to the Group}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Documents attached to the Group}</th>
+        <td>{PolicyKey}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Owner Name}</th>
+        <td>{PolicyOwner}</td>
+      </tr>
+      <!--%(AGENT_DATA)-->
+      <tr>
+        <th>{%(5)Agent}</th>
+        <td>{AGENT_NO} -- {AGENT_NAME}</td>
+      </tr>
+      <!--%-->
+    </table>
+    <table>
+      <tr>
+        <th>
+          <a href="{SortPath}&SortField=title">{%(11)Title}</a>
+        </th>
+        <th>
+          <a href="{SortPath}&SortField=file_name">{%(6)File Name}</a>
+        </th>
+        <th>
+          <a href="{SortPath}&SortField=policy">{%(12)Policy}</a>
+        </th>
+        <th>
+          <a href="{SortPath}&SortField=date">{%(10)Date}</a>
+        </th>
+        <th>{%(7)Time}</th>
+      </tr>
+      <!--{GROUP_DOC_IMAGES}-->
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="AddButton" value="{%(100)Add}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

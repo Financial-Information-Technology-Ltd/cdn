@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Step 4}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form method="post" action="%SERVLET_PATH%">
+    {ERRORS} {REGULAR_INCOME_PAYMENT_INCLUDE}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(2)Funds}</td>
+      </tr>
+      <tr>
+        <td style="width: 30%">{%(3)Portfolio}</td>
+        <td>{%(4)Share}</td>
+      </tr>
+      <!--{INVESTMENT_PERCENTAGE_TABLE}-->
+      <tr>
+        <td style="width: 30%">{%(5)Distribution Option}</td>
+        <td>
+          <select name="DistributionOption">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <td class="title" colspan="2">{%(10)Payment Details}</td>
+      </tr>
+      <tr>
+        <td colspan="2">{%(11)As likewise the following undertaking is filled before the full domestic form
+          completely and signed}</td>
+      </tr>
+      <tr>
+        <td style="width: 30%">{%(12)Sort Code}</td>
+        <td>
+          <input name="SortCode" size="10">
+        </td>
+      </tr>
+      <tr>
+        <td>{%(13)Account Number}</td>
+        <td>
+          <input name="BankAccount" size="20">
+        </td>
+      </tr>
+      <tr>
+        <td>{%(14)Bank Name}</td>
+        <td>
+          <input name="BankName" size="30">
+        </td>
+      </tr>
+      <tr>
+        <td>{%(15)Account Holder Last Name}</td>
+        <td>
+          <input name="AccountHolderLastName" size="55">
+        </td>
+      </tr>
+      <tr>
+        <td>{%(16)Account Holder First Name}</td>
+        <td>
+          <input name="AccountHolderFirstName" size="55">
+        </td>
+      </tr>
+      <tr>
+        <td>{%(17)Credit Card Number}</td>
+        <td>
+          <input name="CreditCardNumber" size="30">
+        </td>
+      </tr>
+      <tr>
+        <td>{%(18)Credit Card Expiry Date}</td>
+        <td>
+          {%(19)Month}
+          <input name="CreditCardExpiryMonth" size="2">
+          {%(20)Year}
+          <input name="CreditCardExpiryYear" size="4">
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td align="left">
+          <input class="button" name="PrevButton" type="submit" value="&lt; {%(91)Previous}">
+        </td>
+        <td align="right">
+          <input class="button" name="NextButton" type="submit" value="{%(92)Next} &gt;">
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

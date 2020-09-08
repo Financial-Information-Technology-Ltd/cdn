@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Scheme Member Totals}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(1)Scheme Member Totals}</td>
+      </tr>
+      <tr>
+        <th width=30%>{%(2)Scheme number}</th>
+        <td>{SCHEME_CODE}</td>
+      </tr>
+      <tr>
+        <th>{%(3)Scheme Owner}</th>
+        <td>{GROUP_OWNER}</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th width=16%>{%(4)Date}</th>
+        <th width=16%>{%(5) No. Members}</th>
+        <th width=16%>{%(6)Total SA}</th>
+        <th width=16%>{%(7)Premium}</th>
+        <th width=16%>{%(8)Total SR}</th>
+        <th width=16%>{%(9)R Premium}</th>
+        <th width=4%></th>
+      </tr>
+      <!--{MEMBER_TOTALS_TABLE}-->
+    </table>
+    <table class="navigation">
+      <tr>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="/lf/images/back.gif">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>
