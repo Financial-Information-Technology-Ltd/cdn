@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Scheme Workbench}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <!--%(OMNILIFE_PLAN)-->
+      <!-- Required for all oml life plans-->
+      <!--%-->
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(167)Group Details}</td>
+      </tr>
+      <tr>
+        <th width=30%>{%(2)Scheme number}</th>
+        <td>
+          <table>
+            <tr>
+              <td style="font-weight: bold">{SCHEME_CODE}</td>
+              <td align="right">
+                <input type="submit" name="GroupNotesButton" value="{%(110)Notes}">
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(118)External Ref}</th>
+        <td style="font-weight: bold">{EXTERNAL_REF}</td>
+      </tr>
+      <tr>
+        <th>{%(129)Quotation Number}</th>
+        <td>{QUOTATION_NUMBER}</td>
+      </tr>
+      <tr>
+        <th>{%(117)Scheme Name}</th>
+        <td style="font-weight: bold">{SCHEME_NAME}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Group Owner}</th>
+        <td>{GROUP_OWNER}</td>
+      </tr>
+      <tr>
+        <th>{%(21)Principle Employer}</th>
+        <td>{PRINCIPLE_EMPLOYER}</td>
+      </tr>
+      <!--%(IMPORTANT_NOTES)-->
+      <tr>
+        <th>{%(131)Important Notes}</th>
+        <td class="othererror">{ImportantNotes}</td>
+      </tr>
+      <!--%-->
+      <tr>
+        <th>{%(23)Base Plan}</th>
+        <td style="font-weight: bold">{BASE_PLAN}</td>
+      </tr>
+      <tr>
+        <th>{%(119)Company code}</th>
+        <td>{COMPANY_CD}</td>
+      </tr>
+      <tr>
+        <th>{%(120)Company number}</th>
+        <td>{CLIENT_EMPLOYER_REG_NO}</td>
+      </tr>
+      <tr>
+        <th>{%(121)Tax Regime}</th>
+        <td>{CLIENT_UK_TAX_STATUS}</td>
+      </tr>
+      <tr>
+        <th>{%(158)Lead Scheme}</th>
+        <td>{LEAD_SCHEME_NO} {LEAD_SCHEME_NAME}</td>
+      </tr>
+      <tr>
+        <th>{%(122)PSTR Number}</th>
+        <td>{CLIENT_TAX_NUMBER}</td>
+      </tr>
+      <!--%(ASSOCIATED_EMPLOYER_FRAGMENT)-->
+      <tr>
+        <th width=30%>{%(142)Associated Employers}</th>
+        <td>
+          <table>
+            <!--{EMPLOYER_LIST}-->
+          </table>
+        </td>
+      </tr>
+    </table>
+    <!--%-->
+    <table>
+      <tr>
+        <td class="title" colspan="2">{%(165)Cover Period}</td>
+      </tr>
+      <tr>
+        <th width=30%>{%(24)Scheme Commencement date}</th>
+        <td style="font-weight: bold">
+          {SCHEME_RCD}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(123)Renewal Date}</th>
+        <td style="font-weight: bold">
+          {RENEWAL_DATE}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(124)Rate Guarantee Start}</th>
+        <td>
+          {RATE_GUARANTEE_START}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(125)Rate Guarantee End}</th>
+        <td>
+          {RATE_GUARANTEE_END}
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <td class="title" colspan="2">{%(164)Payment Details}</td>
+      </tr>
+      <!--%(SCHEME_RENEWAL_FRAGMENT)-->
+      <tr>
+        <th width=30%>{%(57)Renewal Premium}</th>
+        <td>
+          {SCHEME_RENEWAL_PREMIUM}
+        </td>
+      </tr>
+      <!--%-->
+      <tr>
+        <th width=30%>{%(20)Premium Balance}</th>
+        <td style="font-weight: bold">
+          {PREMIUM_BALANCE}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(27)Currency}</th>
+        <td>
+          {CURRENCY}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(28)Mode method}</th>
+        <td>
+          {MODE_METHOD}
+        </td>
+      </tr>
+      <!--%(MANUAL_PAYMENT_FRAGMENT)-->
+      <tr>
+        <th>{%(139)Manual Payment Amount}</th>
+        <td>{MANUAL_PAYMENT_AMOUNT}</td>
+      </tr>
+      <!--%-->
+      <!--%(FIRST_PAYMENT_FRAGMENT)-->
+      <tr>
+        <th>{%(126)First Collection Date}</th>
+        <td>
+          {FIRST_PAYMENT_DATE}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(127)First Collection Amount}</th>
+        <td>
+          {FIRST_PAYMENT_AMOUNT}
+        </td>
+      </tr>
+      <!--%-->
+      <!--%(NEXT_PAYMENT_FRAGMENT)-->
+      <tr>
+        <th>{%(80)Next Collection Date}</th>
+        <td>
+          {NEXT_PAYMENT_DATE}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(81)Next Collection Amount}</th>
+        <td>
+          {NEXT_PAYMENT_AMOUNT}
+        </td>
+      </tr>
+      <tr>
+        <!--%-->
+        <!--%(SUBSEQUENT_PAYMENT_FRAGMENT)-->
+      <tr>
+        <th>{%(82)Payment Day}</th>
+        <td>{PAYMENT_DAY}</td>
+      </tr>
+      <tr>
+        <th>{%(83)Subsequent Payment Amount}</th>
+        <td>
+          {PAYMENT_AMOUNT}
+        </td>
+      </tr>
+      <!--%-->
+    </table>
+    <!--%(BANK_DETAILS)-->
+    <table>
+      <tr>
+        <td class="title" colspan="2">{%(159)Bank Details}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(160)Bank Account}</th>
+        <td>
+          {BANK_ACCOUNT}
+        </td>
+      </tr>
+    </table>
+    <!--%-->
+    <table>
+      <tr>
+        <td class="title" colspan="2">{%(166)Policy Details}</td>
+      </tr>
+      <tr>
+        <th width=30%>{%(25)Signed off}</th>
+        <td>
+          {SIGN_OFF_DATE}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(26)Policy Number}</th>
+        <td>
+          {MASTER_POLICY_NUMBER}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(22)Scheme status}</th>
+        <td style="font-weight: bold">
+          {STATUS}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(141)Member Data Loaded}</th>
+        <td style="font-weight: bold">
+          {MEMBER_DATA_LOADED}
+          &nbsp;&nbsp;({%(143)Version}&nbsp;
+          {MEMBER_DATA_VERSION}
+          )
+        </td>
+      </tr>
+      <tr>
+        <th>{%(30)Documentation Language}</th>
+        <td>
+          {SCHEME_LANGUAGE}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(31)Scheme Administrator}</th>
+        <td>
+          {SCHEME_ADMINISTRATOR}
+        </td>
+      </tr>
+      <!--%(OMNILIFE_AGENT_FRAGMENT)-->
+      <tr>
+        <th>{%(29)Omnilife Agent}</th>
+        <td>
+          {INTERNAL_AGENT_NUMBER}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(149) Trust}</th>
+        <td>
+          {TRUST_CLIENT}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(150)Redundancy Cover}</th>
+        <td>
+          {REDUNDANCY_COVER}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(156)Catastrophic Event Limit}</th>
+        <td>
+          {CATASTROPHIC_EVENT_LIMIT}
+        </td>
+      </tr>
+      <tr>
+        <th width=30%>{%(128)Scheme Eligibility Text}</th>
+        <td>
+          {ELIGIBILITY_TEXT}
+        </td>
+      </tr>
+      <tr>
+        <th width=30%>{%(157)Temporary Absence Text}</th>
+        <td>
+          {TEMPORARY_ABSENCE_TEXT}
+        </td>
+      </tr>
+      <!--%-->
+    </table>
+    <!--%(INCOME_PROTECTION_FRAGMENT)-->
+    <table>
+      <tr>
+        <td class="title" colspan="4">{%(138)Income Protection}</td>
+      </tr>
+      <tr>
+        <th width=30%>{%(145)Limited Payment Period (Years)}</th>
+        <td>
+          {LIMITED_PAYMENT_PERIOD}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(146)Deferred Period (Weeks)}</th>
+        <td>
+          {DEFERRED_PERIOD}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(147)Increase Rate}</th>
+        <td>
+          {INCREASE_RATE}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(148)Cease Age}</th>
+        <td>
+          {CEASE_AGE}
+        </td>
+      </tr>
+    </table>
+    <!--%-->
+    <table>
+      <tr>
+        <td class="title" colspan="2">{%(35)Base Coverage Configuration}</td>
+      </tr>
+      <tr>
+        <th width=30%>{%(36)Sum Assured Basis}</th>
+        <td>
+          {SA_BASIS}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(37)Sum Assured Value}</th>
+        <td>
+          {SA_VALUE}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(38)Unit Rate}</th>
+        <td>
+          {UNIT_RATE}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(55)Base Rate}</th>
+        <td>
+          {BASE_RATE}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(56)Reinsurance Rate}</th>
+        <td>
+          {REINSURANCE_RATE}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(79)Premium Rate Table}</th>
+        <td>
+          {PREMIUM_RATES_TABLE}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(39)Adjustment Percent}</th>
+        <td>
+          {ADJUSTMENT_PERCENT}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(130)Policy Fee Per Member}</th>
+        <td>
+          {MEMBER_FEE}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(40)Initial Commission}</th>
+        <td>
+          {INIT_COMM_PERC}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(41)Free cover limit}</th>
+        <td>
+          {FREE_COVER}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(42)Reinsurance Treaties}</th>
+        <td>
+          {REINS_TREATY_LIST}
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <td class="title" colspan="{PLAN_CHOICE_COLS}">{%(43)Rider Configuration}</td>
+      </tr>
+      <tr>
+        <th colspan="{PLAN_CHOICE_PLAN_COLS}">{%(44)Product}</th>
+        <!--%(PLAN_CHOICE_SA_BASIS)-->
+        <th>{%(45)SA Basis}</th>
+        <!--%-->
+        <!--%(PLAN_CHOICE_SA_AMOUNT)-->
+        <th align='RIGHT'>{%(46)SA Amount}</th>
+        <!--%-->
+        <!--%(PLAN_CHOICE_SA_MULTIPLY)-->
+        <th align='RIGHT'>{%(47)SA as multiply of salary}</th>
+        <!--%-->
+        <!--%(PLAN_CHOICE_PREMIUM_AMOUNT)-->
+        <th align='RIGHT'>{%(48)Premium amount}</th>
+        <!--%-->
+        <!--%(PLAN_CHOICE_PREMIUM_PERCENT)-->
+        <th align='RIGHT'>{%(49)Premium as percent of salary}</th>
+        <!--%-->
+        <!--%(PLAN_CHOICE_FREE_COVER)-->
+        <th align='RIGHT'>{%(50)Free Cover Limit}</th>
+        <!--%-->
+        <!--%(PLAN_CHOICE_UNIT_RATE_OVERRIDE)-->
+        <th align='RIGHT'>{%(51)Unit rate}</th>
+        <!--%-->
+        <!--%(PLAN_CHOICE_ADJUSTMENT_PERCENT)-->
+        <th align='RIGHT'>{%(52)Adjustment Percent}</th>
+        <!--%-->
+        <!--%(PLAN_CHOICE_COMMISSION)-->
+        <th align='RIGHT'>{%(53)Init Commission}</th>
+        <!--%-->
+        <!--%(PLAN_CHOICE_INCREASE_RATE)-->
+        <th align='RIGHT'>{%(76)IP Increase Rate}</th>
+        <!--%-->
+        <!--%(PLAN_CHOICE_REINS_TREATY)-->
+        <th>{%(54)Reinsurance Treaties}</th>
+        <!--%-->
+      </tr>
+      <!--{PLAN_CHOICE_OVERRIDE_FRAGMENT}-->
+    </table>
+    <!--%(COINSURANCE_FRAGMENT)-->
+    <table>
+      <tr>
+        <td class="title" colspan="3">{%(60)Co-Insurance Details}</td>
+      </tr>
+      <tr>
+        <th width=30%>{%(61)Co-Insurance Company}</th>
+        <th width=10%>{%(62)Share}</th>
+        <th>{%(63)Lead Coinsurer}</th>
+      </tr>
+      <!--{COINSURER_LIST}-->
+    </table>
+    <!--%-->
+    <table>
+      <tr>
+        <td class="title" colspan="5">{%(91)Commission Details}</td>
+      </tr>
+      <tr>
+        <th>{%(92)Agent No}</th>
+        <th>{%(93)Agent Name}</th>
+        <th>{%(94)Contact Name}</th>
+        <th>{%(95)Share}</th>
+        <th>{%(96)Agency}</th>
+      </tr>
+      <!--{AGENT_LIST_OML}-->
+    </table>
+    <!--%(SUBGROUP)-->
+    <table>
+      <tr>
+        <td class="title" colspan="3">{%(111)Subgroup Details}</td>
+      </tr>
+      <!--{SUBGROUP_LIST}-->
+    </table>
+    <!--%-->
+    <!--%(MEMBERS_DETAILS)-->
+    <table>
+      <tr>
+        <td class="title" colspan="5">{%(151)Members Details}</td>
+      </TR>
+      <TR>
+        <TH>{%(152)Pending Members}: {PENDING_MEMBERS}</TH>
+        <TH>{%(153)Incomplete Members}: {INCOMPLETE_MEMBERS}</TH>
+        <TH>{%(161)On Hold Members}: {ON_HOLD_MEMBERS}</TH>
+        <TH>{%(154)Active Members}: {ACTIVE_MEMBERS}</TH>
+        <TH>{%(155)Other Members Status}: {OTHER_MEMBERS}</TH>
+      </TR>
+      <TR>
+        <TH>{%(168)Members Over Free Cover Limit}: {FCL_MEMBERS}</TH>
+      </TR>
+    </table>
+    <!--%-->
+    <table class="navigation">
+      <tr>
+        <td style="width: 1%">
+          <input type="submit" name="MembershipButton" value="{%(100)Show Members}">
+        </td>
+        <td style="width: 1%">
+          <input type="submit" name="CalculateBillButton" value="{%(102)Calculate Bill}">
+        </td>
+        <td style="width: 1%">
+          <input type="submit" name="StatusChangeButton" value="{%(1030)Change Status}">
+        </td>
+        <td style="width: 1%">
+          <input type="submit" name="DoPolicyPaymentButton" value="{%(1210)Input Payment}">
+        </td>
+        <td style="width: 1%">
+          <input type="submit" name="CalculateYearEndAdjustment" value="{%(136)Calculate Year End Adjustment}"
+            ONCLICK="return confirmYearEndAdj()">
+        </td>
+        <td style="width: 1%">
+          <input type="submit" name="SchemeAccountingButton" value="{%(1190)Scheme Accounting}">
+        </td>
+        <td style="width: 1%">
+          <input type="submit" name="ShowGroupImagesButton" value="{%(1191)DocStore}">
+        </td>
+      </tr>
+      <tr>
+        <td style="width: 1%">
+          <input type="submit" name="ImportMembersButton" value="{%(113)Import Members}">
+          <input type="submit" name="MembershipTotalsButton" value="{%(1001)Member Totals}">
+        </td>
+        <td style="width: 1%">
+          <input type="submit" name="ModifySchemeButton" value="{%(135)Modify Scheme}">
+        </td>
+        <td style="width: 1%">
+          <input type="submit" name="UndoActivationButton" value="{%(134)Undo Activation}"
+            ONCLICK="return confirmUndoActivation()">
+        </td>
+        <td style="width: 1%">
+          <input type="submit" name="ReversePaymentButton" value="{%(1241)Reverse Payment}">
+        </td>
+        <td style="width: 1%">
+          <input type="submit" name="CancelYearEndAdjustment" value="{%(137)Cancel Year End Adjustment}"
+            ONCLICK="return confirmCancelYearEnd()">
+        </td>
+        <td style="width: 1%">
+          <input type="submit" name="AccountStatementButton" value="{%(114)Account Statement}">
+        </td>
+        <td style="width: 1%">
+          <input type="submit" name="AgentCommissionButton" value="{%(115)Agent Commission}">
+        </td>
+      </tr>
+      <tr>
+        <td style="width: 1%">
+          <input type="submit" name="MatchMemberButton" value="{%(133)Match Members}">
+        </td>
+        <td style="width: 1%">
+          <input type="submit" name="SignOffUndoButton" value="{%(109)Undo Sign Off}">
+        </td>
+        <td style="width: 1%">
+          <input type="submit" name="StatusChangeReversalButton" value="{%(1031)Status Change Reversal}">
+        </td>
+        <td style="width: 1%">
+          <input type="submit" name="RefundPremiumButton" value="{%(103)Refund Premium}">
+        </td>
+        <td style="width: 1%">
+          <input type="submit" name="SettleSchemeButton" value="{%(107)Settle Scheme}">
+        </td>
+        <td style="width: 1%">
+          <input type="submit" name="SchemeAccountingOverrideButton" value="{%(1192)Accounting Override}">
+        </td>
+        <td style="width: 1%"></td>
+      </tr>
+      <tr>
+        <td class="return" colspan=7>
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="{IMAGE_PATH}back.gif">
+          </a>
+        </td>
+      </tr>
+    </table>
+    <input type="hidden" name="CommInitText" value="{%(70)Initial percent}">
+    <input type="hidden" name="CommOverrideText" value="{%(71)Override}">
+    <input type="hidden" name="CommAgentNoText" value="{%(72)Agent No}">
+    <input type="hidden" name="CommOridePercText" value="{%(73)Percent}">
+    <input type="hidden" name="CommShowButtonText" value="{%(74)View}">
+    <input type="hidden" name="CommHideButtonText" value="{%(75)Hide}">
+  </form>
+  <script type="text/javascript">
+            var refreshlink ='{refreshlink}';
+            if(refreshlink !='')
+              window.location.replace(refreshlink);
+			function confirmReversePremium() {
+				reply = confirm("{%(3)Are you sure you wish to reverse last premium for the whole group?}");
+				return reply;
+			}
+			function confirmCancelBill() {
+				reply = confirm("{%(5)Are you sure you wish to cancel the latest bill?}");
+				return reply;
+			}
+            function confirmUndoActivation() {
+                reply = confirm("{%(6)Are you sure you wish to Undo the Activation?}");
+                return reply;
+            }
+            function confirmYearEndAdj() {
+                reply = confirm("{%(8)Are you sure you wish to calculate the Year End Adjustment?}");
+                return reply;
+            }
+            function confirmCancelYearEnd() {
+                reply = confirm("{%(7)Are you sure you wish to cancel the Year End Adjustment?}");
+                return reply;
+            }
+			function showCommission(i) {
+				document.getElementById("COMMISSION_TABLE_" + i).style.display = "block";
+				document.getElementById("SHOW_COMMISSION_LINK_" + i).style.display = "none";
+				document.getElementById("HIDE_COMMISSION_LINK_" + i).style.display = "block";
+			}
+			function hideCommission(i) {
+				document.getElementById("COMMISSION_TABLE_" + i).style.display = "none";
+				document.getElementById("SHOW_COMMISSION_LINK_" + i).style.display = "block";
+				document.getElementById("HIDE_COMMISSION_LINK_" + i).style.display = "none";
+			}
+		</script>
+</body>
+</html>

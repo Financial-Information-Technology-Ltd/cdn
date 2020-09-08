@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Step 3}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body ONLOAD="OnLoad()">
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(2)Policy Details}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Application Date}</th>
+        <td>
+          <input type="text" name="ApplicationDate">
+          {DATE_FORMAT}
+        </td>
+      </tr>
+      <!--%(LIFE_COVER_FRAGMENT)-->
+      <tr>
+        <th>{%(11)Life Cover}</th>
+        <td>
+          <select name="LifeCover" ONCHANGE="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <!--%-->
+      <!--%(INPUT_SUM_ASSURED_FRAGMENT)-->
+      <tr>
+        <th>{%(4)Sum Assured}</th>
+        <td>
+          <input type="text" name="FaceAmount" size="20">
+        </td>
+      </tr>
+      <!--%-->
+      <!--%(LIFE_COVER_AMOUNT_FRAGMENT)-->
+      <tr>
+        <th>{%(12)Sum Assured Change Amount}</th>
+        <td>
+          <input type="text" name="LifeCoverAmount">
+        </td>
+      </tr>
+      <!--%-->
+      <!--%(LIFE_COVER_PERCENT_FRAGMENT)-->
+      <tr>
+        <th>{%(13)Interest Rate}</th>
+        <td>
+          <input type="text" name="FaceAmountPercent" size=8>
+        </td>
+      </tr>
+      <!--%-->
+      <tr>
+        <th>{%(6)Payment Frequency}</th>
+        <td>
+          <select name="Frequency" onchange="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(9)Commencement Date}</th>
+        <td>
+          <input type="text" name="StartDate" size=10>
+        </td>
+      </tr>
+      <!--%(REGULAR_PAYMENT_METHOD)-->
+      <tr>
+        <th>{%(7)Payment Method}</th>
+        <td>
+          <select name="PaymentCode" onchange="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <!--%-->
+      <tr>
+        <th>{%(8)Term (years)}</th>
+        <td>
+          <input type="text" name="MaturityYears" size=5>
+        </td>
+      </tr>
+      <!--%(ESCALATION_ALLOWED)-->
+      <tr>
+        <th>{%(10)Escalation Rate}</th>
+        <td>
+          <input type="text" name="FaceAmountEscalationRate">
+        </td>
+      </tr>
+      <!--%-->
+      <tr>
+        <th>{%(14)PTD Cover}</th>
+        <td>
+          <input type="checkbox" name="AddExtraRider_0">
+          <input type="hidden" name="AddExtraRiderPlan_0" value="{BASE_PLAN}_PTD">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(15)Lender}</th>
+        <td>
+          <select name="PolicyAssignee">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+    <!--%(BANK_DETAILS)-->
+    <table>
+      <tr>
+        <td class="title" colspan="2">{%(21)Bank Details}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(22)Sort Code}</th>
+        <td>
+          <input type="text" name="SortCode" size="10" onchange="document.forms[0].submit()">
+          <input type="BUTTON" value="{%(105)Find Branch}" ONCLICK="search_sortcode('SortCode')">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(23)Bank Name}</th>
+        <td>
+          <input type="text" name="BankName" size="50">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(24)Bank Address}</th>
+        <td>
+          <input type="text" name="BankAddress" size="50">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(27)Bank City}</th>
+        <td>
+          <input type="text" name="BankCity" size="30">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(28)Bank State}</th>
+        <td>
+          <input type="text" name="BankCounty" size="30">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(25)Account Number}</th>
+        <td>
+          <input type="text" name="BankAccount" size="20">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(26)Account Name}</th>
+        <td>
+          <input type="text" name="AccountName" size="60">
+        </td>
+      </tr>
+    </table>
+    <!--%-->
+    <!--%(MEDICAL_QUESTIONS_FRAGMENT)-->
+    <table>
+      <tr>
+        <td class="title" colspan="3">{%(31)Medical Questionnaire}</td>
+      </tr>
+      <tr>
+        <th>{%(32)Question}</th>
+        <th style="width: 1%">{%(33)Yes}</th>
+        <th style="width: 1%">{%(34)No}</th>
+      </tr>
+      <!--{MEDICAL_QUESTIONS}-->
+    </table>
+    <!--%(MEDICAL_QUESTIONS_FRAGMENT_END)-->
+    <table>
+      <tr>
+        <th>{%(41)Height}</th>
+        <td>
+          <input type="text" name="FirstLife_Height" ONCHANGE="changeHeight('FirstLife_')">
+          &nbsp;{%(42)cm}
+        </td>
+        <th>{%(43)Weight}</th>
+        <td>
+          <input type="text" name="FirstLife_Weight" ONCHANGE="changeWeight('FirstLife_')">
+          &nbsp;{%(44)kg}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(45)Height}</th>
+        <td>
+          <input type="text" name="FirstLife_Height_ft"
+            ONCHANGE="changeHeightImperial('FirstLife_','FirstLife_Height_ft')">
+          &nbsp;{%(46)ft}&nbsp;
+          <input type="text" name="FirstLife_Height_in"
+            ONCHANGE="changeHeightImperial('FirstLife_','FirstLife_Height_in')">
+          &nbsp;{%(47)in}
+        </td>
+        <th>{%(48)Weight}</th>
+        <td>
+          <input type="text" name="FirstLife_Weight_lb" ONCHANGE="changeWeightImperial('FirstLife_')">
+          &nbsp;{%(49)lb}
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td align="left">
+          <input type="submit" class="button" name="PrevButton" value="&lt; {%(99)Previous}">
+        </td>
+        <td align="right">
+          <input type="submit" class="button" name="NextButton" value="{%(100)Next} &gt;">
+        </td>
+      </tr>
+    </table>
+  </form>
+  <script type="text/javascript">
+function changeHeight(prefix)
+{
+  if (!integer_change(prefix+"Height"))
+    return;
+  element1 = document.forms[0].elements[prefix+"Height"];
+  element2 = document.forms[0].elements[prefix+"Height_ft"];
+  element3 = document.forms[0].elements[prefix+"Height_in"];
+  m_value = parse_float(element1.value);
+  value = Math.round(m_value/2.54);
+  in_value = value%12;
+  ft_value = (value-in_value)/12;
+  element2.value = ft_value;
+  element3.value = in_value;
+}
+function changeHeightImperial(prefix, field_name)
+{
+  if (!integer_change(field_name))
+    return;
+  element1 = document.forms[0].elements[prefix+"Height"];
+  element2 = document.forms[0].elements[prefix+"Height_ft"];
+  element3 = document.forms[0].elements[prefix+"Height_in"];
+  ft_value = parse_float(element2.value);
+  in_value = parse_float(element3.value);
+  value = ft_value*12+in_value;
+  element1.value = Math.round(value*2.54);
+}
+function changeWeight(prefix)
+{
+  if (!float_changed(prefix+"Weight",3))
+    return;
+  element1 = document.forms[0].elements[prefix+"Weight"];
+  element2 = document.forms[0].elements[prefix+"Weight_lb"];
+  m_value = parse_float(element1.value);
+  value = m_value/0.45359237;
+  element2.value = Math.round(value);
+}
+function changeWeightImperial(prefix)
+{
+  if (!integer_change(prefix+"Weight_lb"))
+    return;
+  element1 = document.forms[0].elements[prefix+"Weight"];
+  element2 = document.forms[0].elements[prefix+"Weight_lb"];
+  value = parse_float(element2.value);
+  m_value = value*0.45359237;
+  element1.value = format_float(m_value,3);
+}
+function OnLoad()
+{
+  changeHeight("FirstLife_");
+  changeWeight("FirstLife_");
+  set_focus();
+}
+</script>
+</body>
+</html>

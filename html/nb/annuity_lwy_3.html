@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Step 6}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form method="post" action="%SERVLET_PATH%">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title">{HELP_LINK}{%(2)Beneficiaries}</td>
+      </tr>
+    </table>
+    <table id="Beneficiary">
+      <!--%(Beneficiary_KEY)-->
+      <tr>
+        <th style="width: 30%">{%(11)Client Code (if exists)}</th>
+        <td>
+          <input name="BeneficiaryKey" size="10" ONCHANGE="document.forms[0].submit()">
+          <input type="BUTTON" name="BeneficiaryCodeButton" value="{%(104)Search Client}">
+        </td>
+      </tr>
+      <!--%-->
+      <tr>
+        <th style="width: 30%">{%(12)First Name}</th>
+        <td>
+          <input name="Beneficiary_FirstName" size="30">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(13)Last Name}</th>
+        <td>
+          <input name="Beneficiary_LastName" size="30">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(55)DOB}</th>
+        <td>
+          <input name="Beneficiary_BirthDate" size="30">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(56)E-mail}</th>
+        <td>
+          <input name="Beneficiary_EMail" size="30">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(15)Mobile No}</th>
+        <td>
+          <input name="Beneficiary_MobileNo" size="10">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(16)Relationship}</th>
+        <td>
+          <select name="Beneficiary_Relationship">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(17)Share (%)}</th>
+        <td>
+          <input name="Beneficiary_Share" size="8">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(22)Bank Verification NO. (BVN)}</th>
+        <td>
+          <input type="text" name="Beneficiary_ExternalRef2" size="12">
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <td style="width: 30%"></td>
+        <td>
+          <input type="submit" class="button" name="AddBenButton" value="{%(21)Add a beneficiary}">
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <td class="title" colspan=2>{%(61)Next Of Kin}</td>
+      </tr>
+      <!--%(NextOfKin_KEY)-->
+      <tr>
+        <th style="width: 30%">{%(62)Next of Kin Number (if client already exists on the system)}</th>
+        <td>
+          <input type="text" name="NextOfKinKey" size=8 ONCHANGE="document.forms[0].submit()">
+          <input type="BUTTON" value="{%(106)Search Client}" ONCLICK="search_client('NextOfKinKey',true)">
+        </td>
+      </tr>
+      <!--%-->
+      <tr>
+        <th style="width: 30%">{%(63)Surname}</th>
+        <td>
+          <input type="text" name="NextOfKin_LastName" size="30">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(64)First Name}</th>
+        <td>
+          <input type="text" name="NextOfKin_FirstName" size="30">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(65)Middle Name}</th>
+        <td>
+          <input type="text" name="NextOfKin_OtherNames" size="30">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(66)Telephone Number}</th>
+        <td>
+          <input type="text" name="NextOfKin_PhoneNo">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(67)Email}</th>
+        <td>
+          <input type="text" name="NextOfKin_EMail" size=40>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(68)Bank Verification NO. (BVN)}</th>
+        <td>
+          <input type="text" name="NextOfKin_ExternalRef2" size="12">
+        </td>
+      </tr>
+    </table>
+    <!--%(BRANCH_CODES)-->
+    <table>
+      <tr>
+        <th style="width: 30%">{%(9)Branch Code}</th>
+        <td>{BranchCode}</td>
+      </tr>
+    </table>
+    <!--%-->
+    <table>
+      <tr>
+        <td class="title" colspan="2">{%(14)Agent Details}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(18)Agent Code}</th>
+        <td>
+          <input type="text" name="AgentNo" onchange="document.forms[0].submit()">
+          <input type="BUTTON" value="{%(105)Search Agent}" ONCLICK="search_agent('AgentNo',true)">
+          {AGENT_NAME}
+        </td>
+      </tr>
+    </table>
+    <!--%(REFERRAL_AGENT)-->
+    <table>
+      <tr>
+        <td class="title" colspan="2">{%(23) Referring Agent}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(18)Agent Code}</th>
+        <td>
+          <input type="text" name="ReferringAgentNo" size="6" ONCHANGE="document.forms[0].submit()">
+          <!--%(REFERRAL_AGENT_INPUT)-->
+          <input type="BUTTON" name="SearchAgentButton" value="{%(105)Search Agent}"
+            ONCLICK="search_agent('ReferringAgentNo',true)">
+          {REFERRAL_AGENT_NAME}
+          <!--%-->
+        </td>
+      </tr>
+    </table>
+    <!--%-->
+    <table class="navigation">
+      <tr>
+        <td align="left">
+          <input class="button" name="PrevButton" type="submit" value="&lt; {%(19)Previous}">
+        </td>
+        <td align="right">
+          <input class="button" name="SubmitButton" type="submit" value="{%(20)Submit} &gt;">
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

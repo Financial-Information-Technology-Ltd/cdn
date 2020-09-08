@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Scheme Setup}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(1)Scheme Setup}</td>
+      </tr>
+      <tr>
+        <th width=30%>{%(2)Scheme number}</th>
+        <td>{SCHEME_CODE}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Group Owner}</th>
+        <td>{GROUP_OWNER}</td>
+      </tr>
+      <tr>
+        <th>{%(21)Number of members}</th>
+        <td>{NUMBER_OF_MEMBERS}</td>
+      </tr>
+      <tr>
+        <th width=30%>{%(22)Scheme status}</th>
+        <td>{STATUS}</td>
+      </tr>
+      <tr>
+        <th>{%(81)Base Plan}</th>
+        <td style="font-size: 10pt; font-weight: bold">{BASE_PLAN}</td>
+      </tr>
+      <tr>
+        <th>{%(24)Scheme RCD}</th>
+        <td>{SCHEME_RCD}</td>
+      </tr>
+      <tr>
+        <th>{%(26)Policy Number}</th>
+        <td>{MASTER_POLICY_NUMBER}</td>
+      </tr>
+      <tr>
+        <th>{%(27)Currency}</th>
+        <td>{CURRENCY}</td>
+      </tr>
+      <tr>
+        <th>{%(28)Mode method}</th>
+        <td>{MODE_METHOD}</td>
+      </tr>
+      <tr>
+        <th>{%(29)Proposal Serial Number}</th>
+        <td>{SERIAL_NUMBER}</td>
+      </tr>
+      <tr>
+        <th>{%(30)Amount in Suspense}</th>
+        <td>{SUSPENSE_AMOUNT}</td>
+      </tr>
+      <tr>
+        <th>{%(125)Outstanding Premium}</th>
+        <td>{OUTSTANDING_AMOUNT}</td>
+      </tr>
+     <tr>
+        <th>{%(40)Initial Commission}</th>
+        <td>{INIT_COMM_PERC}</td>
+      </tr>
+      <tr>
+        <th>{%(43)Free cover limit}</th>
+        <td>{FREE_COVER}</td>
+      </tr>
+      <tr>
+        <th>{%(55)Unit Rate}</th>
+        <td>{UNIT_RATE}</td>
+      </tr>
+       <tr>
+        <th>{%(53)Documentation Language}</th>
+        <td>{SCHEME_LANGUAGE}</td>
+      </tr>
+    </table>
+    <!--%(RISK_PLAN_LIST)-->
+    <table>
+      <tr>
+        <td class="title" colspan="4">{%(71)Risk Details}</td>
+      </tr>
+      <tr>
+        <th>{%(72)Plan Code}</th>
+        <th>{%(73)Source}</th>
+        <th>{%(74)Optional for Subgroup}</th>
+        <th>{%(75)Optional for Member}</th>
+      </tr>
+      <!--{RISK_PLANS}-->
+    </table>
+    <!--%(RISK_PLAN_LIST_END)-->
+    <table>
+      <tr>
+        <td class="title" colspan="8">{%(91)Commission Details}</td>
+      </tr>
+      <tr>
+        <th>{%(92)Agent No}</th>
+        <th>{%(93)Agent Name}</th>
+        <th>{%(94)Share}</th>
+      </tr>
+      <!--{AGENT_LIST}-->
+    </table>
+    <table>
+      <tr>
+        <td class="title" colspan="3">{%(111)Subgroup Details}</td>
+      </tr>
+      <!--{SUBGROUP_LIST}-->
+    </table>
+    <table class="navigation">
+      <tr>
+        <td style="width: 1%">
+          <input type="submit" name="MembershipButton" value="{%(100)Show Members}">
+        </td>
+        <td style="width: 1%">
+          <input type="submit" name="CalculateBillButton" value="{%(102)Calculate Bill}">
+        </td>
+        <td style="width: 1%">
+          <input type="submit" name="PayPremiumButton" value="{%(103)Pay Premium on Certificates}">
+        </td>
+        <td style="width: 1%">
+          <input type="submit" name="DoPolicyPaymentButton" value="{%(121)Input Payment}">
+        </td>
+        <td style="width: 1%">
+          <input type="submit" name="ReversePremiumButton" value="{%(106)Reverse Last Premium}"
+            ONCLICK="return confirmReversePremium()">
+        </td>
+        <td>
+          <input type="submit" name="ImportMembersButton" value="{%(113)Import Members}">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="submit" name="StatusChangeButton" value="{%(107)Change Status}">
+        </td>
+        <td>
+          <input type="submit" name="CalculateJoinersBillButton" value="{%(104)Calculate Leavers/Joiners Bill}">
+        </td>
+        <td>
+          <input type="submit" name="PayJoinersPremiumButton" value="{%(105)Pay Leavers/Joiners}">
+        </td>
+        <td>
+          <input type="submit" name="PayPartialPremiumButton" value="{%(112)Pay Partial Premium}">
+        </td>
+
+        <td>
+          <input type="submit" name="DoPolicyAccountingButton" value="{%(108)Accounting}">
+        </td>
+        <td>
+          <input type="submit" name="LossRatioButton" value="{%(126)Loss Ratio}">
+        </td>
+      </tr>
+      <tr>
+        <!--%(UndoButton)-->
+        <td>
+          <input type="submit" name="SignOffUndoButton" value="{%(109)Undo Sign Off}">
+        </td>
+        <!--%-->
+        <td>
+          <input type="submit" name="RenewalDataButton" value="{%(119)Renewal Data}">
+        </td>
+        <td>
+          <input type="submit" name="GroupSurrenderButton" value="{%(118)Surrender/Terminate Group}">
+        </td>
+        <td>
+          <input type="submit" name="MedicalProviderButton" value="{%(124)Medical Provider}">
+        </td>
+        <td>
+          <input type="submit" name="CancelBillButton" value="{%(120)Cancel Latest Bill}"
+            ONCLICK="return confirmCancelBill()">
+        </td>
+        <td>
+          <input type="submit" name="CreatePaymentOutButton" value="{%(127)Create Payment Out}">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="submit" name="CSVBillButton" value="{%(122)Reproduce Bill CSV}">
+        </td>
+      </tr>
+      <tr>
+        <td class="return" colspan=6>
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="/lf/images/back.gif">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+  <script type="text/javascript">
+function confirmReversePremium()
+{
+  reply = confirm("{%(3)Are you sure you wish to reverse last premium for the whole group?}");
+  return reply;
+}
+</script>
+</body>
+</html>

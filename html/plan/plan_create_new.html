@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Create New Plan}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan=3>{HELP_LINK}{%(2)New Plan}</td>
+      </tr>
+      <tr>
+        <td></td>
+      </tr>
+      <tr>
+        <th>{%(3)You have chosen plan} {PLAN_CODE}.</th>
+      </tr>
+      <tr>
+        <th>{%(4)This plan does not exist. Would you like to create a new plan?}</th>
+      </tr>
+      <tr>
+        <td></td>
+      </tr>
+      <tr>
+        <td>{%(5)Alternatively you might consider "Clone Plan" functionality.}</td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="ContinueButton" value="{%(100)Create New Plan}">
+          <input type="submit" name="CancelButton" value="{%(101)Cancel}">
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

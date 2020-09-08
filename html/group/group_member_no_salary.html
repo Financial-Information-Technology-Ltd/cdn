@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Scheme Member}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(1)Scheme Member}</td>
+      </tr>
+      <tr>
+        <th width=30%>{%(3)Scheme number}</th>
+        <td>{SCHEME_CODE}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Member No}</th>
+        <td>{MEMBER_NO}</td>
+      </tr>
+      <tr>
+        <th>{%(15)Client No}</th>
+        <td>
+          <input type="text" name="ClientNo" ONCHANGE="force_submit();">
+          <input type="Button" name="SearchClientButton" value="{%(98)Search Client}"
+            ONCLICK="search_client('ClientNo',true)">
+        </td>
+      </tr>
+      <!--%(EffectiveDate)-->
+      <tr>
+        <th>{%(26)Change Effective Date}</th>
+        <td>
+          <input type="text" name="ChangeDate">
+        </td>
+      </tr>
+      <!--%-->
+      <tr>
+        <th>{%(36)Application Number}</th>
+        <td>
+          <input type="text" name="FormNumber" size=20>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(22)Application Date}</th>
+        <td>
+          <input type="text" name="ApplicationDate">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(37)Salutation}</th>
+        <td>
+          <select name="Salutation">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(38)Title}</th>
+        <td>
+          <select name="Title">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(5)Last Name}</th>
+        <td>
+          <input type="text" name="LastName" size=20>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(6)First Name}</th>
+        <td>
+          <input type="text" name="FirstName" size=40>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(7)Subgroup}</th>
+        <td>
+          <select name="Subgroup" ONCHANGE="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(8)Address}</th>
+        <td>
+          <TEXTAREA name="Address" COLS=40></TEXTAREA>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(9)City}</th>
+        <td>
+          <input type="text" name="City">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(10)County}</th>
+        <td>
+          <input type="text" name="County">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(11)Post Code}</th>
+        <td>
+          <input type="text" name="PostCode">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(39)Address 2}</th>
+        <td>
+          <TEXTAREA name="SecondAddress" COLS=40></TEXTAREA>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(40)City 2}</th>
+        <td>
+          <input type="text" name="SecondCity">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(41)County 2}</th>
+        <td>
+          <input type="text" name="SecondCounty">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(42)Post Code 2}</th>
+        <td>
+          <input type="text" name="SecondPostCode">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(12)Sex}</th>
+        <td>
+          <select name="Sex">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(13)Birth Date}</th>
+        <td>
+          <input type="text" name="BirthDate" size=10>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(14)Pay No}</th>
+        <td>
+          <input type="text" name="PayNo">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(16)Nationality}</th>
+        <td>
+          <select name="Nationality">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(19)Personal Id Number}</th>
+        <td>
+          <input type="text" name="NatInsNo" ONCHANGE="document.forms[0].submit()">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(28)Premium Start Date}</th>
+        <td>
+          <input type="text" name="PremiumStartDate">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(27)Payment Day}</th>
+        <td>
+          <input type="text" name="PaymentDay" size=3>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(43)Signature on application}</th>
+        <td>
+          <input type="checkbox" name="DocumentsComplete">
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th>{%(31)Coverage}</th>
+        <th>{%(32)Source}</th>
+        <th>{%(33)Include}</th>
+        <th>{%(34)Premium (modal)}</th>
+      </tr>
+      <tr>
+        <td>{BASE_PLAN}</td>
+        <td>{BASE_SOURCE}</td>
+        <td>[X]</td>
+        <td>
+          <input type="text" name="BasePremium">
+        </td>
+      </tr>
+      <!--{PLAN_LIST}-->
+    </table>
+    <table>
+      <tr>
+        <th style="width: 10%">{%(23)Agent No}</th>
+        <th>{%(24)Agent Name}</th>
+        <th>{%(25)Share}</th>
+      </tr>
+      <!--{AGENT_LIST}-->
+      <tr>
+        <td colspan="8">
+          <input type="submit" name="AddAgentButton" value="{%(95)Add}">
+        </td>
+      </tr>
+    </table>
+    <input type="hidden" name="PremiumFrequency" value="MODAL">
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SaveButton" value="{%(100)Save}">
+          <input type="submit" name="EditButton" value="{%(107)Edit}">
+          <input type="submit" name="DocumentsButton" value="{%(102)Documents}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="/lf/images/back.gif">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

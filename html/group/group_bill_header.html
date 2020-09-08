@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Group Bill Header}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan=2>{HELP_LINK}{%(1)Group Bill Header}</td>
+      </tr>
+      <tr>
+        <th>{%(3)Total Face Amt}</th>
+        <td>
+          <input type="text" name="TOT_FACE_AMT" size=13>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(4)Total Modal Prem}</th>
+        <td>
+          <input type="text" name="TOT_MODAL_PREM" size=13>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(5)Bill Comments}</th>
+        <td>
+          <input type="text" name="BILL_COMMENTS" size=47>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(6)Bill Admin Comments}</th>
+        <td>
+          <input type="text" name="BILL_ADMIN_COMMENTS" size=47>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(7)Scheme No}</th>
+        <td>
+          <input type="text" name="SCHEME_NO" size=10>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(8)Seq No}</th>
+        <td>
+          <input type="text" name="SEQ_NO" size=10>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(9)Run Date}</th>
+        <td>
+          <input type="text" name="RUN_DATE" size=10>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(10)PC Date}</th>
+        <td>
+          <input type="text" name="PCDATE" size=10>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(11)PC Time}</th>
+        <td>
+          <input type="text" name="PCTIME" size=10>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(12)Bill Type}</th>
+        <td>
+          <select name="BILL_TYPE">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="text" name="GROUP_NAME" size=45>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(13)}</th>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SaveButton" value="{%(100)Save}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="/lf/images/back.gif">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

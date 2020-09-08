@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Step 3}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form method="post" action="%SERVLET_PATH%">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(2)Policy Details}</td>
+      </tr>
+      <tr>
+        <td style="width: 30%">{%(3)Application Date}</td>
+        <td>
+          <input name="ApplicationDate" size="16">
+          {DATE_FORMAT}
+        </td>
+      </tr>
+      <tr>
+        <td>{%(4)Application Number}</td>
+        <td>
+          <input name="ApplicationNumber" size="16">
+        </td>
+      </tr>
+      <tr>
+        <td>{%(8)Date Application Signed}</td>
+        <td>
+          <input name="ProposalDate" size="16">
+          {DATE_FORMAT}
+        </td>
+      </tr>
+      <tr>
+        <td>{%(5)Policy Currency}</td>
+        <td>
+          <select name="Currency">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>{%(6)Hold Mail}</td>
+        <td>
+          <select name="HoldMail">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>{%(7)Expected Gross Premium}</td>
+        <td>
+          <input name="PremiumAmount" size="20">
+        </td>
+      </tr>
+      <tr>
+        <td style="width: 260">{%(9)Life Cover Option}</td>
+        <td>
+          <select name="LifeCover" onchange="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>{%(10)Percent}</td>
+        <td>
+          <input name="FaceAmountPercent" size="10">
+        </td>
+      </tr>
+      <tr>
+        <td>{%(13)Whole Life Duration}</td>
+        <td>
+          <input type="checkbox" name="WholeLifeDuration">
+        </td>
+      </tr>
+      <tr>
+        <td>{%(11)End Date}</td>
+        <td>
+          <input name="EndDate" size="10" ONCHANGE="document.forms[0].submit()">
+        </td>
+      </tr>
+      <tr>
+        <td>{%(15)Premium Tax Prefinance}</td>
+        <td>
+          <input type="checkbox" name="PREM_TAX_PREFINANCE" ONCLICK="document.forms[0].submit()">
+        </td>
+      </tr>
+      <tr>
+        <td>{%(16)Premium Tax Prefinance Term}</td>
+        <td>
+          <input type="text" name="PREM_TAX_PREFINANCE_TERM" size=4>
+        </td>
+      </tr>
+      <tr>
+        <td>{%(14)Documentation Language}</td>
+        <td>
+          <select name="DocumentLanguage">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>{%(12)Conditional Special Clauses}</td>
+        <td>
+          <table>
+            <!--{COND_SPEC_CLAUSES_TABLE}-->
+          </table>
+        </td>
+      </tr>
+    </table>
+    <!--%(ADDITIONAL_RIDERS)-->
+    <table>
+      <tr>
+        <th colspan="6">{%(21)Additional Riders}</th>
+      </tr>
+      <tr>
+        <th style="width: 40">&nbsp;</th>
+        <th>{%(22)}Plan</th>
+        <th>{%(23)}Life Cover</th>
+        <th>{%(24)}Percent</th>
+        <th>{%(25)}Face Amount</th>
+        <th>{%(26)}Permium</th>
+      </tr>
+      <!--{RIDER_LIST_LC}-->
+    </table>
+    <!--%-->
+    <table class="navigation">
+      <tr>
+        <td align="left">
+          <input class="button" name="PrevButton" type="submit" value="&lt; {%(101)Previous}">
+        </td>
+        <td align="right">
+          <input class="button" name="NextButton" type="submit" value="{%(102)Next} &gt;">
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

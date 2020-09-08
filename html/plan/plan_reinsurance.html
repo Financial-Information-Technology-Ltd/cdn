@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Plan Reinsurance Premium Calculation}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan=2>{HELP_LINK}{%(1)Plan Reinsurance Premium Calculation}</td>
+      </tr>
+      <tr>
+        <th width=30%>{%(2)Plan Code}</th>
+        <td>{PlanCode}</td>
+      </tr>
+      <tr>
+        <th>{%(3)Plan Name}</th>
+        <td>{PlanName}</td>
+      </tr>
+      <tr>
+        <th>{%(18)Treaty Code}</th>
+        <td>
+          <table>
+            <!--{TREATY_LIST_TABLE}-->
+            <tr>
+              <td>
+                <input type="submit" name="TREATY_CODE_BUTTON" value="{%(19)Add}">
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(9)Commission Share}</th>
+        <td>
+          <input type="text" name="REINS_COMMISSION_PERCENT" size=8>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(10)Process reinsurance at the same time as mortality (unit-linked products)}</th>
+        <td>
+          <input type="checkbox" name="REINSURANCE_AT_MORTALITY">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(14)Process reinsurance at dealing day (unit-linked products)}</th>
+        <td>
+          <input type="checkbox" name="REINSURANCE_AT_DEALING_DAY">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(11)Reinsurance Finance Company}</th>
+        <td>
+          <select name="REINS_FINANCE_COMPANY">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(12)Reinsurance Finance Rate}</th>
+        <td>
+          <input type="text" name="REINS_FINANCE_RATE" size=8>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(13)Reinsurance Repayment Rate}</th>
+        <td>
+          <input type="text" name="REINS_REPAYMENT_RATE" size=8>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(15)Use Current Plan Reinsurance Arrangement}</th>
+        <td>
+          <input type="checkbox" name="USE_CURRENT_TREATY_CODE">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(16)Use Original Terms}</th>
+        <td>
+          <input type="checkbox" name="USE_ORIGINAL_REINSURANCE_TERMS">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(17)Allow Facultative Reinsurance}</th>
+        <td>
+          <input type="checkbox" name="FACULTATIVE_REINSURANCE">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(20)Set claim amount to RSAR on treaties in force at date of death}</th>
+        <td>
+          <input type="checkbox" name="USE_REINS_TREATY_VALUES">
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SaveButton" value="{%(100)Save}">
+        </td>
+        <td class="return">
+          <b>
+            <a href="%BACK_LINK%">
+              {%(101)Return}
+              <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+            </a>
+          </b>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

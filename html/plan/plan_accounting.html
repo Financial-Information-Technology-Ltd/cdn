@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Plan Accounting}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan=2>{HELP_LINK}{%(1)Plan Accounting}</td>
+      </tr>
+      <tr>
+        <th width=30%>{%(2)Plan Code}</th>
+        <td>{PlanCode}</td>
+      </tr>
+      <tr>
+        <th>{%(3)Plan Name}</th>
+        <td>{PlanName}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Asset Accounting}</th>
+        <td>
+          <input TYPE="CHECKBOX" name="ASSET_ACCOUNTING">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(6)Accrual Accounting}</th>
+        <td>
+          <input TYPE="CHECKBOX" name="ACCRUAL_ACCOUNTING">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(15)Group Accrual Accounting}</th>
+        <td>
+          <input TYPE="CHECKBOX" name="GROUP_ACCRUAL_ACCOUNTING">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(14)Accrual Accounting Frequency (if empty - premium frequency)}</th>
+        <td>
+          <select name="ACCRUAL_FREQUENCY">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th colspan=4>{%(5)Accounting Data}</th>
+      </tr>
+      <tr>
+        <th style="width: 1%">{%(11)Pseudo code}</th>
+        <th style="width: 1%">&nbsp;</th>
+        <th style="width: 1%">{%(12)Account Number}</th>
+        <th>{%(13)Description}</th>
+      </tr>
+      <!--{ACCOUNTING_TABLE}-->
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SaveButton" value="{%(100)Save}">
+        </td>
+        <td class="return">
+          <b>
+            <a href="%BACK_LINK%">
+              {%(101)Return}
+              <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+            </a>
+          </b>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

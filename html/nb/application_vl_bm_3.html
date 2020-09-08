@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Step 2}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form method="post" action="%SERVLET_PATH%">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(2)Policy Details}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Application Date}</th>
+        <td>
+          <input name="ApplicationDate" size="10">
+          {DATE_FORMAT}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(8)Payment Frequency}</th>
+        <td>
+          <select name="Frequency">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(11)Payment Method}</th>
+        <td>
+          <select name="PaymentCode" onchange="force_submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(12)Sum Assured}</th>
+        <td>
+          <input name="FaceAmount" size="10">
+        </td>
+      </tr>
+    </table>
+    <!--%(ADDITIONAL_RIDERS)-->
+    <table>
+      <tr>
+        <th colspan="4">{%(41)Additional Riders}</th>
+      </tr>
+      <tr>
+        <th style="width: 40">&nbsp;</th>
+        <th>{%(42)Plan}</th>
+        <th>{%(43)Sum Assured}</th>
+        <th>&nbsp;</th>
+      </tr>
+      <!--{RIDER_LIST}-->
+    </table>
+    <!--%-->
+    <!--%(BANK_DETAILS_DD)-->
+    <table>
+      <tr>
+        <th colspan="2">{%(50)Bank Details}</th>
+      </tr>
+      <tr>
+        <td style="width: 30%">{%(17)Sort Code}</td>
+        <td>
+          <select name="SortCode" onchange="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>{%(14)Bank Name}</td>
+        <td>
+          <input name="BankName" size="30">
+        </td>
+      </tr>
+      <tr>
+        <td>{%(13)Account Number}</td>
+        <td>
+          <input name="BankAccount" size="20">
+        </td>
+      </tr>
+      <tr>
+        <td>{%(15)Account Holder Last Name}</td>
+        <td>
+          <input name="AccountHolderLastName" size="55">
+        </td>
+      </tr>
+      <tr>
+        <td>{%(16)Account Holder First Name}</td>
+        <td>
+          <input name="AccountHolderFirstName" size="55">
+        </td>
+      </tr>
+    </table>
+    <!--%-->
+    <!--%(BANK_DETAILS_CC)-->
+    <table>
+      <tr>
+        <th colspan="2">{%(60)Credit Card Details}</th>
+      </tr>
+      <tr>
+        <td>{%(61)Credit Card Holders Name}</td>
+        <td>
+          <input name="AccountName" size="55">
+        </td>
+      </tr>
+      <tr>
+        <td>{%(62)Credit Card Number}</td>
+        <td>
+          <input name="CreditCardNumber" size="16">
+        </td>
+      </tr>
+      <tr>
+        <td>{%(63)Expiry Date}</td>
+        <td>
+          {%(64)Month}
+          <input name="CreditCardExpiryMonth" size="2">
+          {%(65)Year}
+          <input name="CreditCardExpiryYear" size="4">
+        </td>
+      </tr>
+    </table>
+    <!--%-->
+    <table class="navigation">
+      <tr>
+        <td align="left">
+          <input class="button" name="PrevButton" type="submit" value="&lt; {%(101)Previous}">
+        </td>
+        <td align="right">
+          <input class="button" name="NextButton" type="submit" value="{%(102)Next} &gt;">
+        </td>
+      </tr>
+    </table>
+    <input type="hidden" name="AutomaticPremiumLoan_HIDDEN" value="Y">
+  </form>
+</body>
+</html>

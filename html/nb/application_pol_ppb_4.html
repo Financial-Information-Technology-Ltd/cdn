@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Step 4}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+<style type="text/css">
+thead {
+	border-bottom: 3px white solid;
+}
+
+thead th {
+	padding: 3px;
+	padding-left: 7px;
+	text-align: left;
+}
+
+thead th a {
+	margin-top: -2px;
+	margin-left: -18px;
+	position: absolute;
+}
+
+#RefreshImage {
+	margin: 0px;
+	width: 0px;
+	height: 0px;
+}
+
+#SecondLifeToggle {
+	margin: 2px 0 0 0;
+}
+
+tbody {
+	border-top: 3px white solid;
+	border-bottom: 3px white solid;
+}
+
+tbody td {
+	padding: 2px;
+	padding-left: 7px;
+}
+
+tfoot {
+	background-color: white;
+	margin-top: 100px;
+}
+</style>
+</head>
+<body onload="updateSOFTotal();">
+  <form method="post" action="%SERVLET_PATH%">
+    {ERRORS}
+    <table>
+      <thead>
+        <tr>
+          <td class="title" colspan="3">{%(16)Source of Funds}</td>
+        </tr>
+      </thead>
+      <tbody id="source_of_funds">
+        <tr>
+          <td style="width: 30%">{%(19)Pension Provider}</td>
+          <td>{%(20)Amount}</td>
+          <td>{%(43)Currency}</td>
+        </tr>
+        <!--{SOURCE_OF_FUNDS_TABLE}-->
+        <tr>
+          <td>{%(17)Total}</td>
+          <td>
+            <span id="SOF_TOTAL_AMOUNT"></span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table>
+      <thead>
+        <tr>
+          <td class="title" colspan="2">{%(26)Beneficiaries</td>
+        </tr>
+      </thead>
+    </table>
+    <table id="Beneficiary">
+      <tbody>
+        <!--%(Beneficiary_KEY)-->
+        <tr>
+          <th style="width: 30%">{%(31)Client Code (if exists)}</th>
+          <td>
+            <input name="BeneficiaryKey" size="10" onchange="document.forms[0].submit()">
+            <input type="button" class="button" name="BeneficiaryCodeButton" value="{%(104)Search Client}">
+          </td>
+        </tr>
+        <!--%-->
+        <tr>
+          <th style="width: 30%">{%(32)First name}</th>
+          <td>
+            <input name="Beneficiary_FirstName" size="30">
+          </td>
+        </tr>
+        <tr>
+          <th>{%(33)Last name}</th>
+          <td>
+            <input name="Beneficiary_LastName" size="30">
+          </td>
+        </tr>
+        <tr>
+          <th>{%(35)Mobile No}</th>
+          <td>
+            <input name="Beneficiary_MobileNo" size="10">
+          </td>
+        </tr>
+        <tr>
+          <th>{%(42)Passport/Identity Card No}</th>
+          <td>
+            <input name="Beneficiary_IDNo" size="10">
+          </td>
+        </tr>
+        <tr>
+          <th>{%(36)Relationship}</th>
+          <td>
+            <select name="Beneficiary_Relationship">
+              <option value="">&nbsp;</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <th>{%(37)Share (%)}</th>
+          <td>
+            <input name="Beneficiary_Share" size="8">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table>
+      <tbody>
+        <tr>
+          <td style="width: 30%"></td>
+          <td>
+            <input type="submit" class="button" name="AddBenButton" value="{%(41)Add a beneficiary}">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table>
+      <tr>
+        <th style="width: 30%">{%(39)Policy Fee Structure}</th>
+        <td>
+          <select name="POLICY_FEE_STRUCTURE" onchange="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th colspan="2">{%(15)Fee Override}</th>
+      </tr>
+      <tr>
+        <td>{%(13)Admin % Trust}</td>
+        <td>
+          <input type="text" name="TRAILER_COMM_RATE" size=8 onchange="document.forms[0].submit()">
+        </td>
+      </tr>
+      <tr>
+        <td>{%(14)Admin Amount Trust}</td>
+        <td>
+          <input type="text" name="TRAILER_COMM_AMOUNT" onchange="document.forms[0].submit()">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(49)Plan Debt Interest Rate}</th>
+        <td>
+          <input type="text" name="PLAN_DEBT_INTEREST_RATE" onchange="document.forms[0].submit()">
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th style="width: 30%">{%(46)Establishment Fee Period Code}</th>
+        <td>
+          <select name="ESTAB_FEE_PERIOD_CODE" onchange="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>{%(47)Annual Establishment Fee %}</td>
+        <td>
+          <input type="text" name="ESTAB_FEE_PERC" size=8>
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tbody id="agent_details">
+        <tr>
+          <td style="width: 30%">{%(21)Agent Code}</td>
+          <td>
+            <input type="text" name="AgentNo" onchange="document.forms[0].submit()">
+            <input type="BUTTON" class="button" value="{%(105)Search Agent}" ONCLICK="search_agent('AgentNo',true)">
+            {AGENT_NAME}
+          </td>
+        </tr>
+        <!--%(COMMISSION_TYPE_FRAGMENT)-->
+        <tr>
+          <td style="width: 38%">{%(40)Commission Type}</td>
+          <td>
+            <select name="COMMISSION_TYPE">
+              <option value="">&nbsp;</option>
+            </select>
+          </td>
+        </tr>
+        <!--%-->
+      </tbody>
+      <tr>
+        <td style="width: 30%">{%(38)Marketing Fee Percentage}</td>
+        <td>
+          <input name="InitComm" size="30">
+          <input type="hidden" name="RenewalCommPercent" size="30">
+        </td>
+      </tr>
+      <tfoot>
+        <tr>
+          <td align="left">
+            <input class="button" name="PrevButton" type="submit" value="&lt; {%(100)Previous}">
+          </td>
+          <td align="right">
+            <input class="button" name="SubmitButton" type="submit" value="{%(101)Submit} &gt;">
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  </form>
+  <script>
+    var i = 0;
+    while ((document.getElementById('SOF_AMOUNT_' + i))) {
+        document.getElementById('SOF_AMOUNT_' + i).onkeyup = updateSOFTotal;
+        i++;
+    }
+    function updateSOFTotal() {
+        var total = 0;
+        var i = 0;
+        while (document.getElementById('SOF_AMOUNT_' + i)) {
+            if (parse_float(document.getElementById('SOF_AMOUNT_' + i).value) != "")
+                total += parse_float(document
+                    .getElementById('SOF_AMOUNT_' + i).value);
+            i++;
+        }
+        document.getElementById('SOF_TOTAL_AMOUNT').innerHTML = format_float(
+            total, 2);
+    }
+</script>
+</body>
+</html>

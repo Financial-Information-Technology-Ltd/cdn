@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)New Rider}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan=2>{HELP_LINK}{%(2)Select a new rider}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Policy No}</th>
+        <td>{PolicyKey}</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th colspan=5>{%(11)Existing coverages}</th>
+      </tr>
+      <tr>
+        <th>{%(12)Plan}</th>
+        <th>{%(13)Status}</th>
+        <th>{%(14)Mode method}</th>
+        <th>{%(15)Premium}</th>
+        <th>{%(16)Face Amount}</th>
+      </tr>
+      <!--{CoverageList}-->
+    </table>
+    <table>
+      <tr>
+        <th colspan=3>{%(21)Available riders}</th>
+      </tr>
+      <tr>
+        <th>{%(22)Choice}</th>
+        <th>{%(23)Plan Code}</th>
+        <th>{%(24)Plan Name}</th>
+      </tr>
+      <!--{AvailableRiderList}-->
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SubmitButton" value="{%(100)Continue}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="/lf/images/back.gif">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

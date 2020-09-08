@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Plan Underwriting}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr title="class">
+        <td class="title" colspan=2>{HELP_LINK}{%(1)Plan Underwriting}</td>
+      </tr>
+      <tr>
+        <th width=30%>{%(2)Plan Code}</th>
+        <td>{PlanCode}</td>
+      </tr>
+      <tr>
+        <th>{%(3)Plan Name}</th>
+        <td>{PlanName}</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th>{%(4)Code}</th>
+        <th>{%(5)Basis}</th>
+        <th>{%(7)Minimum Value}</th>
+        <th>{%(8)Maximum Value}</th>
+        <th>{%(12)Created at New Business}</th>
+        <th>{%(13)Created at Reinstatement}</th>
+        <th>{%(9)Create for riders also}</th>
+        <th>{%(14)Terminate Declined Coverages}</th>
+      </tr>
+      <!--{UNDERWRITING_TABLE}-->
+      <tr>
+        <td colspan=7>
+          <input type="submit" name="AddUnderwritingButton" value="{%(11)Add}">
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th style="width: 30%">{%(24)Underwriting table is currency-specific}</th>
+        <td>
+          <input type="checkbox" name="UWRREQ_TABLE_PER_CCY">
+        </td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(18)Underwriting table}</th>
+        <td>
+          <select name="UWRREQ_TABLE">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(21)Underwriting table is country-specific}</th>
+        <td>
+          <input type="checkbox" name="UWRREQ_TABLE_BY_COUNTRY">
+        </td>
+      </tr>
+    </table>
+    <!--%(UWRREQ_BY_COUNTRY)-->
+    <table>
+      <tr>
+        <th style="width: 30%">{%(22)Country}</th>
+        <th>{%(23)Underwriting table}</th>
+      </tr>
+      <!--{UWRREQ_COUNTRY_LIST}-->
+    </table>
+    <!--%-->
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SaveButton" value="{%(100)Save}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

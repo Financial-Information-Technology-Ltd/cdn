@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Premium Receipt History}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(1)Premium Receipt History}
+          <a href="%BACK_LINK%">
+            <span class="return_link">{%(101)Return}</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(2)Policy}</th>
+        <th>{PolicyKey}</th>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+        <th colspan="3" align="Center">{%(3)Created}</th>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+        <!--%(BANK_FRAGMENT)-->
+        <th>&nbsp;</th>
+        <!--%-->
+        <th colspan="8" align="Center">{%(4)Reconciled}</th>
+      </tr>
+      <tr>
+        <th>{%(5)Batch}</th>
+        <th>{%(6)Cash Pseudo}</th>
+        <th>{%(7)Operator}</th>
+        <th>{%(8)Date}</th>
+        <th>{%(9)Time}</th>
+        <th>{%(10)Amount}</th>
+        <th>{%(11)Type}</th>
+        <th>{%(19)Cheque No}</th>
+        <th>{%(20)Receipt No}</th>
+        <th>{%(12)Currency}</th>
+        <!--%(BANK_FRAGMENT)-->
+        <th>{%(21)Bank}</th>
+        <!--%-->
+        <th>{%(13)Cleared Date}</th>
+        <th>{%(14)Effective Date}</th>
+        <th>{%(15)User}</th>
+        <th>{%(16)Date}</th>
+        <th>{%(17)Time}</th>
+        <th>{%(18)How}</th>
+        <th>{%(22)Rv}</th>
+        <th></th>
+      </tr>
+      <!--{BANK_TRANSACTIONS_DONE_LIST}-->
+    </table>
+    <table class="navigation">
+      <tr>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

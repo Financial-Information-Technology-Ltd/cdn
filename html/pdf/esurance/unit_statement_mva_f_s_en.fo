@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+<fo:layout-master-set>
+<fo:simple-page-master margin-bottom="14.2pt" margin-left="56.7pt" margin-right="49.55pt" margin-top="36pt" master-name="pm0" page-height="841.9pt" page-width="595.3pt">
+<fo:region-body margin-bottom="36.0pt" margin-top="100pt" region-name="body"/>
+<fo:region-before extent="41.841pt" overflow="visible" region-name="header"/>
+<fo:region-after display-align="after" extent="36.0pt" overflow="visible" region-name="footer"/>
+</fo:simple-page-master>
+</fo:layout-master-set>
+<fo:page-sequence master-reference="pm0">
+<fo:static-content flow-name="header">
+<fo:table table-layout="fixed">
+<fo:table-column column-width="-5.4pt"/>
+<fo:table-column column-width="499.85pt"/>
+<fo:table-body>
+<fo:table-row>
+<fo:table-cell>
+<fo:block/>
+</fo:table-cell>
+<fo:table-cell>
+<fo:table table-layout="fixed">
+<fo:table-column column-width="249.9pt"/>
+<fo:table-column column-width="249.95pt"/>
+<fo:table-body>
+<fo:table-row>
+<fo:table-cell padding-left="5.4pt" padding-right="5.4pt">
+<fo:block end-indent="-2.6pt" line-height="24.6pt" orphans="2" start-indent="0pt" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:external-graphic content-height="41.841pt" content-width="98.039pt" height="41.841pt" scaling="non-uniform" src="url(&apos;unit_statement_mva_f_s_en.images/pict0.png&apos;)" width="98.039pt"/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell padding-left="5.4pt" padding-right="5.4pt">
+<fo:block end-indent="-2.6pt" line-height="24.6pt" orphans="2" start-indent="0pt" text-align="end" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:inline color="#003479" font-family="Times Roman, serif" font-size="20.0pt">
+LCL INTERNATIONAL</fo:inline>
+</fo:block>
+<fo:block end-indent="-2.6pt" line-height="12.3pt" orphans="2" start-indent="-1.7pt" text-align="end" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:inline color="#003479" font-family="Times Roman, serif" font-size="10.0pt">
+PO Box 391, Douglas, Isle of Man IM99 2XW</fo:inline>
+</fo:block>
+<fo:block end-indent="-2.6pt" line-height="12.3pt" orphans="2" start-indent="-1.7pt" text-align="end" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:leader/>
+</fo:block>
+<fo:block end-indent="-2.6pt" line-height="12.3pt" orphans="2" start-indent="-1.7pt" text-align="end" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:inline color="#003479" font-family="Times Roman, serif" font-size="10.0pt">
+Tel: +44 1624 683 683</fo:inline>
+</fo:block>
+
+<fo:block end-indent="-2.6pt" line-height="12.3pt" orphans="2" space-after="6pt" space-before="0pt" start-indent="-1.7pt" text-align="end" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:inline color="#003479" font-family="Times Roman, serif" font-size="10.0pt">
+Email: front.office@lcl.co.im</fo:inline>
+</fo:block>
+
+<fo:block end-indent="-2.6pt" line-height="12.3pt" orphans="2" start-indent="-1.7pt" text-align="end" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:inline color="#003479" font-family="Times Roman, serif" font-size="10.0pt">
+Web: www.lcl-ila.com</fo:inline>
+
+</fo:block>
+</fo:table-cell>
+</fo:table-row>
+</fo:table-body>
+</fo:table>
+</fo:table-cell>
+</fo:table-row>
+</fo:table-body>
+</fo:table>
+<fo:block end-indent="-2.6pt" line-height="14.75pt" orphans="2" start-indent="0pt" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:leader/>
+</fo:block>
+</fo:static-content>
+<fo:static-content flow-name="footer">
+<fo:block end-indent="-38.3pt" line-height="9.85pt" orphans="2" start-indent="0pt" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:inline color="#808080" font-family="Times Roman, serif" font-size="12.0pt" font-weight="bold">
+LCL International Life Assurance Company Limited</fo:inline>
+<fo:inline color="#808080" font-family="Times Roman, serif" font-size="8.0pt">
+ trading as LCL International</fo:inline>
+</fo:block>
+<fo:block end-indent="-52.5pt" keep-with-next.within-column="always" line-height="9.85pt" orphans="2" start-indent="0pt" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:inline color="#808080" font-family="Times Roman, serif" font-size="8.0pt" font-weight="bold">
+Registered office:  St George’s Court, Upper Church Street, Douglas, Isle of Man IM1 1EE</fo:inline>
+</fo:block>
+<fo:block end-indent="-38.3pt" line-height="9.85pt" orphans="2" start-indent="0pt" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:inline color="#808080" font-family="Times Roman, serif" font-size="8.0pt">
+Authorised by the Isle of Man Financial Services Authority as a Life Insurer to conduct Class 1, 2 and 10 business</fo:inline>
+</fo:block>
+<fo:block end-indent="-38.3pt" line-height="9.85pt" orphans="2" start-indent="0pt" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:inline color="#808080" font-family="Times Roman, serif" font-size="8.0pt">
+Registered in the Isle of Man No. 027082C</fo:inline>
+</fo:block>
+<fo:block end-indent="-38.3pt" line-height="9.85pt" orphans="2" start-indent="-42.55pt" text-align="center" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:leader/>
+</fo:block>
+</fo:static-content>
+<fo:flow flow-name="body">
+
+<fo:block end-indent="0pt" line-height="13.55pt" orphans="2" start-indent="-7.1pt" text-indent="0pt" white-space-collapse="false" widows="2"><fo:inline font-family="Times Roman, serif" font-size="11.0pt">{CLIENT_NAME_1}</fo:inline></fo:block>
+
+<fo:block end-indent="0pt" line-height="13.55pt" orphans="2" start-indent="-7.1pt" text-indent="0pt" white-space-collapse="false" widows="2"><fo:inline font-family="Times Roman, serif" font-size="11.0pt">{CLIENT_ADDRESS}</fo:inline></fo:block>
+
+<fo:block end-indent="0pt" line-height="13.55pt" orphans="2" start-indent="-7.1pt" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:leader/>
+</fo:block>
+<fo:block end-indent="0pt" line-height="13.55pt" orphans="2" start-indent="-7.1pt" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:leader/>
+</fo:block>
+<fo:block end-indent="0pt" line-height="22.15pt" orphans="2" start-indent="-7.1pt" text-align="center" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:inline color="#365F91" font-family="Times Roman, serif" font-size="18.0pt" font-weight="bold">
+YOUR UNIT STATEMENT AS AT {SYSTEM_DATE}</fo:inline>
+</fo:block>
+<fo:block end-indent="0pt" line-height="13.55pt" orphans="2" start-indent="-7.1pt" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:leader/>
+</fo:block>
+<fo:table table-layout="fixed">
+<fo:table-column column-width="-19.6pt"/>
+<fo:table-column column-width="508.1pt"/>
+<fo:table-body>
+<fo:table-row>
+<fo:table-cell>
+<fo:block/>
+</fo:table-cell>
+<fo:table-cell>
+<fo:table table-layout="fixed">
+<fo:table-column column-width="170.15pt"/>
+<fo:table-column column-width="337.95pt"/>
+<fo:table-body>
+<fo:table-row>
+<fo:table-cell border-left="4pt double black" border-top="4pt double black" padding-left="5.4pt" padding-right="5.4pt">
+<fo:block end-indent="0pt" line-height="13.55pt" orphans="2" start-indent="0pt" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:inline font-family="Times Roman, serif" font-size="11.0pt">Your plan type:</fo:inline></fo:block>
+</fo:table-cell>
+<fo:table-cell border-right="4pt double black" border-top="4pt double black" padding-left="5.4pt" padding-right="5.4pt">
+<fo:block end-indent="0pt" line-height="13.55pt" orphans="2" start-indent="0pt" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:inline font-family="Times Roman, serif" font-size="11.0pt">{PLAN}</fo:inline></fo:block>
+</fo:table-cell>
+</fo:table-row>
+<fo:table-row>
+<fo:table-cell border-left="4pt double black" padding-left="5.4pt" padding-right="5.4pt">
+<fo:block end-indent="0pt" line-height="13.55pt" orphans="2" start-indent="0pt" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:inline font-family="Times Roman, serif" font-size="11.0pt">Plan currency:</fo:inline></fo:block>
+</fo:table-cell>
+<fo:table-cell border-right="4pt double black" padding-left="5.4pt" padding-right="5.4pt">
+<fo:block end-indent="0pt" line-height="13.55pt" orphans="2" start-indent="0pt" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:inline font-family="Times Roman, serif" font-size="11.0pt">{POL_CCY_CD}</fo:inline></fo:block>
+</fo:table-cell>
+</fo:table-row>
+<fo:table-row>
+<fo:table-cell border-left="4pt double black" padding-left="5.4pt" padding-right="5.4pt">
+<fo:block end-indent="0pt" line-height="13.55pt" orphans="2" start-indent="0pt" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:inline font-family="Times Roman, serif" font-size="11.0pt">Your policy number:</fo:inline></fo:block>
+</fo:table-cell>
+<fo:table-cell border-right="4pt double black" padding-left="5.4pt" padding-right="5.4pt">
+<fo:block end-indent="0pt" line-height="13.55pt" orphans="2" start-indent="0pt" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:inline font-family="Times Roman, serif" font-size="11.0pt">{POLICY_NO}</fo:inline></fo:block>
+</fo:table-cell>
+</fo:table-row>
+<fo:table-row>
+<fo:table-cell border-bottom="4pt double black" border-left="4pt double black" padding-left="5.4pt" padding-right="5.4pt">
+<fo:block end-indent="0pt" line-height="13.55pt" orphans="2" start-indent="0pt" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:inline font-family="Times Roman, serif" font-size="11.0pt">Policy holder name(s):</fo:inline></fo:block>
+</fo:table-cell>
+<fo:table-cell border-bottom="4pt double black" border-right="4pt double black" padding-left="5.4pt" padding-right="5.4pt">
+<fo:block end-indent="0pt" line-height="13.55pt" orphans="2" start-indent="0pt" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:inline font-family="Times Roman, serif" font-size="11.0pt">{CLIENT_NAME_3}</fo:inline></fo:block>
+</fo:table-cell>
+</fo:table-row>
+</fo:table-body>
+</fo:table>
+</fo:table-cell>
+</fo:table-row>
+</fo:table-body>
+</fo:table>
+<fo:block end-indent="0pt" line-height="9.85pt" orphans="2" start-indent="-7.1pt" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:leader/>
+</fo:block>
+<fo:block end-indent="0pt" line-height="9.85pt" orphans="2" start-indent="-7.1pt" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:leader/>
+</fo:block>
+<fo:block end-indent="0pt" line-height="22.15pt" orphans="2" start-indent="-7.1pt" text-align="center" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:inline color="#365F91" font-family="Times Roman, serif" font-size="18.0pt" font-weight="bold">
+PLAN VALUE: {POL_CCY_CD} {TOT_POLICY_CCY_VALUE_NET}</fo:inline>
+</fo:block>
+<fo:block end-indent="0pt" line-height="9.85pt" orphans="2" start-indent="-7.1pt" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:leader/>
+</fo:block>
+<fo:block end-indent="0pt" line-height="9.85pt" orphans="2" start-indent="-7.1pt" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:leader/>
+</fo:block>
+<fo:block end-indent="-62.4pt" line-height="13.55pt" orphans="2" start-indent="-49.65pt" text-align="center" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:inline font-family="Times Roman, serif" font-size="11.0pt" font-weight="bold">
+SUMMARY OF CURRENT FUND HOLDING</fo:inline>
+</fo:block>
+<fo:table table-layout="fixed">
+<fo:table-column column-width="-32.85pt"/>
+<fo:table-column column-width="538.6pt"/>
+<fo:table-body>
+<fo:table-row>
+<fo:table-cell>
+<fo:block/>
+</fo:table-cell>
+<fo:table-cell>
+<fo:table table-layout="fixed">
+<fo:table-column column-width="146.85pt"/>
+<fo:table-column column-width="49.6pt"/>
+<fo:table-column column-width="78pt"/>
+<fo:table-column column-width="56.7pt"/>
+<fo:table-column column-width="70.85pt"/>
+<fo:table-column column-width="77.95pt"/>
+<fo:table-column column-width="58.65pt"/>
+<fo:table-body>
+<fo:table-row height="59.05pt">
+<fo:table-cell background-color="#8A99AB" border-left="4pt double black" border-top="4pt double black" padding-left="4.25pt" padding-right="4.25pt">
+<fo:block end-indent="0pt" line-height="13.55pt" orphans="2" start-indent="0pt" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:leader/>
+</fo:block>
+<fo:block end-indent="0pt" line-height="13.55pt" orphans="2" start-indent="0pt" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:inline color="#FFFFFF" font-family="Times Roman, serif" font-size="11.0pt" font-weight="bold">
+Fund Name</fo:inline>
+</fo:block>
+<fo:block end-indent="0pt" line-height="13.55pt" orphans="2" start-indent="0pt" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:leader/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell background-color="#8A99AB" border-top="4pt double black" padding-left="4.25pt" padding-right="4.25pt">
+<fo:block end-indent="0pt" line-height="13.55pt" orphans="2" start-indent="0pt" text-align="end" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:leader/>
+</fo:block>
+<fo:block end-indent="0pt" line-height="13.55pt" orphans="2" start-indent="0pt" text-align="end" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:inline color="#FFFFFF" font-family="Times Roman, serif" font-size="11.0pt" font-weight="bold">
+Fund</fo:inline>
+</fo:block>
+<fo:block end-indent="0pt" line-height="13.55pt" orphans="2" start-indent="0pt" text-align="end" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:inline color="#FFFFFF" font-family="Times Roman, serif" font-size="11.0pt" font-weight="bold">
+Curr</fo:inline>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell background-color="#8A99AB" border-top="4pt double black" padding-left="4.25pt" padding-right="4.25pt">
+<fo:block end-indent="0pt" line-height="13.55pt" orphans="2" start-indent="0pt" text-align="end" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:leader/>
+</fo:block>
+<fo:block end-indent="0pt" line-height="13.55pt" orphans="2" start-indent="0pt" text-align="end" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:inline color="#FFFFFF" font-family="Times Roman, serif" font-size="11.0pt" font-weight="bold">
+Number</fo:inline>
+</fo:block>
+<fo:block end-indent="0pt" line-height="13.55pt" orphans="2" start-indent="0pt" text-align="end" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:inline color="#FFFFFF" font-family="Times Roman, serif" font-size="11.0pt" font-weight="bold">
+of Units</fo:inline>
+</fo:block>
+<fo:block end-indent="0pt" line-height="13.55pt" orphans="2" start-indent="0pt" text-align="end" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:leader/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell background-color="#8A99AB" border-top="4pt double black" padding-left="4.25pt" padding-right="4.25pt">
+<fo:block end-indent="0pt" line-height="13.55pt" orphans="2" start-indent="0pt" text-align="end" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:leader/>
+</fo:block>
+<fo:block end-indent="0pt" line-height="13.55pt" orphans="2" start-indent="0pt" text-align="end" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:inline color="#FFFFFF" font-family="Times Roman, serif" font-size="11.0pt" font-weight="bold">
+Bid</fo:inline>
+</fo:block>
+<fo:block end-indent="0pt" line-height="13.55pt" orphans="2" start-indent="0pt" text-align="end" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:inline color="#FFFFFF" font-family="Times Roman, serif" font-size="11.0pt" font-weight="bold">
+Price</fo:inline>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell background-color="#8A99AB" border-top="4pt double black" padding-left="4.25pt" padding-right="4.25pt">
+<fo:block end-indent="0pt" line-height="13.55pt" orphans="2" start-indent="0pt" text-align="end" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:leader/>
+</fo:block>
+<fo:block end-indent="0pt" line-height="13.55pt" orphans="2" start-indent="0pt" text-align="end" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:inline color="#FFFFFF" font-family="Times Roman, serif" font-size="11.0pt" font-weight="bold">
+Exchange</fo:inline>
+</fo:block>
+<fo:block end-indent="0pt" line-height="13.55pt" orphans="2" start-indent="0pt" text-align="end" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:inline color="#FFFFFF" font-family="Times Roman, serif" font-size="11.0pt" font-weight="bold">
+Rate</fo:inline>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell background-color="#8A99AB" border-top="4pt double black" padding-left="4.25pt" padding-right="4.25pt">
+<fo:block end-indent="0pt" line-height="13.55pt" orphans="2" start-indent="0pt" text-align="end" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:leader/>
+</fo:block>
+<fo:block end-indent="0pt" line-height="13.55pt" orphans="2" start-indent="0pt" text-align="end" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:inline color="#FFFFFF" font-family="Times Roman, serif" font-size="11.0pt" font-weight="bold">
+Value of Units</fo:inline>
+</fo:block>
+<fo:block end-indent="0pt" line-height="13.55pt" orphans="2" start-indent="0pt" text-align="end" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:inline color="#FFFFFF" font-family="Times Roman, serif" font-size="11.0pt" font-weight="bold">
+in Plan currency</fo:inline>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell background-color="#8A99AB" border-right="4pt double black" border-top="4pt double black" padding-left="4.25pt" padding-right="4.25pt">
+<fo:block end-indent="0pt" line-height="13.55pt" orphans="2" start-indent="0pt" text-align="end" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:leader/>
+</fo:block>
+<fo:block end-indent="0pt" line-height="13.55pt" orphans="2" start-indent="0pt" text-align="end" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:inline color="#FFFFFF" font-family="Times Roman, serif" font-size="11.0pt" font-weight="bold">
+TB / MVR</fo:inline>
+</fo:block>
+<fo:block end-indent="0pt" line-height="13.55pt" orphans="2" start-indent="0pt" text-align="end" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:inline color="#FFFFFF" font-family="Times Roman, serif" font-size="11.0pt" font-weight="bold">
+%</fo:inline>
+</fo:block>
+</fo:table-cell>
+</fo:table-row>
+<fo:table-row height="19.85pt">
+<fo:table-cell border-left="4pt double black" display-align="center" padding-left="4.25pt" padding-right="4.25pt">
+<fo:block end-indent="0pt" line-height="13.55pt" orphans="2" start-indent="0pt" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:inline font-family="Times Roman, serif" font-size="11.0pt">
+{FUND_NAMES}</fo:inline>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell display-align="center" padding-left="4.25pt" padding-right="4.25pt">
+<fo:block end-indent="0pt" line-height="13.55pt" orphans="2" start-indent="0pt" text-align="center" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:inline font-family="Times Roman, serif" font-size="11.0pt">
+{FUND_CCY_CD}</fo:inline>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell display-align="center" padding-left="4.25pt" padding-right="4.25pt">
+<fo:block end-indent="0pt" line-height="13.55pt" orphans="2" start-indent="0pt" text-align="end" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:inline font-family="Times Roman, serif" font-size="11.0pt">
+{FUND_UNITS}</fo:inline>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell display-align="center" padding-left="4.25pt" padding-right="4.25pt">
+<fo:block end-indent="0pt" line-height="13.55pt" orphans="2" start-indent="0pt" text-align="end" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:inline font-family="Times Roman, serif" font-size="11.0pt">
+{FUND_PRICES}</fo:inline>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell display-align="center" padding-left="4.25pt" padding-right="4.25pt">
+<fo:block end-indent="0pt" line-height="13.55pt" orphans="2" start-indent="0pt" text-align="end" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:inline font-family="Times Roman, serif" font-size="11.0pt">
+{FUND_EXCH_RATE}</fo:inline>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell display-align="center" padding-left="4.25pt" padding-right="4.25pt">
+<fo:block end-indent="0pt" line-height="13.55pt" orphans="2" start-indent="0pt" text-align="end" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:inline font-family="Times Roman, serif" font-size="11.0pt">
+{FUND_VALUES}</fo:inline>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell border-right="4pt double black" display-align="center" padding-left="4.25pt" padding-right="4.25pt">
+<fo:block end-indent="0pt" line-height="13.55pt" orphans="2" start-indent="0pt" text-align="end" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:inline font-family="Times Roman, serif" font-size="11.0pt">
+{TBMVA_PERCENT}</fo:inline>
+</fo:block>
+</fo:table-cell>
+</fo:table-row>
+<fo:table-row height="44pt">
+<fo:table-cell border-bottom="4pt double black" border-left="4pt double black" number-columns-spanned="5" padding-left="4.25pt" padding-right="4.25pt">
+<fo:block end-indent="0pt" line-height="18pt" orphans="2" space-after="0pt" space-before="0pt" start-indent="0pt" text-align="end" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:leader/>
+</fo:block>
+<fo:block end-indent="0pt" line-height="18pt" orphans="2" space-after="0pt" space-before="0pt" start-indent="0pt" text-align="end" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:inline font-family="Times Roman, serif" font-size="11.0pt" font-weight="bold">
+With Profits fund TB / MVR:</fo:inline>
+</fo:block>
+<fo:block end-indent="0pt" line-height="18pt" orphans="2" space-after="0pt" space-before="0pt" start-indent="0pt" text-align="end" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:inline font-family="Times Roman, serif" font-size="11.0pt" font-weight="bold">
+Value as at {SYSTEM_DATE}:                               </fo:inline>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell border-bottom="4pt double black" padding-left="4.25pt" padding-right="4.25pt">
+<fo:block end-indent="0pt" line-height="18pt" orphans="2" space-after="0pt" space-before="0pt" start-indent="0pt" text-align="end" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:inline id="_Hlk38030049">
+<fo:leader leader-length="0%"/>
+</fo:inline>
+</fo:block>
+<fo:block end-indent="0pt" line-height="18pt" orphans="2" space-after="0pt" space-before="0pt" start-indent="0pt" text-align="end" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:inline font-family="Times Roman, serif" font-size="11.0pt" font-weight="bold">
+{TOT_TB_MVA_BONUS_POLICY}</fo:inline>
+</fo:block>
+<fo:block end-indent="0pt" line-height="18pt" orphans="2" space-after="0pt" space-before="0pt" start-indent="0pt" text-align="end" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:inline font-family="Times Roman, serif" font-size="11.0pt" font-weight="bold">
+{TOT_POLICY_CCY_VALUE_NET}</fo:inline>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell border-bottom="4pt double black" border-right="4pt double black" padding-left="4.25pt" padding-right="4.25pt">
+<fo:block end-indent="0pt" line-height="13.55pt" orphans="2" start-indent="0pt" text-align="end" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:leader/>
+</fo:block>
+</fo:table-cell>
+</fo:table-row>
+</fo:table-body>
+</fo:table>
+</fo:table-cell>
+</fo:table-row>
+</fo:table-body>
+</fo:table>
+<fo:block end-indent="0pt" line-height="12.3pt" orphans="2" start-indent="0pt" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:leader/>
+</fo:block>
+<fo:block end-indent="0pt" line-height="13.55pt" orphans="2" start-indent="-7.1pt" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:inline font-family="Times Roman, serif" font-size="11.0pt" font-weight="bold">
+Additional Information</fo:inline>
+</fo:block>
+<fo:block end-indent="0pt" line-height="13.55pt" orphans="2" start-indent="-7.1pt" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:inline font-family="Times Roman, serif" font-size="11.0pt">
+For With-Profits fund investments a Final Bonus (TB) and/or Market Value Reduction (MVR) may be applied when units are claimed.  The future rates of TB / MVR are not guaranteed and may change at any time without notice.  Please note that this value is indicative and not guaranteed.  The actual proceeds on surrender depend upon the bid prices and exchange rates on the dealing day following receipt of a correctly completed request and any documentation to complete the company’s regulatory requirements.  </fo:inline>
+</fo:block>
+<fo:block end-indent="0pt" line-height="13.55pt" orphans="2" start-indent="-7.1pt" text-align="justify" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:leader/>
+</fo:block>
+<fo:block end-indent="0pt" line-height="13.55pt" orphans="2" start-indent="-7.1pt"  text-indent="0pt" white-space-collapse="false"  space-after="0pt" space-before="0pt" >
+
+<fo:inline font-family="Times Roman, serif" font-size="11.0pt" >Fund prices are available on our website www.lcl-ila.com.</fo:inline>
+
+</fo:block>
+<fo:block end-indent="0pt" line-height="13.55pt" orphans="2" start-indent="-7.1pt" text-align="justify" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:inline font-family="Times Roman, serif" font-size="11.0pt">
+The policy is assumed to be in full force as at the Statement Date. </fo:inline>
+</fo:block>
+<fo:block end-indent="0pt" line-height="13.55pt" orphans="2" start-indent="-7.1pt" text-align="justify" text-indent="0pt" white-space-collapse="false" widows="2">
+<fo:inline font-family="Times Roman, serif" font-size="11.0pt">
+All contributions allocated to the funds by the Statement Date are included.</fo:inline>
+</fo:block>
+</fo:flow>
+</fo:page-sequence>
+</fo:root>

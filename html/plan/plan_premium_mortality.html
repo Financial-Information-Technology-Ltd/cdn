@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Plan Mortality Loading}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan=2>{HELP_LINK}{%(1)Plan Mortality Loading}</td>
+      </tr>
+      <tr>
+        <th width=30%>{%(2)Plan Code}</th>
+        <td>{PlanCode}</td>
+      </tr>
+      <tr>
+        <th>{%(3)Plan Name}</th>
+        <td>{PlanName}</td>
+      </tr>
+      <tr>
+        <th>{%(19)Allow mortality rate loading}</th>
+        <td>
+          <input type="checkbox" name="ALLOW_RATE_LOADING">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(20)Allow per mille loading}</th>
+        <td>
+          <input type="checkbox" name="ALLOW_PER_MILLE_LOADING">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(17)Allow age loading}</th>
+        <td>
+          <input type="checkbox" name="ALLOW_AGE_LOADING">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(18)Allow loading for individual life rates}</th>
+        <td>
+          <input type="checkbox" name="ALLOW_LIFE_LOADING">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(21)Allow setting limit to sum assured}</th>
+        <td>
+          <input type="checkbox" name="ALLOW_LIMITING_SUM_ASSURED">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(10)Loading applicable to sum assured above free cover limit}</th>
+        <td>
+          <input type="checkbox" name="LOAD_ONLY_ABOVE_FCL">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(11)Allow loading without description}</th>
+        <td>
+          <input type="checkbox" name="ALLOW_LOADING_WITHOUT_DESCRIPTION">
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SaveButton" value="{%(100)Save}">
+        </td>
+        <td class="return">
+          <b>
+            <a href="%BACK_LINK%">
+              {%(101)Return}
+              <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+            </a>
+          </b>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

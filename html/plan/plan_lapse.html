@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Plan Lapse}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr TITLE="class">
+        <td class="title" colspan=2>{HELP_LINK}{%(1)Plan Lapse}</td>
+      </tr>
+      <tr>
+        <th width=30%>{%(2)Plan Code}</th>
+        <td>{PlanCode}</td>
+      </tr>
+      <tr>
+        <th>{%(3)Plan Name}</th>
+        <td>{PlanName}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Lapse allowed}</th>
+        <td>
+          <input type="checkbox" name="LAPSE_ALLOWED">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(9)Lapse Free Period (months)}</th>
+        <td>
+          <input type="text" name="LAPSE_FREE_PERIOD" size=5>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(22)Days before automatic premium loan is created}</th>
+        <td>
+          <input type="text" name="APL_DAYS" size=5 ONCHANGE="document.forms[0].submit()">
+          {%(24)If set - see Loans page for more parameters}
+        </td>
+      </tr>
+      <tr>
+        <th>{%(10)Days of grace before lapsing}</th>
+        <td>
+          <input type="text" name="LAPSE_DAYS" size=5>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(12)Lapse Notice}</th>
+        <td>
+          <table>
+            <tr>
+              <th>{%(13)Days after non-payment}</th>
+              <th>{%(14)Documentation Event}</th>
+            </tr>
+            <!--{LAPSE_NOTICE_TABLE}-->
+            <tr>
+              <td colspan=2>
+                <input type="submit" name="AddLapseNoticeButton" value="{%(15)Add}">
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(20)Make policy paid-up instead of lapsing if paid-up is allowed (see paid-up parameters)}</th>
+        <td>
+          <input type="checkbox" name="PUP_ON_LAPSE">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(25)Leave coverage active instead of lapsing (if it is base or base is left active)}</th>
+        <td>
+          <input type="checkbox" name="ACTIVE_ON_LAPSE">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(26)Lapse policy or group if money in Policy Suspense}</th>
+        <td>
+          <input type="checkbox" name="ALLOW_LAPSE_WITH_MONEY_IN_SUSPENSE">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(21)Lapse value}</th>
+        <td>
+          <select name="LAPSE_VALUE_CODE">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(6)Months after issue before lapse can have value}</th>
+        <td>
+          <input type="text" name="LAPSE_VALUE_MONTHS" size=5>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(16)What should happen to funded coverage when policy does not have enough funds to pay charges}</th>
+        <td>
+          <select name="LAPSE_OS_CODE" ONCHANGE="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(19)Lapse Status when policy lapses automatically}</th>
+        <td>
+          <select name="LAPSE_STATUS" ONCHANGE="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(27)No commission clawback on lapse}</th>
+        <td>
+          <input type="checkbox" name="NO_CLAWBACK_ON_LAPSE">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(28)Write off Loan balance on lapse}</th>
+        <td>
+          <input type="checkbox" name="WRITE_OFF_LOAN_ON_LAPSE">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(29)Permanent Paid up Status}</th>
+        <td>
+          <select name="PERM_PAID_UP_STATUS">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(30)Permanent Paid up Months}</th>
+        <td>
+          <input type="text" name="PERM_PAID_UP_MONTHS">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(31)Permanent lapse Status}</th>
+        <td>
+          <select name="PERM_LAPSE_STATUS">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(32)Permanent lapse Months}</th>
+        <td>
+          <input type="text" name="PERM_LAPSE_MONTHS">
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SaveButton" value="{%(100)Save}">
+        </td>
+        <td class="return">
+          <b>
+            <a href="%BACK_LINK%">
+              {%(101)Return}
+              <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+            </a>
+          </b>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

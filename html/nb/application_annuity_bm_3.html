@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Step 4}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body ONLOAD="OnLoad()">
+  <form method="post" action="%SERVLET_PATH%">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="3">{HELP_LINK}{%(2)Additional KYC Questions}</td>
+      </tr>
+      <tr>
+        <th>{%(3)Question}</th>
+        <th style="width: 1%">{%(4)Yes}</th>
+        <th style="width: 1%">{%(5)No}</th>
+      </tr>
+      <!--{MEDICAL_QUESTIONS}-->
+    </table>
+    <table class="navigation">
+      <tr>
+        <td align="left">
+          <input class="button" name="PrevButton" type="submit" value="&lt; {%(101)Previous}">
+        </td>
+        <td align="center">
+      <!--%(SaveButtonFragment)-->
+          <input class="button" name="SaveButton" type="submit" value="{%(144)Save} &gt;">
+      <!--%-->
+        </td>
+        <td align="right">
+          <input class="button" name="SubmitButton" type="submit" value="{%(102)Submit} &gt;">
+      <!--%(SubmitEmailButtonFragment)-->
+          <input class="button" name="SubmitEmailButton" type="submit" value="{%(103)Submit &amp; Email} &gt;">
+      <!--%-->
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

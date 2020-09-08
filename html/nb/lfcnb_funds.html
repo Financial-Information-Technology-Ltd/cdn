@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Funds}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form method="post" action="%SERVLET_PATH%">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(2)Funds}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(3)Portfolio}</th>
+        <th>{%(4)Split (%)}</th>
+      </tr>
+      <!--{INVESTMENT_PERCENTAGE_TABLE}-->
+    </table>
+    <table class="navigation">
+      <tr>
+        <td align="left">
+          <input class="button" name="PrevButton" type="submit" value="&lt; {%(101)Previous}">
+        </td>
+        <td align="right">
+          <input class="button" name="NextButton" type="submit" value="{%(102)Next} &gt;">
+          <input class="button" name="SubmitButton" type="submit" value="{%(103)Submit} &gt;">
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

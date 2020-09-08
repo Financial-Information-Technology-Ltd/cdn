@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Surrender Group}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(1)Surrender Group}</td>
+      </tr>
+      <tr>
+        <th width=30%>{%(3)Scheme number}</th>
+        <td>{SCHEME_CODE}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Group Owner}</th>
+        <td>{GROUP_OWNER}</td>
+      </tr>
+      <tr>
+        <th>{%(5)Current Group Status}</th>
+        <td>{GROUP_STATUS}</td>
+      </tr>
+      <tr>
+        <th>{%(6)Issue Date}</th>
+        <td>{ISSUE_DATE}</td>
+      </tr>
+      <tr>
+        <th>{%(7)Effective Date}</th>
+        <td>
+          <input type="text" name="EFF_DATE">
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="ProcessButton" value="{%(100)Process}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="/lf/images/back.gif">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Step 2}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<form method="post" action="%SERVLET_PATH%">
+  {ERRORS}
+  <table>
+    <tr>
+      <td class="title" colspan="2">{HELP_LINK}{%(4)First Life}</td>
+    </tr>
+    <!--%(FirstLife_KEY)-->
+    <tr>
+      <th style="width: 30%">{%(22)First Life Number (if already exists)}</th>
+      <td>
+        <input type="text" name="FirstLifeKey" onchange="document.forms[0].submit()">
+        <input type="BUTTON" value="{%(104)Search Client}" ONCLICK="search_client('FirstLifeKey',true)">
+      </td>
+    </tr>
+    <!--%-->
+    <tr>
+      <th>{%(2)Title}</th>
+      <td>
+        <select name="FirstLife_Title">
+          <option value="">&nbsp;</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th style="width: 30%">{%(6)First Name}</th>
+      <td>
+        <input name="FirstLife_FirstName" size="30">
+      </td>
+    </tr>
+    <tr>
+      <th>{%(5)Surname}</th>
+      <td>
+        <input name="FirstLife_LastName" size="30" onblur="updfsd();">
+      </td>
+    </tr>
+    <tr>
+      <th>{%(7)Middle Names}</th>
+      <td>
+        <input name="FirstLife_OtherNames" size="30">
+      </td>
+    </tr>
+    <tr>
+      <th>{%(8)Address}</th>
+      <td>
+        <input name="FirstLife_Address" size="50">
+      </td>
+    </tr>
+    <tr>
+      <th>{%(9)Postcode}</th>
+      <td>
+        <input name="FirstLife_PostCode" size="20">
+      </td>
+    </tr>
+    <tr>
+      <th>{%(10)City}</th>
+      <td>
+        <input name="FirstLife_City" size="20">
+      </td>
+    </tr>
+    <tr>
+      <th>{%(44)Country}</th>
+      <td>
+        <select name="FirstLife_Country">
+          <option value="">&nbsp;</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th>{%(3)Gender}</th>
+      <td>
+        <select name="FirstLife_Sex">
+          <option value="">&nbsp;</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th>{%(12)Birth Date}</th>
+      <td>
+        <input name="FirstLife_BirthDate" size="10">
+        {DATE_FORMAT}
+      </td>
+    </tr>
+    <tr>
+      <th>{%(13)Telephone}</th>
+      <td>
+        <input name="FirstLife_PhoneNo" size="20">
+      </td>
+    </tr>
+    <tr>
+      <th>{%(18)Mobile Phone Number}</th>
+      <td>
+        <input name="FirstLife_MobileNo" size="20">
+      </td>
+    </tr>
+    <tr>
+      <th>{%(15)E-Mail}</th>
+      <td>
+        <input name="FirstLife_EMail" size="30">
+      </td>
+    </tr>
+    <tr>
+      <th>{%(32)ID Number}</th>
+      <td>
+        <input name="FirstLife_IDNo" size="20">
+      </td>
+    </tr>
+    <tr>
+      <th>{%(33)ID Place of Issue}</th>
+      <td>
+        <input name="FirstLife_IDIssuePlace" size="40">
+      </td>
+    </tr>
+    <tr>
+      <th>{%(34)ID Expiry Date}</th>
+      <td>
+        <input name="FirstLife_IDExpiryDate" size="10">
+        {DATE_FORMAT}
+      </td>
+    </tr>
+  </table>
+  <table class="navigation">
+    <tr>
+      <td align="left">
+        <input class="button" name="PrevButton" type="submit" value="&lt; {%(19)Previous}">
+      </td>
+      <td align="right">
+        <input class="button" name="NextButton" type="submit" value="{%(20)Next} &gt;">
+      </td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

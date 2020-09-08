@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Plan Base Details}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan=2>{HELP_LINK}{%(1)Plan Base Details}</td>
+      </tr>
+      <tr>
+        <th width=30%>{%(2)Plan Code}</th>
+        <td>{PlanCode}</td>
+      </tr>
+      <tr>
+        <th>{%(3)Plan Name}</th>
+        <td>
+          <input type="text" name="PLAN_NAME" size=50>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(4)Class Code}</th>
+        <td>
+          <select name="CLASS_CODE">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(5)Insurance Type}</th>
+        <td>
+          <select name="INSURANCE_TP">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(11)General}</th>
+        <td>
+          <TEXTAREA name="GENERAL_INFORMATION" COLS="50" ROWS="3"></TEXTAREA>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(12)Policy Number Digits}</th>
+        <td>
+          <input type="text" name="POLICY_DIGITS" size=3>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(13)Policy Number Prefix}</th>
+        <td>
+          <input type="text" name="POLICY_NUMBER_PREFIX" size=4>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(14)Application Number Digits}</th>
+        <td>
+          <input type="text" name="APPLICATION_DIGITS" size=3>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(15)Application Number Prefix}</th>
+        <td>
+          <input type="text" name="APPLICATION_NUMBER_PREFIX" size=4>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(19)Use application number as policy number}</th>
+        <td>
+          <input type="checkbox" name="USE_APP_NO_FOR_POLICY">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(17)Do not record status change events}</th>
+        <td>
+          <input type="checkbox" name="NO_STATUS_EVENTS">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(18)Allowed for Group Business}</th>
+        <td>
+          <input type="checkbox" name="GROUP_PLAN">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(20)Allowed Documentation Languages}</th>
+        <td>
+          <table>
+            <!--{DOC_LANGUAGE}-->
+            <tr>
+              <td>
+                <input type="submit" name="DOC_LANGUAGE_BUTTON" value="{%(21)Add}">
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(22)Sun Accounts Plan Code}</th>
+        <td>
+          <input type="text" name="SUN_ACCOUNTS_PLAN_CODE" size=20>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(23)Reporting Class Code}</th>
+        <td>
+          <select name="REPORTING_CLASS_CODE">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(24)Allowed Maturity Automation}</th>
+        <td>
+          <input type="checkbox" name="MATURITY_AUTHOMATION">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(25)Maturity Payment Method}</th>
+        <td>
+          <select name="MATURITY_PAYMENT_METHOD">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(26)External Reference Digits}</th>
+        <td>
+          <input type="text" name="EXTERNAL_REF_DIGITS" size=3>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(27)External Reference Prefix}</th>
+        <td>
+          <input type="text" name="EXTERNAL_REF_PREFIX" size=5>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(28)Next External Reference}</th>
+        <td>
+          <input type="text" name="EXTERNAL_REF_NEXT_NO" size=5>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(29)Birthday Greetings}</th>
+        <td>
+          <input type="checkbox" name="BIRTHDAY_GREETINGS">
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SaveButton" value="{%(100)Save}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(102)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

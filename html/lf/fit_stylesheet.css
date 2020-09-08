@@ -1,0 +1,8 @@
+@import "fit.css";
+
+:root {
+	--darker1: #a3608b;
+	--darker:  #93507b;
+	--darker2: #73305b;
+	--lighter: #efe1eb;
+}

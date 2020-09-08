@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Group Cancel}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan=2>{HELP_LINK}{%(1)Group Cancel}</td>
+      </tr>
+      <tr>
+        <th>{%(3)Scheme number}</th>
+        <td>
+          <input type="text" name="SCHEME_CODE" size=10>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(4)Scheme owner}</th>
+        <td>
+          <input type="text" name="GROUP_OWNER" size=8>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="text" name="GROUP_OWNER" size=46>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(5)}</th>
+      </tr>
+      <tr>
+        <th>{%(6)Scheme status}</th>
+        <td>
+          <input type="text" name="STATUS" size=24>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(7)App Recd. Date}</th>
+        <td>
+          <input type="text" name="APP_RECD_DATE" size=10>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(8)Scheme RCD}</th>
+        <td>
+          <input type="text" name="SCHEME_RCD" size=10>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(9)Policy Number}</th>
+        <td>
+          <input type="text" name="MASTER_POLICY_NUMBER" size=12>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(10)Currency}</th>
+        <td>
+          <input type="text" name="CURRENCY" size=3>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(11)Mode method}</th>
+        <td>
+          <select name="MODE_METHOD">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(12)Type of scheme}</th>
+        <td>
+          <select name="SCHEME_TYPE">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(13)Proposal Serial Number}</th>
+        <td>
+          <input type="text" name="SERIAL_NUMBER" size=10>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(14)Signed off}</th>
+        <td>
+          <input type="text" name="SIGN_OFF_DATE" size=10>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(15)Paid to date}</th>
+        <td>
+          <input type="text" name="PAID_TO_DATE" size=10>
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SaveButton" value="{%(100)Save}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="/lf/images/back.gif">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

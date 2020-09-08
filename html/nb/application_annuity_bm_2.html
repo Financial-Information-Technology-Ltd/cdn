@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Step 2}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form method="post" action="%SERVLET_PATH%">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(2)Policy Details}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Premium}</th>
+        <td>
+          <input name="PremiumAmount" size="16">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(5)Annuity Frequency}</th>
+        <td>
+          <select name="ANNUITY_Frequency" ONCHANGE="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(6)Guaranteed Period (months)}</th>
+        <td>
+          <select name="ANNUITY_GuaranteePeriod">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(7)Source Of Premium}</th>
+        <td>
+          <select name="ANNUITY_SourceOfPremium">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+    <!--%(ADDITIONAL_RIDERS)-->
+    <table>
+      <tr>
+        <th colspan="4">{%(8)Additional Riders}</th>
+      </tr>
+      <tr>
+        <th style="width: 40">&nbsp;</th>
+        <th>{%(9)Plan}</th>
+        <th>{%(10)Face Amount}</th>
+        <th></th>
+      </tr>
+      <!--{RIDER_LIST}-->
+    </table>
+    <!--%-->
+    <table>
+      <tr>
+        <td class="title" colspan="2">{%(11)Bank Details}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(12)Payment Method}</th>
+        <td>
+          <select name="ANNUITY_PaymentMethod" ONCHANGE="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <!--%(ANNUITY_BANK_DETAILS)-->
+      <tr>
+        <th>{%(13)Sort Code}</th>
+        <td>
+          <select name="ANNUITY_SortCode" onchange="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(14)Bank Name}</th>
+        <td>
+          <input name="ANNUITY_BankName" size="50">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(15)Account Number}</th>
+        <td>
+          <input name="ANNUITY_BankAccount" size="20">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(16)Account Name}</th>
+        <td>
+          <input name="ANNUITY_AccountName" size="60">
+        </td>
+      </tr>
+      <!--%-->
+      <!--%(ANNUITY_PAYEE_NAME)-->
+      <tr>
+        <th>{%(17)Payee Name}</th>
+        <td>
+          <input name="ANNUITY_PayeeName" size="60">
+        </td>
+      </tr>
+      <!--%-->
+    </table>
+    <!--%(BENFICIARY_DETAILS_FRAGMENT)-->
+    <table>
+      <tr>
+        <td class="title" colspan="8">{%(18)Beneficiaries}</td>
+      </tr>
+      <tr>
+        <th colspan=8>{%(19)Primary Beneficiaries}</th>
+      </tr>
+      <tr>
+        <!--%(PrimClientCodeColumn)-->
+        <th>{%(20)Client}</th>
+        <!--%-->
+        <th>{%(21)First Name}</th>
+        <th>{%(22)Middle Name}</th>
+        <th>{%(23)Last Name}</th>
+        <th>{%(24)Date of Birth}</th>
+        <th>{%(25)Relationship}</th>
+        <th>{%(26)NIN}</th>
+        <th>{%(27)Share}</th>
+      </tr>
+      <!--{PrimaryBeneficiaries}-->
+      <tr>
+        <th>{%(28)Clause Text}</th>
+        <td colspan=7>
+          <input type="text" name="BeneficiaryClauseText_1" size=60 onchange="document.forms[0].submit()">
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th colspan=8>{%(29)Secondary Beneficiaries}</th>
+      </tr>
+      <tr>
+        <!--%(SecClientCodeColumn)-->
+        <th>{%(20)Client}</th>
+        <!--%-->
+        <th>{%(21)First Name}</th>
+        <th>{%(22)Middle Name}</th>
+        <th>{%(23)Last Name}</th>
+        <th>{%(24)Date of Birth}</th>
+        <th>{%(25)Relationship}</th>
+        <th>{%(26)NIN}</th>
+        <th>{%(27)Share}</th>
+      </tr>
+      <!--{SecondaryBeneficiaries}-->
+      <tr>
+        <th>{%(28)Clause Text}</th>
+        <td colspan=7>
+          <input type="text" name="BeneficiaryClauseText_2" size=60 onchange="document.forms[0].submit()">
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <td class="title" colspan=2>{%(30)Guardian (required if a beneficiary is below 18 years of age)}</td>
+      </tr>
+      <!--%(Guardian_KEY)-->
+      <tr>
+        <th style="width: 30%">{%(31)Guardian Number (if client already exists on the system)}</th>
+        <td>
+          <input type="text" name="GuardianKey" size=8 ONCHANGE="document.forms[0].submit()">
+          <input type="BUTTON" value="{%(104)Search Client}" ONCLICK="search_client('GuardianKey',true)">
+        </td>
+      </tr>
+      <!--%-->
+      <tr>
+        <th>{%(21)First Name}</th>
+        <td>
+          <input type="text" name="Guardian_FirstName" size="30">
+        </td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(32)Surname}</th>
+        <td>
+          <input type="text" name="Guardian_LastName" size="30">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(24)Date of Birth}</th>
+        <td>
+          <input type="text" name="Guardian_BirthDate">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(33)Address}</th>
+        <td>
+          <input name="Guardian_Address" size="50">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(34)City}</th>
+        <td>
+          <input name="Guardian_City" size="20">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(35)Country}</th>
+        <td>
+          <select name="Guardian_Country">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(36)ID Number}</th>
+        <td>
+          <input name="Guardian_IDNo" size="20">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(37)Phone Number}</th>
+        <td>
+          <input name="Guardian_PhoneNo" size="20">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(38)Relationship to Life Assured}</th>
+        <td>
+          <select name="Guardian_Relationship">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+    <!--%(BENFICIARY_DETAILS_FRAGMENT_END)-->
+    <table class="navigation">
+      <tr>
+        <td align="left">
+          <input class="button" name="PrevButton" type="submit" value="&lt; {%(101)Previous}">
+        </td>
+        <td align="center">
+      <!--%(SaveButtonFragment)-->
+          <input class="button" name="SaveButton" type="submit" value="{%(144)Save} &gt;">
+      <!--%-->
+        </td>
+        <td align="right">
+          <input class="button" name="NextButton" type="submit" value="{%(102)Next} &gt;">
+        </td>
+      </tr>
+    </table>
+    <input type="hidden" name="MaturityType" value="W">
+  </form>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Plan System Processes}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan=2>{HELP_LINK}{%(1)Plan System Processes}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(2)Plan Code}</th>
+        <td>{PlanCode}</td>
+      </tr>
+      <tr>
+        <th>{%(3)Plan Name}</th>
+        <td>{PlanName}</td>
+      </tr>
+      <tr>
+        <th>{%(4)New business process}</th>
+        <td>
+          <select name="NEW_BUS_PROCESS">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(5)New Coverage process}</th>
+        <td>
+          <select name="NEW_BUS_COV_PROCESS">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(6)New Business Coverage agent process}</th>
+        <td>
+          <select name="NEW_BUS_COV_AG_PROCESS">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(16)New Business Policy updated screen}</th>
+        <td>
+          <select name="NEW_BUS_POLICY_UPDATED_SCREEN">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(7)Fund Allocation process}</th>
+        <td>
+          <select name="FUND_ALLOC_PROCESS">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(10)Policy Enquiry Screen}</th>
+        <td>
+          <select name="POL_ENQ_PROCESS">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(11)Policy Maintenance screen}</th>
+        <td>
+          <select name="POL_MAINT_PROCESS">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(20)Beneficiaries Maintanance screen}</th>
+        <td>
+          <select name="BENEFICIARY_MAINT_SCREEN">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(21)Withdrawal screen}</th>
+        <td>
+          <select name="WITHDRAWAL_SCREEN">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(14)Scheme Setup screen}</th>
+        <td>
+          <select name="SCHEME_SETUP_SCREEN">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(15)Scheme Enquiry screen}</th>
+        <td>
+          <select name="SCHEME_ENQUIRY_SCREEN">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(23)Scheme Modification screen}</th>
+        <td>
+          <select name="SCHEME_MODIFICATION_SCREEN">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(17)Scheme Subgroup screen}</th>
+        <td>
+          <select name="SUBGROUP_HTML_TEMPLATE">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(19)Use Dynamic Subgroups}</th>
+        <td>
+          <input type="checkbox" name="USE_DYNAMIC_SUBGROUPS">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(18)Group Member screen}</th>
+        <td>
+          <select name="GROUP_MEMBER_SCREEN">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(22)Group Member Mortality screen}</th>
+        <td>
+          <select name="GROUP_MEMBER_MORTALITY_SCREEN">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(24)Restrict Premium Collection On Pending}</th>
+        <td>
+          <input type="checkbox" name="RESTRICT_PREMIUM_COLLECTION_ON_PENDING">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(9)List of group members screen}</th>
+        <td>
+          <select name="GROUP_MEMBER_LIST_SCREEN">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SaveButton" value="{%(100)Save}">
+        </td>
+        <td class="return">
+          <b>
+            <a href="%BACK_LINK%">
+              {%(101)Return}
+              <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+            </a>
+          </b>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

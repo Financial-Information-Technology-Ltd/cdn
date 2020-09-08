@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Modify Group}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan="2">{HELP_LINK}{%(1)Modify Group}
+          <a href="%BACK_LINK%">
+            <span class="return_link">{%(101)Return}</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <th width=30%>{%(3)Scheme number}</th>
+        <td>{SCHEME_CODE}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Scheme Owner}</th>
+        <td>{GROUP_OWNER}</td>
+      </tr>
+      <tr>
+        <th>{%(16)Lead Scheme}</th>
+        <td>
+          <input type="text" name="LEAD_SCHEME_NO" ONCHANGE="force_submit();">
+          <input type="BUTTON" name="SearchGroupButton" value="{%(17)Search Group}"
+            ONCLICK="search_group('LEAD_SCHEME_NO',true)">
+          {LEAD_SCHEME_NAME}
+        </td>
+      </tr>
+      <!--{MODIFY_SUBGROUP_NAME_LIST}-->
+      <tr>
+        <th>{%(5)Rate Guarantee Start}</th>
+        <td>
+          <input type="text" name="RATE_GUARANTEE_START" size=10>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(6)Rate Guarantee End}</th>
+        <td>
+          <input type="text" name="RATE_GUARANTEE_END" size=10>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(7)Scheme Administrator}</th>
+        <td>
+          <select name="SCHEME_ADMINISTRATOR">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(8)Omnilife Agent}</th>
+        <td>
+          <select name="INTERNAL_AGENT_NUMBER">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(9)Member Data Loaded}</th>
+        <td>
+          <select name="MEMBER_DATA_LOADED">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(18)Member Data Version}</th>
+        <td>
+          <select name="MEMBER_DATA_VERSION" size=3>
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(10)Trust}</th>
+        <td>
+          <select name="TRUST_CLIENT">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(11)Quotation Number}</th>
+        <td>
+          <input type="text" name="QUOTATION_NUMBER" size=100>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(12)Catastrophic Event Limit}</th>
+        <td>
+          <input type="text" name="CATASTROPHIC_EVENT_LIMIT" size=15>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(13)Minimum Annual Group Premium}</th>
+        <td>
+          <input type="text" name="MINIMUM_PREMIUM_AMT" size=10>
+        </td>
+      </tr>
+      <tr>
+        <th width=30%>{%(14)Scheme Eligibility Text}</th>
+        <td>
+          <TEXTAREA name="ELIGIBILITY_TEXT" COLS="100" ROWS="2"></TEXTAREA>
+        </td>
+      </tr>
+      <tr>
+        <th width=30%>{%(15)Temporary Absence Text}</th>
+        <td>
+          <TEXTAREA name="TEMPORARY_ABSENCE_TEXT" COLS="100" ROWS="2"></TEXTAREA>
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SaveButton" value="{%(102)Save}">
+          <input type="submit" name="ModeMethodButton" value="{%(103)Change Payment Mode/Method}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="/lf/images/back.gif">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

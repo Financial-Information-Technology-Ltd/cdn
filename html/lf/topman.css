@@ -1,0 +1,56 @@
+@import "fit.css";
+
+:root {
+	--darker1: #5c5085;
+	--darker: #3e3267;
+	--darker2: #1e1247;
+	--lighter: #baddbf;
+}
+
+#fields label, td, td a, table, tbody, tbody td, tbody th {
+	border: none;
+	color: #475f72;
+}
+
+.title, .title th {
+	color: white;	
+	text-transform: uppercase;
+}
+
+input[type=submit], input[type=button], input[type=file]+label, button {
+	font-weight: bold;
+	font-size: 14px;
+	padding-top: 3px;
+	padding-left: 10px;
+	padding-right: 10px;
+	background-image: linear-gradient(#778fa2,#577f82,#374f62);
+}
+
+select {
+	background-image: linear-gradient(45deg, transparent 50%, white 50%),
+		linear-gradient(135deg, white 50%, transparent 50%),
+		linear-gradient(#ffc6a8,#e5a688,#d59678);
+}
+
+.radiocontainer input:checked ~ .radiocheckmark, .dpDayHighlightTD, label.container input:checked ~ .checkmark {
+	background-image: linear-gradient(#ffc6a8,#e5a688,#d59678);
+}
+
+.dpTitleTR, .dpTodayButtonTR {
+	background-color: #e5a688;
+	background-image: linear-gradient(#778fa2,#577f82,#374f62);
+}
+
+.zebra tr:nth-child(even) td {
+	background-color: #f7ebe3;
+}
+
+.zebra tr:hover td {
+	background-color: #f9f9f9;
+}
+
+.terminal, .terminal td {
+	background-color: black;
+	color: lime;
+	border-radius: 5px 5px 5px 5px;
+}
