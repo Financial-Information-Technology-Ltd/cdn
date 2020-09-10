@@ -1165,3 +1165,6 @@ a:focus {text-decoration: underline}
 	display: inline;
 	vertical-align: middle;
 }
+.ui-dialog-titlebar{
+	background: var(--darker2);
+}
