@@ -105,23 +105,6 @@
 					</xsd:sequence>
 				</xsd:complexType>
 			</xsd:element>
-			<xsd:element name="UpdateSecurityFieldRequest">
-				<xsd:complexType>
-					<xsd:sequence>
-						<xsd:element name="Login" type="tns:LoginData" />
-						<xsd:element name="SecurityNumber" type="xsd:string" nillable="false" />
-						<xsd:element name="FieldName" type="xsd:string" nillable="false" />
-						<xsd:element name="FieldValue" type="xsd:string" nillable="false" />
-					</xsd:sequence>
-				</xsd:complexType>
-			</xsd:element>
-			<xsd:element name="UpdateSecurityFieldResponse">
-				<xsd:complexType>
-					<xsd:sequence>
-						<xsd:element name="RequestResult" type="tns:RequestResult" />
-					</xsd:sequence>
-				</xsd:complexType>
-			</xsd:element>
 			<xsd:element name="SelectRecordRequest">
 				<xsd:complexType>
 					<xsd:sequence>
@@ -3814,6 +3797,8 @@
 	<message name="RMWorkbenchOutput">
 		<part name="RMWorkbenchResponse" element="fittype:RMWorkbenchResponse" />
 	</message>
+
+
 	<message name="UpdateClientFieldInput">
 		<part name="UpdateClientFieldRequest" element="fittype:UpdateClientFieldRequest" />
 	</message>
@@ -3821,12 +3806,6 @@
 		<part name="UpdateClientFieldResponse" element="fittype:UpdateClientFieldResponse" />
 	</message>
 
-	<message name="UpdateSecurityFieldInput">
-		<part name="UpdateSecurityFieldRequest" element="fittype:UpdateSecurityFieldRequest" />
-	</message>
-	<message name="UpdateSecurityFieldOutput">
-		<part name="UpdateSecurityFieldResponse" element="fittype:UpdateSecurityFieldResponse" />
-	</message>
 	<message name="SendSmsInput">
 		<part name="SendSmsRequest" element="fittype:SendSmsRequest" />
 	</message>
@@ -4271,7 +4250,7 @@
 		</operation>
 		<operation name="EndorseSumAssured">
 			<input message="lifefit:EndorseSumAssuredInput" />
-			<output message="EndorseSumAssuredOutput" />
+			<output message="lifefit:EndorseSumAssuredOutput" />
 		</operation>
 		<operation name="GetRMWorkbench">
 			<input message="lifefit:RMWorkbenchInput" />
@@ -4280,10 +4259,6 @@
 		<operation name="ClientFieldUpdate">
 			<input message="lifefit:UpdateClientFieldInput" />
 			<output message="lifefit:UpdateClientFieldOutput" />
-		</operation>
-		<operation name="SecurityFieldUpdate">
-			<input message="lifefit:UpdateSecurityFieldInput" />
-			<output message="lifefit:UpdateSecurityFieldOutput" />
 		</operation>
 		<operation name="SendSms">
 			<input message="lifefit:SendSmsInput" />
@@ -5366,17 +5341,9 @@
 				<soap:body use="literal" />
 			</output>
 		</operation>
+
 		<operation name="ClientFieldUpdate">
 			<soap:operation soapAction="clientFieldUpdate" style="document"/>
-			<input>
-				<soap:body use="literal" />
-			</input>
-			<output>
-				<soap:body use="literal" />
-			</output>
-		</operation>
-		<operation name="SecurityFieldUpdate">
-			<soap:operation soapAction="securityFieldUpdate" style="document"/>
 			<input>
 				<soap:body use="literal" />
 			</input>
