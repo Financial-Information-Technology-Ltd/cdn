@@ -587,7 +587,7 @@ function set_focus()
 	  }
 	});
   });
-  var rows = document.querySelectorAll('.zubra tr');
+  var rows = document.querySelectorAll('.zebra:not(.noclick) tr');
   Array.prototype.forEach.call(rows, function(row) {
 	var inputs = row.querySelectorAll('input, select, button');
 	if (inputs.length==0) {
