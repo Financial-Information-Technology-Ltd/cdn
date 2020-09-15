@@ -138,10 +138,6 @@
           <Command>REVERSE_PAY_BY_RECEIPT</Command>
         </Item>
         <Item>
-          <Prompt>Backdated Payment Reversal</Prompt>
-          <Command>BACKDATED_PAYMENT_REVERSAL</Command>
-        </Item>
-        <Item>
           <Prompt>Adjust Scheme Premium Balance</Prompt>
           <Command>DO_ADJUST_SCHEME_PREMIUM_BALANCE</Command>
         </Item>
