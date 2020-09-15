@@ -1288,10 +1288,6 @@
         <Command>PROCESS_REVERSE_PAY_BY_RECEIPT</Command>
     </CommandRelation>
     <CommandRelation>
-        <MainCommand>BACKDATED_PAYMENT_REVERSAL</MainCommand>
-        <Command>PROCESS_BACKDATED_PAYMENT_REVERSAL</Command>
-    </CommandRelation>
-    <CommandRelation>
         <MainCommand>IMPORT_ACCOUNTING_SETUP</MainCommand>
         <Command>PROCESS_IMPORT_ACCOUNTING_SETUP</Command>
     </CommandRelation>
