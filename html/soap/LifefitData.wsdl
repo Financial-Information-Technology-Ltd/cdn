@@ -12,7 +12,7 @@
 				<xsd:complexType>
 					<xsd:sequence>
 						<xsd:element name="Login" type="tns:LoginData" />
-						<xsd:element name="SchemeNo" type="xsd:string" nillable="false" />
+						<xsd:element name="ClientNo" type="xsd:string" nillable="false" />
 					</xsd:sequence>
 				</xsd:complexType>
 			</xsd:element>
@@ -20,19 +20,7 @@
 				<xsd:complexType>
 					<xsd:sequence>
 						<xsd:element name="RequestResult" type="tns:RequestResult" />
-						<xsd:element name="GroupNo" type="xsd:string"/>
-						<xsd:element name="Owner" type="xsd:string"/>
-						<xsd:element name="PolicyNo" type="xsd:string"/>
-						<xsd:element name="Status" type="xsd:string"/>
-						<xsd:element name="RiskCommence" type="xsd:date"/>
-						<xsd:element name="RenewalDate" type="xsd:date"/>
-						<xsd:element name="RelationshipManager" type="xsd:string"/>
-						<xsd:element name="RelationshipSubManager" type="xsd:string"/>
-						<xsd:element name="Agent" type="xsd:string"/>
-						<xsd:element name="BilledInCurrentPeriod" type="xsd:double"/>
-						<xsd:element name="PremiumOutstanding" type="xsd:double"/>
-						<xsd:element name="CreditNoteDue" type="xsd:integer"/>
-						<xsd:element name="CreditNoteOverDue" type="xsd:integer"/>
+						<xsd:element name="message" type="tns:RMWorkbenchData" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
 					</xsd:sequence>
 				</xsd:complexType>
 			</xsd:element>
@@ -1821,6 +1809,23 @@
 					<xsd:element name="MobileMoneyProvider" type="xsd:string" nillable="true" minOccurs="0" />
 					<xsd:element name="PolicyRelationship" type="tns:BankAccountPolicyRelationshipData"
 								 nillable="true" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="RMWorkbenchData">
+				<xsd:sequence>
+					<xsd:element name="GroupNo" type="xsd:string"/>
+					<xsd:element name="Owner" type="xsd:string"/>
+					<xsd:element name="PolicyNo" type="xsd:string"/>
+					<xsd:element name="Status" type="xsd:string"/>
+					<xsd:element name="RiskCommence" type="xsd:date"/>
+					<xsd:element name="RenewalDate" type="xsd:date"/>
+					<xsd:element name="RelationshipManager" type="xsd:string"/>
+					<xsd:element name="RelationshipSubManager" type="xsd:string"/>
+					<xsd:element name="Agent" type="xsd:string"/>
+					<xsd:element name="BilledInCurrentPeriod" type="xsd:double"/>
+					<xsd:element name="PremiumOutstanding" type="xsd:double"/>
+					<xsd:element name="CreditNoteDue" type="xsd:integer"/>
+					<xsd:element name="CreditNoteOverDue" type="xsd:integer"/>
 				</xsd:sequence>
 			</xsd:complexType>
 			<xsd:complexType name="BankAccountPolicyRelationshipData">
@@ -4250,7 +4255,7 @@
 		</operation>
 		<operation name="EndorseSumAssured">
 			<input message="lifefit:EndorseSumAssuredInput" />
-			<output message="lifefit:EndorseSumAssuredOutput" />
+			<output message="EndorseSumAssuredOutput" />
 		</operation>
 		<operation name="GetRMWorkbench">
 			<input message="lifefit:RMWorkbenchInput" />
