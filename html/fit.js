@@ -593,7 +593,7 @@ function set_focus()
 	if (inputs.length==0) {
 	    row.addEventListener('click', function(e) {
 	        var link = row.querySelector('a');
-	        if (link!=null)
+	        if (link!=null&&getSelectionText()=="")
 	      	  window.location = link.href;
 	  	});
 	}
@@ -1440,6 +1440,15 @@ function addFingerprint() {
     	input.setAttribute("value", fingerprint);
     	document.forms[0].appendChild(input);
     })
+}
+function getSelectionText() {
+    var text = "";
+    if (window.getSelection) {
+        text = window.getSelection().toString();
+    } else if (document.selection && document.selection.type != "Control") {
+        text = document.selection.createRange().text;
+    }
+    return text;
 }
 var form_being_submitted = false;
 window.onload = set_focus;

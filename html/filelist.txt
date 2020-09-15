@@ -58,6 +58,7 @@ annuity_payment.html
 application.html
 audit_logs.html
 backdated_job_loss_claim.html
+backdated_payment_reversal.html
 bank_account.html
 bank_account_lwy.html
 bank_account_main.html

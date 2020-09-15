@@ -110,6 +110,10 @@
           <Prompt>Reverse Payment by Receipt No</Prompt>
           <Command>REVERSE_PAY_BY_RECEIPT</Command>
         </Item>
+        <Item>
+          <Prompt>Backdated Payment Reversal</Prompt>
+          <Command>BACKDATED_PAYMENT_REVERSAL</Command>
+        </Item>
       </Submenu>
       <Item>
         <Prompt>Unreconciled transactions</Prompt>
