@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Plan Paid Up}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan=2>{HELP_LINK}{%(1)Plan Paid Up}</td>
+      </tr>
+      <tr>
+        <th width=30%>{%(2)Plan Code}</th>
+        <td>{PlanCode}</td>
+      </tr>
+      <tr>
+        <th>{%(3)Plan Name}</th>
+        <td>{PlanName}</td>
+      </tr>
+      <tr>
+        <th>{%(5)Paidup Type}</th>
+        <td>
+          <select name="PAIDUP_ALLOWED" ONCHANGE="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(14)Sum Assured recalculation code}</th>
+        <td>
+          <select name="PUP_SA_RECALC_CODE" ONCHANGE="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(27)Sum Assured recalculation rate table}</th>
+        <td>
+          <select name="PUP_SA_RECALC_TABLE">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(8)Table for PUP penalty rate}</th>
+        <td>
+          <select name="PUP_PENALTY" ONCHANGE="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(21)PUP penalty minimum basis}</th>
+        <td>
+          <select name="PUP_PENALTY_MINIMUM_BASIS" ONCHANGE="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(22)PUP penalty minimum factor}</th>
+        <td>
+          <input type="text" name="PUP_PENALTY_MINIMUM_FACTOR" size=10>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(25)Status when policy goes paid-up automatically}</th>
+        <td>
+          <select name="H_STATUS">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(15)Minimum policy value when paidup is allowed}</th>
+        <td>
+          <input type="text" name="MIN_PUP_VALUE" size=10>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(7)Months after issue before paid-up is allowed}</th>
+        <td>
+          <input type="text" name="MONTHS_TO_PUP" size=5>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(23)Reinstatement requires catch-up premium in suspense}</th>
+        <td>
+          <input type="checkbox" name="PUP_REINST_REQUIRES_PREMIUM">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(26)Do not reinstate}</th>
+        <td>
+          <input type="checkbox" name="PUP_NO_REINSTATEMENT">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(24)Reinstatement requires underwriting}</th>
+        <td>
+          <input type="checkbox" name="PUP_REINST_REQUIRES_UNDERWRITING">
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th colspan=2>{%(17)Charges taken when policy is in paid-up status}</th>
+      </tr>
+      <!--{PUP_CHARGES_TABLE}-->
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SaveButton" value="{%(100)Save}">
+        </td>
+        <td class="return">
+          <b>
+            <a href="%BACK_LINK%">
+              {%(101)Return}
+              <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+            </a>
+          </b>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

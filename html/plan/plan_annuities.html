@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Plan Annuities}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr>
+        <td class="title" colspan=2>{HELP_LINK}{%(1)Plan Annuities}</td>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(2)Plan Code}</th>
+        <td>{PlanCode}</td>
+      </tr>
+      <tr>
+        <th>{%(3)Plan Name}</th>
+        <td>{PlanName}</td>
+      </tr>
+      <tr>
+        <th>{%(16)Annuity type}</th>
+        <td>
+          <select name="ANNUITY_TYPE">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(4)Annuity calculate code}</th>
+        <td>
+          <select name="ANNUITY_CALC_CODE" ONCHANGE="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(5)Rate Table to calculate annuity}</th>
+        <td>
+          <select name="ANNUITY_RATE_TABLE" ONCHANGE="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(9)Rate value to calculate annuity (%)}</th>
+        <td>
+          <input type="text" name="ANNUITY_RATE">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(14)Annuity amount (annual)}</th>
+        <td>
+          <input type="text" name="ANNUITY_AMOUNT">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(28)Gross Yield Rate}</th>
+        <td>
+          <input type="text" name="ANNUITY_GROSS_YIELD_RATETABLE">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(35)Current Gross Yield Rate}</th>
+        <td>
+          <input type="text" name="ANNUITY_CURRENT_GROSS_YIELD_RATETABLE">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(36)Market Yield Variation Factor}</th>
+        <td>
+          <input type="text" name="ANNUITY_MARKET_YIELD_VARIATION_FACTOR">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(29)Per Policy Initial Expense}</th>
+        <td>
+          <input type="text" name="ANNUITY_INITIAL_EXPENSE_RATETABLE">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(30)Per Policy Renewal Fixed Expense}</th>
+        <td>
+          <input type="text" name="ANNUITY_RENEWAL_FIXED_EXPENSE_RATETABLE">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(31)Variable Expense (% of annuity)}</th>
+        <td>
+          <input type="text" name="ANNUITY_VARIABLE_EXPENSE_RATETABLE">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(32)Writing Agent Commission Rate}</th>
+        <td>
+          <input type="text" name="ANNUITY_WRT_AGENT_COMM_RATETABLE">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(33)Expense Inflation rate}</th>
+        <td>
+          <input type="text" name="ANNUITY_EXPENSE_INFLATION_RATETABLE">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(34)Contingency and Profit Margin}</th>
+        <td>
+          <input type="text" name="ANNUITY_CONTINGENCY_PROFIT_MARGIN_RATETABLE">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(11)Allowed escalation rates}</th>
+        <td>
+          <table>
+            <!--{ANNUITY_ESCALATION_RATES}-->
+            <tr>
+              <td>
+                <input type="submit" name="AddEscalationRateButton" value="{%(10)Add}">
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(12)Allowed reversionary percentages}</th>
+        <td>
+          <table>
+            <!--{ANNUITY_REVERSIONARY_PERCENTAGES}-->
+            <tr>
+              <td>
+                <input type="submit" name="AddReversionaryPercentageButton" value="{%(10)Add}">
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(13)Allowed guaranteed periods (months)}</th>
+        <td>
+          <table>
+            <!--{ANNUITY_GUARANTEE_PERIODS}-->
+            <tr>
+              <td>
+                <input type="submit" name="AddGuaranteePeriodButton" value="{%(10)Add}">
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(6)School Term Dates}</th>
+        <td>
+          <table>
+            <tr>
+              <th>{%(7)Day}</th>
+              <th>{%(8)Month}</th>
+            </tr>
+            <!--{ANNUITY_SCHOOL_TERMS_TABLE}-->
+            <tr>
+              <td colspan=2>
+                <input type="submit" name="AddSchoolTermButton" value="{%(10)Add}">
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(15)Annuity term (months)}</th>
+        <td>
+          <input type="text" name="ANNUITY_TERM" size=5>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(19)Annuity term table (months)}</th>
+        <td>
+          <select name="ANNUITY_TERM_TABLE" ONCHANGE="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(18)Certification Period (months)}</th>
+        <td>
+          <input type="text" name="RECERT_PERIOD" size=5>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(20)Annuity payment frequencies and methods}</th>
+        <td>
+          <table>
+            <tr>
+              <th>{%(21)Frequency}</th>
+              <th>{%(22)Method}</th>
+            </tr>
+            <!--{ANNUITY_MODE_METHODS}-->
+            <tr>
+              <td>
+                <input type="submit" name="ANNUITY_FREQUENCY_BUTTON" value="{%(10)Add}">
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(17)Activate annuity when policy matures}</th>
+        <td>
+          <input type="checkbox" name="ACTIVATE_ANNUITY_ON_MATURITY">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(26)Mature/Expire coverage or policy when all annuity payments are finished}</th>
+        <td>
+          <input type="checkbox" name="EXPIRE_WHEN_ANNUITY_ENDS">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(23)Apply loading when calculating annuity payment}</th>
+        <td>
+          <input type="checkbox" name="ANNUITY_APPLY_LOADING">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(24)When annuity starts}</th>
+        <td>
+          <select name="ANNUITY_WHEN_STARTS">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(25)Cash Back (percent of original payment)}</th>
+        <td>
+          <select name="ANNUITY_NB_BONUS_RATE" size=8>
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(27)Suspend Annuity Payment Date (DDMM)}</th>
+        <td>
+          <input type="text" name="SUSPEND_ANNUITY_PAYMENT_DATE" size=4>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(37)Payment Out Reasons}</th>
+        <td>
+          <table>
+            <tr>
+              <th>{%(38)From Date}</th>
+              <th>{%(39)Reason}</th>
+            </tr>
+            <!--{ANNUITY_PAYMENT_OUT_REASON_TABLE}-->
+            <tr>
+              <td>
+                <input type="submit" name="AddAnnuityPaymentOutReasonButton" value="{%(10)Add}">
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(40)Maximum Benefit Period (years)}</th>
+        <td>
+          <input type="text" name="MAXIMUM_BENEFIT_PERIOD" size=4>
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SaveButton" value="{%(100)Save}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(102)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Plan Cessation}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr TITLE="class">
+        <td class="title" colspan=2>{HELP_LINK}{%(1)Plan Cessation}</td>
+      </tr>
+      <tr>
+        <th width=30%>{%(2)Plan Code}</th>
+        <td>{PlanCode}</td>
+      </tr>
+      <tr>
+        <th>{%(3)Plan Name}</th>
+        <td>{PlanName}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Maturity type}</th>
+        <td>
+          <select name="MATURITY_TP" ONCHANGE="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(5)Maturity at (years)}</th>
+        <td>
+          <input type="text" name="MATURITY_AD" size=3>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(19)Maturity at for females (if different)}</th>
+        <td>
+          <input type="text" name="MATURITY_AD_FEMALE" size=3>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(6)Maturity months}</th>
+        <td>
+          <input type="text" name="MAT_MONTHS" size=3>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(7)Maturity days}</th>
+        <td>
+          <input type="text" name="MAT_DAYS" size=3>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(8)Maximum maturity age}</th>
+        <td>
+          <input type="text" name="MAX_MAT_AGE" size=3>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(16)Minimum maturity age}</th>
+        <td>
+          <input type="text" name="MIN_MAT_AGE" size=3>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(9)Minimum policy term}</th>
+        <td>
+          <input type="text" name="MIN_TERM" size=3>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(10)Maximum policy term}</th>
+        <td>
+          <input type="text" name="MAX_TERM" size=3>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(11)Maturity calc code}</th>
+        <td>
+          <select name="MAT_CALC_CODE" ONCHANGE="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(24)Refund of Premiums Factor Table}</th>
+        <td>
+          <select name="MAT_REFUND_PREMIUMS_FACTOR_TABLE">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(25)Refund of Premiums Factor}</th>
+        <td>
+          <input type="text" name="MAT_REFUND_PREMIUMS_FACTOR">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(44)SA Calc Code}</th>
+        <td>
+          <select name="SUM_INSURED_TP">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(12)Maturity notice weeks}</th>
+        <td>
+          <input type="text" name="MAT_NOTICE_WEEKS" size=3>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(17)Product bought at maturity}</th>
+        <td>
+          <select name="MATURITY_PLAN">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(14)Expiry type}</th>
+        <td>
+          <select name="EXPIRY_TP" ONCHANGE="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(15)Expiry at}</th>
+        <td>
+          <input type="text" name="EXPIRY_AD" size=3>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(21)Expiry age Young}</th>
+        <td>
+          <input type="text" name="EXPIRY_AGE_YOUNG" size=3>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(22)Rider Expiry age}</th>
+        <td>
+          <input type="text" name="RIDER_EXP_AGE" size=3>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(23)Max Conversion age}</th>
+        <td>
+          <input type="text" name="MAX_CONV_AGE" size=3>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(20)Maturity/Expiry Term Years}</th>
+        <td>
+          <table>
+            <!--{EXPIRY_TERM_YEARS_TABLE}-->
+            <tr>
+              <td>
+                <input type="submit" name="EXPIRY_TERM_YEARS_BUTTON" value="{%(18)Add}">
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(29)Premium Payment Term Type}</th>
+        <td>
+          <select name="PREM_PAY_TERM_TP" ONCHANGE="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <!--%(YEARS_TERM)-->
+          {%(30)Premium Payment Term Years}
+          <!--%-->
+          <!--%(AGE_TERM)-->
+          {%(51)Age in years when premium stops}
+          <!--%-->
+          <!--%(BEFORE_MAT_TERM)-->
+          {%(53)Years before maturity/expiry date}
+          <!--%-->
+        </th>
+        <td>
+          <input type="text" name="PREM_PAY_TERM_AD" size=3>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <!--%(YEARS_TERM)-->
+          {%(31)Premium Payment Term Months}
+          <!--%-->
+          <!--%(AGE_TERM)-->
+          {%(52)Age in month when premium stops}
+          <!--%-->
+          <!--%(BEFORE_MAT_TERM)-->
+          {%(54)Months before maturity/expiry date}
+          <!--%-->
+        </th>
+        <td>
+          <input type="text" name="PREM_PAY_TERM_MTHS" size=3>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(36)Table to calculate premium payment term (in months)}</th>
+        <td>
+          <select name="PREM_PAY_TERM_TABLE">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(32)Minimum premium payment term}</th>
+        <td>
+          <input type="text" name="PREM_PAY_TERM_MIN" size=3>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(33)Maximum premium payment term}</th>
+        <td>
+          <input type="text" name="PREM_PAY_TERM_MAX" size=3>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(46)Set Status when policy reaches premium payment term}</th>
+        <td>
+          <select name="PAYMENT_TERM_STATUS">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(47)Extending Payment Term Status}</th>
+        <td>
+          <select name="PAYMENT_TERM_EXT_STATUS">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(48)Extending Payment Term premium increase coverage status}</th>
+        <td>
+          <select name="PAYMENT_TERM_EXT_PINC_STATUS">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th colspan=3>{%(41)Partial Maturity}</th>
+      </tr>
+      <tr>
+        <th style="width: 30%">{%(43)Percent of maturity value}</th>
+        <th>{%(45)Term in Years}</th>
+        <th>{%(42)Term (percent of total term)}</th>
+      </tr>
+      <!--{PARTIAL_MATURITY_TABLE}-->
+      <tr>
+        <td colspan=2>
+          <input type="submit" name="AddPartialMaturityButton" value="{%(18)Add}">
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SaveButton" value="{%(100)Save}">
+        </td>
+        <td class="return">
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

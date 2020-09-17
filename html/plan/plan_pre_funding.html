@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Plan Actuarial Pre-funding details}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    <b>{ERRORS}</b>
+    <table>
+      <tr>
+        <td class="title" colspan=2>{HELP_LINK}{%(1)Plan Actuarial Pre-funding details}</td>
+      </tr>
+      <tr>
+        <th width=30%>{%(2)Plan Code}</th>
+        <td>{PlanCode}</td>
+      </tr>
+      <tr>
+        <th>{%(3)Plan Name}</th>
+        <td>{PlanName}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Initial Unit AFF rates code}</th>
+        <td>
+          <select name="ACT_FUNDING_INIT_SR_CD">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(5)Accumulation Unit AFF rates code}</th>
+        <td>
+          <select name="ACT_FUNDING_ACCUM_SR_CD">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(6)Termination date calc}</th>
+        <td>
+          <select name="ACT_FUNDING_TERM_CALC">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(7)Termination date years}</th>
+        <td>
+          <input type="text" name="ACT_FUNDING_TERM_VAL">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(10)Amortise Initial Fee}</th>
+        <td>
+          <input type="checkbox" name="AMORTISE_INITIAL_FEE">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(11)Amortise Policy Fee}</th>
+        <td>
+          <input type="checkbox" name="AMORTISE_POLICY_FEE">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(12)Amortise Mortality Charge}</th>
+        <td>
+          <input type="checkbox" name="AMORTISE_MORT_CHARGE">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(13)Amortise Frequency}</th>
+        <td>
+          <select name="AMORTISE_FREQUENCY">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(14)Amortise Fee Years}</th>
+        <td>
+          <input type="text" name="AMORTISE_YEARS" size=4>
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SaveButton" value="{%(100)Save}">
+        </td>
+        <td class="return">
+          <b>
+            <a href="%BACK_LINK%">
+              {%(101)Return}
+              <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+            </a>
+          </b>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

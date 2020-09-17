@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{%(1)Plan Surrenders}</title>
+<link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+</head>
+<body>
+  <form action="%SERVLET_PATH%" method="post">
+    {ERRORS}
+    <table>
+      <tr title="class">
+        <td class="title" colspan=2>{HELP_LINK}{%(1)Plan Surrenders}</td>
+      </tr>
+      <tr>
+        <th width=30%>{%(2)Plan Code}</th>
+        <td>{PlanCode}</td>
+      </tr>
+      <tr>
+        <th>{%(3)Plan Name}</th>
+        <td>{PlanName}</td>
+      </tr>
+      <tr>
+        <th>{%(4)Months to surrender value}</th>
+        <td>
+          {%(5)Value}
+          <input name="SVRATE" type="RADIO" value="RATE" checked ONCLICK="document.forms[0].submit()">
+          {%(34)Table}
+          <input name="SVRATE" type="RADIO" value="TABLE" ONCLICK="document.forms[0].submit()">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(11)Months to surrender}</th>
+        <td>
+          <input type="text" name="MONTHS_TO_SV" size=5>
+        </td>
+      </tr>
+      <!--%(MONTHSSVTABLE)-->
+      <tr>
+        <th>{%(6)Term calculation for surrender months}</th>
+        <td>
+          <select name="SV_WHICH_TERM">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(7)Surrender Table}</th>
+        <td>
+          <table>
+            <tr>
+              <th>{%(8)Term}</th>
+              <th>{%(9)Months to Surrender}</th>
+            </tr>
+            <!--{SV_TABLE}-->
+            <tr>
+              <td colspan="2">
+                <input type="submit" name="AddSvTermButton" value="{%(10)Add}">
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <!--%-->
+      <tr>
+        <th>{%(13)Surrender Calculation Code}</th>
+        <td>
+          <select name="SURR_CHARGE_TP" ONCHANGE="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(14)Surrender Value Rate Table}</th>
+        <td>
+          <select name="STD_PLAN_CD">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(15)Surrender Penalty Factor Rate Table}</th>
+        <td>
+          <select name="SURRENDER_FACTOR">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(35)Fixed Surrender Fee}</th>
+        <td>
+          <input type="text" name="FIXED_SURRENDER_FEE">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(23)Minimum Policy value required before surrender}</th>
+        <td>
+          <input type="text" name="MINIMUM_POLICY_VALUE_BEFORE_FSUR">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(17)Minimum Penalty calculation Code}</th>
+        <td>
+          <select name="PENALTY_MINIMUM_CD" ONCHANGE="document.forms[0].submit()">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(18)Minimum Penalty calculation Factor}</th>
+        <td>
+          <input type="text" name="PENALTY_MINIMUM_FACTOR">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(19)Penalty Factor Z}</th>
+        <td>
+          <select name="PENALTY_FACTORZ">
+            <option value="">&nbsp;</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(20)No Surrender penalty from paid-up status}</th>
+        <td>
+          <input type="checkbox" name="NO_PENALTY_FROM_PAIDUP_STATUS">
+        </td>
+      </tr>
+      <tr>
+        <th>{%(21)Surrender Grace Period (days)}</th>
+        <td>
+          <input type="text" name="SURRENDER_GRACE_PERIOD" size=3>
+        </td>
+      </tr>
+      <tr>
+        <th>{%(22)Allow Override Surrender Fee}</th>
+        <td>
+          <input type="checkbox" name="ALLOW_OVERRIDE_SURRENDER_FEE">
+        </td>
+      </tr>
+    </table>
+    <table class="navigation">
+      <tr>
+        <td>
+          <input type="submit" name="SaveButton" value="{%(100)Save}">
+        </td>
+        <td class="return">
+          <b>
+            <a href="%BACK_LINK%">
+              {%(101)Return}
+              <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+            </a>
+          </b>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

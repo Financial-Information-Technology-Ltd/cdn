@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>{%(1)Plan Internet}</title>
+  <link rel="stylesheet" type="text/css" href="{STYLESHEET_PATH}">
+  <link rel="stylesheet" type="text/css" href="{JQUERY_UI_CSS_PATH}">
+  <script type="text/javascript" src="{JQUERY_PATH}"></script>
+  <script type="text/javascript" src="{JQUERY_UI_PATH}"></script>
+  <link href="{FONT_AWESOME}" rel="stylesheet">
+  <style>
+    select{
+      width: 500px; ;
+    }
+    .text-input{
+      width: 493px;
+    }
+    .textarea-input{
+      width: 493px;
+    }
+    .emailVarBtn{
+      font-size: 15px;
+      margin-left: 5px;
+      margin-top: 1px;
+    }
+    .ui-dialog-titlebar{
+      background: var(--darker2);
+    }
+  </style>
+</head>
+<body>
+<form action="%SERVLET_PATH%" method="post">
+  {ERRORS}
+  <table>
+    <tr title="class">
+      <td class="title" colspan=2>{HELP_LINK}{%(1)Plan Internet}</td>
+    </tr>
+    <tr>
+      <th width=30%>{%(2)Plan Code}</th>
+      <td>{PlanCode}</td>
+    </tr>
+    <tr>
+      <th>{%(3)Plan Name}</th>
+      <td>{PlanName}</td>
+    </tr>
+    <tr>
+      <th>{%(15)New Business allowed over the Internet Portal}</th>
+      <td>
+        <input type="checkbox" name="WEB_NB_ALLOWED">
+      </td>
+    </tr>
+    <tr>
+      <th>{%(4)HTML template for New Business (if different from back office)}</th>
+      <td>
+        <input type="text" name="HTML_TEMPLATE" size=50 class="text-input">
+      </td>
+    </tr>
+    <tr>
+      <th>{%(8)HTML template for Submit screen}</th>
+      <td>
+        <select name="SUBMIT_HTML_TEMPLATE">
+          <option value="">&nbsp;</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th>{%(9)PDF template for Application form}</th>
+      <td>
+        <select name="APPLICATION_PDF">
+          <option value="">&nbsp;</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th>{%(10)HTML template for Individual Business Quote}</th>
+      <td>
+        <select name="QUOTE_HTML_TEMPLATE">
+          <option value="">&nbsp;</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th>{%(18)HTML template for Group Business Quote}</th>
+      <td>
+        <select name="GROUP_QUOTE_TEMPLATE">
+          <option value="">&nbsp;</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th>{%(20)HTML template for Group Business Quote Subgroup}</th>
+      <td>
+        <select name="GROUP_QUOTE_SUBGROUP_TEMPLATE">
+          <option value="">&nbsp;</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th>{%(19)HTML template for Group Quote Member list}</th>
+      <td>
+        <select name="QUOTE_MEMBER_LIST_TEMPLATE">
+          <option value="">&nbsp;</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th>{%(16)Do not edit application if created via quotation functionality}</th>
+      <td>
+        <input type="checkbox" name="NO_EDIT_AFTER_QUOTE">
+      </td>
+    </tr>
+    <!--{PROTECT_APPL_FIELD_LIST}-->
+    <tr>
+      <th>{%(11)PDF template for pre-sales quote}</th>
+      <td>
+        <select name="QUOTE_PDF_TEMPLATE">
+          <option value="">&nbsp;</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th>{%(21)PDF template for Group Quote}</th>
+      <td>
+        <select name="GROUP_QUOTE_PDF_TEMPLATE">
+          <option value="">&nbsp;</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th>{%(28)PDF template for Group Member Quote}</th>
+      <td>
+        <select name="GROUP_MEMBER_QUOTE_PDF_TEMPLATE">
+          <option value="">&nbsp;</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th>{%(30)PDF template for Group Member Quote (Post Issue)}</th>
+      <td>
+        <select name="GROUP_MEMBER_QUOTE_POST_ISSUE_PDF_TEMPLATE">
+          <option value="">&nbsp;</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th>{%(14)HTML template for Policy Enquiry by Agent}</th>
+      <td>
+        <select name="POLICY_ENQUIRY_AGENT_TMPL_ES">
+          <option value="">&nbsp;</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th>{%(17)HTML template for Policy Enquiry by Client}</th>
+      <td>
+        <select name="POLICY_ENQUIRY_CLIENT_TMPL_ES">
+          <option value="">&nbsp;</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th>{%(22)HTML template for Group Enquiry by Agent}</th>
+      <td>
+        <select name="GROUP_ENQUIRY_AGENT_SCREEN_ES">
+          <option value="">&nbsp;</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th>{%(23)HTML template for Group Enquiry by Client}</th>
+      <td>
+        <select name="GROUP_ENQUIRY_CLIENT_SCREEN_ES">
+          <option value="">&nbsp;</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th>{%(24)HTML template for Member Enquiry by Client}</th>
+      <td>
+        <select name="GROUP_MEMBER_CLIENT_SCREEN_ES">
+          <option value="">&nbsp;</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th>{%(27)HTML template for group bill premiums screen}</th>
+      <td>
+        <select name="GROUP_BILL_PREMIUMS_SCREEN_ES">
+          <option value="">&nbsp;</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th>{%(31)PDF template for Unit Statement}</th>
+      <td>
+        <select name="UNIT_STATEMENT_PDF_TEMPLATE">
+          <option value="">&nbsp;</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th>{%(32)Process for Unit Statement calculation}</th>
+      <td>
+        <select name="UNIT_STATEMENT_PROCESS_ES">
+          <option value="">&nbsp;</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th>{%(33)PDF template for Premium Statement}</th>
+      <td>
+        <select name="PREMIUM_STATEMENT_PDF_TEMPLATE">
+          <option value="">&nbsp;</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th>{%(34)Process for Premium Statement calculation}</th>
+      <td>
+        <select name="PREMIUM_STATEMENT_PROCESS_ES">
+          <option value="">&nbsp;</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th>{%(29)Create Web User for a policy owner when the policy is issued}</th>
+      <td>
+        <input type="checkbox" name="CREATE_USER_ON_ISSUE">
+      </td>
+    </tr>
+    <tr>
+      <th>{%(25)Field protected on group member screen after certificate is created}</th>
+      <td>
+        <!--{WEB_MEMBER_PROTECTED_FIELDS}-->
+        <input type="hidden" name="WEB_MEMBER_FIELDS_BUTTON_TEXT" value="{%(26)Edit}">
+      </td>
+    </tr>
+    <tr>
+      <th>{%(12)Web sites}</th>
+      <td>
+        <table>
+          <!--{WEBSITE_TABLE}-->
+          <tr>
+            <td>
+              <input type="submit" name="WEBSITE_BUTTON" value="{%(13)Add}">
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  <table>
+    <tr>
+      <th width=30%>{%(35)Quote Email Subject}</th>
+      <td>
+        <input type="text" name="QUOTE_EMAIL_SUBJECT"  class="text-input"><i class="fas fa-cog emailVarBtn"></i>
+      </td>
+    </tr>
+    <tr>
+      <th>{%(36)Quote Email Body}</th>
+      <td>
+        <textarea name="QUOTE_EMAIL_BODY"  rows="18" class="textarea-input"></textarea><i class="fas fa-cog emailVarBtn"></i>
+      </td>
+    </tr>
+  </table>
+  <table>
+    <tr>
+      <th width=30%>{%(37)Application Email Subject}</th>
+      <td>
+        <input type="text" name="APP_EMAIL_SUBJECT"  class="text-input"><i class="fas fa-cog emailVarBtn"></i>
+      </td>
+    </tr>
+    <tr>
+      <th>{%(38)Application Email Body}</th>
+      <td>
+        <textarea name="APP_EMAIL_BODY"  rows="18" class="textarea-input"></textarea><i class="fas fa-cog emailVarBtn"></i>
+      </td>
+    </tr>
+  </table>
+  <table class="navigation">
+    <tr>
+      <td>
+        <input type="submit" name="SaveButton" value="{%(100)Save}">
+      </td>
+      <td class="return">
+        <b>
+          <a href="%BACK_LINK%">
+            {%(101)Return}
+            <img src="%BACK_IMAGE%" alt="{%(666)Back}">
+          </a>
+        </b>
+      </td>
+    </tr>
+  </table>
+</form>
+<div id="emailVarsModal" title="Email Vars">
+  <p>Variable that can be used in the Quote email subject, Quote email body, Application email subject and Application email subject</p>
+  <p>{Client Name} - For  the clients full name</p>
+  <p>{Agent Name} - For the Agents full name</p>
+  <p>{Quote Number} - For the quote or application number</p>
+</div>
+<script>
+  var emailVarsModal = document.getElementById("emailVarsModal");
+
+  $( function() {
+    $( "#emailVarsModal" ).dialog({
+      autoOpen: false,
+      modal: true,
+      show: {
+        effect: "blind",
+        duration: 1000
+      },
+      hide: {
+        effect: "explode",
+        duration: 1000
+      }
+    });
+    $( ".emailVarBtn" ).click(function() {
+      $( "#emailVarsModal" ).dialog( "open" );
+    })
+
+  } );
+</script>
+</body>
+</html>
