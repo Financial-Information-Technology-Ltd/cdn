@@ -3875,14 +3875,6 @@
 			<input message="lifefit:PolicyAddRiskRiderInput" />
 			<output message="lifefit:ProcessOutput" />
 		</operation>
-        <operation name="AgentBalanceQuery">
-            <input message="lifefit:AgentBalanceInput" />
-            <output message="lifefit:AgentBalanceOutput" />
-        </operation>
-		<operation name="AgentsByClientQuery">
-			<input message="lifefit:AgentsByClientInput" />
-			<output message="lifefit:AgentsByClientOutput" />
-		</operation>
 		<operation name="AuthorisePaymentOut">
 			<input message="lifefit:AuthorisePaymentOutInput" />
 			<output message="lifefit:ProcessOutput" />
@@ -3893,10 +3885,6 @@
 		</operation>
 		<operation name="AuthenticateUser">
 			<input message="lifefit:AuthenticateUserInput" />
-			<output message="lifefit:ProcessOutput" />
-		</operation>
-		<operation name="BackdatedReversePaymentByReceiptNo">
-			<input message="lifefit:PaymentReversalByReceiptNoInput" />
 			<output message="lifefit:ProcessOutput" />
 		</operation>
 		<operation name="CalculateQuote">
@@ -3915,14 +3903,6 @@
 			<input message="lifefit:ClearUnderwritingInput" />
 			<output message="lifefit:ProcessOutput" />
 		</operation>
-		<operation name="ClientBankAccountQuery">
-			<input message="lifefit:ClientBankAccountInput" />
-			<output message="lifefit:ClientBankAccountOutput" />
-		</operation>
-		<operation name="ClientFieldUpdate">
-			<input message="lifefit:UpdateClientFieldInput" />
-			<output message="lifefit:UpdateClientFieldOutput" />
-		</operation>
 		<operation name="CreateAgent">
 			<input message="lifefit:AgentUpdateInput" />
 			<output message="lifefit:CreateAgentOutput" />
@@ -3935,10 +3915,6 @@
 			<input message="lifefit:QuoteDataInput" />
 			<output message="lifefit:CreatePolicyOutput" />
 		</operation>
-		<operation name="CreateReferral">
-			<input message="lifefit:CreateReferralInput" />
-			<output message="lifefit:CreateReferralOutput" />
-		</operation>
 		<operation name="CreateSecurity">
 			<input message="lifefit:CreateSecurityInput" />
 			<output message="lifefit:ProcessOutput" />
@@ -3950,18 +3926,6 @@
 		<operation name="CreateWorkflowTask">
 			<input message="lifefit:CreateWorkflowTaskInput" />
 			<output message="lifefit:ProcessWorkflowOutput" />
-		</operation>
-		<operation name="CreditConfirmation">
-			<input message="lifefit:CreditConfirmationInput" />
-			<output message="lifefit:CreditConfirmationOutput" />
-		</operation>
-		<operation name="DocTrigger">
-			<input message="lifefit:DocTriggerInput" />
-			<output message="lifefit:DocTriggerOutput" />
-		</operation>
-		<operation name="EndorseSumAssured">
-			<input message="lifefit:EndorseSumAssuredInput" />
-			<output message="lifefit:EndorseSumAssuredOutput" />
 		</operation>
 		<operation name="FindAgent">
 			<input message="lifefit:FindAgentInput" />
@@ -4119,10 +4083,6 @@
 			<input message="lifefit:GetRegionAreasInput" />
 			<output message="lifefit:GetRegionAreasOutput" />
 		</operation>
-		<operation name="GetRMWorkbench">
-			<input message="lifefit:RMWorkbenchInput" />
-			<output message="RMWorkbenchOutput" />
-		</operation>
 		<operation name="GetSecInfo">
 			<input message="lifefit:SecInfoInput" />
 			<output message="lifefit:SecInfoOutput" />
@@ -4167,18 +4127,6 @@
 			<input message="lifefit:PolicyListInput" />
 			<output message="lifefit:PolicyListOutput" />
 		</operation>
-		<operation name="MobileAppVersionQuery">
-			<input message="lifefit:MobileAppVersionInput" />
-			<output message="lifefit:MobileAppVersionOutput" />
-		</operation>
-		<operation name="MobileMoneyCreditConfirmation">
-			<input message="lifefit:MobileMoneyCreditConfirmationInput" />
-			<output message="lifefit:MobileMoneyCreditConfirmationOutput" />
-		</operation>
-		<operation name="OrganisationOpenQuery">
-			<input message="lifefit:OrganisationOpenInput" />
-			<output message="lifefit:OrganisationOpenOutput" />
-		</operation>
 		<operation name="PartialSurrender">
 			<input message="lifefit:PartialSurrenderInput" />
 			<output message="lifefit:PartialSurrenderOutput" />
@@ -4186,14 +4134,6 @@
 		<operation name="PayPolicy">
 			<input message="lifefit:PaymentInput" />
 			<output message="lifefit:ProcessOutput" />
-		</operation>
-		<operation name="PolicyFieldUpdate">
-			<input message="lifefit:UpdatePolicyFieldInput" />
-			<output message="lifefit:UpdatePolicyFieldOutput" />
-		</operation>
-		<operation name="PolicyStatusChange">
-			<input message="lifefit:PolicyStatusChangeInput" />
-			<output message="lifefit:PolicyStatusChangeOutput" />
 		</operation>
 		<operation name="PremiumEndorsement">
 			<input message="lifefit:PremiumEndorsementInput" />
@@ -4215,25 +4155,9 @@
 			<input message="lifefit:RiderStatusChangeInput" />
 			<output message="lifefit:ProcessOutput" />
 		</operation>
-		<operation name="SecurityFieldUpdate">
-			<input message="lifefit:UpdateSecurityFieldInput" />
-			<output message="lifefit:UpdateSecurityFieldOutput" />
-		</operation>
-		<operation name="SelectRecord">
-			<input message="lifefit:SelectRecordInput" />
-			<output message="lifefit:SelectRecordOutput" />
-		</operation>
 		<operation name="SendEMail">
 			<input message="lifefit:SendEMailInput" />
 			<output message="lifefit:ProcessOutput" />
-		</operation>
-		<operation name="SendSms">
-			<input message="lifefit:SendSmsInput" />
-			<output message="lifefit:SendSmsOutput" />
-		</operation>
-		<operation name="SetDefaultAgentQuery">
-			<input message="lifefit:DefaultAgentInput" />
-			<output message="lifefit:DefaultAgentOutput" />
 		</operation>
 		<operation name="SetPolicyPaymentMethod">
 			<input message="lifefit:SetPolicyPaymentMethodInput" />
@@ -4279,6 +4203,7 @@
 			<input message="lifefit:UpdateBeneficiaryDataInput" />
 			<output message="lifefit:UpdateBeneficiaryDataOutput" />
 		</operation>
+
 		<operation name="UpdatePolicyBankAccount">
 			<input message="lifefit:UpdatePolicyBankAccountInput" />
 			<output message="lifefit:ProcessOutput" />
@@ -4307,7 +4232,83 @@
 			<input message="lifefit:WorkflowInput" />
 			<output message="lifefit:WorkflowOutput" />
 		</operation>
+		<operation name="CreateReferral">
+			<input message="lifefit:CreateReferralInput" />
+			<output message="lifefit:CreateReferralOutput" />
+		</operation>
+		<operation name="OrganisationOpenQuery">
+			<input message="lifefit:OrganisationOpenInput" />
+			<output message="lifefit:OrganisationOpenOutput" />
+		</operation>
+		<operation name="MobileAppVersionQuery">
+			<input message="lifefit:MobileAppVersionInput" />
+			<output message="lifefit:MobileAppVersionOutput" />
+		</operation>
+
+		<operation name="AgentsByClientQuery">
+			<input message="lifefit:AgentsByClientInput" />
+			<output message="lifefit:AgentsByClientOutput" />
+		</operation>
+        <operation name="AgentBalanceQuery">
+            <input message="lifefit:AgentBalanceInput" />
+            <output message="lifefit:AgentBalanceOutput" />
+        </operation>
+		<operation name="DocTrigger">
+			<input message="lifefit:DocTriggerInput" />
+			<output message="lifefit:DocTriggerOutput" />
+		</operation>
+		<operation name="SelectRecord">
+			<input message="lifefit:SelectRecordInput" />
+			<output message="lifefit:SelectRecordOutput" />
+		</operation>
+		<operation name="PolicyFieldUpdate">
+			<input message="lifefit:UpdatePolicyFieldInput" />
+			<output message="lifefit:UpdatePolicyFieldOutput" />
+		</operation>
+		<operation name="PolicyStatusChange">
+			<input message="lifefit:PolicyStatusChangeInput" />
+			<output message="lifefit:PolicyStatusChangeOutput" />
+		</operation>
+		<operation name="EndorseSumAssured">
+			<input message="lifefit:EndorseSumAssuredInput" />
+			<output message="lifefit:EndorseSumAssuredOutput" />
+		</operation>
+		<operation name="GetRMWorkbench">
+			<input message="lifefit:RMWorkbenchInput" />
+			<output message="RMWorkbenchOutput" />
+		</operation>
+		<operation name="ClientFieldUpdate">
+			<input message="lifefit:UpdateClientFieldInput" />
+			<output message="lifefit:UpdateClientFieldOutput" />
+		</operation>
+		<operation name="SecurityFieldUpdate">
+			<input message="lifefit:UpdateSecurityFieldInput" />
+			<output message="lifefit:UpdateSecurityFieldOutput" />
+		</operation>
+		<operation name="SendSms">
+			<input message="lifefit:SendSmsInput" />
+			<output message="lifefit:SendSmsOutput" />
+		</operation>
+
+		<operation name="MobileMoneyCreditConfirmation">
+			<input message="lifefit:MobileMoneyCreditConfirmationInput" />
+			<output message="lifefit:MobileMoneyCreditConfirmationOutput" />
+		</operation>
+		<operation name="CreditConfirmation">
+			<input message="lifefit:CreditConfirmationInput" />
+			<output message="lifefit:CreditConfirmationOutput" />
+		</operation>
+		<operation name="ClientBankAccountQuery">
+			<input message="lifefit:ClientBankAccountInput" />
+			<output message="lifefit:ClientBankAccountOutput" />
+		</operation>
+
+		<operation name="SetDefaultAgentQuery">
+			<input message="lifefit:DefaultAgentInput" />
+			<output message="lifefit:DefaultAgentOutput" />
+		</operation>
 	</portType>
+
 	<binding name="LifefitBinding" type="lifefit:LifefitPortType">
 		<soap:binding style="document"
 			transport="http://schemas.xmlsoap.org/soap/http" />
@@ -4350,24 +4351,6 @@
 				<soap:body use="literal" />
 			</output>
 		</operation>
-		<operation name="AgentBalanceQuery">
-			<soap:operation soapAction="agentBalanceQuery" style="document"/>
-			<input>
-				<soap:body use="literal" />
-			</input>
-			<output>
-				<soap:body use="literal" />
-			</output>
-		</operation>
-		<operation name="AgentsByClientQuery">
-			<soap:operation soapAction="agentsByClientQuery" style="document"/>
-			<input>
-				<soap:body use="literal" />
-			</input>
-			<output>
-				<soap:body use="literal" />
-			</output>
-		</operation>
 		<operation name="AuthenticateAgent">
 			<soap:operation soapAction="authenticateAgent"
 				style="document" />
@@ -4390,16 +4373,6 @@
 		</operation>
 		<operation name="AuthorisePaymentOut">
 			<soap:operation soapAction="authorisePaymentOut"
-				style="document" />
-			<input>
-				<soap:body use="literal" />
-			</input>
-			<output>
-				<soap:body use="literal" />
-			</output>
-		</operation>
-		<operation name="BackdatedReversePaymentByReceiptNo">
-			<soap:operation soapAction="backdatedReversePaymentByReceiptNo"
 				style="document" />
 			<input>
 				<soap:body use="literal" />
@@ -4448,24 +4421,6 @@
 				<soap:body use="literal" />
 			</output>
 		</operation>
-		<operation name="ClientBankAccountQuery">
-			<soap:operation soapAction="clientBankAccountQuery" style="document"/>
-			<input>
-				<soap:body use="literal" />
-			</input>
-			<output>
-				<soap:body use="literal" />
-			</output>
-		</operation>
-		<operation name="ClientFieldUpdate">
-			<soap:operation soapAction="clientFieldUpdate" style="document"/>
-			<input>
-				<soap:body use="literal" />
-			</input>
-			<output>
-				<soap:body use="literal" />
-			</output>
-		</operation>
 		<operation name="CreateAgent">
 			<soap:operation soapAction="createAgent"
 				style="document" />
@@ -4496,15 +4451,6 @@
 				<soap:body use="literal" />
 			</output>
 		</operation>
-		<operation name="CreateReferral">
-			<soap:operation soapAction="createReferral" style="document"/>
-			<input>
-				<soap:body use="literal" />
-			</input>
-			<output>
-				<soap:body use="literal" />
-			</output>
-		</operation>
 		<operation name="CreateSecurity">
 			<soap:operation soapAction="createSecurity"
 				style="document" />
@@ -4528,33 +4474,6 @@
 		<operation name="CreateWorkflowTask">
 			<soap:operation soapAction="createWorkflowTask"
 				style="document" />
-			<input>
-				<soap:body use="literal" />
-			</input>
-			<output>
-				<soap:body use="literal" />
-			</output>
-		</operation>
-		<operation name="CreditConfirmation">
-			<soap:operation soapAction="creditConfirmation" style="document"/>
-			<input>
-				<soap:body use="literal" />
-			</input>
-			<output>
-				<soap:body use="literal" />
-			</output>
-		</operation>
-		<operation name="DocTrigger">
-			<soap:operation soapAction="docTrigger" style="document"/>
-			<input>
-				<soap:body use="literal" />
-			</input>
-			<output>
-				<soap:body use="literal" />
-			</output>
-		</operation>
-		<operation name="EndorseSumAssured">
-			<soap:operation soapAction="endorseSumAssured" style="document"/>
 			<input>
 				<soap:body use="literal" />
 			</input>
@@ -4952,15 +4871,6 @@
 				<soap:body use="literal" />
 			</output>
 		</operation>
-		<operation name="GetRMWorkbench">
-			<soap:operation soapAction="getRMWorkbench" style="document"/>
-			<input>
-				<soap:body use="literal" />
-			</input>
-			<output>
-				<soap:body use="literal" />
-			</output>
-		</operation>
 		<operation name="GetSecInfo">
 			<soap:operation soapAction="getSecInfo"
 				style="document" />
@@ -5071,33 +4981,6 @@
 				<soap:body use="literal" />
 			</output>
 		</operation>
-		<operation name="MobileAppVersionQuery">
-			<soap:operation soapAction="mobileAppVersionQuery" style="document"/>
-			<input>
-				<soap:body use="literal" />
-			</input>
-			<output>
-				<soap:body use="literal" />
-			</output>
-		</operation>
-		<operation name="MobileMoneyCreditConfirmation">
-			<soap:operation soapAction="mobileMoneyCreditConfirmation" style="document"/>
-			<input>
-				<soap:body use="literal" />
-			</input>
-			<output>
-				<soap:body use="literal" />
-			</output>
-		</operation>
-		<operation name="OrganisationOpenQuery">
-			<soap:operation soapAction="organisationOpenQuery" style="document"/>
-			<input>
-				<soap:body use="literal" />
-			</input>
-			<output>
-				<soap:body use="literal" />
-			</output>
-		</operation>
 		<operation name="PartialSurrender">
 			<soap:operation soapAction="partialSurrender"
 				style="document" />
@@ -5111,24 +4994,6 @@
 		<operation name="PayPolicy">
 			<soap:operation soapAction="payPolicy"
 				style="document" />
-			<input>
-				<soap:body use="literal" />
-			</input>
-			<output>
-				<soap:body use="literal" />
-			</output>
-		</operation>
-		<operation name="PolicyFieldUpdate">
-			<soap:operation soapAction="policyFieldUpdate" style="document"/>
-			<input>
-				<soap:body use="literal" />
-			</input>
-			<output>
-				<soap:body use="literal" />
-			</output>
-		</operation>
-		<operation name="PolicyStatusChange">
-			<soap:operation soapAction="policyStatusChange" style="document"/>
 			<input>
 				<soap:body use="literal" />
 			</input>
@@ -5179,33 +5044,6 @@
 		<operation name="RiderStatusChange">
 			<soap:operation soapAction="riderStatusChange"
 				style="document" />
-			<input>
-				<soap:body use="literal" />
-			</input>
-			<output>
-				<soap:body use="literal" />
-			</output>
-		</operation>
-		<operation name="SecurityFieldUpdate">
-			<soap:operation soapAction="securityFieldUpdate" style="document"/>
-			<input>
-				<soap:body use="literal" />
-			</input>
-			<output>
-				<soap:body use="literal" />
-			</output>
-		</operation>
-		<operation name="SelectRecord">
-			<soap:operation soapAction="selectRecord" style="document"/>
-			<input>
-				<soap:body use="literal" />
-			</input>
-			<output>
-				<soap:body use="literal" />
-			</output>
-		</operation>
-		<operation name="SetDefaultAgentQuery">
-			<soap:operation soapAction="setDefaultAgentQuery" style="document" />
 			<input>
 				<soap:body use="literal" />
 			</input>
@@ -5404,6 +5242,159 @@
 		</operation>
 		<operation name="UserWorkflowQuery">
 			<soap:operation soapAction="userWorkflowQuery" style="document"/>
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+		<operation name="CreateReferral">
+			<soap:operation soapAction="createReferral" style="document"/>
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+		<operation name="OrganisationOpenQuery">
+			<soap:operation soapAction="organisationOpenQuery" style="document"/>
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+		<operation name="MobileAppVersionQuery">
+			<soap:operation soapAction="mobileAppVersionQuery" style="document"/>
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+		<operation name="AgentsByClientQuery">
+			<soap:operation soapAction="agentsByClientQuery" style="document"/>
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+		<operation name="ClientBankAccountQuery">
+			<soap:operation soapAction="clientBankAccountQuery" style="document"/>
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+		<operation name="SetDefaultAgentQuery">
+			<soap:operation soapAction="setDefaultAgentQuery" style="document" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+		<operation name="AgentBalanceQuery">
+			<soap:operation soapAction="agentBalanceQuery" style="document"/>
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+		<operation name="DocTrigger">
+			<soap:operation soapAction="docTrigger" style="document"/>
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+		<operation name="SelectRecord">
+			<soap:operation soapAction="selectRecord" style="document"/>
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+		<operation name="PolicyFieldUpdate">
+			<soap:operation soapAction="policyFieldUpdate" style="document"/>
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+		<operation name="PolicyStatusChange">
+			<soap:operation soapAction="policyStatusChange" style="document"/>
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+		<operation name="EndorseSumAssured">
+			<soap:operation soapAction="endorseSumAssured" style="document"/>
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+		<operation name="GetRMWorkbench">
+			<soap:operation soapAction="getRMWorkbench" style="document"/>
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+		<operation name="ClientFieldUpdate">
+			<soap:operation soapAction="clientFieldUpdate" style="document"/>
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+		<operation name="SecurityFieldUpdate">
+			<soap:operation soapAction="securityFieldUpdate" style="document"/>
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+		<operation name="MobileMoneyCreditConfirmation">
+			<soap:operation soapAction="mobileMoneyCreditConfirmation" style="document"/>
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+		<operation name="CreditConfirmation">
+			<soap:operation soapAction="creditConfirmation" style="document"/>
 			<input>
 				<soap:body use="literal" />
 			</input>
