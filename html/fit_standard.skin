@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<!DOCTYPE SkinDescription SYSTEM "menu.dtd">
-<Skin>
-  <Description>FIT standard</Description>
-  <ImageName>$PATH/lifefit.png</ImageName>
-  <StylesheetPath>$PATH/fit_stylesheet.css</StylesheetPath>
-  <StylesheetPathRtl>$PATH/fit_stylesheet_rtl.css</StylesheetPathRtl>
-  <MenuStyle>$PATH/menu_var.js</MenuStyle>
-</Skin>

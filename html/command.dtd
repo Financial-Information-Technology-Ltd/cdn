@@ -1,8 +1,0 @@
-<!ELEMENT RelatedCommands (CommandRelation*)>
-
-<!ELEMENT CommandRelation (MainCommand, Command*)>
-
-<!ELEMENT MainCommand (#PCDATA)>
-
-<!ELEMENT Command (#PCDATA)>
-

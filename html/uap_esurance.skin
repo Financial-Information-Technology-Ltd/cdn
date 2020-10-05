@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<!DOCTYPE SkinDescription SYSTEM "menu.dtd">
-<Skin>
-  <Description>UAP eSurance</Description>
-  <ImageName>$PATH/uap_logo.gif</ImageName>
-  <StylesheetPath>$PATH/uap_esurance.css</StylesheetPath>
-</Skin>

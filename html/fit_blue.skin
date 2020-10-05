@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<!DOCTYPE SkinDescription SYSTEM "menu.dtd">
-<Skin>
-  <Description>FIT Blue</Description>
-  <ImageName>$PATH/lifefit-blue.png</ImageName>
-  <StylesheetPath>$PATH/train_stylesheet.css</StylesheetPath>
-  <StylesheetPathRtl>$PATH/train_stylesheet.css</StylesheetPathRtl>
-  <MenuStyle>$PATH/menu_var_blue.js</MenuStyle>
-</Skin>

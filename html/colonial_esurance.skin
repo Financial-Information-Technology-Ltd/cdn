@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<!DOCTYPE SkinDescription SYSTEM "menu.dtd">
-<Skin>
-  <Description>Colonial eSurance</Description>
-  <ImageName>$PATH/colonial_logo.gif</ImageName>
-  <StylesheetPath>$PATH/colonial_esurance.css</StylesheetPath>
-  <HelpIcon>$PATH/help-white.png</HelpIcon>
-</Skin>

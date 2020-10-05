@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<!DOCTYPE SkinDescription SYSTEM "menu.dtd">
-<Skin>
-  <Description>FIT Topman</Description>
-  <ImageName>$PATH/fit.png</ImageName>
-  <StylesheetPath>$PATH/topman.css</StylesheetPath>
-  <StylesheetPathRtl>$PATH/train_stylesheet.css</StylesheetPathRtl>
-  <MenuStyle>$PATH/menu_var_topman.js</MenuStyle>
-</Skin>
